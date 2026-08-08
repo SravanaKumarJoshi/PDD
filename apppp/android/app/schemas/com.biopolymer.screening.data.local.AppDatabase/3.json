@@ -1,0 +1,409 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 3,
+    "identityHash": "617204b15cd3acaa09ef7b4161caaea2",
+    "entities": [
+      {
+        "tableName": "materials",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `name` TEXT NOT NULL, `category` TEXT NOT NULL, `source` TEXT, `notes` TEXT, `evidenceLevel` TEXT NOT NULL, `referencesJson` TEXT NOT NULL, `extPropertiesJson` TEXT NOT NULL, `updatedAt` INTEGER NOT NULL, `isDeleted` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "category",
+            "columnName": "category",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "source",
+            "columnName": "source",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "notes",
+            "columnName": "notes",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "evidenceLevel",
+            "columnName": "evidenceLevel",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "referencesJson",
+            "columnName": "referencesJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "extPropertiesJson",
+            "columnName": "extPropertiesJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updatedAt",
+            "columnName": "updatedAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isDeleted",
+            "columnName": "isDeleted",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "material_properties",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `materialId` TEXT NOT NULL, `tensileStrengthMpaMin` REAL, `tensileStrengthMpaMax` REAL, `elasticModulusGpaMin` REAL, `elasticModulusGpaMax` REAL, `elongationPctMin` REAL, `elongationPctMax` REAL, `punctureResistanceN` REAL, `wvtr` REAL, `otr` REAL, `waterSolubility` INTEGER, `swellingRatio` REAL, `degradationDaysMin` REAL, `degradationDaysMax` REAL, `enzymaticDegradability` INTEGER, `hydrolyticStability` TEXT, `cytotoxicitySafe` INTEGER, `hemocompatible` INTEGER, `antimicrobial` INTEGER, `endotoxinConcern` TEXT, `sterGamma` INTEGER NOT NULL, `sterEto` INTEGER NOT NULL, `sterSteam` INTEGER NOT NULL, `sterUv` INTEGER NOT NULL, `sterAutoclave` INTEGER NOT NULL, `procFilm` INTEGER NOT NULL, `procCasting` INTEGER NOT NULL, `procExtrusion` INTEGER NOT NULL, `procCoating` INTEGER NOT NULL, `procMelt` INTEGER NOT NULL, `solventCompatible` TEXT, `costBand` TEXT, `availabilityBand` TEXT, `dataCompleteness` REAL NOT NULL, `updatedAt` INTEGER NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`materialId`) REFERENCES `materials`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "materialId",
+            "columnName": "materialId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tensileStrengthMpaMin",
+            "columnName": "tensileStrengthMpaMin",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tensileStrengthMpaMax",
+            "columnName": "tensileStrengthMpaMax",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "elasticModulusGpaMin",
+            "columnName": "elasticModulusGpaMin",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "elasticModulusGpaMax",
+            "columnName": "elasticModulusGpaMax",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "elongationPctMin",
+            "columnName": "elongationPctMin",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "elongationPctMax",
+            "columnName": "elongationPctMax",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "punctureResistanceN",
+            "columnName": "punctureResistanceN",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "wvtr",
+            "columnName": "wvtr",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "otr",
+            "columnName": "otr",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "waterSolubility",
+            "columnName": "waterSolubility",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "swellingRatio",
+            "columnName": "swellingRatio",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "degradationDaysMin",
+            "columnName": "degradationDaysMin",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "degradationDaysMax",
+            "columnName": "degradationDaysMax",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "enzymaticDegradability",
+            "columnName": "enzymaticDegradability",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "hydrolyticStability",
+            "columnName": "hydrolyticStability",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cytotoxicitySafe",
+            "columnName": "cytotoxicitySafe",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "hemocompatible",
+            "columnName": "hemocompatible",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "antimicrobial",
+            "columnName": "antimicrobial",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "endotoxinConcern",
+            "columnName": "endotoxinConcern",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sterGamma",
+            "columnName": "sterGamma",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sterEto",
+            "columnName": "sterEto",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sterSteam",
+            "columnName": "sterSteam",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sterUv",
+            "columnName": "sterUv",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sterAutoclave",
+            "columnName": "sterAutoclave",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "procFilm",
+            "columnName": "procFilm",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "procCasting",
+            "columnName": "procCasting",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "procExtrusion",
+            "columnName": "procExtrusion",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "procCoating",
+            "columnName": "procCoating",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "procMelt",
+            "columnName": "procMelt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "solventCompatible",
+            "columnName": "solventCompatible",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "costBand",
+            "columnName": "costBand",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "availabilityBand",
+            "columnName": "availabilityBand",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dataCompleteness",
+            "columnName": "dataCompleteness",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updatedAt",
+            "columnName": "updatedAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_material_properties_materialId",
+            "unique": true,
+            "columnNames": [
+              "materialId"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_material_properties_materialId` ON `${TABLE_NAME}` (`materialId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "materials",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "materialId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "projects",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `userId` TEXT, `title` TEXT NOT NULL, `requirementsJson` TEXT NOT NULL, `resultsJson` TEXT NOT NULL DEFAULT '', `createdAt` INTEGER NOT NULL, `updatedAt` INTEGER NOT NULL, `isSynced` INTEGER NOT NULL, `isDeleted` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userId",
+            "columnName": "userId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "requirementsJson",
+            "columnName": "requirementsJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "resultsJson",
+            "columnName": "resultsJson",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "''"
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "createdAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updatedAt",
+            "columnName": "updatedAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isSynced",
+            "columnName": "isSynced",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isDeleted",
+            "columnName": "isDeleted",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '617204b15cd3acaa09ef7b4161caaea2')"
+    ]
+  }
+}

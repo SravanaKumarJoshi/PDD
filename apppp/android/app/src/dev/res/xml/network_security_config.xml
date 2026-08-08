@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Network Security Configuration — DEV flavor.
+
+  Permits cleartext (HTTP) traffic for local development and testing
+  (e.g. local backend on 10.0.2.2, localhost, or local network IPs).
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+            <certificates src="user" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

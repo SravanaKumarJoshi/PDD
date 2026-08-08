@@ -1,0 +1,401 @@
+name,category,medical_application,medical_field,delivery_system,biocompatibility,biodegradability,toxicity_category,clinical_stage,source
+Inulin,Storage,Prebiotic therapy,Tissue engineering,Hydrogel,Moderate,Partially,Moderate toxicity,Preclinical,Plants
+Heparin,Bioactive,Blood thinner,Immunology,Nanoparticle,Moderate,Fully,Non-toxic,Preclinical,Animals
+Pullulan,Fungal,Drug carrier,Wound care,Microencapsulation,Excellent,Partially,Moderate toxicity,Approved,Fungi
+Pullulan,Fungal,Drug carrier,Drug delivery,Microencapsulation,Excellent,Non-degradable,Non-toxic,Phase II,Fungi
+Levan,Bacterial,Prebiotic,Ophthalmology,Hydrogel,Good,Non-degradable,Low toxicity,Approved,Bacteria
+Pectin,Structural,Wound healing gel,Oncology,Film,Good,Partially,Non-toxic,Preclinical,Plants
+Fucoidan,Algal,Anticoagulant/Antitumor,Tissue engineering,Injectable,Good,Fully,Low toxicity,Phase I,Brown Algae
+Carrageenan,Algal,Antiviral,Wound care,Tablet matrix,Good,Non-degradable,Moderate toxicity,Phase III,Red Algae
+Locust Bean Gum,Storage,Cholesterol reduction,Tissue engineering,Nanoparticle,Moderate,Fully,Moderate toxicity,Phase I,Plants
+Chitin,Structural,Wound healing scaffolds,Ophthalmology,Nanoparticle,Excellent,Fully,Moderate toxicity,Phase II,Fungi/Exoskeletons
+Agar,Algal,Microbiological media,Cardiology,Tablet matrix,Excellent,Partially,Non-toxic,Approved,Red Algae
+Welan Gum,Bacterial,Drug suspension,Tissue engineering,Film,Good,Fully,Non-toxic,Phase II,Bacteria
+Guar Gum,Storage,Laxative,Ophthalmology,Hydrogel,Excellent,Partially,Moderate toxicity,Phase II,Plants
+Welan Gum,Bacterial,Drug suspension,Orthopedics,Injectable,Excellent,Fully,Non-toxic,Approved,Bacteria
+Welan Gum,Bacterial,Drug suspension,Immunology,Injectable,Good,Non-degradable,Non-toxic,Phase I,Bacteria
+Pectin,Structural,Wound healing gel,Cardiology,Hydrogel,Excellent,Partially,Low toxicity,Phase I,Plants
+Starch,Storage,Drug delivery,Immunology,Film,Good,Fully,Non-toxic,Phase II,Plants
+Glycogen,Storage,Hypoglycemia treatment,Wound care,Injectable,Excellent,Non-degradable,Low toxicity,Phase III,Animals
+Curdlan,Bacterial,Immune stimulant,Oncology,Film,Excellent,Partially,Non-toxic,Preclinical,Bacteria
+Starch,Storage,Drug delivery,Orthopedics,Hydrogel,Moderate,Non-degradable,Non-toxic,Phase I,Plants
+Konjac Glucomannan,Storage,Obesity/Diabetes aid,Cardiology,Nanoparticle,Good,Non-degradable,Low toxicity,Phase III,Plants
+Guar Gum,Storage,Laxative,Drug delivery,Tablet matrix,Good,Non-degradable,Low toxicity,Phase II,Plants
+Alginate,Algal,Drug encapsulation,Immunology,Nanoparticle,Good,Partially,Moderate toxicity,Phase II,Brown Algae
+Locust Bean Gum,Storage,Cholesterol reduction,Immunology,Nanoparticle,Good,Non-degradable,Moderate toxicity,Preclinical,Plants
+Heparin,Bioactive,Blood thinner,Tissue engineering,Hydrogel,Moderate,Fully,Low toxicity,Phase III,Animals
+Starch,Storage,Drug delivery,Ophthalmology,Tablet matrix,Moderate,Non-degradable,Low toxicity,Phase II,Plants
+Xanthan Gum,Bacterial,Drug suspension aid,Cardiology,Hydrogel,Good,Non-degradable,Non-toxic,Phase II,Bacteria
+Fucoidan,Algal,Anticoagulant/Antitumor,Diabetology,Film,Moderate,Fully,Low toxicity,Phase II,Brown Algae
+Pectin,Structural,Wound healing gel,Tissue engineering,Tablet matrix,Good,Partially,Low toxicity,Phase I,Plants
+Cellulose,Structural,Wound dressing,Diabetology,Injectable,Good,Non-degradable,Non-toxic,Phase III,Plants
+Pullulan,Fungal,Drug carrier,Drug delivery,Microencapsulation,Excellent,Fully,Low toxicity,Phase I,Fungi
+Pullulan,Fungal,Drug carrier,Wound care,Tablet matrix,Good,Non-degradable,Moderate toxicity,Phase I,Fungi
+Dextran,Bacterial,Plasma volume expander,Immunology,Microencapsulation,Excellent,Partially,Non-toxic,Phase III,Bacteria
+Cellulose,Structural,Wound dressing,Ophthalmology,Microencapsulation,Moderate,Fully,Non-toxic,Phase III,Plants
+Dextran,Bacterial,Plasma volume expander,Oncology,Film,Good,Non-degradable,Non-toxic,Preclinical,Bacteria
+Inulin,Storage,Prebiotic therapy,Wound care,Microencapsulation,Good,Non-degradable,Moderate toxicity,Approved,Plants
+Heparin,Bioactive,Blood thinner,Cardiology,Injectable,Good,Fully,Moderate toxicity,Phase I,Animals
+Levan,Bacterial,Prebiotic,Cardiology,Microencapsulation,Excellent,Fully,Low toxicity,Phase II,Bacteria
+Agar,Algal,Microbiological media,Tissue engineering,Film,Good,Fully,Low toxicity,Phase II,Red Algae
+Laminarin,Algal,Antitumor,Orthopedics,Hydrogel,Moderate,Partially,Moderate toxicity,Phase II,Brown Algae
+Curdlan,Bacterial,Immune stimulant,Wound care,Injectable,Excellent,Partially,Non-toxic,Phase III,Bacteria
+Cellulose Sulfate,Structural,Antiviral coating,Ophthalmology,Microencapsulation,Good,Fully,Low toxicity,Approved,Plants (Modified)
+Fucoidan,Algal,Anticoagulant/Antitumor,Immunology,Tablet matrix,Excellent,Partially,Low toxicity,Preclinical,Brown Algae
+Heparin,Bioactive,Blood thinner,Diabetology,Film,Moderate,Partially,Moderate toxicity,Phase II,Animals
+Pullulan,Fungal,Drug carrier,Drug delivery,Film,Good,Partially,Low toxicity,Phase III,Fungi
+Starch,Storage,Drug delivery,Diabetology,Nanoparticle,Good,Fully,Non-toxic,Approved,Plants
+Dextran,Bacterial,Plasma volume expander,Ophthalmology,Tablet matrix,Moderate,Partially,Non-toxic,Approved,Bacteria
+Cellulose Sulfate,Structural,Antiviral coating,Orthopedics,Nanoparticle,Good,Fully,Low toxicity,Preclinical,Plants (Modified)
+Pullulan,Fungal,Drug carrier,Diabetology,Film,Excellent,Fully,Non-toxic,Phase II,Fungi
+Fucoidan,Algal,Anticoagulant/Antitumor,Cardiology,Microencapsulation,Moderate,Fully,Low toxicity,Approved,Brown Algae
+Guar Gum,Storage,Laxative,Drug delivery,Nanoparticle,Excellent,Non-degradable,Moderate toxicity,Approved,Plants
+Gellan Gum,Bacterial,Controlled release,Oncology,Injectable,Excellent,Non-degradable,Non-toxic,Approved,Bacteria
+Gellan Gum,Bacterial,Controlled release,Immunology,Hydrogel,Excellent,Non-degradable,Moderate toxicity,Phase I,Bacteria
+Dextran,Bacterial,Plasma volume expander,Orthopedics,Injectable,Excellent,Partially,Moderate toxicity,Phase I,Bacteria
+Chitin,Structural,Wound healing scaffolds,Cardiology,Nanoparticle,Excellent,Non-degradable,Non-toxic,Approved,Fungi/Exoskeletons
+Chitin,Structural,Wound healing scaffolds,Ophthalmology,Hydrogel,Excellent,Partially,Non-toxic,Approved,Fungi/Exoskeletons
+Pullulan,Fungal,Drug carrier,Tissue engineering,Nanoparticle,Excellent,Partially,Low toxicity,Phase III,Fungi
+Hyaluronic Acid,Bioactive,Dermal filler,Ophthalmology,Tablet matrix,Good,Non-degradable,Moderate toxicity,Phase III,Animals/Bacteria
+Scleroglucan,Fungal,Immunostimulant,Cardiology,Film,Excellent,Non-degradable,Non-toxic,Phase I,Fungi
+Heparin,Bioactive,Blood thinner,Ophthalmology,Hydrogel,Moderate,Non-degradable,Moderate toxicity,Approved,Animals
+Xanthan Gum,Bacterial,Drug suspension aid,Immunology,Film,Good,Partially,Moderate toxicity,Preclinical,Bacteria
+Curdlan,Bacterial,Immune stimulant,Immunology,Microencapsulation,Moderate,Partially,Low toxicity,Phase III,Bacteria
+Welan Gum,Bacterial,Drug suspension,Cardiology,Film,Good,Partially,Non-toxic,Preclinical,Bacteria
+Dextran,Bacterial,Plasma volume expander,Immunology,Nanoparticle,Moderate,Partially,Non-toxic,Approved,Bacteria
+Dextran,Bacterial,Plasma volume expander,Oncology,Injectable,Moderate,Non-degradable,Moderate toxicity,Phase III,Bacteria
+Cellulose,Structural,Wound dressing,Drug delivery,Hydrogel,Good,Non-degradable,Low toxicity,Phase II,Plants
+Starch,Storage,Drug delivery,Wound care,Microencapsulation,Moderate,Non-degradable,Non-toxic,Phase II,Plants
+Welan Gum,Bacterial,Drug suspension,Diabetology,Film,Moderate,Fully,Non-toxic,Phase I,Bacteria
+Alginate,Algal,Drug encapsulation,Drug delivery,Film,Moderate,Fully,Low toxicity,Phase II,Brown Algae
+Carrageenan,Algal,Antiviral,Cardiology,Injectable,Good,Partially,Low toxicity,Approved,Red Algae
+Scleroglucan,Fungal,Immunostimulant,Wound care,Tablet matrix,Moderate,Non-degradable,Moderate toxicity,Approved,Fungi
+Inulin,Storage,Prebiotic therapy,Wound care,Injectable,Good,Non-degradable,Moderate toxicity,Phase II,Plants
+Curdlan,Bacterial,Immune stimulant,Tissue engineering,Nanoparticle,Excellent,Fully,Moderate toxicity,Phase I,Bacteria
+Agar,Algal,Microbiological media,Cardiology,Injectable,Excellent,Partially,Moderate toxicity,Phase III,Red Algae
+Pectin,Structural,Wound healing gel,Ophthalmology,Injectable,Excellent,Fully,Non-toxic,Phase III,Plants
+Konjac Glucomannan,Storage,Obesity/Diabetes aid,Tissue engineering,Nanoparticle,Excellent,Non-degradable,Low toxicity,Preclinical,Plants
+Cellulose,Structural,Wound dressing,Cardiology,Film,Good,Non-degradable,Moderate toxicity,Preclinical,Plants
+Hyaluronic Acid,Bioactive,Dermal filler,Drug delivery,Nanoparticle,Moderate,Partially,Low toxicity,Phase I,Animals/Bacteria
+Fucoidan,Algal,Anticoagulant/Antitumor,Diabetology,Hydrogel,Excellent,Partially,Low toxicity,Phase III,Brown Algae
+Scleroglucan,Fungal,Immunostimulant,Orthopedics,Hydrogel,Excellent,Non-degradable,Non-toxic,Phase III,Fungi
+Locust Bean Gum,Storage,Cholesterol reduction,Ophthalmology,Nanoparticle,Moderate,Fully,Moderate toxicity,Preclinical,Plants
+Xanthan Gum,Bacterial,Drug suspension aid,Oncology,Hydrogel,Excellent,Partially,Low toxicity,Approved,Bacteria
+Cellulose Sulfate,Structural,Antiviral coating,Cardiology,Microencapsulation,Excellent,Non-degradable,Moderate toxicity,Approved,Plants (Modified)
+Guar Gum,Storage,Laxative,Ophthalmology,Hydrogel,Moderate,Partially,Moderate toxicity,Phase II,Plants
+Alginate,Algal,Drug encapsulation,Diabetology,Hydrogel,Excellent,Partially,Low toxicity,Phase III,Brown Algae
+Glycogen,Storage,Hypoglycemia treatment,Cardiology,Hydrogel,Moderate,Partially,Non-toxic,Preclinical,Animals
+Guar Gum,Storage,Laxative,Ophthalmology,Nanoparticle,Moderate,Non-degradable,Low toxicity,Preclinical,Plants
+Agar,Algal,Microbiological media,Orthopedics,Microencapsulation,Good,Non-degradable,Low toxicity,Preclinical,Red Algae
+Hyaluronic Acid,Bioactive,Dermal filler,Orthopedics,Nanoparticle,Moderate,Non-degradable,Non-toxic,Approved,Animals/Bacteria
+Laminarin,Algal,Antitumor,Diabetology,Microencapsulation,Good,Non-degradable,Non-toxic,Approved,Brown Algae
+Welan Gum,Bacterial,Drug suspension,Cardiology,Tablet matrix,Good,Partially,Moderate toxicity,Preclinical,Bacteria
+Cellulose,Structural,Wound dressing,Drug delivery,Film,Good,Fully,Low toxicity,Preclinical,Plants
+Heparin,Bioactive,Blood thinner,Ophthalmology,Tablet matrix,Moderate,Partially,Moderate toxicity,Preclinical,Animals
+Agar,Algal,Microbiological media,Immunology,Nanoparticle,Moderate,Non-degradable,Moderate toxicity,Preclinical,Red Algae
+Alginate,Algal,Drug encapsulation,Cardiology,Film,Moderate,Non-degradable,Moderate toxicity,Preclinical,Brown Algae
+Cellulose Sulfate,Structural,Antiviral coating,Immunology,Hydrogel,Good,Non-degradable,Non-toxic,Preclinical,Plants (Modified)
+Cellulose,Structural,Wound dressing,Immunology,Tablet matrix,Excellent,Non-degradable,Low toxicity,Phase III,Plants
+Guar Gum,Storage,Laxative,Orthopedics,Hydrogel,Excellent,Fully,Non-toxic,Phase I,Plants
+Cellulose Sulfate,Structural,Antiviral coating,Tissue engineering,Injectable,Moderate,Non-degradable,Non-toxic,Approved,Plants (Modified)
+Guar Gum,Storage,Laxative,Oncology,Film,Good,Non-degradable,Non-toxic,Phase III,Plants
+Welan Gum,Bacterial,Drug suspension,Tissue engineering,Tablet matrix,Excellent,Fully,Low toxicity,Preclinical,Bacteria
+Laminarin,Algal,Antitumor,Drug delivery,Microencapsulation,Excellent,Partially,Low toxicity,Preclinical,Brown Algae
+Agar,Algal,Microbiological media,Ophthalmology,Nanoparticle,Moderate,Fully,Non-toxic,Phase III,Red Algae
+Gellan Gum,Bacterial,Controlled release,Diabetology,Tablet matrix,Excellent,Fully,Moderate toxicity,Phase I,Bacteria
+Cellulose,Structural,Wound dressing,Cardiology,Nanoparticle,Excellent,Partially,Non-toxic,Phase II,Plants
+Cellulose,Structural,Wound dressing,Drug delivery,Microencapsulation,Moderate,Non-degradable,Non-toxic,Phase II,Plants
+Heparin,Bioactive,Blood thinner,Tissue engineering,Film,Moderate,Fully,Moderate toxicity,Preclinical,Animals
+Glycogen,Storage,Hypoglycemia treatment,Orthopedics,Tablet matrix,Excellent,Partially,Moderate toxicity,Phase II,Animals
+Agar,Algal,Microbiological media,Immunology,Injectable,Good,Partially,Moderate toxicity,Phase II,Red Algae
+Fucoidan,Algal,Anticoagulant/Antitumor,Ophthalmology,Tablet matrix,Good,Partially,Moderate toxicity,Approved,Brown Algae
+Locust Bean Gum,Storage,Cholesterol reduction,Cardiology,Nanoparticle,Good,Partially,Moderate toxicity,Approved,Plants
+Guar Gum,Storage,Laxative,Orthopedics,Nanoparticle,Excellent,Fully,Moderate toxicity,Phase I,Plants
+Dextran,Bacterial,Plasma volume expander,Diabetology,Hydrogel,Excellent,Partially,Moderate toxicity,Phase I,Bacteria
+Cellulose,Structural,Wound dressing,Ophthalmology,Injectable,Good,Non-degradable,Low toxicity,Preclinical,Plants
+Starch,Storage,Drug delivery,Immunology,Nanoparticle,Good,Partially,Moderate toxicity,Phase III,Plants
+Dextran,Bacterial,Plasma volume expander,Cardiology,Nanoparticle,Good,Non-degradable,Low toxicity,Phase III,Bacteria
+Starch,Storage,Drug delivery,Tissue engineering,Film,Good,Fully,Non-toxic,Phase I,Plants
+Carrageenan,Algal,Antiviral,Wound care,Injectable,Good,Non-degradable,Non-toxic,Phase II,Red Algae
+Cellulose,Structural,Wound dressing,Diabetology,Microencapsulation,Excellent,Non-degradable,Low toxicity,Phase II,Plants
+Konjac Glucomannan,Storage,Obesity/Diabetes aid,Ophthalmology,Nanoparticle,Good,Non-degradable,Moderate toxicity,Phase III,Plants
+Levan,Bacterial,Prebiotic,Oncology,Nanoparticle,Moderate,Partially,Moderate toxicity,Phase II,Bacteria
+Cellulose Sulfate,Structural,Antiviral coating,Immunology,Film,Moderate,Non-degradable,Moderate toxicity,Approved,Plants (Modified)
+Inulin,Storage,Prebiotic therapy,Wound care,Film,Good,Non-degradable,Non-toxic,Phase I,Plants
+Starch,Storage,Drug delivery,Orthopedics,Injectable,Good,Fully,Non-toxic,Approved,Plants
+Dextran,Bacterial,Plasma volume expander,Drug delivery,Tablet matrix,Good,Fully,Moderate toxicity,Phase II,Bacteria
+Alginate,Algal,Drug encapsulation,Orthopedics,Injectable,Good,Non-degradable,Moderate toxicity,Preclinical,Brown Algae
+Chitin,Structural,Wound healing scaffolds,Orthopedics,Tablet matrix,Moderate,Partially,Low toxicity,Phase I,Fungi/Exoskeletons
+Pullulan,Fungal,Drug carrier,Immunology,Nanoparticle,Good,Fully,Low toxicity,Preclinical,Fungi
+Alginate,Algal,Drug encapsulation,Immunology,Injectable,Moderate,Fully,Low toxicity,Preclinical,Brown Algae
+Curdlan,Bacterial,Immune stimulant,Cardiology,Microencapsulation,Moderate,Non-degradable,Low toxicity,Preclinical,Bacteria
+Pullulan,Fungal,Drug carrier,Wound care,Microencapsulation,Good,Partially,Low toxicity,Phase I,Fungi
+Agar,Algal,Microbiological media,Wound care,Hydrogel,Moderate,Non-degradable,Non-toxic,Phase I,Red Algae
+Chitin,Structural,Wound healing scaffolds,Oncology,Hydrogel,Moderate,Non-degradable,Low toxicity,Approved,Fungi/Exoskeletons
+Pectin,Structural,Wound healing gel,Oncology,Tablet matrix,Moderate,Fully,Non-toxic,Phase II,Plants
+Inulin,Storage,Prebiotic therapy,Oncology,Injectable,Good,Non-degradable,Moderate toxicity,Preclinical,Plants
+Laminarin,Algal,Antitumor,Ophthalmology,Microencapsulation,Excellent,Fully,Moderate toxicity,Phase III,Brown Algae
+Chitin,Structural,Wound healing scaffolds,Diabetology,Nanoparticle,Excellent,Fully,Low toxicity,Approved,Fungi/Exoskeletons
+Alginate,Algal,Drug encapsulation,Tissue engineering,Nanoparticle,Moderate,Partially,Low toxicity,Phase I,Brown Algae
+Starch,Storage,Drug delivery,Drug delivery,Tablet matrix,Good,Partially,Low toxicity,Phase II,Plants
+Guar Gum,Storage,Laxative,Orthopedics,Tablet matrix,Excellent,Fully,Low toxicity,Preclinical,Plants
+Dextran,Bacterial,Plasma volume expander,Wound care,Tablet matrix,Excellent,Fully,Moderate toxicity,Phase I,Bacteria
+Pectin,Structural,Wound healing gel,Diabetology,Injectable,Moderate,Non-degradable,Moderate toxicity,Phase II,Plants
+Xanthan Gum,Bacterial,Drug suspension aid,Tissue engineering,Tablet matrix,Excellent,Non-degradable,Moderate toxicity,Phase I,Bacteria
+Carrageenan,Algal,Antiviral,Cardiology,Nanoparticle,Excellent,Non-degradable,Moderate toxicity,Approved,Red Algae
+Fucoidan,Algal,Anticoagulant/Antitumor,Diabetology,Injectable,Good,Non-degradable,Moderate toxicity,Preclinical,Brown Algae
+Locust Bean Gum,Storage,Cholesterol reduction,Oncology,Tablet matrix,Good,Non-degradable,Moderate toxicity,Approved,Plants
+Pullulan,Fungal,Drug carrier,Drug delivery,Microencapsulation,Excellent,Non-degradable,Low toxicity,Phase I,Fungi
+Pectin,Structural,Wound healing gel,Ophthalmology,Microencapsulation,Excellent,Partially,Low toxicity,Preclinical,Plants
+Welan Gum,Bacterial,Drug suspension,Ophthalmology,Film,Moderate,Partially,Low toxicity,Preclinical,Bacteria
+Alginate,Algal,Drug encapsulation,Diabetology,Tablet matrix,Excellent,Partially,Moderate toxicity,Phase III,Brown Algae
+Laminarin,Algal,Antitumor,Ophthalmology,Film,Good,Fully,Moderate toxicity,Phase I,Brown Algae
+Cellulose Sulfate,Structural,Antiviral coating,Ophthalmology,Film,Moderate,Non-degradable,Moderate toxicity,Phase I,Plants (Modified)
+Laminarin,Algal,Antitumor,Orthopedics,Microencapsulation,Good,Partially,Non-toxic,Preclinical,Brown Algae
+Levan,Bacterial,Prebiotic,Tissue engineering,Tablet matrix,Excellent,Non-degradable,Low toxicity,Phase I,Bacteria
+Hyaluronic Acid,Bioactive,Dermal filler,Immunology,Nanoparticle,Excellent,Fully,Low toxicity,Phase II,Animals/Bacteria
+Konjac Glucomannan,Storage,Obesity/Diabetes aid,Diabetology,Injectable,Good,Non-degradable,Non-toxic,Phase I,Plants
+Cellulose,Structural,Wound dressing,Tissue engineering,Nanoparticle,Moderate,Fully,Non-toxic,Phase I,Plants
+Locust Bean Gum,Storage,Cholesterol reduction,Diabetology,Film,Good,Partially,Non-toxic,Phase III,Plants
+Welan Gum,Bacterial,Drug suspension,Diabetology,Hydrogel,Moderate,Partially,Non-toxic,Phase II,Bacteria
+Pectin,Structural,Wound healing gel,Cardiology,Injectable,Excellent,Fully,Moderate toxicity,Phase II,Plants
+Pullulan,Fungal,Drug carrier,Tissue engineering,Injectable,Good,Non-degradable,Low toxicity,Phase II,Fungi
+Konjac Glucomannan,Storage,Obesity/Diabetes aid,Immunology,Injectable,Excellent,Non-degradable,Non-toxic,Approved,Plants
+Locust Bean Gum,Storage,Cholesterol reduction,Cardiology,Hydrogel,Excellent,Non-degradable,Moderate toxicity,Phase II,Plants
+Scleroglucan,Fungal,Immunostimulant,Immunology,Film,Good,Partially,Non-toxic,Approved,Fungi
+Gellan Gum,Bacterial,Controlled release,Orthopedics,Nanoparticle,Excellent,Partially,Low toxicity,Phase II,Bacteria
+Cellulose,Structural,Wound dressing,Diabetology,Tablet matrix,Moderate,Non-degradable,Low toxicity,Phase II,Plants
+Pectin,Structural,Wound healing gel,Tissue engineering,Microencapsulation,Excellent,Fully,Non-toxic,Phase I,Plants
+Levan,Bacterial,Prebiotic,Diabetology,Microencapsulation,Moderate,Non-degradable,Low toxicity,Preclinical,Bacteria
+Alginate,Algal,Drug encapsulation,Orthopedics,Hydrogel,Excellent,Partially,Low toxicity,Phase III,Brown Algae
+Pullulan,Fungal,Drug carrier,Ophthalmology,Hydrogel,Good,Partially,Moderate toxicity,Preclinical,Fungi
+Agar,Algal,Microbiological media,Orthopedics,Hydrogel,Excellent,Fully,Moderate toxicity,Approved,Red Algae
+Konjac Glucomannan,Storage,Obesity/Diabetes aid,Wound care,Nanoparticle,Moderate,Fully,Moderate toxicity,Approved,Plants
+Xanthan Gum,Bacterial,Drug suspension aid,Oncology,Film,Excellent,Partially,Non-toxic,Phase II,Bacteria
+Curdlan,Bacterial,Immune stimulant,Tissue engineering,Injectable,Good,Non-degradable,Non-toxic,Phase III,Bacteria
+Dextran,Bacterial,Plasma volume expander,Cardiology,Injectable,Moderate,Fully,Low toxicity,Phase III,Bacteria
+Guar Gum,Storage,Laxative,Orthopedics,Nanoparticle,Excellent,Partially,Moderate toxicity,Preclinical,Plants
+Alginate,Algal,Drug encapsulation,Cardiology,Injectable,Excellent,Non-degradable,Non-toxic,Phase II,Brown Algae
+Hyaluronic Acid,Bioactive,Dermal filler,Diabetology,Microencapsulation,Good,Partially,Moderate toxicity,Approved,Animals/Bacteria
+Scleroglucan,Fungal,Immunostimulant,Cardiology,Injectable,Moderate,Partially,Non-toxic,Phase III,Fungi
+Chitin,Structural,Wound healing scaffolds,Diabetology,Microencapsulation,Excellent,Non-degradable,Moderate toxicity,Preclinical,Fungi/Exoskeletons
+Fucoidan,Algal,Anticoagulant/Antitumor,Oncology,Hydrogel,Excellent,Non-degradable,Low toxicity,Phase I,Brown Algae
+Scleroglucan,Fungal,Immunostimulant,Ophthalmology,Microencapsulation,Good,Fully,Low toxicity,Phase I,Fungi
+Gellan Gum,Bacterial,Controlled release,Immunology,Microencapsulation,Excellent,Fully,Moderate toxicity,Preclinical,Bacteria
+Locust Bean Gum,Storage,Cholesterol reduction,Ophthalmology,Nanoparticle,Good,Fully,Low toxicity,Approved,Plants
+Laminarin,Algal,Antitumor,Ophthalmology,Injectable,Excellent,Fully,Low toxicity,Phase II,Brown Algae
+Laminarin,Algal,Antitumor,Tissue engineering,Injectable,Moderate,Fully,Moderate toxicity,Phase II,Brown Algae
+Guar Gum,Storage,Laxative,Diabetology,Injectable,Excellent,Partially,Non-toxic,Phase II,Plants
+Scleroglucan,Fungal,Immunostimulant,Immunology,Film,Moderate,Partially,Moderate toxicity,Phase II,Fungi
+Cellulose Sulfate,Structural,Antiviral coating,Immunology,Microencapsulation,Excellent,Fully,Non-toxic,Phase II,Plants (Modified)
+Levan,Bacterial,Prebiotic,Immunology,Microencapsulation,Excellent,Non-degradable,Low toxicity,Preclinical,Bacteria
+Hyaluronic Acid,Bioactive,Dermal filler,Immunology,Microencapsulation,Moderate,Fully,Low toxicity,Phase III,Animals/Bacteria
+Welan Gum,Bacterial,Drug suspension,Wound care,Film,Good,Non-degradable,Low toxicity,Phase I,Bacteria
+Starch,Storage,Drug delivery,Orthopedics,Microencapsulation,Moderate,Fully,Low toxicity,Preclinical,Plants
+Cellulose Sulfate,Structural,Antiviral coating,Drug delivery,Microencapsulation,Moderate,Partially,Low toxicity,Phase III,Plants (Modified)
+Pullulan,Fungal,Drug carrier,Tissue engineering,Film,Good,Fully,Low toxicity,Phase III,Fungi
+Gellan Gum,Bacterial,Controlled release,Ophthalmology,Microencapsulation,Moderate,Fully,Low toxicity,Phase III,Bacteria
+Levan,Bacterial,Prebiotic,Ophthalmology,Tablet matrix,Excellent,Non-degradable,Non-toxic,Preclinical,Bacteria
+Laminarin,Algal,Antitumor,Drug delivery,Hydrogel,Moderate,Non-degradable,Non-toxic,Preclinical,Brown Algae
+Carrageenan,Algal,Antiviral,Cardiology,Injectable,Good,Partially,Moderate toxicity,Preclinical,Red Algae
+Fucoidan,Algal,Anticoagulant/Antitumor,Oncology,Tablet matrix,Excellent,Partially,Moderate toxicity,Phase I,Brown Algae
+Hyaluronic Acid,Bioactive,Dermal filler,Diabetology,Film,Moderate,Fully,Low toxicity,Phase I,Animals/Bacteria
+Alginate,Algal,Drug encapsulation,Drug delivery,Film,Excellent,Non-degradable,Moderate toxicity,Phase I,Brown Algae
+Starch,Storage,Drug delivery,Oncology,Nanoparticle,Moderate,Fully,Moderate toxicity,Phase III,Plants
+Guar Gum,Storage,Laxative,Oncology,Hydrogel,Good,Partially,Non-toxic,Phase I,Plants
+Fucoidan,Algal,Anticoagulant/Antitumor,Ophthalmology,Nanoparticle,Good,Non-degradable,Non-toxic,Phase III,Brown Algae
+Fucoidan,Algal,Anticoagulant/Antitumor,Tissue engineering,Hydrogel,Moderate,Partially,Non-toxic,Preclinical,Brown Algae
+Glycogen,Storage,Hypoglycemia treatment,Diabetology,Injectable,Moderate,Non-degradable,Low toxicity,Preclinical,Animals
+Starch,Storage,Drug delivery,Diabetology,Tablet matrix,Excellent,Fully,Moderate toxicity,Approved,Plants
+Carrageenan,Algal,Antiviral,Ophthalmology,Tablet matrix,Good,Partially,Low toxicity,Approved,Red Algae
+Gellan Gum,Bacterial,Controlled release,Oncology,Microencapsulation,Good,Partially,Non-toxic,Preclinical,Bacteria
+Inulin,Storage,Prebiotic therapy,Immunology,Film,Good,Partially,Non-toxic,Phase I,Plants
+Levan,Bacterial,Prebiotic,Diabetology,Microencapsulation,Good,Partially,Moderate toxicity,Approved,Bacteria
+Locust Bean Gum,Storage,Cholesterol reduction,Ophthalmology,Film,Excellent,Partially,Moderate toxicity,Phase III,Plants
+Alginate,Algal,Drug encapsulation,Diabetology,Injectable,Excellent,Partially,Non-toxic,Approved,Brown Algae
+Starch,Storage,Drug delivery,Tissue engineering,Hydrogel,Good,Partially,Low toxicity,Approved,Plants
+Chitin,Structural,Wound healing scaffolds,Orthopedics,Microencapsulation,Excellent,Non-degradable,Non-toxic,Preclinical,Fungi/Exoskeletons
+Cellulose Sulfate,Structural,Antiviral coating,Wound care,Hydrogel,Good,Non-degradable,Non-toxic,Preclinical,Plants (Modified)
+Heparin,Bioactive,Blood thinner,Tissue engineering,Tablet matrix,Good,Non-degradable,Moderate toxicity,Approved,Animals
+Konjac Glucomannan,Storage,Obesity/Diabetes aid,Ophthalmology,Nanoparticle,Good,Partially,Low toxicity,Phase II,Plants
+Gellan Gum,Bacterial,Controlled release,Drug delivery,Hydrogel,Excellent,Partially,Moderate toxicity,Approved,Bacteria
+Laminarin,Algal,Antitumor,Tissue engineering,Nanoparticle,Good,Non-degradable,Non-toxic,Approved,Brown Algae
+Guar Gum,Storage,Laxative,Diabetology,Film,Good,Non-degradable,Non-toxic,Phase II,Plants
+Pullulan,Fungal,Drug carrier,Immunology,Tablet matrix,Moderate,Non-degradable,Moderate toxicity,Preclinical,Fungi
+Chitin,Structural,Wound healing scaffolds,Tissue engineering,Injectable,Excellent,Partially,Non-toxic,Preclinical,Fungi/Exoskeletons
+Hyaluronic Acid,Bioactive,Dermal filler,Diabetology,Injectable,Excellent,Fully,Non-toxic,Phase III,Animals/Bacteria
+Chitin,Structural,Wound healing scaffolds,Oncology,Film,Good,Fully,Moderate toxicity,Approved,Fungi/Exoskeletons
+Guar Gum,Storage,Laxative,Wound care,Injectable,Moderate,Partially,Low toxicity,Preclinical,Plants
+Dextran,Bacterial,Plasma volume expander,Cardiology,Film,Good,Non-degradable,Moderate toxicity,Phase II,Bacteria
+Locust Bean Gum,Storage,Cholesterol reduction,Drug delivery,Tablet matrix,Good,Non-degradable,Moderate toxicity,Phase I,Plants
+Heparin,Bioactive,Blood thinner,Orthopedics,Tablet matrix,Moderate,Fully,Moderate toxicity,Phase II,Animals
+Locust Bean Gum,Storage,Cholesterol reduction,Orthopedics,Film,Good,Fully,Low toxicity,Phase I,Plants
+Hyaluronic Acid,Bioactive,Dermal filler,Diabetology,Injectable,Good,Fully,Low toxicity,Phase III,Animals/Bacteria
+Hyaluronic Acid,Bioactive,Dermal filler,Wound care,Film,Excellent,Fully,Low toxicity,Phase I,Animals/Bacteria
+Xanthan Gum,Bacterial,Drug suspension aid,Cardiology,Tablet matrix,Good,Partially,Non-toxic,Preclinical,Bacteria
+Laminarin,Algal,Antitumor,Immunology,Tablet matrix,Excellent,Fully,Low toxicity,Approved,Brown Algae
+Agar,Algal,Microbiological media,Drug delivery,Injectable,Excellent,Fully,Low toxicity,Phase II,Red Algae
+Levan,Bacterial,Prebiotic,Orthopedics,Microencapsulation,Moderate,Partially,Low toxicity,Approved,Bacteria
+Cellulose Sulfate,Structural,Antiviral coating,Ophthalmology,Nanoparticle,Moderate,Fully,Non-toxic,Phase I,Plants (Modified)
+Inulin,Storage,Prebiotic therapy,Wound care,Microencapsulation,Moderate,Fully,Non-toxic,Approved,Plants
+Curdlan,Bacterial,Immune stimulant,Tissue engineering,Microencapsulation,Moderate,Non-degradable,Moderate toxicity,Phase II,Bacteria
+Gellan Gum,Bacterial,Controlled release,Immunology,Hydrogel,Excellent,Fully,Non-toxic,Phase I,Bacteria
+Glycogen,Storage,Hypoglycemia treatment,Wound care,Hydrogel,Excellent,Partially,Non-toxic,Phase II,Animals
+Glycogen,Storage,Hypoglycemia treatment,Oncology,Hydrogel,Moderate,Partially,Low toxicity,Phase III,Animals
+Pectin,Structural,Wound healing gel,Orthopedics,Tablet matrix,Excellent,Fully,Moderate toxicity,Phase III,Plants
+Carrageenan,Algal,Antiviral,Tissue engineering,Injectable,Good,Partially,Low toxicity,Approved,Red Algae
+Pectin,Structural,Wound healing gel,Diabetology,Nanoparticle,Moderate,Fully,Non-toxic,Phase II,Plants
+Welan Gum,Bacterial,Drug suspension,Wound care,Film,Moderate,Partially,Low toxicity,Phase II,Bacteria
+Scleroglucan,Fungal,Immunostimulant,Cardiology,Tablet matrix,Good,Non-degradable,Low toxicity,Phase I,Fungi
+Starch,Storage,Drug delivery,Drug delivery,Film,Moderate,Partially,Moderate toxicity,Phase III,Plants
+Xanthan Gum,Bacterial,Drug suspension aid,Diabetology,Hydrogel,Good,Partially,Non-toxic,Preclinical,Bacteria
+Xanthan Gum,Bacterial,Drug suspension aid,Immunology,Microencapsulation,Moderate,Fully,Non-toxic,Approved,Bacteria
+Dextran,Bacterial,Plasma volume expander,Drug delivery,Nanoparticle,Good,Partially,Moderate toxicity,Preclinical,Bacteria
+Laminarin,Algal,Antitumor,Orthopedics,Nanoparticle,Moderate,Partially,Moderate toxicity,Phase III,Brown Algae
+Carrageenan,Algal,Antiviral,Oncology,Injectable,Moderate,Partially,Low toxicity,Preclinical,Red Algae
+Curdlan,Bacterial,Immune stimulant,Oncology,Injectable,Good,Non-degradable,Moderate toxicity,Phase III,Bacteria
+Guar Gum,Storage,Laxative,Wound care,Film,Moderate,Non-degradable,Moderate toxicity,Preclinical,Plants
+Cellulose,Structural,Wound dressing,Drug delivery,Nanoparticle,Moderate,Non-degradable,Non-toxic,Phase I,Plants
+Heparin,Bioactive,Blood thinner,Cardiology,Film,Excellent,Fully,Low toxicity,Preclinical,Animals
+Pectin,Structural,Wound healing gel,Cardiology,Tablet matrix,Good,Fully,Moderate toxicity,Approved,Plants
+Gellan Gum,Bacterial,Controlled release,Oncology,Microencapsulation,Moderate,Partially,Moderate toxicity,Phase I,Bacteria
+Curdlan,Bacterial,Immune stimulant,Drug delivery,Tablet matrix,Excellent,Non-degradable,Low toxicity,Phase III,Bacteria
+Scleroglucan,Fungal,Immunostimulant,Oncology,Nanoparticle,Excellent,Non-degradable,Non-toxic,Phase II,Fungi
+Glycogen,Storage,Hypoglycemia treatment,Wound care,Film,Excellent,Partially,Moderate toxicity,Phase I,Animals
+Welan Gum,Bacterial,Drug suspension,Diabetology,Film,Excellent,Non-degradable,Moderate toxicity,Preclinical,Bacteria
+Dextran,Bacterial,Plasma volume expander,Orthopedics,Tablet matrix,Good,Fully,Low toxicity,Phase III,Bacteria
+Curdlan,Bacterial,Immune stimulant,Cardiology,Tablet matrix,Good,Fully,Non-toxic,Preclinical,Bacteria
+Hyaluronic Acid,Bioactive,Dermal filler,Cardiology,Hydrogel,Good,Non-degradable,Moderate toxicity,Preclinical,Animals/Bacteria
+Konjac Glucomannan,Storage,Obesity/Diabetes aid,Wound care,Nanoparticle,Excellent,Non-degradable,Low toxicity,Phase III,Plants
+Glycogen,Storage,Hypoglycemia treatment,Ophthalmology,Microencapsulation,Moderate,Non-degradable,Non-toxic,Phase I,Animals
+Dextran,Bacterial,Plasma volume expander,Oncology,Film,Moderate,Partially,Non-toxic,Phase II,Bacteria
+Heparin,Bioactive,Blood thinner,Drug delivery,Film,Excellent,Fully,Low toxicity,Phase I,Animals
+Hyaluronic Acid,Bioactive,Dermal filler,Orthopedics,Microencapsulation,Moderate,Partially,Low toxicity,Preclinical,Animals/Bacteria
+Guar Gum,Storage,Laxative,Drug delivery,Tablet matrix,Good,Partially,Moderate toxicity,Approved,Plants
+Pullulan,Fungal,Drug carrier,Wound care,Nanoparticle,Moderate,Partially,Non-toxic,Approved,Fungi
+Curdlan,Bacterial,Immune stimulant,Ophthalmology,Injectable,Good,Partially,Moderate toxicity,Phase II,Bacteria
+Xanthan Gum,Bacterial,Drug suspension aid,Drug delivery,Injectable,Moderate,Non-degradable,Moderate toxicity,Phase II,Bacteria
+Glycogen,Storage,Hypoglycemia treatment,Diabetology,Hydrogel,Good,Fully,Low toxicity,Phase II,Animals
+Cellulose,Structural,Wound dressing,Cardiology,Tablet matrix,Moderate,Non-degradable,Non-toxic,Phase III,Plants
+Heparin,Bioactive,Blood thinner,Immunology,Tablet matrix,Good,Partially,Moderate toxicity,Phase III,Animals
+Scleroglucan,Fungal,Immunostimulant,Oncology,Microencapsulation,Moderate,Fully,Moderate toxicity,Phase II,Fungi
+Starch,Storage,Drug delivery,Wound care,Film,Good,Partially,Low toxicity,Preclinical,Plants
+Hyaluronic Acid,Bioactive,Dermal filler,Drug delivery,Microencapsulation,Excellent,Partially,Moderate toxicity,Phase I,Animals/Bacteria
+Konjac Glucomannan,Storage,Obesity/Diabetes aid,Oncology,Film,Moderate,Partially,Moderate toxicity,Approved,Plants
+Welan Gum,Bacterial,Drug suspension,Tissue engineering,Injectable,Good,Partially,Non-toxic,Phase II,Bacteria
+Gellan Gum,Bacterial,Controlled release,Drug delivery,Tablet matrix,Good,Partially,Moderate toxicity,Phase III,Bacteria
+Dextran,Bacterial,Plasma volume expander,Oncology,Hydrogel,Moderate,Fully,Low toxicity,Phase III,Bacteria
+Konjac Glucomannan,Storage,Obesity/Diabetes aid,Orthopedics,Tablet matrix,Good,Non-degradable,Non-toxic,Phase I,Plants
+Locust Bean Gum,Storage,Cholesterol reduction,Wound care,Microencapsulation,Moderate,Non-degradable,Moderate toxicity,Phase I,Plants
+Curdlan,Bacterial,Immune stimulant,Wound care,Hydrogel,Moderate,Partially,Non-toxic,Preclinical,Bacteria
+Dextran,Bacterial,Plasma volume expander,Wound care,Microencapsulation,Good,Partially,Non-toxic,Phase III,Bacteria
+Starch,Storage,Drug delivery,Wound care,Hydrogel,Excellent,Partially,Low toxicity,Preclinical,Plants
+Hyaluronic Acid,Bioactive,Dermal filler,Ophthalmology,Hydrogel,Good,Fully,Moderate toxicity,Phase I,Animals/Bacteria
+Heparin,Bioactive,Blood thinner,Diabetology,Microencapsulation,Excellent,Partially,Non-toxic,Phase II,Animals
+Chitin,Structural,Wound healing scaffolds,Immunology,Tablet matrix,Moderate,Partially,Moderate toxicity,Phase I,Fungi/Exoskeletons
+Guar Gum,Storage,Laxative,Tissue engineering,Film,Moderate,Fully,Non-toxic,Phase III,Plants
+Heparin,Bioactive,Blood thinner,Drug delivery,Hydrogel,Good,Partially,Low toxicity,Phase III,Animals
+Laminarin,Algal,Antitumor,Tissue engineering,Tablet matrix,Excellent,Partially,Low toxicity,Approved,Brown Algae
+Starch,Storage,Drug delivery,Ophthalmology,Tablet matrix,Excellent,Fully,Low toxicity,Phase II,Plants
+Pectin,Structural,Wound healing gel,Diabetology,Nanoparticle,Moderate,Non-degradable,Low toxicity,Preclinical,Plants
+Fucoidan,Algal,Anticoagulant/Antitumor,Ophthalmology,Hydrogel,Good,Fully,Non-toxic,Phase I,Brown Algae
+Dextran,Bacterial,Plasma volume expander,Tissue engineering,Nanoparticle,Good,Partially,Moderate toxicity,Phase I,Bacteria
+Levan,Bacterial,Prebiotic,Wound care,Microencapsulation,Good,Partially,Moderate toxicity,Phase III,Bacteria
+Cellulose,Structural,Wound dressing,Orthopedics,Film,Excellent,Fully,Low toxicity,Approved,Plants
+Chitin,Structural,Wound healing scaffolds,Immunology,Nanoparticle,Good,Non-degradable,Moderate toxicity,Preclinical,Fungi/Exoskeletons
+Fucoidan,Algal,Anticoagulant/Antitumor,Tissue engineering,Nanoparticle,Excellent,Partially,Non-toxic,Approved,Brown Algae
+Locust Bean Gum,Storage,Cholesterol reduction,Tissue engineering,Injectable,Good,Fully,Low toxicity,Phase III,Plants
+Levan,Bacterial,Prebiotic,Oncology,Microencapsulation,Good,Partially,Moderate toxicity,Preclinical,Bacteria
+Laminarin,Algal,Antitumor,Immunology,Tablet matrix,Good,Partially,Moderate toxicity,Phase II,Brown Algae
+Cellulose Sulfate,Structural,Antiviral coating,Drug delivery,Nanoparticle,Excellent,Partially,Moderate toxicity,Phase III,Plants (Modified)
+Scleroglucan,Fungal,Immunostimulant,Cardiology,Hydrogel,Excellent,Partially,Moderate toxicity,Approved,Fungi
+Inulin,Storage,Prebiotic therapy,Ophthalmology,Tablet matrix,Moderate,Non-degradable,Low toxicity,Phase III,Plants
+Cellulose,Structural,Wound dressing,Immunology,Microencapsulation,Excellent,Fully,Low toxicity,Phase III,Plants
+Alginate,Algal,Drug encapsulation,Oncology,Tablet matrix,Moderate,Partially,Low toxicity,Phase III,Brown Algae
+Pectin,Structural,Wound healing gel,Orthopedics,Nanoparticle,Moderate,Partially,Non-toxic,Phase II,Plants
+Alginate,Algal,Drug encapsulation,Tissue engineering,Nanoparticle,Good,Partially,Low toxicity,Preclinical,Brown Algae
+Laminarin,Algal,Antitumor,Cardiology,Microencapsulation,Moderate,Fully,Moderate toxicity,Phase III,Brown Algae
+Agar,Algal,Microbiological media,Wound care,Nanoparticle,Moderate,Fully,Non-toxic,Phase I,Red Algae
+Fucoidan,Algal,Anticoagulant/Antitumor,Immunology,Film,Good,Partially,Low toxicity,Approved,Brown Algae
+Agar,Algal,Microbiological media,Diabetology,Tablet matrix,Good,Fully,Non-toxic,Phase II,Red Algae
+Alginate,Algal,Drug encapsulation,Oncology,Hydrogel,Moderate,Non-degradable,Moderate toxicity,Preclinical,Brown Algae
+Carrageenan,Algal,Antiviral,Diabetology,Injectable,Excellent,Partially,Moderate toxicity,Phase II,Red Algae
+Levan,Bacterial,Prebiotic,Tissue engineering,Nanoparticle,Excellent,Non-degradable,Low toxicity,Preclinical,Bacteria
+Levan,Bacterial,Prebiotic,Cardiology,Hydrogel,Moderate,Partially,Low toxicity,Approved,Bacteria
+Locust Bean Gum,Storage,Cholesterol reduction,Diabetology,Hydrogel,Moderate,Fully,Low toxicity,Approved,Plants
+Guar Gum,Storage,Laxative,Ophthalmology,Film,Good,Non-degradable,Moderate toxicity,Phase I,Plants
+Inulin,Storage,Prebiotic therapy,Diabetology,Injectable,Excellent,Non-degradable,Low toxicity,Phase I,Plants
+Scleroglucan,Fungal,Immunostimulant,Orthopedics,Microencapsulation,Excellent,Partially,Non-toxic,Preclinical,Fungi
+Levan,Bacterial,Prebiotic,Wound care,Microencapsulation,Good,Partially,Moderate toxicity,Phase II,Bacteria
+Chitin,Structural,Wound healing scaffolds,Ophthalmology,Hydrogel,Excellent,Non-degradable,Low toxicity,Phase I,Fungi/Exoskeletons
+Glycogen,Storage,Hypoglycemia treatment,Orthopedics,Injectable,Moderate,Non-degradable,Low toxicity,Approved,Animals
+Levan,Bacterial,Prebiotic,Drug delivery,Tablet matrix,Good,Partially,Moderate toxicity,Preclinical,Bacteria
+Pectin,Structural,Wound healing gel,Drug delivery,Microencapsulation,Good,Partially,Non-toxic,Phase III,Plants
+Gellan Gum,Bacterial,Controlled release,Immunology,Hydrogel,Moderate,Non-degradable,Non-toxic,Phase III,Bacteria
+Inulin,Storage,Prebiotic therapy,Tissue engineering,Nanoparticle,Moderate,Non-degradable,Non-toxic,Phase III,Plants
+Cellulose Sulfate,Structural,Antiviral coating,Drug delivery,Nanoparticle,Excellent,Non-degradable,Moderate toxicity,Phase II,Plants (Modified)
+Dextran,Bacterial,Plasma volume expander,Orthopedics,Microencapsulation,Good,Non-degradable,Low toxicity,Preclinical,Bacteria
+Heparin,Bioactive,Blood thinner,Wound care,Tablet matrix,Good,Non-degradable,Low toxicity,Phase III,Animals
+Konjac Glucomannan,Storage,Obesity/Diabetes aid,Oncology,Microencapsulation,Moderate,Non-degradable,Low toxicity,Phase I,Plants
+Carrageenan,Algal,Antiviral,Diabetology,Hydrogel,Good,Non-degradable,Non-toxic,Preclinical,Red Algae
+Carrageenan,Algal,Antiviral,Ophthalmology,Hydrogel,Excellent,Non-degradable,Low toxicity,Phase I,Red Algae
+Hyaluronic Acid,Bioactive,Dermal filler,Tissue engineering,Tablet matrix,Good,Partially,Non-toxic,Phase III,Animals/Bacteria
+Laminarin,Algal,Antitumor,Orthopedics,Microencapsulation,Good,Non-degradable,Non-toxic,Phase II,Brown Algae
+Locust Bean Gum,Storage,Cholesterol reduction,Diabetology,Tablet matrix,Good,Fully,Low toxicity,Phase III,Plants
+Konjac Glucomannan,Storage,Obesity/Diabetes aid,Immunology,Microencapsulation,Good,Fully,Non-toxic,Phase III,Plants
+Dextran,Bacterial,Plasma volume expander,Oncology,Tablet matrix,Good,Partially,Moderate toxicity,Phase I,Bacteria
+Scleroglucan,Fungal,Immunostimulant,Cardiology,Film,Moderate,Non-degradable,Low toxicity,Phase III,Fungi
+Levan,Bacterial,Prebiotic,Ophthalmology,Injectable,Excellent,Non-degradable,Non-toxic,Phase I,Bacteria
+Laminarin,Algal,Antitumor,Diabetology,Nanoparticle,Moderate,Non-degradable,Moderate toxicity,Phase III,Brown Algae
+Starch,Storage,Drug delivery,Drug delivery,Tablet matrix,Excellent,Fully,Moderate toxicity,Phase III,Plants
+Scleroglucan,Fungal,Immunostimulant,Cardiology,Microencapsulation,Excellent,Non-degradable,Moderate toxicity,Phase III,Fungi
+Cellulose Sulfate,Structural,Antiviral coating,Diabetology,Hydrogel,Excellent,Partially,Low toxicity,Phase I,Plants (Modified)
+Hyaluronic Acid,Bioactive,Dermal filler,Immunology,Injectable,Excellent,Partially,Non-toxic,Phase II,Animals/Bacteria
+Glycogen,Storage,Hypoglycemia treatment,Oncology,Hydrogel,Moderate,Partially,Low toxicity,Phase I,Animals
+Scleroglucan,Fungal,Immunostimulant,Immunology,Hydrogel,Excellent,Partially,Moderate toxicity,Preclinical,Fungi
+Laminarin,Algal,Antitumor,Drug delivery,Hydrogel,Excellent,Partially,Moderate toxicity,Preclinical,Brown Algae
+Starch,Storage,Drug delivery,Oncology,Injectable,Moderate,Partially,Moderate toxicity,Phase III,Plants
+Carrageenan,Algal,Antiviral,Cardiology,Film,Good,Non-degradable,Moderate toxicity,Preclinical,Red Algae
+Welan Gum,Bacterial,Drug suspension,Diabetology,Injectable,Excellent,Partially,Low toxicity,Preclinical,Bacteria
+Dextran,Bacterial,Plasma volume expander,Tissue engineering,Injectable,Excellent,Partially,Low toxicity,Approved,Bacteria
+Fucoidan,Algal,Anticoagulant/Antitumor,Immunology,Film,Excellent,Fully,Non-toxic,Phase II,Brown Algae
+Konjac Glucomannan,Storage,Obesity/Diabetes aid,Cardiology,Injectable,Excellent,Partially,Low toxicity,Phase II,Plants
+Heparin,Bioactive,Blood thinner,Ophthalmology,Film,Excellent,Partially,Non-toxic,Phase II,Animals
+Fucoidan,Algal,Anticoagulant/Antitumor,Cardiology,Film,Moderate,Partially,Non-toxic,Phase II,Brown Algae
+Pectin,Structural,Wound healing gel,Orthopedics,Injectable,Good,Partially,Low toxicity,Phase II,Plants
+Curdlan,Bacterial,Immune stimulant,Orthopedics,Tablet matrix,Excellent,Fully,Non-toxic,Approved,Bacteria
+Dextran,Bacterial,Plasma volume expander,Oncology,Hydrogel,Good,Non-degradable,Low toxicity,Phase II,Bacteria
+Dextran,Bacterial,Plasma volume expander,Wound care,Tablet matrix,Moderate,Partially,Low toxicity,Phase III,Bacteria
+Scleroglucan,Fungal,Immunostimulant,Orthopedics,Hydrogel,Moderate,Non-degradable,Non-toxic,Phase I,Fungi
+Laminarin,Algal,Antitumor,Orthopedics,Film,Good,Non-degradable,Non-toxic,Preclinical,Brown Algae
+Xanthan Gum,Bacterial,Drug suspension aid,Orthopedics,Hydrogel,Moderate,Fully,Low toxicity,Phase II,Bacteria
+Gellan Gum,Bacterial,Controlled release,Diabetology,Injectable,Moderate,Partially,Low toxicity,Approved,Bacteria
+Hyaluronic Acid,Bioactive,Dermal filler,Drug delivery,Injectable,Excellent,Non-degradable,Moderate toxicity,Phase II,Animals/Bacteria
+Locust Bean Gum,Storage,Cholesterol reduction,Drug delivery,Film,Good,Non-degradable,Non-toxic,Approved,Plants
+Guar Gum,Storage,Laxative,Wound care,Film,Good,Fully,Moderate toxicity,Preclinical,Plants
+Pectin,Structural,Wound healing gel,Ophthalmology,Microencapsulation,Excellent,Fully,Non-toxic,Phase II,Plants
+Laminarin,Algal,Antitumor,Cardiology,Injectable,Excellent,Partially,Low toxicity,Phase III,Brown Algae
+Curdlan,Bacterial,Immune stimulant,Oncology,Injectable,Moderate,Fully,Moderate toxicity,Phase I,Bacteria
+Alginate,Algal,Drug encapsulation,Oncology,Film,Moderate,Fully,Low toxicity,Approved,Brown Algae
+Glycogen,Storage,Hypoglycemia treatment,Orthopedics,Tablet matrix,Moderate,Non-degradable,Moderate toxicity,Preclinical,Animals
+Cellulose,Structural,Wound dressing,Immunology,Tablet matrix,Moderate,Fully,Non-toxic,Phase II,Plants
+Gellan Gum,Bacterial,Controlled release,Wound care,Injectable,Moderate,Fully,Non-toxic,Phase III,Bacteria
+Hyaluronic Acid,Bioactive,Dermal filler,Oncology,Tablet matrix,Good,Non-degradable,Low toxicity,Preclinical,Animals/Bacteria
+Gellan Gum,Bacterial,Controlled release,Ophthalmology,Injectable,Excellent,Fully,Moderate toxicity,Phase II,Bacteria
+Cellulose,Structural,Wound dressing,Ophthalmology,Hydrogel,Excellent,Non-degradable,Moderate toxicity,Phase III,Plants
+Pullulan,Fungal,Drug carrier,Cardiology,Tablet matrix,Excellent,Partially,Moderate toxicity,Preclinical,Fungi
+Xanthan Gum,Bacterial,Drug suspension aid,Immunology,Nanoparticle,Good,Fully,Low toxicity,Phase I,Bacteria
+Chitin,Structural,Wound healing scaffolds,Diabetology,Tablet matrix,Excellent,Non-degradable,Low toxicity,Phase II,Fungi/Exoskeletons
+Curdlan,Bacterial,Immune stimulant,Oncology,Tablet matrix,Good,Fully,Moderate toxicity,Phase III,Bacteria
+Konjac Glucomannan,Storage,Obesity/Diabetes aid,Ophthalmology,Tablet matrix,Moderate,Non-degradable,Low toxicity,Preclinical,Plants
+Inulin,Storage,Prebiotic therapy,Tissue engineering,Tablet matrix,Good,Partially,Moderate toxicity,Phase I,Plants
+Pectin,Structural,Wound healing gel,Diabetology,Film,Moderate,Partially,Moderate toxicity,Phase II,Plants
+Inulin,Storage,Prebiotic therapy,Diabetology,Hydrogel,Good,Partially,Moderate toxicity,Approved,Plants
+Locust Bean Gum,Storage,Cholesterol reduction,Orthopedics,Injectable,Good,Fully,Non-toxic,Phase III,Plants
+Starch,Storage,Drug delivery,Drug delivery,Tablet matrix,Good,Partially,Non-toxic,Phase I,Plants
+Glycogen,Storage,Hypoglycemia treatment,Tissue engineering,Injectable,Good,Fully,Low toxicity,Phase II,Animals
+Fucoidan,Algal,Anticoagulant/Antitumor,Diabetology,Hydrogel,Excellent,Fully,Non-toxic,Phase I,Brown Algae
+Dextran,Bacterial,Plasma volume expander,Diabetology,Microencapsulation,Good,Non-degradable,Low toxicity,Preclinical,Bacteria
+Scleroglucan,Fungal,Immunostimulant,Orthopedics,Tablet matrix,Excellent,Non-degradable,Moderate toxicity,Phase I,Fungi
+Pectin,Structural,Wound healing gel,Wound care,Hydrogel,Good,Fully,Non-toxic,Approved,Plants
+Scleroglucan,Fungal,Immunostimulant,Wound care,Microencapsulation,Moderate,Partially,Moderate toxicity,Approved,Fungi

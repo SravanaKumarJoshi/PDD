@@ -1,0 +1,87 @@
+# Python & Byte-compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Distribution / Packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Logs and Output Files
+*.log
+logs/
+*.sqlite
+*.sqlite3
+*.db
+db_check_out.txt
+
+# Machine Learning Artifacts & Cache
+catboost_info/
+*.pkl
+*.joblib
+*.h5
+*.tflite
+*.onnx
+*.pt
+*.pth
+
+# IDEs & Text Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Android / Mobile Development
+.gradle/
+local.properties
+/captures/
+*.apk
+*.aab
+*.jks
+*.keystore
+google-services.json
+
+# Node / Frontend (if applicable)
+node_modules/
+.next/

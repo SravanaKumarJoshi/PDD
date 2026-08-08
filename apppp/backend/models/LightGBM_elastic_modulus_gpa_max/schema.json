@@ -1,0 +1,11 @@
+{
+  "features": [
+    "mw",
+    "logp",
+    "length",
+    "backbone_hash"
+  ],
+  "target": "elastic_modulus_gpa_max",
+  "min_expected": 27.0,
+  "max_expected": 996.0
+}

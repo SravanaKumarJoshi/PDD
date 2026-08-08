@@ -1,0 +1,40 @@
+Name,SMILES,target,source
+Poly(hexamethylene sebacate),*CCCCCCOC(=O)CCCCCCCCC(=O)O*,0.00064572,exp1
+Poly(vinyl butyral),*CC1CC(*)OC(CCC)O1,0.00058606,exp1
+Poly(benzyl acrylate),*CC(*)C(=O)OCc1ccccc1,0.00036949,exp1
+Poly(isodecyl acrylate),*CC(*)C(=O)OCCCCCCCC(C)C,0.00030409,exp1
+Poly(isopropyl acrylate),*CC(*)C(=O)OC(C)C,0.00021957,exp1
+Poly(2-methoxyethyl acrylate),*CC(*)C(=O)OCCOC,0.00041962,exp1
+Poly(2-butoxyethyl acrylate),*CC(*)C(=O)OCCOCCCC,0.00044497,exp1
+PS,*CC(*)c1ccccc1,0.006566413,exp2
+PP,*CC(*)C,0.020078359,exp2
+Polyacetal,*CO*,0.02129268,exp2
+Poly(tetrafluoroethylene),C(C(F)(F)*)(F)(F)*,0.027817725,exp2
+PC,*Oc1ccc(C(C)(C)c2ccc(OC(*)=O)cc2)cc1,0.028398854,exp2
+PMMA,*CC(*)(C)C(=O)OC,0.042921139,exp2
+PEN,*CCOC(=O)c1ccc2cc(C(=O)O*)ccc2c1,0.2101159,exp2
+Polychloroprene,*CC/C=C(/*)Cl,0.465459614,exp2
+PET,*CCOC(=O)c1ccc(cc1)C(=O)O*,0.0003,literature
+PLA,*OC(C)C(=O)*,0.00033,literature
+PLLA,*C([C@H](O*)C)=O,0.0014,literature
+PCL,*CCCCCC(=O)O*,0.0027,literature
+PS,*CC(*)c1ccccc1,0.0111,literature
+PU,*C(=O)NC1=CC=C(CC2=CC=C(NC(=O)OCCO*)C=C2)C=C1,0.0116,literature
+Nylon6,*NCCCCCC(*)=O,0.0222,literature
+PC,*Oc1ccc(C(C)(C)c2ccc(OC(*)=O)cc2)cc1,0.0238,literature
+PBS,*OCCCCOC(=O)CCC(*)=O,0.0714,literature
+Nylon66,*NCCCCCCNC(=O)CCCCC(*)=O,0.0778,literature
+PESeb,*OCCOC(=O)CCCCCCCCC(*)=O,0.0894,literature
+PBSeb,*OCCCCOC(=O)CCCCCCCCC(*)=O,0.114,literature
+PBAZ,*OCCCCOC(=O)CCCCCCCC(*)=O,0.2011,literature
+P3HB,CC(CC(*)=O)O*,0.2917,literature
+PEAz,*OCCOC(=O)CCCCCCCC(*)=O,0.3073,literature
+PBAdip,*OCCCCOC(=O)CCCCC(*)=O,0.3929,literature
+Nylon4,*NCCCC(*)=O,1.4286,literature
+PPS,*OCCCOC(=O)CCCCCCC(=O)*,2.2405,literature
+PVA,C(C(O)*)*,2.8333,literature
+PPAz,*OCCCOC(=O)CCCCCCCC(=O)*,7.4969,literature
+PPSeb,*OCCCOC(=O)CCCCCCCCC(*)=O,7.5642,literature
+PPAd,*OCCCOC(=O)CCCCC(=O)*,61.3197,literature
+PPGI,*OCCCOC(=O)CCCC(=O)*,100.0,literature
+PPPIM,*OCCCOC(=O)CCCCCC(*)=O,100.0,literature

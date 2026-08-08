@@ -1,0 +1,301 @@
+id,name,category,pdb_like_id,helix_type,repeat_unit_length_angstrom,chain_conformation,glycosidic_angle_phi,glycosidic_angle_psi,branch_points_per_100_residues,molecular_weight_kda,bond_type
+PS-14205,Starch,Storage,B372,Random coil,7.98,4C1,-22.73,-20.36,14.7,530.61,"Alpha-1,4/1,6"
+PS-16629,Chitin,Structural,O702,Random coil,11.0,4C1,49.67,-55.52,18.7,660.13,"Beta-1,4"
+PS-81287,Agar,Algal,Y665,Single helix,12.85,Half-chair,30.87,42.95,15.8,141.7,Mixed
+PS-51293,Starch,Storage,H783,Single helix,6.8,1C4,-54.92,13.27,12.5,536.94,"Alpha-1,4/1,6"
+PS-94749,Dextran,Bacterial,T941,Random coil,14.15,Skew boat,34.0,3.5,12.3,93.37,"Alpha-1,6"
+PS-36039,Glycogen,Storage,O704,Random coil,11.22,Skew boat,-14.13,6.79,7.3,782.89,"Alpha-1,4/1,6"
+PS-23051,Carrageenan,Algal,E321,Random coil,6.44,4C1,-1.8,8.52,6.2,539.71,Mixed
+PS-52247,Konjac Glucomannan,Storage,N287,Double helix,11.84,Half-chair,20.37,11.41,14.6,1098.87,"Beta-1,4"
+PS-68467,Laminarin,Algal,Z115,Single helix,11.54,4H3,-40.18,-8.31,24.7,5.19,"Beta-1,3"
+PS-38094,Starch,Storage,O152,Extended chain,8.53,Half-chair,41.31,-47.32,10.3,540.92,"Alpha-1,4/1,6"
+PS-97209,Scleroglucan,Fungal,V128,Triple helix,4.14,Half-chair,53.25,35.9,5.9,1253.09,"Beta-1,3/1,6"
+PS-90636,Konjac Glucomannan,Storage,S625,Extended chain,9.05,Half-chair,-6.17,-42.41,2.8,1114.24,"Beta-1,4"
+PS-80451,Starch,Storage,Q740,Extended chain,14.57,Half-chair,-56.34,38.44,1.8,505.59,"Alpha-1,4/1,6"
+PS-44083,Carrageenan,Algal,J647,Double helix,4.93,4C1,-5.85,45.62,8.9,501.58,Mixed
+PS-84853,Agar,Algal,O619,Triple helix,8.25,4C1,4.69,-52.59,0.6,151.44,Mixed
+PS-72168,Levan,Bacterial,K584,Single helix,12.95,1C4,41.05,-14.37,2.1,2045.93,"Beta-2,6"
+PS-94928,Glycogen,Storage,V186,Double helix,9.13,Skew boat,20.92,10.85,19.8,819.18,"Alpha-1,4/1,6"
+PS-83359,Levan,Bacterial,Q254,Random coil,11.71,Skew boat,9.43,59.89,23.3,1989.03,"Beta-2,6"
+PS-16556,Fucoidan,Algal,I144,Extended chain,7.26,4C1,-28.96,34.86,19.8,98.16,"Alpha-1,2/1,3"
+PS-65987,Alginate,Algal,B606,Extended chain,10.71,1C4,-1.5,20.9,20.2,202.55,"Beta-1,4"
+PS-53687,Agar,Algal,X486,Triple helix,4.28,Skew boat,9.72,43.08,16.5,155.08,Mixed
+PS-48384,Hyaluronic Acid,Bioactive,U146,Extended chain,14.11,4H3,40.21,-14.84,13.7,2105.77,"Beta-1,3"
+PS-66270,Laminarin,Algal,A372,Random coil,9.14,1C4,-52.23,-58.61,14.0,4.52,"Beta-1,3"
+PS-30946,Heparin,Bioactive,L693,Double helix,12.91,Skew boat,-26.97,5.61,0.0,16.68,"Alpha-1,4"
+PS-39098,Konjac Glucomannan,Storage,I647,Random coil,9.39,Half-chair,-32.65,-55.07,10.9,1116.4,"Beta-1,4"
+PS-72852,Carrageenan,Algal,E870,Extended chain,8.34,Half-chair,-51.82,-57.35,20.8,450.7,Mixed
+PS-38108,Glycogen,Storage,D700,Double helix,7.29,Half-chair,16.81,-40.41,20.5,743.28,"Alpha-1,4/1,6"
+PS-24150,Levan,Bacterial,H318,Random coil,11.64,4C1,-18.99,57.72,1.1,1882.17,"Beta-2,6"
+PS-76983,Cellulose Sulfate,Structural,D510,Triple helix,12.36,4C1,49.2,-16.76,23.9,1007.11,"Beta-1,4"
+PS-28958,Guar Gum,Storage,I227,Extended chain,4.17,4H3,18.03,44.77,17.4,208.05,"Beta-1,4"
+PS-64577,Curdlan,Bacterial,M965,Single helix,8.64,Skew boat,47.59,51.76,1.6,74.28,"Beta-1,3"
+PS-43907,Welan Gum,Bacterial,T651,Extended chain,12.04,4C1,5.6,54.77,18.2,2175.82,Mixed
+PS-82240,Pullulan,Fungal,E199,Triple helix,3.96,4H3,-10.36,41.73,2.6,280.31,"Alpha-1,4/1,6"
+PS-91598,Pectin,Structural,F503,Random coil,14.37,Half-chair,-9.34,19.58,15.4,87.97,"Alpha-1,4"
+PS-86253,Welan Gum,Bacterial,M813,Extended chain,9.59,4H3,51.64,-14.26,7.8,2188.41,Mixed
+PS-52903,Glycogen,Storage,K702,Triple helix,14.75,4C1,-46.72,13.64,18.1,834.47,"Alpha-1,4/1,6"
+PS-72620,Cellulose,Structural,L352,Random coil,13.67,4C1,-17.85,-51.55,2.0,1043.86,"Beta-1,4"
+PS-39762,Cellulose,Structural,T650,Extended chain,12.69,1C4,-9.45,-30.17,24.4,1035.43,"Beta-1,4"
+PS-77458,Chitin,Structural,S366,Triple helix,7.47,4C1,-14.52,-59.08,0.6,726.22,"Beta-1,4"
+PS-49470,Curdlan,Bacterial,Z239,Triple helix,9.36,Half-chair,-29.97,-54.37,23.0,82.86,"Beta-1,3"
+PS-45910,Scleroglucan,Fungal,Z858,Extended chain,10.36,Skew boat,-0.3,-54.0,19.7,1131.49,"Beta-1,3/1,6"
+PS-50729,Starch,Storage,K533,Triple helix,8.88,Skew boat,-19.21,47.1,14.3,533.9,"Alpha-1,4/1,6"
+PS-51803,Dextran,Bacterial,H296,Extended chain,12.66,4C1,-8.98,-30.9,19.6,94.19,"Alpha-1,6"
+PS-59972,Carrageenan,Algal,Z233,Double helix,12.25,4H3,24.07,-53.5,9.9,480.08,Mixed
+PS-55485,Laminarin,Algal,H154,Single helix,11.34,Skew boat,-40.77,-37.59,4.4,4.75,"Beta-1,3"
+PS-69234,Konjac Glucomannan,Storage,N589,Random coil,6.73,1C4,31.66,13.59,9.8,904.88,"Beta-1,4"
+PS-46822,Hyaluronic Acid,Bioactive,W202,Single helix,7.47,Half-chair,37.83,-29.86,19.9,2066.92,"Beta-1,3"
+PS-10802,Cellulose,Structural,Y649,Single helix,4.3,Half-chair,1.95,-12.47,17.8,1117.99,"Beta-1,4"
+PS-35674,Heparin,Bioactive,C277,Extended chain,10.15,4H3,-6.71,34.27,0.3,16.09,"Alpha-1,4"
+PS-27682,Pullulan,Fungal,W518,Triple helix,13.23,Skew boat,-50.86,27.65,23.0,267.85,"Alpha-1,4/1,6"
+PS-42929,Locust Bean Gum,Storage,H853,Random coil,7.11,Skew boat,-18.51,10.65,9.6,328.79,"Beta-1,4"
+PS-70450,Cellulose,Structural,R458,Double helix,7.42,4H3,53.76,-39.02,3.2,1041.22,"Beta-1,4"
+PS-40482,Welan Gum,Bacterial,Q432,Triple helix,7.34,4H3,-54.34,21.1,10.7,1906.64,Mixed
+PS-47382,Alginate,Algal,U578,Triple helix,11.88,1C4,41.46,-50.8,3.5,185.29,"Beta-1,4"
+PS-68648,Welan Gum,Bacterial,J888,Extended chain,10.38,Skew boat,21.86,14.49,20.4,1800.74,Mixed
+PS-62185,Pullulan,Fungal,Y311,Double helix,10.97,1C4,-1.29,-56.32,21.7,303.97,"Alpha-1,4/1,6"
+PS-99795,Carrageenan,Algal,F939,Single helix,13.77,4H3,25.71,18.61,1.5,541.62,Mixed
+PS-60728,Laminarin,Algal,H946,Single helix,6.06,1C4,-56.02,13.07,19.8,4.68,"Beta-1,3"
+PS-81476,Gellan Gum,Bacterial,Q949,Double helix,6.2,1C4,-20.28,-32.46,7.6,888.58,Mixed
+PS-93148,Welan Gum,Bacterial,X206,Extended chain,3.83,Skew boat,-7.14,0.62,12.9,1792.14,Mixed
+PS-55264,Levan,Bacterial,F385,Triple helix,6.05,4H3,-28.6,-8.7,20.6,1860.93,"Beta-2,6"
+PS-57399,Cellulose Sulfate,Structural,W167,Random coil,10.23,1C4,-5.96,34.11,2.7,982.33,"Beta-1,4"
+PS-97755,Fucoidan,Algal,K346,Extended chain,4.48,Half-chair,-5.22,0.28,16.5,108.98,"Alpha-1,2/1,3"
+PS-60593,Gellan Gum,Bacterial,Z737,Extended chain,9.95,Half-chair,3.32,33.17,22.1,1063.44,Mixed
+PS-17985,Laminarin,Algal,J422,Random coil,9.95,1C4,40.5,-47.44,21.0,5.22,"Beta-1,3"
+PS-59393,Inulin,Storage,H137,Single helix,13.34,Half-chair,4.85,55.62,17.8,4.61,"Beta-2,1"
+PS-36703,Heparin,Bioactive,R764,Double helix,10.11,1C4,2.58,-31.41,19.8,13.74,"Alpha-1,4"
+PS-94681,Chitin,Structural,V662,Random coil,3.36,1C4,53.24,7.99,24.6,702.87,"Beta-1,4"
+PS-16471,Locust Bean Gum,Storage,W691,Extended chain,14.09,1C4,-42.52,-54.63,2.9,286.57,"Beta-1,4"
+PS-10276,Hyaluronic Acid,Bioactive,A164,Extended chain,7.63,Skew boat,-14.47,-54.56,0.7,2163.81,"Beta-1,3"
+PS-98011,Laminarin,Algal,R921,Random coil,11.58,4C1,-58.66,-49.97,7.4,4.85,"Beta-1,3"
+PS-47848,Glycogen,Storage,B841,Double helix,13.77,4H3,51.43,17.99,16.0,720.33,"Alpha-1,4/1,6"
+PS-16208,Locust Bean Gum,Storage,Z594,Triple helix,8.05,Half-chair,16.98,-36.6,7.7,337.26,"Beta-1,4"
+PS-51470,Curdlan,Bacterial,V909,Single helix,3.42,1C4,28.0,59.35,11.4,78.47,"Beta-1,3"
+PS-10459,Hyaluronic Acid,Bioactive,L936,Triple helix,14.32,Half-chair,-14.5,40.09,8.3,2193.41,"Beta-1,3"
+PS-67135,Cellulose,Structural,N784,Random coil,8.06,4C1,-51.14,48.6,9.8,969.03,"Beta-1,4"
+PS-21835,Glycogen,Storage,W960,Double helix,14.84,4C1,36.93,5.0,2.5,821.91,"Alpha-1,4/1,6"
+PS-45240,Curdlan,Bacterial,Y733,Random coil,3.5,Half-chair,-58.19,32.76,19.0,72.75,"Beta-1,3"
+PS-36516,Cellulose Sulfate,Structural,J667,Double helix,7.54,Half-chair,7.75,-11.37,9.7,940.68,"Beta-1,4"
+PS-79200,Starch,Storage,H652,Random coil,9.7,Half-chair,47.72,7.89,11.8,559.4,"Alpha-1,4/1,6"
+PS-93996,Scleroglucan,Fungal,P900,Extended chain,3.87,4C1,-15.48,10.96,4.5,1186.62,"Beta-1,3/1,6"
+PS-84625,Glycogen,Storage,O486,Single helix,11.32,1C4,-44.82,53.19,3.3,873.19,"Alpha-1,4/1,6"
+PS-56990,Konjac Glucomannan,Storage,O969,Extended chain,9.93,1C4,-14.38,-23.67,2.0,1085.15,"Beta-1,4"
+PS-84925,Konjac Glucomannan,Storage,L242,Single helix,12.41,4H3,-19.73,-22.28,23.9,990.54,"Beta-1,4"
+PS-48114,Pullulan,Fungal,W192,Double helix,8.86,Skew boat,12.25,34.09,2.4,312.45,"Alpha-1,4/1,6"
+PS-82276,Fucoidan,Algal,E387,Single helix,10.3,Half-chair,-11.66,-43.47,6.7,91.91,"Alpha-1,2/1,3"
+PS-72590,Laminarin,Algal,K624,Extended chain,3.89,4C1,37.34,45.8,22.8,4.72,"Beta-1,3"
+PS-58030,Gellan Gum,Bacterial,I235,Single helix,12.88,4H3,21.72,-15.26,20.8,890.89,Mixed
+PS-76295,Levan,Bacterial,E102,Extended chain,4.7,4H3,-0.37,-59.99,14.4,2210.29,"Beta-2,6"
+PS-18305,Cellulose,Structural,U508,Double helix,14.1,4H3,-10.8,54.08,11.5,930.71,"Beta-1,4"
+PS-46496,Heparin,Bioactive,P281,Extended chain,4.96,Half-chair,13.32,46.49,22.1,14.21,"Alpha-1,4"
+PS-21660,Cellulose,Structural,P632,Extended chain,5.19,4H3,26.05,-31.16,3.4,980.72,"Beta-1,4"
+PS-81073,Carrageenan,Algal,Z890,Triple helix,3.07,4C1,-52.93,-17.83,14.1,523.76,Mixed
+PS-21988,Cellulose,Structural,D688,Triple helix,14.7,Half-chair,-38.64,-4.34,20.2,1115.45,"Beta-1,4"
+PS-21294,Scleroglucan,Fungal,K290,Random coil,3.97,4C1,29.26,-32.71,20.4,1284.66,"Beta-1,3/1,6"
+PS-84647,Cellulose,Structural,E304,Single helix,3.39,4C1,37.16,11.24,17.0,881.1,"Beta-1,4"
+PS-43610,Guar Gum,Storage,W949,Single helix,13.53,Half-chair,34.22,7.41,8.2,209.07,"Beta-1,4"
+PS-28461,Fucoidan,Algal,Z681,Extended chain,8.62,Half-chair,6.64,-34.4,21.4,96.27,"Alpha-1,2/1,3"
+PS-43697,Laminarin,Algal,I583,Single helix,7.96,4C1,55.12,35.16,12.9,4.57,"Beta-1,3"
+PS-36500,Guar Gum,Storage,Z418,Extended chain,3.99,4C1,-55.74,-20.13,3.8,234.5,"Beta-1,4"
+PS-90055,Scleroglucan,Fungal,M327,Double helix,3.82,4H3,-34.4,45.8,19.8,1159.66,"Beta-1,3/1,6"
+PS-78684,Inulin,Storage,Y943,Double helix,7.05,1C4,-9.52,-52.74,21.6,5.57,"Beta-2,1"
+PS-15101,Levan,Bacterial,X539,Random coil,5.33,Half-chair,-33.72,26.13,6.3,1903.8,"Beta-2,6"
+PS-75979,Cellulose Sulfate,Structural,G660,Triple helix,14.61,4H3,36.02,-14.08,24.5,1042.97,"Beta-1,4"
+PS-63201,Dextran,Bacterial,E653,Single helix,6.97,4C1,-6.54,-6.68,6.9,89.2,"Alpha-1,6"
+PS-68849,Alginate,Algal,T443,Triple helix,3.96,Skew boat,-40.87,7.75,18.2,176.47,"Beta-1,4"
+PS-80889,Cellulose,Structural,K884,Triple helix,4.29,Skew boat,15.47,-22.86,0.7,1117.63,"Beta-1,4"
+PS-40614,Chitin,Structural,D185,Single helix,8.55,Half-chair,52.97,-48.63,24.7,619.21,"Beta-1,4"
+PS-48657,Pectin,Structural,W555,Random coil,3.65,1C4,-39.82,-57.14,17.9,77.52,"Alpha-1,4"
+PS-51304,Agar,Algal,I815,Single helix,11.19,4C1,47.16,20.02,4.6,164.44,Mixed
+PS-56837,Curdlan,Bacterial,B110,Double helix,13.32,4C1,-50.53,-46.68,5.4,77.9,"Beta-1,3"
+PS-55485,Hyaluronic Acid,Bioactive,Z770,Extended chain,6.12,Half-chair,-19.23,-7.43,1.1,2160.68,"Beta-1,3"
+PS-68057,Chitin,Structural,W295,Double helix,8.56,Half-chair,-54.06,-17.54,18.6,729.24,"Beta-1,4"
+PS-13676,Fucoidan,Algal,H782,Single helix,3.58,Skew boat,-25.46,21.3,5.4,95.3,"Alpha-1,2/1,3"
+PS-11599,Gellan Gum,Bacterial,G806,Extended chain,4.42,4H3,-18.21,52.52,22.0,982.82,Mixed
+PS-90160,Locust Bean Gum,Storage,W878,Triple helix,3.77,Half-chair,-24.01,13.61,2.3,289.27,"Beta-1,4"
+PS-54146,Fucoidan,Algal,T731,Double helix,14.52,4H3,-18.47,30.01,22.7,104.46,"Alpha-1,2/1,3"
+PS-29203,Pectin,Structural,B470,Random coil,3.85,4C1,-11.09,-1.57,23.5,70.65,"Alpha-1,4"
+PS-62138,Starch,Storage,S538,Extended chain,3.71,Half-chair,-13.58,-7.29,6.6,533.4,"Alpha-1,4/1,6"
+PS-72781,Agar,Algal,Q373,Double helix,11.6,1C4,19.47,8.43,7.2,152.92,Mixed
+PS-39494,Alginate,Algal,A102,Random coil,8.89,Skew boat,31.05,41.58,8.4,176.39,"Beta-1,4"
+PS-92953,Hyaluronic Acid,Bioactive,L948,Single helix,3.87,1C4,58.24,-22.43,3.3,1947.76,"Beta-1,3"
+PS-23863,Dextran,Bacterial,O650,Triple helix,5.21,4C1,15.33,19.38,14.3,106.7,"Alpha-1,6"
+PS-39009,Agar,Algal,J438,Single helix,3.84,4C1,8.56,17.18,22.3,162.2,Mixed
+PS-56683,Cellulose,Structural,H105,Extended chain,9.67,Skew boat,1.25,-30.84,3.8,1096.68,"Beta-1,4"
+PS-60335,Glycogen,Storage,M554,Double helix,12.53,Half-chair,51.3,-26.21,17.0,887.88,"Alpha-1,4/1,6"
+PS-53788,Pullulan,Fungal,Y997,Extended chain,9.68,Half-chair,-5.86,42.87,21.5,270.32,"Alpha-1,4/1,6"
+PS-87803,Curdlan,Bacterial,Y533,Triple helix,5.01,4C1,-32.29,41.18,10.5,79.4,"Beta-1,3"
+PS-11110,Hyaluronic Acid,Bioactive,W244,Random coil,7.44,Half-chair,-37.62,-29.3,24.6,2187.17,"Beta-1,3"
+PS-88097,Welan Gum,Bacterial,E101,Random coil,4.37,4H3,41.02,-32.92,18.8,1762.94,Mixed
+PS-66550,Xanthan Gum,Bacterial,W272,Single helix,10.76,Half-chair,27.07,-39.49,8.8,3295.48,Mixed
+PS-78452,Chitin,Structural,S600,Single helix,11.24,Half-chair,-48.66,-47.23,2.8,689.34,"Beta-1,4"
+PS-58683,Cellulose Sulfate,Structural,K663,Extended chain,3.98,Half-chair,45.69,8.28,11.6,1057.8,"Beta-1,4"
+PS-22346,Hyaluronic Acid,Bioactive,M669,Extended chain,3.53,4C1,30.05,32.78,22.9,1989.8,"Beta-1,3"
+PS-89150,Konjac Glucomannan,Storage,G168,Extended chain,14.75,Half-chair,53.11,1.02,14.5,1095.81,"Beta-1,4"
+PS-46190,Locust Bean Gum,Storage,K418,Single helix,10.89,Half-chair,-43.43,26.69,11.9,272.89,"Beta-1,4"
+PS-82246,Hyaluronic Acid,Bioactive,G729,Triple helix,9.44,1C4,-43.77,53.46,1.5,1802.57,"Beta-1,3"
+PS-73868,Inulin,Storage,I770,Double helix,11.77,Half-chair,29.73,-52.08,24.3,5.55,"Beta-2,1"
+PS-88963,Curdlan,Bacterial,W300,Single helix,11.08,4C1,-44.69,16.09,24.5,70.04,"Beta-1,3"
+PS-29564,Welan Gum,Bacterial,H972,Double helix,4.57,Skew boat,-0.24,42.06,3.2,2180.39,Mixed
+PS-58880,Agar,Algal,W298,Single helix,13.78,1C4,0.4,-9.85,22.2,146.66,Mixed
+PS-35826,Carrageenan,Algal,A798,Single helix,7.13,Half-chair,-32.3,39.38,11.4,482.7,Mixed
+PS-22576,Curdlan,Bacterial,T650,Double helix,4.58,4C1,22.05,18.21,24.8,66.71,"Beta-1,3"
+PS-99887,Scleroglucan,Fungal,X175,Random coil,6.58,Half-chair,-55.09,53.39,14.6,1331.27,"Beta-1,3/1,6"
+PS-25641,Xanthan Gum,Bacterial,Z129,Triple helix,5.98,Half-chair,38.54,-51.97,9.7,2756.79,Mixed
+PS-20637,Curdlan,Bacterial,Z989,Double helix,14.27,Skew boat,-1.58,0.13,9.2,75.02,"Beta-1,3"
+PS-64746,Alginate,Algal,M571,Single helix,7.6,Skew boat,51.58,-49.91,12.8,194.9,"Beta-1,4"
+PS-17922,Alginate,Algal,J695,Triple helix,12.35,4H3,-23.94,-55.66,24.1,194.79,"Beta-1,4"
+PS-99765,Xanthan Gum,Bacterial,J719,Double helix,11.61,Half-chair,-9.98,-58.98,16.2,2911.39,Mixed
+PS-34873,Pullulan,Fungal,E966,Double helix,7.62,Skew boat,45.85,-45.9,7.4,274.57,"Alpha-1,4/1,6"
+PS-63862,Xanthan Gum,Bacterial,V240,Triple helix,14.29,Half-chair,23.45,-28.01,3.8,3129.01,Mixed
+PS-93392,Locust Bean Gum,Storage,B646,Random coil,14.39,Half-chair,54.04,14.12,18.5,342.01,"Beta-1,4"
+PS-93816,Heparin,Bioactive,H841,Triple helix,13.89,4C1,18.96,8.51,9.5,13.99,"Alpha-1,4"
+PS-54411,Cellulose Sulfate,Structural,Z345,Double helix,11.64,4H3,53.67,56.89,4.7,919.36,"Beta-1,4"
+PS-57798,Cellulose,Structural,R341,Double helix,5.95,1C4,53.92,-55.83,17.2,898.61,"Beta-1,4"
+PS-57951,Welan Gum,Bacterial,V641,Random coil,7.87,4H3,57.62,-27.95,21.6,2133.61,Mixed
+PS-83887,Carrageenan,Algal,V375,Random coil,6.97,Skew boat,-11.83,25.45,18.0,558.84,Mixed
+PS-93326,Gellan Gum,Bacterial,K304,Triple helix,14.6,Skew boat,-15.51,-3.34,21.4,974.33,Mixed
+PS-87941,Gellan Gum,Bacterial,Y614,Random coil,14.55,4C1,-8.29,48.71,3.2,922.5,Mixed
+PS-58488,Dextran,Bacterial,A648,Single helix,9.87,Half-chair,50.05,-23.24,2.2,96.2,"Alpha-1,6"
+PS-62310,Konjac Glucomannan,Storage,T246,Triple helix,12.44,4H3,9.09,-12.35,21.1,923.61,"Beta-1,4"
+PS-11775,Agar,Algal,O990,Triple helix,4.64,4H3,33.23,10.62,3.0,138.54,Mixed
+PS-47475,Chitin,Structural,B783,Triple helix,10.81,Half-chair,-36.55,35.12,3.9,685.8,"Beta-1,4"
+PS-49452,Chitin,Structural,Y424,Triple helix,5.56,4C1,-5.66,-10.48,16.4,692.93,"Beta-1,4"
+PS-99216,Chitin,Structural,A130,Extended chain,10.75,4C1,-0.52,3.7,8.9,644.06,"Beta-1,4"
+PS-20407,Chitin,Structural,L847,Extended chain,8.36,Half-chair,-26.3,-41.23,9.1,778.87,"Beta-1,4"
+PS-33097,Inulin,Storage,N617,Random coil,6.12,Skew boat,-54.17,-0.33,16.1,4.6,"Beta-2,1"
+PS-98697,Fucoidan,Algal,A808,Extended chain,7.93,4H3,45.04,38.44,5.6,98.67,"Alpha-1,2/1,3"
+PS-27308,Pullulan,Fungal,S540,Random coil,11.18,Skew boat,-37.4,-3.84,2.8,329.59,"Alpha-1,4/1,6"
+PS-16113,Fucoidan,Algal,Y744,Triple helix,12.78,Skew boat,51.89,-52.45,23.2,96.82,"Alpha-1,2/1,3"
+PS-78045,Fucoidan,Algal,V146,Single helix,3.3,1C4,-1.94,21.89,18.2,89.58,"Alpha-1,2/1,3"
+PS-51915,Hyaluronic Acid,Bioactive,O778,Double helix,4.44,4C1,12.51,-32.79,14.3,2140.05,"Beta-1,3"
+PS-38523,Konjac Glucomannan,Storage,Y507,Extended chain,12.67,4C1,-0.67,-40.26,0.9,909.19,"Beta-1,4"
+PS-91583,Carrageenan,Algal,L459,Double helix,9.22,Skew boat,-38.88,26.5,15.0,462.38,Mixed
+PS-92728,Gellan Gum,Bacterial,P902,Double helix,7.13,4H3,55.96,-17.73,22.3,1038.23,Mixed
+PS-40753,Xanthan Gum,Bacterial,E273,Double helix,10.68,Skew boat,-32.78,13.91,22.3,3074.44,Mixed
+PS-10186,Hyaluronic Acid,Bioactive,J472,Random coil,11.29,1C4,33.82,-32.94,5.7,1964.87,"Beta-1,3"
+PS-55876,Locust Bean Gum,Storage,B580,Random coil,4.1,4C1,6.15,-4.91,12.8,301.75,"Beta-1,4"
+PS-25832,Guar Gum,Storage,Y617,Double helix,12.96,1C4,-14.26,-48.16,12.3,201.84,"Beta-1,4"
+PS-56428,Chitin,Structural,U965,Extended chain,5.67,Half-chair,21.33,15.85,4.6,631.06,"Beta-1,4"
+PS-97322,Guar Gum,Storage,Z962,Random coil,14.08,4H3,4.1,-29.01,10.1,204.18,"Beta-1,4"
+PS-44426,Pullulan,Fungal,E248,Double helix,14.76,1C4,57.86,57.9,3.5,275.62,"Alpha-1,4/1,6"
+PS-76631,Welan Gum,Bacterial,A749,Single helix,12.05,4H3,-29.55,-41.52,14.0,2081.77,Mixed
+PS-84196,Gellan Gum,Bacterial,E834,Double helix,5.14,4H3,-11.4,-14.76,20.5,1028.3,Mixed
+PS-37664,Pectin,Structural,L771,Single helix,13.8,1C4,39.97,16.25,18.1,87.0,"Alpha-1,4"
+PS-18738,Agar,Algal,U217,Extended chain,3.67,Skew boat,22.04,-0.99,2.6,140.51,Mixed
+PS-97687,Guar Gum,Storage,K334,Extended chain,14.4,4C1,18.38,-21.12,0.3,228.45,"Beta-1,4"
+PS-60510,Agar,Algal,F510,Single helix,9.1,4H3,19.68,-32.49,20.7,149.05,Mixed
+PS-60609,Alginate,Algal,C421,Triple helix,12.49,4C1,-16.62,-29.83,1.8,184.37,"Beta-1,4"
+PS-96466,Fucoidan,Algal,C477,Single helix,8.14,4H3,-51.36,7.95,23.0,96.21,"Alpha-1,2/1,3"
+PS-45601,Levan,Bacterial,A683,Single helix,9.91,Skew boat,11.09,-34.62,8.0,2022.62,"Beta-2,6"
+PS-34230,Alginate,Algal,B588,Single helix,12.73,4C1,-29.57,-7.85,4.0,176.72,"Beta-1,4"
+PS-95462,Laminarin,Algal,P198,Double helix,11.75,4C1,-42.04,-51.21,5.0,4.69,"Beta-1,3"
+PS-66360,Welan Gum,Bacterial,T513,Random coil,9.38,Skew boat,-11.28,7.97,13.1,1863.5,Mixed
+PS-65884,Hyaluronic Acid,Bioactive,P595,Double helix,3.96,Half-chair,58.21,-37.76,10.9,1946.91,"Beta-1,3"
+PS-13711,Konjac Glucomannan,Storage,O447,Extended chain,14.57,Half-chair,14.6,17.85,10.5,936.94,"Beta-1,4"
+PS-37263,Fucoidan,Algal,U801,Extended chain,13.8,4H3,-35.64,12.31,15.7,97.17,"Alpha-1,2/1,3"
+PS-34690,Dextran,Bacterial,A624,Extended chain,10.64,1C4,-32.02,-42.63,4.0,102.07,"Alpha-1,6"
+PS-13082,Alginate,Algal,Y457,Random coil,12.69,4H3,59.18,7.56,11.4,220.24,"Beta-1,4"
+PS-10902,Guar Gum,Storage,W151,Single helix,4.68,Half-chair,-4.29,-23.26,13.6,233.86,"Beta-1,4"
+PS-62548,Guar Gum,Storage,J686,Random coil,10.12,4H3,46.18,-49.32,20.4,213.96,"Beta-1,4"
+PS-65919,Alginate,Algal,W134,Triple helix,13.29,4C1,-57.23,-30.69,7.9,186.59,"Beta-1,4"
+PS-14932,Xanthan Gum,Bacterial,S856,Random coil,14.7,Half-chair,-8.81,-37.62,11.6,2696.94,Mixed
+PS-84112,Fucoidan,Algal,U466,Double helix,9.83,Skew boat,-33.27,-35.29,17.4,102.25,"Alpha-1,2/1,3"
+PS-11042,Gellan Gum,Bacterial,F476,Triple helix,4.32,Half-chair,-40.67,-10.38,5.2,951.93,Mixed
+PS-51158,Glycogen,Storage,T396,Extended chain,10.45,Half-chair,40.86,31.61,15.3,770.95,"Alpha-1,4/1,6"
+PS-64256,Dextran,Bacterial,V545,Double helix,6.58,4H3,30.45,44.96,23.6,95.01,"Alpha-1,6"
+PS-50290,Agar,Algal,W363,Single helix,12.5,4H3,13.44,-12.54,23.2,153.21,Mixed
+PS-89621,Konjac Glucomannan,Storage,H953,Triple helix,6.31,Skew boat,-25.79,8.99,6.7,978.38,"Beta-1,4"
+PS-78920,Starch,Storage,Y792,Extended chain,5.06,1C4,-54.27,-20.62,10.5,512.65,"Alpha-1,4/1,6"
+PS-38642,Guar Gum,Storage,S785,Extended chain,10.71,Half-chair,9.92,52.05,2.5,201.93,"Beta-1,4"
+PS-84843,Starch,Storage,O232,Single helix,11.3,4C1,43.25,31.4,12.0,476.16,"Alpha-1,4/1,6"
+PS-55579,Locust Bean Gum,Storage,G393,Random coil,7.45,Skew boat,36.04,-44.17,19.4,275.57,"Beta-1,4"
+PS-15624,Starch,Storage,J384,Extended chain,8.19,4H3,-14.22,-52.31,18.1,466.81,"Alpha-1,4/1,6"
+PS-13589,Cellulose,Structural,E854,Triple helix,4.28,4C1,-35.52,43.65,8.3,974.44,"Beta-1,4"
+PS-79306,Alginate,Algal,W709,Random coil,5.28,Half-chair,-19.51,21.3,11.8,176.11,"Beta-1,4"
+PS-20339,Levan,Bacterial,S724,Double helix,14.33,4H3,24.7,6.31,4.7,2093.97,"Beta-2,6"
+PS-60841,Carrageenan,Algal,H186,Single helix,5.67,Half-chair,6.09,-54.23,5.1,546.83,Mixed
+PS-63398,Xanthan Gum,Bacterial,F786,Double helix,3.4,1C4,-36.61,-5.1,4.6,2932.74,Mixed
+PS-24127,Fucoidan,Algal,A408,Double helix,10.96,Half-chair,-10.12,28.97,16.9,103.79,"Alpha-1,2/1,3"
+PS-13672,Cellulose Sulfate,Structural,B665,Triple helix,11.53,1C4,8.29,-26.33,18.8,1054.71,"Beta-1,4"
+PS-95697,Heparin,Bioactive,C762,Random coil,8.26,4H3,-52.27,-28.38,24.8,14.29,"Alpha-1,4"
+PS-17660,Pectin,Structural,E333,Extended chain,12.53,4H3,53.67,-40.4,20.4,82.1,"Alpha-1,4"
+PS-65328,Inulin,Storage,M446,Double helix,8.38,4H3,27.58,30.47,19.0,4.64,"Beta-2,1"
+PS-78198,Heparin,Bioactive,E738,Double helix,3.11,4C1,-43.87,-11.85,24.8,13.98,"Alpha-1,4"
+PS-40110,Starch,Storage,A324,Double helix,6.04,Skew boat,-7.08,28.09,3.1,548.11,"Alpha-1,4/1,6"
+PS-57867,Pullulan,Fungal,A548,Random coil,4.7,Skew boat,13.16,-18.32,20.3,281.94,"Alpha-1,4/1,6"
+PS-17427,Gellan Gum,Bacterial,F384,Triple helix,5.53,4C1,52.99,-39.24,5.8,1019.61,Mixed
+PS-43857,Konjac Glucomannan,Storage,P274,Double helix,3.35,4H3,26.01,54.09,3.3,910.49,"Beta-1,4"
+PS-70090,Dextran,Bacterial,C918,Extended chain,12.71,4C1,-49.1,26.12,23.9,103.89,"Alpha-1,6"
+PS-48361,Heparin,Bioactive,B482,Single helix,8.27,Skew boat,49.96,-28.93,22.1,14.87,"Alpha-1,4"
+PS-23315,Konjac Glucomannan,Storage,P757,Random coil,6.85,4H3,-10.33,14.68,20.8,1104.57,"Beta-1,4"
+PS-44564,Hyaluronic Acid,Bioactive,B495,Triple helix,10.68,1C4,4.42,50.46,3.9,2085.27,"Beta-1,3"
+PS-29442,Fucoidan,Algal,K617,Single helix,5.16,4H3,11.86,36.32,14.6,104.51,"Alpha-1,2/1,3"
+PS-61668,Carrageenan,Algal,Y646,Triple helix,11.55,Half-chair,26.96,-42.31,6.2,469.89,Mixed
+PS-69161,Xanthan Gum,Bacterial,S887,Single helix,12.53,4C1,-44.4,-49.69,1.2,3022.26,Mixed
+PS-15500,Locust Bean Gum,Storage,H813,Triple helix,14.79,Half-chair,-10.09,50.19,15.4,322.62,"Beta-1,4"
+PS-69561,Glycogen,Storage,B983,Random coil,6.5,4C1,35.75,51.9,15.0,771.68,"Alpha-1,4/1,6"
+PS-91189,Curdlan,Bacterial,T357,Triple helix,5.14,4H3,28.23,47.69,2.7,66.93,"Beta-1,3"
+PS-28625,Hyaluronic Acid,Bioactive,P497,Triple helix,6.0,Half-chair,-5.47,-40.37,9.0,1898.85,"Beta-1,3"
+PS-24809,Heparin,Bioactive,M280,Random coil,11.15,4H3,10.93,17.53,21.2,13.89,"Alpha-1,4"
+PS-10197,Xanthan Gum,Bacterial,W652,Double helix,5.43,4H3,-24.67,-6.86,22.6,2653.34,Mixed
+PS-77969,Locust Bean Gum,Storage,P620,Extended chain,9.96,4H3,-58.59,-4.25,20.1,273.57,"Beta-1,4"
+PS-90458,Alginate,Algal,V486,Extended chain,11.21,4C1,13.45,44.99,4.7,208.73,"Beta-1,4"
+PS-43735,Guar Gum,Storage,T818,Double helix,7.77,1C4,-40.81,45.32,18.5,215.47,"Beta-1,4"
+PS-34246,Inulin,Storage,O609,Random coil,6.83,1C4,-40.8,-16.96,3.8,4.9,"Beta-2,1"
+PS-55782,Carrageenan,Algal,R185,Double helix,12.71,1C4,-56.67,-15.73,18.1,458.92,Mixed
+PS-47465,Curdlan,Bacterial,D173,Triple helix,14.09,Skew boat,-33.8,-41.8,7.9,78.57,"Beta-1,3"
+PS-86226,Welan Gum,Bacterial,M338,Random coil,5.93,1C4,17.49,-39.32,15.6,1902.4,Mixed
+PS-33577,Konjac Glucomannan,Storage,B541,Random coil,3.91,4H3,14.82,-56.75,16.7,961.51,"Beta-1,4"
+PS-36838,Xanthan Gum,Bacterial,X209,Double helix,10.86,4C1,-54.77,8.87,21.3,2801.6,Mixed
+PS-18419,Hyaluronic Acid,Bioactive,U185,Double helix,13.21,4C1,53.97,-39.25,1.9,2119.61,"Beta-1,3"
+PS-96867,Locust Bean Gum,Storage,D828,Triple helix,9.46,Skew boat,5.21,4.29,24.8,294.97,"Beta-1,4"
+PS-23629,Starch,Storage,Y696,Single helix,9.37,4H3,6.75,-52.98,7.7,476.67,"Alpha-1,4/1,6"
+PS-98305,Heparin,Bioactive,A143,Random coil,5.13,Half-chair,49.87,-0.26,16.0,14.93,"Alpha-1,4"
+PS-78259,Pectin,Structural,K894,Random coil,10.65,4H3,53.49,-12.08,7.8,84.71,"Alpha-1,4"
+PS-67061,Laminarin,Algal,X232,Double helix,6.55,1C4,-46.58,-43.09,23.3,5.37,"Beta-1,3"
+PS-19843,Hyaluronic Acid,Bioactive,G287,Single helix,6.67,4C1,-54.54,-40.43,6.3,1864.14,"Beta-1,3"
+PS-46884,Chitin,Structural,X597,Extended chain,14.0,Half-chair,32.7,24.0,2.8,695.14,"Beta-1,4"
+PS-68525,Laminarin,Algal,E945,Random coil,10.06,Half-chair,57.21,-26.68,17.3,4.52,"Beta-1,3"
+PS-77330,Hyaluronic Acid,Bioactive,W303,Single helix,11.82,4C1,-53.16,45.02,10.6,1770.05,"Beta-1,3"
+PS-32032,Welan Gum,Bacterial,W102,Single helix,3.06,1C4,29.76,4.71,4.8,1950.09,Mixed
+PS-10504,Chitin,Structural,K746,Single helix,6.92,1C4,-27.58,46.36,22.5,708.37,"Beta-1,4"
+PS-56567,Starch,Storage,R805,Double helix,14.1,Half-chair,-39.49,33.4,19.2,447.49,"Alpha-1,4/1,6"
+PS-62180,Pullulan,Fungal,R814,Random coil,4.97,Skew boat,30.75,52.03,21.4,276.77,"Alpha-1,4/1,6"
+PS-37106,Cellulose Sulfate,Structural,Q724,Random coil,11.08,1C4,-34.26,-1.96,22.5,854.99,"Beta-1,4"
+PS-93230,Pectin,Structural,D746,Extended chain,13.96,Skew boat,-38.76,-5.41,6.2,81.0,"Alpha-1,4"
+PS-24242,Konjac Glucomannan,Storage,A176,Double helix,4.86,Half-chair,34.93,-35.86,5.6,1026.11,"Beta-1,4"
+PS-98214,Chitin,Structural,R969,Extended chain,11.77,1C4,-18.08,-37.58,18.4,738.36,"Beta-1,4"
+PS-79252,Glycogen,Storage,P433,Single helix,7.87,Skew boat,-0.84,-48.6,1.1,849.06,"Alpha-1,4/1,6"
+PS-58527,Gellan Gum,Bacterial,S271,Single helix,10.62,Half-chair,2.72,42.76,20.3,939.37,Mixed
+PS-91417,Glycogen,Storage,E578,Extended chain,8.34,Skew boat,-45.99,50.19,17.4,771.65,"Alpha-1,4/1,6"
+PS-64919,Curdlan,Bacterial,S973,Extended chain,10.72,Half-chair,23.13,-18.01,12.4,78.16,"Beta-1,3"
+PS-29749,Starch,Storage,W500,Random coil,7.42,Skew boat,4.06,31.65,15.3,482.47,"Alpha-1,4/1,6"
+PS-28135,Chitin,Structural,K558,Double helix,6.7,Half-chair,11.18,46.93,4.1,670.79,"Beta-1,4"
+PS-45760,Laminarin,Algal,V545,Single helix,12.17,4H3,46.39,9.52,15.2,4.93,"Beta-1,3"
+PS-72282,Fucoidan,Algal,E883,Extended chain,7.94,Half-chair,58.62,-23.46,19.1,101.78,"Alpha-1,2/1,3"
+PS-73495,Carrageenan,Algal,A675,Single helix,9.64,Half-chair,-5.13,22.32,12.5,507.1,Mixed
+PS-90977,Scleroglucan,Fungal,S391,Random coil,6.31,Half-chair,-36.78,12.99,12.6,1143.05,"Beta-1,3/1,6"
+PS-70560,Levan,Bacterial,H395,Random coil,9.23,4H3,-35.25,27.97,13.4,2015.94,"Beta-2,6"
+PS-48399,Carrageenan,Algal,Y698,Extended chain,3.34,4H3,-22.08,35.08,4.2,516.8,Mixed
+PS-11299,Carrageenan,Algal,K275,Single helix,13.03,4C1,-40.32,-43.26,11.5,487.6,Mixed
+PS-82466,Dextran,Bacterial,T162,Single helix,13.08,1C4,-27.53,40.03,9.0,90.5,"Alpha-1,6"
+PS-10071,Agar,Algal,R998,Extended chain,9.88,1C4,44.99,36.54,8.2,142.98,Mixed
+PS-82229,Cellulose Sulfate,Structural,H733,Extended chain,11.84,4H3,40.01,29.22,2.6,915.26,"Beta-1,4"
+PS-11909,Agar,Algal,E557,Triple helix,13.98,4C1,-59.92,-54.49,8.6,146.05,Mixed
+PS-62860,Scleroglucan,Fungal,D706,Extended chain,7.27,1C4,-57.93,56.19,8.9,1140.32,"Beta-1,3/1,6"
+PS-44217,Cellulose Sulfate,Structural,Y678,Double helix,12.91,Half-chair,19.8,47.66,7.4,938.33,"Beta-1,4"
+PS-75883,Cellulose,Structural,Y591,Single helix,10.84,Half-chair,-3.35,-10.27,16.1,888.38,"Beta-1,4"
+PS-92709,Chitin,Structural,Y308,Random coil,7.47,4C1,-54.29,-27.43,7.4,775.55,"Beta-1,4"
+PS-27239,Inulin,Storage,T709,Single helix,7.72,4H3,19.83,54.56,14.0,5.51,"Beta-2,1"
+PS-31605,Alginate,Algal,J139,Random coil,4.7,1C4,-45.98,49.22,15.3,196.94,"Beta-1,4"
+PS-27947,Guar Gum,Storage,K535,Double helix,5.21,1C4,-45.01,-59.05,5.9,242.8,"Beta-1,4"
+PS-96495,Fucoidan,Algal,J550,Single helix,6.1,4H3,-2.35,-13.34,13.5,104.43,"Alpha-1,2/1,3"
+PS-58806,Pectin,Structural,T328,Extended chain,8.24,1C4,-48.43,38.89,5.8,74.72,"Alpha-1,4"
+PS-74107,Starch,Storage,C240,Triple helix,7.0,4H3,-33.82,-40.05,20.7,547.94,"Alpha-1,4/1,6"
+PS-10435,Cellulose,Structural,X355,Random coil,4.53,1C4,53.58,51.66,1.7,1052.11,"Beta-1,4"
+PS-41041,Guar Gum,Storage,Y755,Double helix,10.6,Skew boat,-0.64,-8.93,6.8,227.53,"Beta-1,4"
+PS-42293,Gellan Gum,Bacterial,T454,Extended chain,6.85,4H3,6.5,-39.48,14.6,953.27,Mixed
+PS-55387,Scleroglucan,Fungal,E829,Triple helix,4.22,4C1,57.3,-20.68,9.2,1080.2,"Beta-1,3/1,6"

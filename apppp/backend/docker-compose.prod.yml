@@ -1,0 +1,48 @@
+# =============================================================================
+# docker-compose.prod.yml — Production overrides
+# =============================================================================
+# Layered on top of docker-compose.yml:
+#   docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+#
+# What changes in production:
+#  - API port is NOT published to the host (nginx reverse proxy handles TLS)
+#  - Hot-reload is disabled (no source volume mount)
+#  - APP_ENV and APP_DEBUG are forced to production values
+#  - All secrets come from environment variables (not the .env file)
+# =============================================================================
+
+version: "3.9"
+
+services:
+  db:
+    # In production, prefer a managed PostgreSQL service (RDS, Cloud SQL, etc.)
+    # and remove this service entirely, pointing DATABASE_URL at the managed host.
+    environment:
+      # Override with strong, randomly generated credentials.
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports: []  # Do not expose the database port in production.
+
+  api:
+    ports: []  # Do not publish; nginx reverse proxy connects via Docker network.
+    volumes: []  # No source mount in production — use the built image.
+    environment:
+      APP_ENV: production
+      APP_DEBUG: "false"
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
+      ADMIN_TOKEN: ${ADMIN_TOKEN}
+      FIREBASE_PROJECT_ID: ${FIREBASE_PROJECT_ID}
+      CORS_ORIGINS: ${CORS_ORIGINS}
+      API_BASE_URL: ${API_BASE_URL}
+    command: >
+      uvicorn app.main:app
+        --host 0.0.0.0
+        --port 8000
+        --workers 4
+        --no-access-log
+    restart: always
+    deploy:
+      resources:
+        limits:
+          memory: 512M

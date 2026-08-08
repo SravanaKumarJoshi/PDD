@@ -1,0 +1,115 @@
+{
+  "medians": {
+    "molecular_weight_kda": 188.64499999999998,
+    "degree_of_polymerization_log": 4.28,
+    "xcomplexity_norm": 0.311,
+    "hb_acceptors": 41.0,
+    "sulfation_present": 0.0,
+    "acetylation_present": 0.0,
+    "is_heteropolymer": 1.0,
+    "known_medical_use": 1.0,
+    "known_food_use": 1.0,
+    "biodegradable": 1.0,
+    "biocompatible": 1.0
+  },
+  "categories": {
+    "monomer_type": [
+      "Fructose",
+      "Fucose",
+      "GalNAc",
+      "Galactose",
+      "GlcA",
+      "GlcNAc",
+      "Glucose",
+      "Mannose"
+    ],
+    "backbone_type": [
+      "Fructose",
+      "Fucose",
+      "GalNAc",
+      "Galactose",
+      "GlcA",
+      "GlcNAc",
+      "Glucose",
+      "Mannose"
+    ],
+    "linkage_type": [
+      "Alpha-1-2",
+      "Alpha-1-3",
+      "Alpha-1-4",
+      "Alpha-1-6",
+      "Beta-1-3",
+      "Beta-1-4",
+      "Beta-2-1",
+      "Beta-2-6",
+      "Mixed"
+    ],
+    "branching_category": [
+      "Highly_Branched",
+      "Linear",
+      "Low_Branched",
+      "Moderate_Branched",
+      "Unknown"
+    ],
+    "source_kingdom": [
+      "Algae",
+      "Animal",
+      "Bacteria",
+      "Fungi",
+      "Plant",
+      "Unknown"
+    ],
+    "solubility_category": [
+      "Insoluble",
+      "Partially_Soluble",
+      "Soluble",
+      "Soluble_Hot",
+      "Unknown"
+    ],
+    "charge_character": [
+      "Anionic",
+      "Cationic",
+      "Neutral"
+    ],
+    "crystallinity_category": [
+      "Amorphous",
+      "High",
+      "Low",
+      "Medium",
+      "Unknown"
+    ],
+    "viscosity_category": [
+      "Gel_forming",
+      "High",
+      "Low",
+      "Medium",
+      "Unknown"
+    ]
+  },
+  "scaler_mean": [
+    417.75927686046515,
+    4.276569767441861,
+    0.3384279069767442,
+    40.56976744186046,
+    0.2651162790697674,
+    0.3488372093023256,
+    0.513953488372093,
+    0.6465116279069767,
+    0.5581395348837209,
+    1.0,
+    1.0
+  ],
+  "scaler_scale": [
+    574.5417979429792,
+    0.5403153889638057,
+    0.12999353530541682,
+    8.488488371296603,
+    0.441395103781146,
+    0.4766023612074232,
+    0.49980526223945443,
+    0.4780526570243571,
+    0.49660829079215396,
+    1.0,
+    1.0
+  ]
+}

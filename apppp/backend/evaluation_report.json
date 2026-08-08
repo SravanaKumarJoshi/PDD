@@ -1,0 +1,456 @@
+{
+  "dataset_path": "D:\\Sravan\\PDD\\apppp\\backend\\data\\starter_dataset.csv",
+  "total_materials": 34,
+  "categories": {
+    "cellulose": 5,
+    "chitosan": 4,
+    "starch": 3,
+    "carrageenan": 3,
+    "alginate": 2,
+    "pectin": 2,
+    "hyaluronic_acid": 2,
+    "pullulan": 2,
+    "dextran": 2,
+    "gellan": 2,
+    "agar": 2,
+    "guar": 2,
+    "xanthan": 2,
+    "glucomannan": 1
+  },
+  "evidence_levels": {
+    "high": 16,
+    "med": 11,
+    "low": 7
+  },
+  "avg_data_completeness": 1.0,
+  "profiles": [
+    {
+      "profile_name": "wound_care",
+      "top_10": [
+        {
+          "name": "Chitosan (High MW)",
+          "category": "chitosan",
+          "score": 0.641,
+          "confidence": 0.88,
+          "top_factor": "wvtr"
+        },
+        {
+          "name": "Chitosan-PVA Blend",
+          "category": "chitosan",
+          "score": 0.624,
+          "confidence": 0.76,
+          "top_factor": "wvtr"
+        },
+        {
+          "name": "Pullulan-Chitosan Blend",
+          "category": "pullulan",
+          "score": 0.624,
+          "confidence": 0.76,
+          "top_factor": "wvtr"
+        },
+        {
+          "name": "Chitosan (Low MW)",
+          "category": "chitosan",
+          "score": 0.6,
+          "confidence": 0.88,
+          "top_factor": "wvtr"
+        },
+        {
+          "name": "Carboxymethyl Cellulose (CMC)",
+          "category": "cellulose",
+          "score": 0.566,
+          "confidence": 1.0,
+          "top_factor": "otr"
+        },
+        {
+          "name": "Dextran Methacrylate",
+          "category": "dextran",
+          "score": 0.565,
+          "confidence": 0.76,
+          "top_factor": "otr"
+        },
+        {
+          "name": "Agarose",
+          "category": "agar",
+          "score": 0.563,
+          "confidence": 1.0,
+          "top_factor": "wvtr"
+        },
+        {
+          "name": "Hydroxypropyl Methylcellulose (HPMC)",
+          "category": "cellulose",
+          "score": 0.563,
+          "confidence": 1.0,
+          "top_factor": "wvtr"
+        },
+        {
+          "name": "Calcium Alginate",
+          "category": "alginate",
+          "score": 0.555,
+          "confidence": 1.0,
+          "top_factor": "wvtr"
+        },
+        {
+          "name": "Pullulan",
+          "category": "pullulan",
+          "score": 0.546,
+          "confidence": 0.88,
+          "top_factor": "wvtr"
+        }
+      ],
+      "total_evaluated": 34,
+      "total_passed": 18,
+      "filtered_out": 16,
+      "missing_data_stats": {}
+    },
+    {
+      "profile_name": "food_packaging",
+      "top_10": [
+        {
+          "name": "Cellulose Nanocrystal (CNC)",
+          "category": "cellulose",
+          "score": 0.585,
+          "confidence": 1.0,
+          "top_factor": "wvtr"
+        },
+        {
+          "name": "Bacterial Cellulose",
+          "category": "cellulose",
+          "score": 0.577,
+          "confidence": 0.88,
+          "top_factor": "wvtr"
+        },
+        {
+          "name": "Chitin Nanowhisker",
+          "category": "chitosan",
+          "score": 0.577,
+          "confidence": 0.76,
+          "top_factor": "wvtr"
+        },
+        {
+          "name": "Cellulose Nanofiber (CNF)",
+          "category": "cellulose",
+          "score": 0.572,
+          "confidence": 1.0,
+          "top_factor": "wvtr"
+        },
+        {
+          "name": "Calcium Alginate",
+          "category": "alginate",
+          "score": 0.517,
+          "confidence": 1.0,
+          "top_factor": "biocompatibility"
+        },
+        {
+          "name": "Chitosan (High MW)",
+          "category": "chitosan",
+          "score": 0.509,
+          "confidence": 0.88,
+          "top_factor": "biocompatibility"
+        },
+        {
+          "name": "Chitosan-PVA Blend",
+          "category": "chitosan",
+          "score": 0.505,
+          "confidence": 0.76,
+          "top_factor": "biocompatibility"
+        },
+        {
+          "name": "Starch Nanocrystal",
+          "category": "starch",
+          "score": 0.491,
+          "confidence": 0.88,
+          "top_factor": "cost"
+        },
+        {
+          "name": "Pullulan-Chitosan Blend",
+          "category": "pullulan",
+          "score": 0.477,
+          "confidence": 0.76,
+          "top_factor": "otr"
+        },
+        {
+          "name": "Low-Methoxyl Pectin",
+          "category": "pectin",
+          "score": 0.455,
+          "confidence": 0.88,
+          "top_factor": "cost"
+        }
+      ],
+      "total_evaluated": 34,
+      "total_passed": 34,
+      "filtered_out": 0,
+      "missing_data_stats": {}
+    },
+    {
+      "profile_name": "drug_blister",
+      "top_10": [
+        {
+          "name": "Bacterial Cellulose",
+          "category": "cellulose",
+          "score": 0.584,
+          "confidence": 0.88,
+          "top_factor": "wvtr"
+        },
+        {
+          "name": "Chitin Nanowhisker",
+          "category": "chitosan",
+          "score": 0.561,
+          "confidence": 0.76,
+          "top_factor": "wvtr"
+        },
+        {
+          "name": "Cellulose Nanocrystal (CNC)",
+          "category": "cellulose",
+          "score": 0.547,
+          "confidence": 1.0,
+          "top_factor": "wvtr"
+        },
+        {
+          "name": "Pullulan",
+          "category": "pullulan",
+          "score": 0.518,
+          "confidence": 0.88,
+          "top_factor": "otr"
+        },
+        {
+          "name": "Cellulose Nanofiber (CNF)",
+          "category": "cellulose",
+          "score": 0.51,
+          "confidence": 1.0,
+          "top_factor": "wvtr"
+        },
+        {
+          "name": "Chitosan-PVA Blend",
+          "category": "chitosan",
+          "score": 0.436,
+          "confidence": 0.76,
+          "top_factor": "biocompatibility"
+        },
+        {
+          "name": "Pullulan-Chitosan Blend",
+          "category": "pullulan",
+          "score": 0.427,
+          "confidence": 0.76,
+          "top_factor": "otr"
+        },
+        {
+          "name": "Dextran Methacrylate",
+          "category": "dextran",
+          "score": 0.418,
+          "confidence": 0.76,
+          "top_factor": "biocompatibility"
+        },
+        {
+          "name": "Calcium Alginate",
+          "category": "alginate",
+          "score": 0.392,
+          "confidence": 1.0,
+          "top_factor": "biocompatibility"
+        },
+        {
+          "name": "Chitosan (High MW)",
+          "category": "chitosan",
+          "score": 0.384,
+          "confidence": 0.88,
+          "top_factor": "biocompatibility"
+        }
+      ],
+      "total_evaluated": 34,
+      "total_passed": 21,
+      "filtered_out": 13,
+      "missing_data_stats": {}
+    },
+    {
+      "profile_name": "implant_packaging",
+      "top_10": [
+        {
+          "name": "Calcium Alginate",
+          "category": "alginate",
+          "score": 0.494,
+          "confidence": 1.0,
+          "top_factor": "biocompatibility"
+        },
+        {
+          "name": "Sodium Alginate",
+          "category": "alginate",
+          "score": 0.487,
+          "confidence": 1.0,
+          "top_factor": "biocompatibility"
+        },
+        {
+          "name": "Hyaluronic Acid (HA)",
+          "category": "hyaluronic_acid",
+          "score": 0.473,
+          "confidence": 1.0,
+          "top_factor": "biocompatibility"
+        },
+        {
+          "name": "Dextran",
+          "category": "dextran",
+          "score": 0.469,
+          "confidence": 1.0,
+          "top_factor": "biocompatibility"
+        },
+        {
+          "name": "Bacterial Cellulose",
+          "category": "cellulose",
+          "score": 0.465,
+          "confidence": 0.88,
+          "top_factor": "biocompatibility"
+        },
+        {
+          "name": "Iota-Carrageenan",
+          "category": "carrageenan",
+          "score": 0.434,
+          "confidence": 1.0,
+          "top_factor": "degradation"
+        },
+        {
+          "name": "Cellulose Nanocrystal (CNC)",
+          "category": "cellulose",
+          "score": 0.423,
+          "confidence": 1.0,
+          "top_factor": "biocompatibility"
+        },
+        {
+          "name": "Cellulose Nanofiber (CNF)",
+          "category": "cellulose",
+          "score": 0.423,
+          "confidence": 1.0,
+          "top_factor": "biocompatibility"
+        },
+        {
+          "name": "Crosslinked HA (HA-BDDE)",
+          "category": "hyaluronic_acid",
+          "score": 0.423,
+          "confidence": 0.88,
+          "top_factor": "biocompatibility"
+        },
+        {
+          "name": "Agarose",
+          "category": "agar",
+          "score": 0.423,
+          "confidence": 1.0,
+          "top_factor": "biocompatibility"
+        }
+      ],
+      "total_evaluated": 34,
+      "total_passed": 15,
+      "filtered_out": 19,
+      "missing_data_stats": {}
+    },
+    {
+      "profile_name": "flexible_pouch",
+      "top_10": [
+        {
+          "name": "Agar",
+          "category": "agar",
+          "score": 0.476,
+          "confidence": 1.0,
+          "top_factor": "cost"
+        },
+        {
+          "name": "Thermoplastic Starch (TPS)",
+          "category": "starch",
+          "score": 0.475,
+          "confidence": 1.0,
+          "top_factor": "cost"
+        },
+        {
+          "name": "Gellan Gum (Low Acyl)",
+          "category": "gellan",
+          "score": 0.475,
+          "confidence": 0.88,
+          "top_factor": "cost"
+        },
+        {
+          "name": "Lambda-Carrageenan",
+          "category": "carrageenan",
+          "score": 0.457,
+          "confidence": 0.88,
+          "top_factor": "cost"
+        },
+        {
+          "name": "Gellan Gum (High Acyl)",
+          "category": "gellan",
+          "score": 0.44,
+          "confidence": 0.88,
+          "top_factor": "cost"
+        },
+        {
+          "name": "Xanthan Gum",
+          "category": "xanthan",
+          "score": 0.44,
+          "confidence": 1.0,
+          "top_factor": "cost"
+        },
+        {
+          "name": "Cellulose Nanocrystal (CNC)",
+          "category": "cellulose",
+          "score": 0.43,
+          "confidence": 1.0,
+          "top_factor": "biocompatibility"
+        },
+        {
+          "name": "Bacterial Cellulose",
+          "category": "cellulose",
+          "score": 0.429,
+          "confidence": 0.88,
+          "top_factor": "biocompatibility"
+        },
+        {
+          "name": "Agarose",
+          "category": "agar",
+          "score": 0.429,
+          "confidence": 1.0,
+          "top_factor": "biocompatibility"
+        },
+        {
+          "name": "Chitin Nanowhisker",
+          "category": "chitosan",
+          "score": 0.427,
+          "confidence": 0.76,
+          "top_factor": "biocompatibility"
+        }
+      ],
+      "total_evaluated": 34,
+      "total_passed": 34,
+      "filtered_out": 0,
+      "missing_data_stats": {}
+    }
+  ],
+  "validations": [
+    {
+      "check": "dataset_has_34_materials",
+      "passed": true,
+      "message": "Found 34 materials ✓"
+    },
+    {
+      "check": "wound_care_chitosan_in_top5",
+      "passed": true,
+      "message": "Top 5: ['Chitosan (High MW)', 'Chitosan-PVA Blend', 'Pullulan-Chitosan Blend', 'Chitosan (Low MW)', 'Carboxymethyl Cellulose (CMC)'] ✓"
+    },
+    {
+      "check": "drug_blister_gamma_filter_works",
+      "passed": true,
+      "message": "Filtered 13 materials without gamma ✓"
+    },
+    {
+      "check": "implant_packaging_filters_heavily",
+      "passed": true,
+      "message": "Filtered 19 materials ✓"
+    },
+    {
+      "check": "all_scores_in_bounds",
+      "passed": true,
+      "message": "All scores/confidence in [0, 1] ✓"
+    },
+    {
+      "check": "scoring_determinism",
+      "passed": true,
+      "message": "Scoring is deterministic ✓"
+    }
+  ],
+  "all_passed": true
+}

@@ -1,0 +1,301 @@
+name,category,food_application,food_function,food_sector,e_number,usage_concentration_percent,regulatory_status,solubility,source
+Cellulose Sulfate,Structural,Coating,Coating,Beverages,E412,4.776,Restricted,Soluble,Plants (Modified)
+Scleroglucan,Fungal,Thickener,Film-forming,Confectionery,E406,1.066,GRAS,Soluble,Fungi
+Chitin,Structural,Preservative,Dietary fiber,Bakery,E406,4.646,Approved FDA,Insoluble,Fungi/Exoskeletons
+Carrageenan,Algal,Gelling/Stabilizing,Prebiotic,Confectionery,E440,1.296,Restricted,Soluble,Red Algae
+Scleroglucan,Fungal,Thickener,Gelling agent,Beverages,E415,3.171,Restricted,Soluble,Fungi
+Glycogen,Storage,Unknown,Fat replacer,Confectionery,E415,3.834,Under review,Soluble,Animals
+Glycogen,Storage,Unknown,Fat replacer,Functional Foods,E440,3.717,Restricted,Soluble,Animals
+Fucoidan,Algal,Nutraceutical,Film-forming,Functional Foods,Unknown,1.175,Approved FDA,Soluble,Brown Algae
+Chitin,Structural,Preservative,Prebiotic,Dairy,E401,0.455,Under review,Insoluble,Fungi/Exoskeletons
+Xanthan Gum,Bacterial,Emulsifier/Thickener,Gelling agent,Sauces/Dressings,E406,4.268,Restricted,Soluble,Bacteria
+Curdlan,Bacterial,Gelling agent,Thickener,Meat products,E401,2.954,Approved EU,Insoluble,Bacteria
+Carrageenan,Algal,Gelling/Stabilizing,Dietary fiber,Sauces/Dressings,Unknown,1.831,Approved EU,Soluble,Red Algae
+Locust Bean Gum,Storage,Stabilizer/Thickener,Humectant,Confectionery,E401,1.983,Under review,Soluble,Plants
+Pullulan,Fungal,Edible films,Fat replacer,Beverages,Unknown,4.715,Approved EU,Soluble,Fungi
+Guar Gum,Storage,Thickener,Coating,Beverages,E415,1.424,GRAS,Soluble,Plants
+Laminarin,Algal,Supplement,Fat replacer,Meat products,E415,4.952,GRAS,Soluble,Brown Algae
+Inulin,Storage,Prebiotic/Sweetener,Humectant,Nutraceuticals,E440,4.145,Restricted,Soluble,Plants
+Dextran,Bacterial,Coating,Dietary fiber,Bakery,Unknown,1.672,Approved EU,Soluble,Bacteria
+Gellan Gum,Bacterial,Gelling agent,Stabilizer,Bakery,Unknown,3.882,Restricted,Soluble,Bacteria
+Gellan Gum,Bacterial,Gelling agent,Dietary fiber,Meat products,Unknown,3.3,Approved EU,Soluble,Bacteria
+Starch,Storage,Thickener/Binder,Film-forming,Functional Foods,E410,2.118,Restricted,Soluble,Plants
+Alginate,Algal,Thickener/Emulsifier,Dietary fiber,Functional Foods,E401,2.644,Approved FDA,Soluble,Brown Algae
+Dextran,Bacterial,Coating,Stabilizer,Functional Foods,E401,0.663,Under review,Soluble,Bacteria
+Cellulose,Structural,Dietary fiber,Prebiotic,Nutraceuticals,E440,0.827,Approved EU,Insoluble,Plants
+Pullulan,Fungal,Edible films,Coating,Meat products,E406,1.057,Approved EU,Soluble,Fungi
+Gellan Gum,Bacterial,Gelling agent,Thickener,Sauces/Dressings,E440,4.282,GRAS,Soluble,Bacteria
+Scleroglucan,Fungal,Thickener,Emulsifier,Functional Foods,E412,3.4,Approved EU,Soluble,Fungi
+Cellulose,Structural,Dietary fiber,Gelling agent,Sauces/Dressings,E412,0.906,GRAS,Insoluble,Plants
+Chitin,Structural,Preservative,Film-forming,Sauces/Dressings,E415,2.175,Approved EU,Insoluble,Fungi/Exoskeletons
+Fucoidan,Algal,Nutraceutical,Dietary fiber,Confectionery,E401,0.603,Restricted,Soluble,Brown Algae
+Guar Gum,Storage,Thickener,Prebiotic,Beverages,E440,3.729,GRAS,Soluble,Plants
+Konjac Glucomannan,Storage,Gelling/Coating,Coating,Functional Foods,E410,3.165,Restricted,Soluble,Plants
+Alginate,Algal,Thickener/Emulsifier,Thickener,Dairy,E401,0.422,Restricted,Soluble,Brown Algae
+Fucoidan,Algal,Nutraceutical,Film-forming,Confectionery,E401,2.938,Under review,Soluble,Brown Algae
+Guar Gum,Storage,Thickener,Prebiotic,Dairy,Unknown,2.968,Restricted,Soluble,Plants
+Guar Gum,Storage,Thickener,Dietary fiber,Meat products,E415,0.635,Approved FDA,Soluble,Plants
+Glycogen,Storage,Unknown,Film-forming,Beverages,E412,4.066,GRAS,Soluble,Animals
+Carrageenan,Algal,Gelling/Stabilizing,Film-forming,Nutraceuticals,E401,2.599,Under review,Soluble,Red Algae
+Cellulose Sulfate,Structural,Coating,Gelling agent,Confectionery,E440,4.489,Approved EU,Soluble,Plants (Modified)
+Laminarin,Algal,Supplement,Emulsifier,Bakery,E415,2.242,Approved FDA,Soluble,Brown Algae
+Chitin,Structural,Preservative,Thickener,Beverages,E415,1.039,Approved EU,Insoluble,Fungi/Exoskeletons
+Glycogen,Storage,Unknown,Film-forming,Meat products,Unknown,3.768,GRAS,Soluble,Animals
+Chitin,Structural,Preservative,Film-forming,Meat products,E410,4.832,Approved EU,Insoluble,Fungi/Exoskeletons
+Levan,Bacterial,Food stabilizer,Thickener,Confectionery,E410,0.24,Under review,Soluble,Bacteria
+Dextran,Bacterial,Coating,Film-forming,Nutraceuticals,E406,2.89,Approved FDA,Soluble,Bacteria
+Locust Bean Gum,Storage,Stabilizer/Thickener,Fat replacer,Confectionery,E440,0.504,GRAS,Soluble,Plants
+Agar,Algal,Gelling agent/Desserts,Thickener,Confectionery,E406,1.506,Approved EU,Soluble (Hot),Red Algae
+Heparin,Bioactive,Unknown,Humectant,Confectionery,E415,1.802,Approved EU,Soluble,Animals
+Gellan Gum,Bacterial,Gelling agent,Humectant,Functional Foods,E401,2.754,Approved FDA,Soluble,Bacteria
+Carrageenan,Algal,Gelling/Stabilizing,Emulsifier,Functional Foods,E412,0.425,Approved FDA,Soluble,Red Algae
+Scleroglucan,Fungal,Thickener,Dietary fiber,Beverages,E415,1.027,Approved FDA,Soluble,Fungi
+Fucoidan,Algal,Nutraceutical,Stabilizer,Sauces/Dressings,E415,3.29,Under review,Soluble,Brown Algae
+Laminarin,Algal,Supplement,Emulsifier,Functional Foods,Unknown,0.776,Restricted,Soluble,Brown Algae
+Carrageenan,Algal,Gelling/Stabilizing,Thickener,Confectionery,E401,1.358,Under review,Soluble,Red Algae
+Chitin,Structural,Preservative,Film-forming,Functional Foods,E401,1.653,GRAS,Insoluble,Fungi/Exoskeletons
+Alginate,Algal,Thickener/Emulsifier,Fat replacer,Meat products,E406,4.346,Approved EU,Soluble,Brown Algae
+Inulin,Storage,Prebiotic/Sweetener,Thickener,Dairy,E412,4.898,Approved EU,Soluble,Plants
+Carrageenan,Algal,Gelling/Stabilizing,Gelling agent,Dairy,E406,2.637,Approved FDA,Soluble,Red Algae
+Curdlan,Bacterial,Gelling agent,Coating,Dairy,E415,1.751,Under review,Insoluble,Bacteria
+Dextran,Bacterial,Coating,Film-forming,Meat products,E415,0.504,GRAS,Soluble,Bacteria
+Hyaluronic Acid,Bioactive,Moisturizing supplement,Fat replacer,Functional Foods,E406,1.732,Under review,Soluble,Animals/Bacteria
+Cellulose Sulfate,Structural,Coating,Humectant,Functional Foods,E412,2.966,Approved FDA,Soluble,Plants (Modified)
+Starch,Storage,Thickener/Binder,Film-forming,Beverages,E440,0.641,Restricted,Soluble,Plants
+Curdlan,Bacterial,Gelling agent,Prebiotic,Bakery,E440,3.2,Approved FDA,Insoluble,Bacteria
+Welan Gum,Bacterial,Unknown,Stabilizer,Functional Foods,E440,2.294,Restricted,Soluble,Bacteria
+Alginate,Algal,Thickener/Emulsifier,Coating,Meat products,E410,4.764,Under review,Soluble,Brown Algae
+Welan Gum,Bacterial,Unknown,Stabilizer,Meat products,E440,4.291,Approved FDA,Soluble,Bacteria
+Levan,Bacterial,Food stabilizer,Fat replacer,Dairy,E440,0.407,Approved EU,Soluble,Bacteria
+Glycogen,Storage,Unknown,Emulsifier,Bakery,E401,3.72,Under review,Soluble,Animals
+Guar Gum,Storage,Thickener,Thickener,Functional Foods,E440,2.548,Approved EU,Soluble,Plants
+Guar Gum,Storage,Thickener,Coating,Dairy,E412,0.079,Approved EU,Soluble,Plants
+Gellan Gum,Bacterial,Gelling agent,Thickener,Functional Foods,E440,2.676,Approved FDA,Soluble,Bacteria
+Agar,Algal,Gelling agent/Desserts,Film-forming,Bakery,E415,2.249,Approved EU,Soluble (Hot),Red Algae
+Scleroglucan,Fungal,Thickener,Film-forming,Confectionery,E406,0.385,Approved EU,Soluble,Fungi
+Locust Bean Gum,Storage,Stabilizer/Thickener,Fat replacer,Bakery,E412,2.483,Approved EU,Soluble,Plants
+Alginate,Algal,Thickener/Emulsifier,Gelling agent,Sauces/Dressings,E440,1.256,Under review,Soluble,Brown Algae
+Konjac Glucomannan,Storage,Gelling/Coating,Gelling agent,Meat products,E410,2.421,Approved FDA,Soluble,Plants
+Xanthan Gum,Bacterial,Emulsifier/Thickener,Thickener,Functional Foods,E406,4.616,Under review,Soluble,Bacteria
+Cellulose,Structural,Dietary fiber,Coating,Nutraceuticals,E401,1.785,Under review,Insoluble,Plants
+Pullulan,Fungal,Edible films,Fat replacer,Meat products,E410,0.545,Approved FDA,Soluble,Fungi
+Gellan Gum,Bacterial,Gelling agent,Emulsifier,Functional Foods,E410,0.054,Restricted,Soluble,Bacteria
+Guar Gum,Storage,Thickener,Stabilizer,Dairy,E415,2.576,Approved EU,Soluble,Plants
+Levan,Bacterial,Food stabilizer,Gelling agent,Nutraceuticals,E401,0.787,Approved FDA,Soluble,Bacteria
+Agar,Algal,Gelling agent/Desserts,Coating,Functional Foods,E410,1.503,Restricted,Soluble (Hot),Red Algae
+Hyaluronic Acid,Bioactive,Moisturizing supplement,Film-forming,Meat products,E401,4.947,Restricted,Soluble,Animals/Bacteria
+Hyaluronic Acid,Bioactive,Moisturizing supplement,Emulsifier,Sauces/Dressings,E440,2.175,Approved FDA,Soluble,Animals/Bacteria
+Welan Gum,Bacterial,Unknown,Stabilizer,Dairy,E406,1.432,Approved EU,Soluble,Bacteria
+Carrageenan,Algal,Gelling/Stabilizing,Dietary fiber,Sauces/Dressings,E401,0.81,Approved EU,Soluble,Red Algae
+Guar Gum,Storage,Thickener,Prebiotic,Dairy,E412,2.45,Restricted,Soluble,Plants
+Scleroglucan,Fungal,Thickener,Emulsifier,Sauces/Dressings,Unknown,3.824,Restricted,Soluble,Fungi
+Locust Bean Gum,Storage,Stabilizer/Thickener,Dietary fiber,Beverages,E401,4.789,GRAS,Soluble,Plants
+Heparin,Bioactive,Unknown,Emulsifier,Sauces/Dressings,E415,0.078,Approved EU,Soluble,Animals
+Cellulose,Structural,Dietary fiber,Fat replacer,Functional Foods,E415,3.69,Restricted,Insoluble,Plants
+Guar Gum,Storage,Thickener,Prebiotic,Meat products,E412,0.422,Restricted,Soluble,Plants
+Agar,Algal,Gelling agent/Desserts,Humectant,Beverages,E440,2.561,Approved EU,Soluble (Hot),Red Algae
+Inulin,Storage,Prebiotic/Sweetener,Gelling agent,Meat products,E440,1.244,Restricted,Soluble,Plants
+Xanthan Gum,Bacterial,Emulsifier/Thickener,Coating,Dairy,E440,3.655,Under review,Soluble,Bacteria
+Hyaluronic Acid,Bioactive,Moisturizing supplement,Stabilizer,Beverages,E406,0.611,Restricted,Soluble,Animals/Bacteria
+Cellulose,Structural,Dietary fiber,Prebiotic,Confectionery,E406,2.137,Under review,Insoluble,Plants
+Xanthan Gum,Bacterial,Emulsifier/Thickener,Gelling agent,Bakery,E412,2.042,Approved FDA,Soluble,Bacteria
+Welan Gum,Bacterial,Unknown,Stabilizer,Confectionery,E410,2.136,GRAS,Soluble,Bacteria
+Locust Bean Gum,Storage,Stabilizer/Thickener,Dietary fiber,Bakery,E410,0.559,Approved FDA,Soluble,Plants
+Inulin,Storage,Prebiotic/Sweetener,Fat replacer,Functional Foods,E406,1.606,GRAS,Soluble,Plants
+Hyaluronic Acid,Bioactive,Moisturizing supplement,Thickener,Bakery,E401,3.306,Approved FDA,Soluble,Animals/Bacteria
+Xanthan Gum,Bacterial,Emulsifier/Thickener,Prebiotic,Nutraceuticals,E410,4.543,GRAS,Soluble,Bacteria
+Levan,Bacterial,Food stabilizer,Emulsifier,Meat products,E412,1.824,Approved FDA,Soluble,Bacteria
+Chitin,Structural,Preservative,Gelling agent,Bakery,E440,2.763,Approved EU,Insoluble,Fungi/Exoskeletons
+Pectin,Structural,Jam/Jelly gelling,Fat replacer,Sauces/Dressings,E440,3.896,Under review,Soluble,Plants
+Laminarin,Algal,Supplement,Fat replacer,Confectionery,E440,1.387,Under review,Soluble,Brown Algae
+Carrageenan,Algal,Gelling/Stabilizing,Gelling agent,Dairy,E406,3.151,Under review,Soluble,Red Algae
+Chitin,Structural,Preservative,Thickener,Confectionery,E406,3.526,GRAS,Insoluble,Fungi/Exoskeletons
+Glycogen,Storage,Unknown,Film-forming,Sauces/Dressings,E410,3.629,Approved EU,Soluble,Animals
+Cellulose Sulfate,Structural,Coating,Emulsifier,Bakery,E406,0.967,Under review,Soluble,Plants (Modified)
+Welan Gum,Bacterial,Unknown,Prebiotic,Sauces/Dressings,E410,2.248,GRAS,Soluble,Bacteria
+Levan,Bacterial,Food stabilizer,Gelling agent,Nutraceuticals,E412,2.624,Under review,Soluble,Bacteria
+Starch,Storage,Thickener/Binder,Emulsifier,Meat products,E440,4.838,Approved FDA,Soluble,Plants
+Cellulose,Structural,Dietary fiber,Humectant,Bakery,Unknown,4.863,Approved EU,Insoluble,Plants
+Gellan Gum,Bacterial,Gelling agent,Dietary fiber,Nutraceuticals,E440,2.667,Under review,Soluble,Bacteria
+Glycogen,Storage,Unknown,Emulsifier,Nutraceuticals,Unknown,2.551,Under review,Soluble,Animals
+Konjac Glucomannan,Storage,Gelling/Coating,Dietary fiber,Functional Foods,E415,1.365,Approved EU,Soluble,Plants
+Starch,Storage,Thickener/Binder,Emulsifier,Confectionery,E415,3.487,Under review,Soluble,Plants
+Pullulan,Fungal,Edible films,Film-forming,Meat products,E410,4.264,Approved FDA,Soluble,Fungi
+Welan Gum,Bacterial,Unknown,Prebiotic,Dairy,E406,1.127,Under review,Soluble,Bacteria
+Agar,Algal,Gelling agent/Desserts,Prebiotic,Bakery,E440,0.749,Approved FDA,Soluble (Hot),Red Algae
+Heparin,Bioactive,Unknown,Prebiotic,Bakery,E440,4.9,Approved EU,Soluble,Animals
+Cellulose Sulfate,Structural,Coating,Gelling agent,Bakery,E440,1.744,Under review,Soluble,Plants (Modified)
+Alginate,Algal,Thickener/Emulsifier,Fat replacer,Dairy,E440,4.421,Approved FDA,Soluble,Brown Algae
+Gellan Gum,Bacterial,Gelling agent,Emulsifier,Functional Foods,E415,1.482,GRAS,Soluble,Bacteria
+Fucoidan,Algal,Nutraceutical,Thickener,Sauces/Dressings,E406,3.655,Approved FDA,Soluble,Brown Algae
+Hyaluronic Acid,Bioactive,Moisturizing supplement,Prebiotic,Bakery,E415,3.29,Under review,Soluble,Animals/Bacteria
+Chitin,Structural,Preservative,Dietary fiber,Meat products,Unknown,3.135,Under review,Insoluble,Fungi/Exoskeletons
+Cellulose Sulfate,Structural,Coating,Stabilizer,Nutraceuticals,E406,1.628,Approved EU,Soluble,Plants (Modified)
+Curdlan,Bacterial,Gelling agent,Dietary fiber,Beverages,E412,1.166,Restricted,Insoluble,Bacteria
+Alginate,Algal,Thickener/Emulsifier,Emulsifier,Nutraceuticals,E401,2.485,Restricted,Soluble,Brown Algae
+Hyaluronic Acid,Bioactive,Moisturizing supplement,Emulsifier,Confectionery,E415,2.458,Approved EU,Soluble,Animals/Bacteria
+Fucoidan,Algal,Nutraceutical,Prebiotic,Bakery,E410,0.823,Approved EU,Soluble,Brown Algae
+Carrageenan,Algal,Gelling/Stabilizing,Humectant,Confectionery,E401,0.726,Restricted,Soluble,Red Algae
+Agar,Algal,Gelling agent/Desserts,Coating,Functional Foods,E401,3.624,Approved EU,Soluble (Hot),Red Algae
+Gellan Gum,Bacterial,Gelling agent,Thickener,Dairy,E412,1.926,GRAS,Soluble,Bacteria
+Starch,Storage,Thickener/Binder,Thickener,Beverages,E406,3.853,Approved FDA,Soluble,Plants
+Heparin,Bioactive,Unknown,Humectant,Bakery,Unknown,4.832,GRAS,Soluble,Animals
+Cellulose Sulfate,Structural,Coating,Fat replacer,Dairy,E406,0.705,Under review,Soluble,Plants (Modified)
+Pullulan,Fungal,Edible films,Emulsifier,Meat products,E410,2.4,Approved EU,Soluble,Fungi
+Cellulose,Structural,Dietary fiber,Film-forming,Meat products,E440,2.723,GRAS,Insoluble,Plants
+Cellulose,Structural,Dietary fiber,Gelling agent,Meat products,E401,2.563,Restricted,Insoluble,Plants
+Heparin,Bioactive,Unknown,Thickener,Confectionery,E401,1.141,Restricted,Soluble,Animals
+Heparin,Bioactive,Unknown,Fat replacer,Meat products,E406,4.609,Restricted,Soluble,Animals
+Scleroglucan,Fungal,Thickener,Gelling agent,Nutraceuticals,E406,4.954,Approved EU,Soluble,Fungi
+Chitin,Structural,Preservative,Prebiotic,Sauces/Dressings,E401,3.082,GRAS,Insoluble,Fungi/Exoskeletons
+Alginate,Algal,Thickener/Emulsifier,Gelling agent,Bakery,E415,0.764,Restricted,Soluble,Brown Algae
+Locust Bean Gum,Storage,Stabilizer/Thickener,Fat replacer,Beverages,E440,2.132,Approved FDA,Soluble,Plants
+Laminarin,Algal,Supplement,Prebiotic,Sauces/Dressings,E401,1.363,Restricted,Soluble,Brown Algae
+Scleroglucan,Fungal,Thickener,Fat replacer,Meat products,Unknown,4.536,GRAS,Soluble,Fungi
+Starch,Storage,Thickener/Binder,Emulsifier,Beverages,E410,0.747,Restricted,Soluble,Plants
+Gellan Gum,Bacterial,Gelling agent,Coating,Dairy,E401,2.893,Approved FDA,Soluble,Bacteria
+Heparin,Bioactive,Unknown,Gelling agent,Sauces/Dressings,E406,0.918,Restricted,Soluble,Animals
+Alginate,Algal,Thickener/Emulsifier,Fat replacer,Nutraceuticals,E412,2.412,Restricted,Soluble,Brown Algae
+Laminarin,Algal,Supplement,Fat replacer,Beverages,Unknown,4.721,Approved EU,Soluble,Brown Algae
+Carrageenan,Algal,Gelling/Stabilizing,Dietary fiber,Nutraceuticals,E415,2.674,Under review,Soluble,Red Algae
+Cellulose Sulfate,Structural,Coating,Stabilizer,Functional Foods,E401,2.909,Restricted,Soluble,Plants (Modified)
+Locust Bean Gum,Storage,Stabilizer/Thickener,Humectant,Confectionery,E440,0.445,Approved FDA,Soluble,Plants
+Starch,Storage,Thickener/Binder,Stabilizer,Bakery,E410,2.796,Approved EU,Soluble,Plants
+Chitin,Structural,Preservative,Thickener,Sauces/Dressings,E410,4.245,Approved EU,Insoluble,Fungi/Exoskeletons
+Dextran,Bacterial,Coating,Coating,Beverages,Unknown,4.268,Restricted,Soluble,Bacteria
+Agar,Algal,Gelling agent/Desserts,Stabilizer,Confectionery,E401,3.738,GRAS,Soluble (Hot),Red Algae
+Welan Gum,Bacterial,Unknown,Emulsifier,Functional Foods,E440,0.141,Restricted,Soluble,Bacteria
+Alginate,Algal,Thickener/Emulsifier,Thickener,Dairy,E440,2.912,Restricted,Soluble,Brown Algae
+Laminarin,Algal,Supplement,Emulsifier,Bakery,E406,1.833,GRAS,Soluble,Brown Algae
+Agar,Algal,Gelling agent/Desserts,Gelling agent,Bakery,E415,4.157,Restricted,Soluble (Hot),Red Algae
+Heparin,Bioactive,Unknown,Emulsifier,Nutraceuticals,E440,0.709,Under review,Soluble,Animals
+Welan Gum,Bacterial,Unknown,Prebiotic,Nutraceuticals,E412,3.616,Restricted,Soluble,Bacteria
+Fucoidan,Algal,Nutraceutical,Thickener,Meat products,E401,0.788,GRAS,Soluble,Brown Algae
+Laminarin,Algal,Supplement,Emulsifier,Beverages,E401,1.988,Restricted,Soluble,Brown Algae
+Scleroglucan,Fungal,Thickener,Coating,Meat products,E415,2.514,Approved EU,Soluble,Fungi
+Levan,Bacterial,Food stabilizer,Emulsifier,Meat products,E401,2.612,Approved EU,Soluble,Bacteria
+Gellan Gum,Bacterial,Gelling agent,Stabilizer,Functional Foods,E415,0.289,Restricted,Soluble,Bacteria
+Hyaluronic Acid,Bioactive,Moisturizing supplement,Film-forming,Dairy,Unknown,3.465,Restricted,Soluble,Animals/Bacteria
+Pectin,Structural,Jam/Jelly gelling,Dietary fiber,Functional Foods,E406,0.283,Approved FDA,Soluble,Plants
+Fucoidan,Algal,Nutraceutical,Dietary fiber,Confectionery,E410,0.551,GRAS,Soluble,Brown Algae
+Alginate,Algal,Thickener/Emulsifier,Humectant,Sauces/Dressings,E401,1.205,Approved EU,Soluble,Brown Algae
+Cellulose Sulfate,Structural,Coating,Gelling agent,Dairy,E406,2.99,Approved FDA,Soluble,Plants (Modified)
+Xanthan Gum,Bacterial,Emulsifier/Thickener,Film-forming,Confectionery,E440,4.647,Approved EU,Soluble,Bacteria
+Inulin,Storage,Prebiotic/Sweetener,Gelling agent,Bakery,E415,4.933,Restricted,Soluble,Plants
+Cellulose,Structural,Dietary fiber,Thickener,Sauces/Dressings,E401,4.718,GRAS,Insoluble,Plants
+Alginate,Algal,Thickener/Emulsifier,Prebiotic,Functional Foods,E415,0.982,Restricted,Soluble,Brown Algae
+Gellan Gum,Bacterial,Gelling agent,Fat replacer,Beverages,E440,3.377,Approved FDA,Soluble,Bacteria
+Levan,Bacterial,Food stabilizer,Film-forming,Dairy,E415,4.039,Approved EU,Soluble,Bacteria
+Starch,Storage,Thickener/Binder,Humectant,Functional Foods,E412,2.936,GRAS,Soluble,Plants
+Dextran,Bacterial,Coating,Emulsifier,Beverages,E440,2.321,GRAS,Soluble,Bacteria
+Welan Gum,Bacterial,Unknown,Stabilizer,Confectionery,Unknown,3.41,Approved EU,Soluble,Bacteria
+Konjac Glucomannan,Storage,Gelling/Coating,Emulsifier,Sauces/Dressings,E412,3.929,Approved FDA,Soluble,Plants
+Dextran,Bacterial,Coating,Fat replacer,Functional Foods,E401,4.454,Restricted,Soluble,Bacteria
+Agar,Algal,Gelling agent/Desserts,Stabilizer,Dairy,E406,2.839,Restricted,Soluble (Hot),Red Algae
+Chitin,Structural,Preservative,Thickener,Beverages,Unknown,4.354,Under review,Insoluble,Fungi/Exoskeletons
+Glycogen,Storage,Unknown,Coating,Dairy,E412,1.575,Approved FDA,Soluble,Animals
+Hyaluronic Acid,Bioactive,Moisturizing supplement,Gelling agent,Meat products,E415,1.823,GRAS,Soluble,Animals/Bacteria
+Glycogen,Storage,Unknown,Emulsifier,Nutraceuticals,E410,4.931,Approved FDA,Soluble,Animals
+Konjac Glucomannan,Storage,Gelling/Coating,Coating,Beverages,E401,4.859,Restricted,Soluble,Plants
+Cellulose,Structural,Dietary fiber,Fat replacer,Meat products,E412,2.051,Under review,Insoluble,Plants
+Scleroglucan,Fungal,Thickener,Emulsifier,Nutraceuticals,E410,2.567,Under review,Soluble,Fungi
+Pectin,Structural,Jam/Jelly gelling,Fat replacer,Dairy,E440,2.072,Restricted,Soluble,Plants
+Inulin,Storage,Prebiotic/Sweetener,Thickener,Bakery,E440,3.955,Under review,Soluble,Plants
+Starch,Storage,Thickener/Binder,Emulsifier,Dairy,E410,1.885,Under review,Soluble,Plants
+Carrageenan,Algal,Gelling/Stabilizing,Gelling agent,Confectionery,E412,4.372,GRAS,Soluble,Red Algae
+Alginate,Algal,Thickener/Emulsifier,Coating,Nutraceuticals,E440,2.68,Restricted,Soluble,Brown Algae
+Chitin,Structural,Preservative,Gelling agent,Beverages,E440,0.551,Restricted,Insoluble,Fungi/Exoskeletons
+Konjac Glucomannan,Storage,Gelling/Coating,Dietary fiber,Confectionery,E412,1.65,Approved FDA,Soluble,Plants
+Pectin,Structural,Jam/Jelly gelling,Humectant,Nutraceuticals,E406,3.514,Restricted,Soluble,Plants
+Chitin,Structural,Preservative,Prebiotic,Nutraceuticals,E401,2.73,Restricted,Insoluble,Fungi/Exoskeletons
+Heparin,Bioactive,Unknown,Stabilizer,Sauces/Dressings,E415,0.166,Under review,Soluble,Animals
+Konjac Glucomannan,Storage,Gelling/Coating,Dietary fiber,Bakery,Unknown,1.814,Restricted,Soluble,Plants
+Guar Gum,Storage,Thickener,Stabilizer,Bakery,E406,4.341,Restricted,Soluble,Plants
+Inulin,Storage,Prebiotic/Sweetener,Prebiotic,Beverages,E401,0.717,Approved FDA,Soluble,Plants
+Carrageenan,Algal,Gelling/Stabilizing,Gelling agent,Meat products,Unknown,3.564,Restricted,Soluble,Red Algae
+Locust Bean Gum,Storage,Stabilizer/Thickener,Stabilizer,Meat products,E406,4.154,GRAS,Soluble,Plants
+Levan,Bacterial,Food stabilizer,Fat replacer,Meat products,E406,1.001,Restricted,Soluble,Bacteria
+Guar Gum,Storage,Thickener,Coating,Beverages,E440,2.19,Under review,Soluble,Plants
+Carrageenan,Algal,Gelling/Stabilizing,Thickener,Confectionery,E401,3.616,Under review,Soluble,Red Algae
+Laminarin,Algal,Supplement,Emulsifier,Sauces/Dressings,E440,4.932,Approved FDA,Soluble,Brown Algae
+Starch,Storage,Thickener/Binder,Emulsifier,Nutraceuticals,E406,2.502,Approved FDA,Soluble,Plants
+Chitin,Structural,Preservative,Dietary fiber,Meat products,E415,3.614,Restricted,Insoluble,Fungi/Exoskeletons
+Heparin,Bioactive,Unknown,Coating,Dairy,E401,1.101,Approved EU,Soluble,Animals
+Levan,Bacterial,Food stabilizer,Film-forming,Beverages,E415,1.894,Approved FDA,Soluble,Bacteria
+Xanthan Gum,Bacterial,Emulsifier/Thickener,Stabilizer,Bakery,E410,4.071,GRAS,Soluble,Bacteria
+Dextran,Bacterial,Coating,Prebiotic,Dairy,E440,2.501,Restricted,Soluble,Bacteria
+Levan,Bacterial,Food stabilizer,Dietary fiber,Sauces/Dressings,E410,4.143,Restricted,Soluble,Bacteria
+Locust Bean Gum,Storage,Stabilizer/Thickener,Fat replacer,Dairy,E406,2.3,Approved FDA,Soluble,Plants
+Hyaluronic Acid,Bioactive,Moisturizing supplement,Film-forming,Beverages,E415,2.185,Approved FDA,Soluble,Animals/Bacteria
+Scleroglucan,Fungal,Thickener,Dietary fiber,Meat products,E440,3.106,GRAS,Soluble,Fungi
+Glycogen,Storage,Unknown,Gelling agent,Dairy,E440,0.092,Restricted,Soluble,Animals
+Chitin,Structural,Preservative,Coating,Dairy,E440,2.226,Under review,Insoluble,Fungi/Exoskeletons
+Cellulose,Structural,Dietary fiber,Prebiotic,Functional Foods,E406,1.122,Restricted,Insoluble,Plants
+Cellulose Sulfate,Structural,Coating,Dietary fiber,Dairy,E406,4.283,GRAS,Soluble,Plants (Modified)
+Alginate,Algal,Thickener/Emulsifier,Coating,Functional Foods,Unknown,3.228,Restricted,Soluble,Brown Algae
+Starch,Storage,Thickener/Binder,Fat replacer,Confectionery,E415,1.425,Approved FDA,Soluble,Plants
+Dextran,Bacterial,Coating,Dietary fiber,Confectionery,E401,4.502,Restricted,Soluble,Bacteria
+Cellulose,Structural,Dietary fiber,Thickener,Bakery,E406,3.955,Under review,Insoluble,Plants
+Gellan Gum,Bacterial,Gelling agent,Humectant,Sauces/Dressings,E410,0.86,Under review,Soluble,Bacteria
+Levan,Bacterial,Food stabilizer,Stabilizer,Functional Foods,E406,3.085,Restricted,Soluble,Bacteria
+Cellulose,Structural,Dietary fiber,Humectant,Functional Foods,E406,4.698,Restricted,Insoluble,Plants
+Gellan Gum,Bacterial,Gelling agent,Emulsifier,Functional Foods,E410,2.591,Restricted,Soluble,Bacteria
+Agar,Algal,Gelling agent/Desserts,Gelling agent,Beverages,E415,0.601,Under review,Soluble (Hot),Red Algae
+Carrageenan,Algal,Gelling/Stabilizing,Prebiotic,Beverages,E410,1.027,GRAS,Soluble,Red Algae
+Starch,Storage,Thickener/Binder,Dietary fiber,Bakery,E440,3.852,Approved EU,Soluble,Plants
+Starch,Storage,Thickener/Binder,Humectant,Dairy,E415,1.918,Approved EU,Soluble,Plants
+Pullulan,Fungal,Edible films,Fat replacer,Beverages,E406,3.266,Approved EU,Soluble,Fungi
+Dextran,Bacterial,Coating,Stabilizer,Confectionery,E440,3.902,Restricted,Soluble,Bacteria
+Konjac Glucomannan,Storage,Gelling/Coating,Prebiotic,Bakery,E410,0.424,Approved EU,Soluble,Plants
+Fucoidan,Algal,Nutraceutical,Thickener,Dairy,E401,2.301,Under review,Soluble,Brown Algae
+Chitin,Structural,Preservative,Gelling agent,Beverages,E410,1.317,Approved EU,Insoluble,Fungi/Exoskeletons
+Glycogen,Storage,Unknown,Gelling agent,Nutraceuticals,Unknown,1.813,Approved EU,Soluble,Animals
+Carrageenan,Algal,Gelling/Stabilizing,Gelling agent,Nutraceuticals,Unknown,0.12,GRAS,Soluble,Red Algae
+Guar Gum,Storage,Thickener,Gelling agent,Confectionery,E440,2.105,Approved FDA,Soluble,Plants
+Fucoidan,Algal,Nutraceutical,Coating,Beverages,E406,1.501,Approved EU,Soluble,Brown Algae
+Scleroglucan,Fungal,Thickener,Humectant,Bakery,E401,4.88,Approved FDA,Soluble,Fungi
+Guar Gum,Storage,Thickener,Humectant,Bakery,E406,2.614,Approved FDA,Soluble,Plants
+Chitin,Structural,Preservative,Stabilizer,Bakery,E415,0.125,Under review,Insoluble,Fungi/Exoskeletons
+Konjac Glucomannan,Storage,Gelling/Coating,Emulsifier,Confectionery,Unknown,1.831,Approved EU,Soluble,Plants
+Starch,Storage,Thickener/Binder,Fat replacer,Beverages,E406,0.426,Approved EU,Soluble,Plants
+Inulin,Storage,Prebiotic/Sweetener,Prebiotic,Nutraceuticals,E406,4.767,Approved FDA,Soluble,Plants
+Welan Gum,Bacterial,Unknown,Film-forming,Meat products,E412,3.729,Restricted,Soluble,Bacteria
+Levan,Bacterial,Food stabilizer,Film-forming,Functional Foods,E406,1.258,Approved EU,Soluble,Bacteria
+Scleroglucan,Fungal,Thickener,Prebiotic,Functional Foods,E401,2.922,Under review,Soluble,Fungi
+Dextran,Bacterial,Coating,Emulsifier,Confectionery,E440,2.444,Restricted,Soluble,Bacteria
+Levan,Bacterial,Food stabilizer,Humectant,Meat products,Unknown,1.601,GRAS,Soluble,Bacteria
+Laminarin,Algal,Supplement,Dietary fiber,Functional Foods,E406,2.84,Approved FDA,Soluble,Brown Algae
+Fucoidan,Algal,Nutraceutical,Gelling agent,Nutraceuticals,E406,4.448,Under review,Soluble,Brown Algae
+Inulin,Storage,Prebiotic/Sweetener,Humectant,Functional Foods,E410,3.023,Under review,Soluble,Plants
+Alginate,Algal,Thickener/Emulsifier,Dietary fiber,Bakery,E401,0.908,Approved FDA,Soluble,Brown Algae
+Levan,Bacterial,Food stabilizer,Emulsifier,Sauces/Dressings,E406,0.372,Approved FDA,Soluble,Bacteria
+Alginate,Algal,Thickener/Emulsifier,Emulsifier,Sauces/Dressings,E401,0.058,GRAS,Soluble,Brown Algae
+Welan Gum,Bacterial,Unknown,Fat replacer,Confectionery,E412,2.842,Approved FDA,Soluble,Bacteria
+Agar,Algal,Gelling agent/Desserts,Film-forming,Dairy,E412,1.425,Approved EU,Soluble (Hot),Red Algae
+Locust Bean Gum,Storage,Stabilizer/Thickener,Stabilizer,Dairy,E415,1.397,Under review,Soluble,Plants
+Scleroglucan,Fungal,Thickener,Gelling agent,Functional Foods,E440,3.783,Approved FDA,Soluble,Fungi
+Pectin,Structural,Jam/Jelly gelling,Stabilizer,Confectionery,E401,4.016,Restricted,Soluble,Plants
+Cellulose,Structural,Dietary fiber,Prebiotic,Functional Foods,E401,0.629,Approved EU,Insoluble,Plants
+Laminarin,Algal,Supplement,Fat replacer,Functional Foods,E406,2.886,Approved FDA,Soluble,Brown Algae
+Starch,Storage,Thickener/Binder,Humectant,Bakery,E412,1.429,Restricted,Soluble,Plants
+Cellulose,Structural,Dietary fiber,Film-forming,Bakery,E410,3.227,GRAS,Insoluble,Plants
+Guar Gum,Storage,Thickener,Gelling agent,Functional Foods,E440,1.512,Approved FDA,Soluble,Plants
+Konjac Glucomannan,Storage,Gelling/Coating,Fat replacer,Functional Foods,E401,2.787,Approved FDA,Soluble,Plants
+Guar Gum,Storage,Thickener,Humectant,Bakery,E412,1.499,Restricted,Soluble,Plants
+Guar Gum,Storage,Thickener,Gelling agent,Sauces/Dressings,E415,0.523,Approved EU,Soluble,Plants
+Cellulose,Structural,Dietary fiber,Thickener,Beverages,E401,4.968,Restricted,Insoluble,Plants
+Agar,Algal,Gelling agent/Desserts,Emulsifier,Dairy,E406,3.623,Approved FDA,Soluble (Hot),Red Algae
+Cellulose Sulfate,Structural,Coating,Thickener,Bakery,E410,4.418,GRAS,Soluble,Plants (Modified)
+Chitin,Structural,Preservative,Thickener,Meat products,E401,1.326,Under review,Insoluble,Fungi/Exoskeletons
+Carrageenan,Algal,Gelling/Stabilizing,Prebiotic,Beverages,E406,2.921,GRAS,Soluble,Red Algae
+Heparin,Bioactive,Unknown,Fat replacer,Beverages,Unknown,2.925,Restricted,Soluble,Animals
+Fucoidan,Algal,Nutraceutical,Coating,Dairy,E415,2.643,Under review,Soluble,Brown Algae
+Guar Gum,Storage,Thickener,Coating,Meat products,E410,3.865,Restricted,Soluble,Plants
+Agar,Algal,Gelling agent/Desserts,Gelling agent,Meat products,Unknown,1.488,GRAS,Soluble (Hot),Red Algae
+Alginate,Algal,Thickener/Emulsifier,Film-forming,Confectionery,E440,3.239,Approved EU,Soluble,Brown Algae
+Welan Gum,Bacterial,Unknown,Gelling agent,Dairy,E412,0.311,GRAS,Soluble,Bacteria
+Scleroglucan,Fungal,Thickener,Stabilizer,Nutraceuticals,Unknown,1.931,Restricted,Soluble,Fungi
+Chitin,Structural,Preservative,Fat replacer,Confectionery,Unknown,2.957,Under review,Insoluble,Fungi/Exoskeletons
+Locust Bean Gum,Storage,Stabilizer/Thickener,Fat replacer,Meat products,E440,2.276,Approved EU,Soluble,Plants
+Locust Bean Gum,Storage,Stabilizer/Thickener,Gelling agent,Beverages,E406,4.584,Restricted,Soluble,Plants
+Pullulan,Fungal,Edible films,Humectant,Confectionery,Unknown,2.007,GRAS,Soluble,Fungi

@@ -1,0 +1,99 @@
+======================================================================
+POLYSACCHARIDE PROJECT — DATASET PATHS REFERENCE (CLINICAL EDITION)
+Generated: 2026-03-18 07:21 UTC
+======================================================================
+
+SINGLE RAW FOLDER RULE
+All downloaded RAW datasets are stored in ONE folder named:
+  Polysaccharide_Datasets_All
+  at: D:\Sravan\PDD\apppp\android\PolysaccharideProject\datasets\raw\Polysaccharide_Datasets_All\
+
+----------------------------------------------------------------------
+RAW DATASETS
+----------------------------------------------------------------------
+  [real_01] PubChem Polysaccharide Compounds
+       Path:   D:\Sravan\PDD\apppp\android\PolysaccharideProject\datasets\raw\Polysaccharide_Datasets_All\realdata_01_pubchem_polysaccharides.csv
+       Source: PubChem (NCBI)
+       URL:    https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/
+       License:Public Domain (US Government, free for all uses)
+       Rows:   10
+
+  [real_02] ChEMBL Glycan/Carbohydrate Molecules
+       Path:   D:\Sravan\PDD\apppp\android\PolysaccharideProject\datasets\raw\Polysaccharide_Datasets_All\realdata_02_chembl_glycan_molecules.csv
+       Source: ChEMBL (European Bioinformatics Institute)
+       URL:    https://www.ebi.ac.uk/chembl/api/data/molecule
+       License:CC BY-SA 3.0 (ChEMBL database)
+       Rows:   60
+
+  [real_05] PubChem Polysaccharide Properties (Expert-Curated)
+       Path:   D:\Sravan\PDD\apppp\android\PolysaccharideProject\datasets\raw\Polysaccharide_Datasets_All\realdata_05_pubchem_polysaccharide_properties.csv
+       Source: PubChem (NCBI) + Expert Curation
+       URL:    https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/
+       License:Public Domain (PubChem data) + CC BY 4.0 (expert annotations)
+       Rows:   20
+
+  [real_06] ChEMBL Polysaccharide Synthase Bioactivity
+       Path:   D:\Sravan\PDD\apppp\android\PolysaccharideProject\datasets\raw\Polysaccharide_Datasets_All\realdata_06_chembl_polysaccharide_bioactivity.csv
+       Source: ChEMBL (European Bioinformatics Institute)
+       URL:    https://www.ebi.ac.uk/chembl/api/data/activity
+       License:CC BY-SA 3.0
+       Rows:   430
+
+----------------------------------------------------------------------
+PROCESSED DATASETS
+----------------------------------------------------------------------
+  master_clinical_dataset.csv: D:\Sravan\PDD\apppp\android\PolysaccharideProject\datasets\processed\master_clinical_dataset.csv
+  cleaned_dataset_01_polysaccharide_types.csv: D:\Sravan\PDD\apppp\android\PolysaccharideProject\datasets\processed\cleaned_dataset_01_polysaccharide_types.csv
+  cleaned_dataset_02_carbohydrate_classification.csv: D:\Sravan\PDD\apppp\android\PolysaccharideProject\datasets\processed\cleaned_dataset_02_carbohydrate_classification.csv
+  cleaned_dataset_03_molecular_properties.csv: D:\Sravan\PDD\apppp\android\PolysaccharideProject\datasets\processed\cleaned_dataset_03_molecular_properties.csv
+  cleaned_dataset_04_bioactivity_data.csv: D:\Sravan\PDD\apppp\android\PolysaccharideProject\datasets\processed\cleaned_dataset_04_bioactivity_data.csv
+  cleaned_dataset_05_food_applications.csv: D:\Sravan\PDD\apppp\android\PolysaccharideProject\datasets\processed\cleaned_dataset_05_food_applications.csv
+  cleaned_dataset_06_medical_applications.csv: D:\Sravan\PDD\apppp\android\PolysaccharideProject\datasets\processed\cleaned_dataset_06_medical_applications.csv
+  cleaned_dataset_07_chemical_compositions.csv: D:\Sravan\PDD\apppp\android\PolysaccharideProject\datasets\processed\cleaned_dataset_07_chemical_compositions.csv
+  cleaned_dataset_08_plant_sources.csv: D:\Sravan\PDD\apppp\android\PolysaccharideProject\datasets\processed\cleaned_dataset_08_plant_sources.csv
+  cleaned_dataset_09_structural_data.csv: D:\Sravan\PDD\apppp\android\PolysaccharideProject\datasets\processed\cleaned_dataset_09_structural_data.csv
+  cleaned_dataset_10_pharmacological_data.csv: D:\Sravan\PDD\apppp\android\PolysaccharideProject\datasets\processed\cleaned_dataset_10_pharmacological_data.csv
+  master_combined_dataset.csv: D:\Sravan\PDD\apppp\android\PolysaccharideProject\datasets\processed\master_combined_dataset.csv
+
+----------------------------------------------------------------------
+MODEL ARTIFACTS
+----------------------------------------------------------------------
+  clinical_model.pkl: D:\Sravan\PDD\apppp\android\PolysaccharideProject\models\clinical\clinical_model.pkl
+  model_manifest.json: D:\Sravan\PDD\apppp\android\PolysaccharideProject\models\clinical\model_manifest.json
+  clinical_scaler.pkl: D:\Sravan\PDD\apppp\android\PolysaccharideProject\models\clinical\clinical_scaler.pkl
+  clinical_label_encoders.pkl: D:\Sravan\PDD\apppp\android\PolysaccharideProject\models\clinical\clinical_label_encoders.pkl
+  clinical_feature_columns.json: D:\Sravan\PDD\apppp\android\PolysaccharideProject\models\clinical\clinical_feature_columns.json
+  clinical_label_classes.json: D:\Sravan\PDD\apppp\android\PolysaccharideProject\models\clinical\clinical_label_classes.json
+
+----------------------------------------------------------------------
+REPORTS
+----------------------------------------------------------------------
+  android_safety_audit.md: D:\Sravan\PDD\apppp\android\PolysaccharideProject\reports\android_safety_audit.md
+  audit_checklist.json: D:\Sravan\PDD\apppp\android\PolysaccharideProject\reports\audit_checklist.json
+  audit_run_log.txt: D:\Sravan\PDD\apppp\android\PolysaccharideProject\reports\audit_run_log.txt
+  audit_summary.md: D:\Sravan\PDD\apppp\android\PolysaccharideProject\reports\audit_summary.md
+  claims_checklist.md: D:\Sravan\PDD\apppp\android\PolysaccharideProject\reports\claims_checklist.md
+  clinical_calibration_curves.png: D:\Sravan\PDD\apppp\android\PolysaccharideProject\reports\clinical_calibration_curves.png
+  clinical_confusion_matrix.png: D:\Sravan\PDD\apppp\android\PolysaccharideProject\reports\clinical_confusion_matrix.png
+  clinical_readiness_report.md: D:\Sravan\PDD\apppp\android\PolysaccharideProject\reports\clinical_readiness_report.md
+  clinical_test_results.json: D:\Sravan\PDD\apppp\android\PolysaccharideProject\reports\clinical_test_results.json
+  clinical_use_disclaimer.md: D:\Sravan\PDD\apppp\android\PolysaccharideProject\reports\clinical_use_disclaimer.md
+  confusion_matrix.png: D:\Sravan\PDD\apppp\android\PolysaccharideProject\reports\confusion_matrix.png
+  dataset_summary.md: D:\Sravan\PDD\apppp\android\PolysaccharideProject\reports\dataset_summary.md
+  executive_summary_for_doctors.md: D:\Sravan\PDD\apppp\android\PolysaccharideProject\reports\executive_summary_for_doctors.md
+  full_report.md: D:\Sravan\PDD\apppp\android\PolysaccharideProject\reports\full_report.md
+  model_accuracy_recompute.json: D:\Sravan\PDD\apppp\android\PolysaccharideProject\reports\model_accuracy_recompute.json
+  model_card.md: D:\Sravan\PDD\apppp\android\PolysaccharideProject\reports\model_card.md
+  model_comparison.png: D:\Sravan\PDD\apppp\android\PolysaccharideProject\reports\model_comparison.png
+  red_flag_closure_evidence.md: D:\Sravan\PDD\apppp\android\PolysaccharideProject\reports\red_flag_closure_evidence.md
+  test_results.json: D:\Sravan\PDD\apppp\android\PolysaccharideProject\reports\test_results.json
+  training_results.md: D:\Sravan\PDD\apppp\android\PolysaccharideProject\reports\training_results.md
+
+----------------------------------------------------------------------
+APP ASSETS (copy to Android assets/)
+----------------------------------------------------------------------
+  android_preprocessing.json: D:\Sravan\PDD\apppp\android\PolysaccharideProject\app_assets\android_preprocessing.json
+  master_clinical_dataset.json: D:\Sravan\PDD\apppp\android\PolysaccharideProject\app_assets\master_clinical_dataset.json
+  master_dataset.json: D:\Sravan\PDD\apppp\android\PolysaccharideProject\app_assets\master_dataset.json
+  model_manifest.json: D:\Sravan\PDD\apppp\android\PolysaccharideProject\app_assets\model_manifest.json
+  polysaccharide_knowledge_base.json: D:\Sravan\PDD\apppp\android\PolysaccharideProject\app_assets\polysaccharide_knowledge_base.json

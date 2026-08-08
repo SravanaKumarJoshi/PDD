@@ -1,0 +1,431 @@
+target_name,target_chembl_id,molecule_chembl_id,pref_name,standard_type,standard_value,standard_units,assay_type,assay_description,document_year
+glucan synthase,CHEMBL2037,CHEMBL396608,,IC50,15000.0,nM,B,"Inhibition of Candida albicans 1,3 beta-D-glucan synthase",2010
+glucan synthase,CHEMBL2037,CHEMBL438668,,IC50,41000.0,nM,B,"Inhibition of Candida albicans 1,3 beta-D-glucan synthase",2010
+glucan synthase,CHEMBL2037,CHEMBL396607,,IC50,49000.0,nM,B,"Inhibition of Candida albicans 1,3 beta-D-glucan synthase",2010
+glucan synthase,CHEMBL2037,CHEMBL412243,,IC50,48000.0,nM,B,"Inhibition of Candida albicans 1,3 beta-D-glucan synthase",2010
+glucan synthase,CHEMBL2037,CHEMBL1254586,,IC50,53000.0,nM,B,"Inhibition of Candida albicans 1,3 beta-D-glucan synthase",2010
+glucan synthase,CHEMBL2037,CHEMBL1254587,,IC50,81000.0,nM,B,"Inhibition of Candida albicans 1,3 beta-D-glucan synthase",2010
+glucan synthase,CHEMBL2037,CHEMBL1254665,,IC50,65000.0,nM,B,"Inhibition of Candida albicans 1,3 beta-D-glucan synthase",2010
+glucan synthase,CHEMBL2037,CHEMBL1254666,,IC50,63000.0,nM,B,"Inhibition of Candida albicans 1,3 beta-D-glucan synthase",2010
+glucan synthase,CHEMBL2037,CHEMBL1254748,,IC50,22000.0,nM,B,"Inhibition of Candida albicans 1,3 beta-D-glucan synthase",2010
+glucan synthase,CHEMBL2037,CHEMBL1254749,,IC50,84000.0,nM,B,"Inhibition of Candida albicans 1,3 beta-D-glucan synthase",2010
+glucan synthase,CHEMBL2037,CHEMBL1254833,,IC50,66000.0,nM,B,"Inhibition of Candida albicans 1,3 beta-D-glucan synthase",2010
+glucan synthase,CHEMBL2037,CHEMBL1254834,,IC50,64000.0,nM,B,"Inhibition of Candida albicans 1,3 beta-D-glucan synthase",2010
+glucan synthase,CHEMBL2037,CHEMBL1253514,,IC50,52000.0,nM,B,"Inhibition of Candida albicans 1,3 beta-D-glucan synthase",2010
+glucan synthase,CHEMBL2037,CHEMBL1254920,,IC50,37000.0,nM,B,"Inhibition of Candida albicans 1,3 beta-D-glucan synthase",2010
+glucan synthase,CHEMBL2037,CHEMBL1255007,,IC50,58000.0,nM,B,"Inhibition of Candida albicans 1,3 beta-D-glucan synthase",2010
+glucan synthase,CHEMBL2037,CHEMBL284616,CHLOROGENIC ACID,IC50,90000.0,nM,B,"Inhibition of Candida albicans 1,3 beta-D-glucan synthase",2010
+glucan synthase,CHEMBL2037,CHEMBL1253515,ACULEACIN A,IC50,8000.0,nM,B,"Inhibition of Candida albicans 1,3 beta-D-glucan synthase",2010
+glucan synthase,CHEMBL2037,CHEMBL264241,ANIDULAFUNGIN,IC50,0.00183,ug.mL-1,B,Inhibition of Candida albicans ATCC 90028 glucan synthase at monophasic kinetics,2008
+glucan synthase,CHEMBL2037,CHEMBL1630575,CASPOFUNGIN,IC50,0.0005,ug.mL-1,B,Inhibition of Candida albicans ATCC 90028 glucan synthase at monophasic kinetics,2008
+glucan synthase,CHEMBL2037,CHEMBL457547,MICAFUNGIN,IC50,0.0188,ug.mL-1,B,Inhibition of Candida albicans ATCC 90028 glucan synthase at monophasic kinetics,2008
+glucan synthase,CHEMBL2037,CHEMBL1684743,,IC50,0.12,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL1684740,,IC50,0.18,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL1684882,,IC50,0.2,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL1684891,,IC50,0.25,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL1684892,,IC50,0.26,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL1684895,,IC50,0.42,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL1684889,,IC50,0.52,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL1684739,,IC50,0.53,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL1684881,,IC50,0.59,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL1684898,,IC50,0.6,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL1684890,,IC50,0.62,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL1684897,,IC50,0.62,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL1684744,,IC50,0.9,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL1684893,,IC50,0.9,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL1684888,,IC50,1.0,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL1684745,,IC50,1.1,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL1684896,,IC50,1.1,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL1684735,,IC50,1.3,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL1684742,,IC50,1.5,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL1684884,,IC50,1.7,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL1684894,,IC50,1.9,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL1684738,,IC50,2.2,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL1684748,,IC50,2.2,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL1684736,,IC50,2.2,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL1684741,,IC50,2.3,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL1684749,,IC50,2.8,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL1684746,,IC50,3.0,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL1684750,,IC50,4.3,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL1684737,,IC50,4.6,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL1684886,,IC50,6.1,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL1684885,,IC50,8.8,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL1684747,,IC50,10.0,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL1684880,,IC50,10.0,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL1684883,,IC50,10.0,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL1684887,,IC50,10.0,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-D-glucan synthase",2011
+glucan synthase,CHEMBL2037,CHEMBL2046596,,IC50,0.92,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans BWP17 membrane,2012
+glucan synthase,CHEMBL2037,CHEMBL2046597,,IC50,0.74,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans BWP17 membrane,2012
+glucan synthase,CHEMBL2037,CHEMBL2046598,,IC50,0.32,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans BWP17 membrane,2012
+glucan synthase,CHEMBL2037,CHEMBL2046599,,IC50,1.51,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans BWP17 membrane,2012
+glucan synthase,CHEMBL2037,CHEMBL2046600,,IC50,0.18,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans BWP17 membrane,2012
+glucan synthase,CHEMBL2037,CHEMBL2046601,,IC50,19.2,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans BWP17 membrane,2012
+glucan synthase,CHEMBL2037,CHEMBL2046602,,IC50,0.062,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans BWP17 membrane,2012
+glucan synthase,CHEMBL2037,CHEMBL2046603,,IC50,0.048,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans BWP17 membrane,2012
+glucan synthase,CHEMBL2037,CHEMBL2046604,,IC50,2.9,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans BWP17 membrane,2012
+glucan synthase,CHEMBL2037,CHEMBL2046734,,IC50,0.32,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans BWP17 membrane,2012
+glucan synthase,CHEMBL2037,CHEMBL2046735,,IC50,0.18,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans BWP17 membrane,2012
+glucan synthase,CHEMBL2037,CHEMBL2046736,,IC50,0.06,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans BWP17 membrane,2012
+glucan synthase,CHEMBL2037,CHEMBL2046737,,IC50,0.11,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans BWP17 membrane,2012
+glucan synthase,CHEMBL2037,CHEMBL2046738,,IC50,0.05,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans BWP17 membrane,2012
+glucan synthase,CHEMBL2037,CHEMBL2046739,,IC50,0.24,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans BWP17 membrane,2012
+glucan synthase,CHEMBL2037,CHEMBL2046740,,IC50,0.81,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans BWP17 membrane,2012
+glucan synthase,CHEMBL2037,CHEMBL2046741,,IC50,0.172,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans BWP17 membrane,2012
+glucan synthase,CHEMBL2037,CHEMBL2046742,,IC50,0.072,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans BWP17 membrane,2012
+glucan synthase,CHEMBL2037,CHEMBL2046743,,IC50,0.14,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans BWP17 membrane,2012
+glucan synthase,CHEMBL2037,CHEMBL2046744,,IC50,0.23,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans BWP17 membrane,2012
+glucan synthase,CHEMBL2037,CHEMBL2046745,,IC50,0.3,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans BWP17 membrane,2012
+glucan synthase,CHEMBL2037,CHEMBL2046746,,IC50,0.064,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans BWP17 membrane,2012
+glucan synthase,CHEMBL2037,CHEMBL2046747,,IC50,0.062,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans BWP17 membrane,2012
+glucan synthase,CHEMBL2037,CHEMBL2046748,,IC50,0.093,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans BWP17 membrane,2012
+glucan synthase,CHEMBL2037,CHEMBL1684737,,IC50,4.6,ug.mL-1,B,"Inhibition of 1,3-beta-D-glucan synthase in Candida albicans BWP17 membranes",2012
+glucan synthase,CHEMBL2037,CHEMBL1770510,,IC50,0.2,ug.mL-1,B,"Inhibition of 1,3-beta-D-glucan synthase in Candida albicans BWP17 membranes",2012
+glucan synthase,CHEMBL2037,CHEMBL2059384,,IC50,0.03,ug.mL-1,B,"Inhibition of 1,3-beta-D-glucan synthase in Candida albicans BWP17 membranes",2012
+glucan synthase,CHEMBL2037,CHEMBL2059385,,IC50,0.8,ug.mL-1,B,"Inhibition of 1,3-beta-D-glucan synthase in Candida albicans BWP17 membranes",2012
+glucan synthase,CHEMBL2037,CHEMBL2059473,,IC50,0.03,ug.mL-1,B,"Inhibition of 1,3-beta-D-glucan synthase in Candida albicans BWP17 membranes",2012
+glucan synthase,CHEMBL2037,CHEMBL2059474,,IC50,0.03,ug.mL-1,B,"Inhibition of 1,3-beta-D-glucan synthase in Candida albicans BWP17 membranes",2012
+glucan synthase,CHEMBL2037,CHEMBL2059475,,IC50,0.5,ug.mL-1,B,"Inhibition of 1,3-beta-D-glucan synthase in Candida albicans BWP17 membranes",2012
+glucan synthase,CHEMBL2037,CHEMBL2059476,,IC50,0.9,ug.mL-1,B,"Inhibition of 1,3-beta-D-glucan synthase in Candida albicans BWP17 membranes",2012
+glucan synthase,CHEMBL2037,CHEMBL2059477,,IC50,0.31,ug.mL-1,B,"Inhibition of 1,3-beta-D-glucan synthase in Candida albicans BWP17 membranes",2012
+glucan synthase,CHEMBL2037,CHEMBL2059478,,IC50,4.0,ug.mL-1,B,"Inhibition of 1,3-beta-D-glucan synthase in Candida albicans BWP17 membranes",2012
+glucan synthase,CHEMBL2037,CHEMBL2059479,,IC50,0.8,ug.mL-1,B,"Inhibition of 1,3-beta-D-glucan synthase in Candida albicans BWP17 membranes",2012
+glucan synthase,CHEMBL2037,CHEMBL2059480,,IC50,0.6,ug.mL-1,B,"Inhibition of 1,3-beta-D-glucan synthase in Candida albicans BWP17 membranes",2012
+glucan synthase,CHEMBL2037,CHEMBL1770516,,IC50,0.06,ug.mL-1,B,"Inhibition of 1,3-beta-D-glucan synthase in Candida albicans BWP17 membranes",2012
+glucan synthase,CHEMBL2037,CHEMBL2059481,,IC50,0.04,ug.mL-1,B,"Inhibition of 1,3-beta-D-glucan synthase in Candida albicans BWP17 membranes",2012
+glucan synthase,CHEMBL2037,CHEMBL2059482,,IC50,0.04,ug.mL-1,B,"Inhibition of 1,3-beta-D-glucan synthase in Candida albicans BWP17 membranes",2012
+glucan synthase,CHEMBL2037,CHEMBL2059483,,IC50,0.08,ug.mL-1,B,"Inhibition of 1,3-beta-D-glucan synthase in Candida albicans BWP17 membranes",2012
+glucan synthase,CHEMBL2037,CHEMBL2059484,,IC50,0.09,ug.mL-1,B,"Inhibition of 1,3-beta-D-glucan synthase in Candida albicans BWP17 membranes",2012
+glucan synthase,CHEMBL2037,CHEMBL2059485,,IC50,0.21,ug.mL-1,B,"Inhibition of 1,3-beta-D-glucan synthase in Candida albicans BWP17 membranes",2012
+glucan synthase,CHEMBL2037,CHEMBL2059486,,IC50,150.0,ug.mL-1,B,"Inhibition of 1,3-beta-D-glucan synthase in Candida albicans BWP17 membranes",2012
+glucan synthase,CHEMBL2037,CHEMBL1770660,,IC50,2.4,ug.mL-1,B,"Inhibition of 1,3-beta-D-glucan synthase in Candida albicans BWP17 membranes",2012
+glucan synthase,CHEMBL2037,CHEMBL2059487,,IC50,0.3,ug.mL-1,B,"Inhibition of 1,3-beta-D-glucan synthase in Candida albicans BWP17 membranes",2012
+glucan synthase,CHEMBL3134,CHEMBL385665,,IC50,120.0,nM,B,"In vitro inhibition of 1,3-beta-glucan synthase in Candida albicans membrane assay.",1997
+glucan synthase,CHEMBL3134,CHEMBL408285,,IC50,100.0,nM,B,"In vitro inhibition of 1,3-beta-glucan synthase in Candida albicans membrane assay.",1997
+glucan synthase,CHEMBL3134,CHEMBL405180,,IC50,450.0,nM,B,"In vitro inhibition of 1,3-beta-glucan synthase in Candida albicans membrane assay.",1997
+glucan synthase,CHEMBL3134,CHEMBL262998,,IC50,2900.0,nM,B,"In vitro inhibition of 1,3-beta-glucan synthase in Candida albicans membrane assay.",1997
+glucan synthase,CHEMBL3134,CHEMBL406357,,IC50,30.0,nM,B,"In vitro inhibition of 1,3-beta-glucan synthase in Candida albicans membrane assay.",1997
+glucan synthase,CHEMBL3134,CHEMBL407083,,IC50,10000.0,nM,B,"In vitro inhibition of 1,3-beta-glucan synthase in Candida albicans membrane assay.",1997
+glucan synthase,CHEMBL3134,CHEMBL407395,,IC50,70.0,nM,B,"In vitro inhibition of 1,3-beta-glucan synthase in Candida albicans membrane assay.",1997
+glucan synthase,CHEMBL3134,CHEMBL415669,,IC50,100.0,nM,B,"In vitro inhibition of 1,3-beta-glucan synthase in Candida albicans membrane assay.",1997
+glucan synthase,CHEMBL3134,CHEMBL414690,,IC50,35.0,nM,B,"In vitro inhibition of 1,3-beta-glucan synthase in Candida albicans membrane assay.",1997
+glucan synthase,CHEMBL3134,CHEMBL261821,,IC50,4000.0,nM,B,"In vitro inhibition of 1,3-beta-glucan synthase in Candida albicans membrane assay.",1997
+glucan synthase,CHEMBL3134,CHEMBL439260,,IC50,90.0,nM,B,"In vitro inhibition of 1,3-beta-glucan synthase in Candida albicans membrane assay.",1997
+glucan synthase,CHEMBL3134,CHEMBL268721,,IC50,40.0,nM,B,"In vitro inhibition of 1,3-beta-glucan synthase in Candida albicans membrane assay.",1997
+glucan synthase,CHEMBL3134,CHEMBL406668,,IC50,800.0,nM,B,"In vitro inhibition of 1,3-beta-glucan synthase in Candida albicans membrane assay.",1997
+glucan synthase,CHEMBL3134,CHEMBL438185,,IC50,150.0,nM,B,"In vitro inhibition of 1,3-beta-glucan synthase in Candida albicans membrane assay.",1997
+glucan synthase,CHEMBL3134,CHEMBL412499,,IC50,260.0,nM,B,"In vitro inhibition of 1,3-beta-glucan synthase in Candida albicans membrane assay.",1997
+glucan synthase,CHEMBL3134,CHEMBL386826,,IC50,200.0,nM,B,"In vitro inhibition of 1,3-beta-glucan synthase in Candida albicans membrane assay.",1997
+glucan synthase,CHEMBL3134,CHEMBL267988,,IC50,70.0,nM,B,"In vitro inhibition of 1,3-beta-glucan synthase in Candida albicans membrane assay.",1997
+glucan synthase,CHEMBL3134,CHEMBL412195,,IC50,150.0,nM,B,"In vitro inhibition of 1,3-beta-glucan synthase in Candida albicans membrane assay.",1997
+glucan synthase,CHEMBL3134,CHEMBL263952,,IC50,550.0,nM,B,"In vitro inhibition of 1,3-beta-glucan synthase in Candida albicans membrane assay.",1997
+glucan synthase,CHEMBL3134,CHEMBL387275,,IC50,200.0,nM,B,"In vitro inhibition of 1,3-beta-glucan synthase in Candida albicans membrane assay.",1997
+glucan synthase,CHEMBL3134,CHEMBL408469,,IC50,200.0,nM,B,"In vitro inhibition of 1,3-beta-glucan synthase in Candida albicans membrane assay.",1997
+glucan synthase,CHEMBL3134,CHEMBL410837,,IC50,80.0,nM,B,"In vitro inhibition of 1,3-beta-glucan synthase in Candida albicans membrane assay.",1997
+glucan synthase,CHEMBL3134,CHEMBL413522,,IC50,50.0,nM,B,"In vitro inhibition of 1,3-beta-glucan synthase in Candida albicans membrane assay.",1997
+glucan synthase,CHEMBL3134,CHEMBL428264,,IC50,70.0,nM,B,"In vitro inhibition of 1,3-beta-glucan synthase in Candida albicans membrane assay.",1997
+glucan synthase,CHEMBL3134,CHEMBL441213,,IC50,60.0,nM,B,"In vitro inhibition of 1,3-beta-glucan synthase in Candida albicans membrane assay.",1997
+glucan synthase,CHEMBL3134,CHEMBL264601,,IC50,600.0,nM,B,"In vitro inhibition of 1,3-beta-glucan synthase in Candida albicans membrane assay.",1997
+glucan synthase,CHEMBL3134,CHEMBL384968,,IC50,100.0,nM,B,"In vitro inhibition of 1,3-beta-glucan synthase in Candida albicans membrane assay.",1997
+glucan synthase,CHEMBL3134,CHEMBL268666,,IC50,3000.0,nM,B,"In vitro inhibition of 1,3-beta-glucan synthase in Candida albicans membrane assay.",1997
+glucan synthase,CHEMBL3134,CHEMBL385431,,IC50,5000.0,nM,B,"In vitro inhibition of 1,3-beta-glucan synthase in Candida albicans membrane assay.",1997
+glucan synthase,CHEMBL2042,CHEMBL410953,,IC50,10.0,nM,B,"Inhibition of 1,3-beta-glucan synthase",1997
+glucan synthase,CHEMBL2042,CHEMBL405670,,IC50,1.0,nM,B,"Inhibition of 1,3-beta-glucan synthase",1997
+glucan synthase,CHEMBL2042,CHEMBL437250,,IC50,50.0,nM,B,"Inhibition of 1,3-beta-glucan synthase",1997
+glucan synthase,CHEMBL2042,CHEMBL428614,,IC50,15.0,nM,B,"Inhibition of 1,3-beta-glucan synthase",1997
+glucan synthase,CHEMBL2042,CHEMBL438381,,IC50,30.0,nM,B,"Inhibition of 1,3-beta-glucan synthase",1997
+glucan synthase,CHEMBL2042,CHEMBL266048,,IC50,10.0,nM,B,"Inhibition of 1,3-beta-glucan synthase",1997
+glucan synthase,CHEMBL2042,CHEMBL265871,,IC50,4.0,nM,B,"Inhibition of 1,3-beta-glucan synthase",1997
+glucan synthase,CHEMBL2042,CHEMBL385234,,IC50,6.0,nM,B,"Inhibition of 1,3-beta-glucan synthase",1997
+glucan synthase,CHEMBL2042,CHEMBL269275,,IC50,300.0,nM,B,"Inhibition of 1,3-beta-glucan synthase",1997
+glucan synthase,CHEMBL2042,CHEMBL413521,,IC50,3.0,nM,B,"Inhibition of 1,3-beta-glucan synthase",1997
+glucan synthase,CHEMBL2042,CHEMBL429520,,IC50,25.0,nM,B,"Inhibition of 1,3-beta-glucan synthase",1997
+glucan synthase,CHEMBL2042,CHEMBL414362,,IC50,,nM,B,"Inhibition of 1,3-beta-glucan synthase",1997
+glucan synthase,CHEMBL2042,CHEMBL387213,,IC50,60.0,nM,B,"Inhibition of 1,3-beta-glucan synthase",1997
+glucan synthase,CHEMBL2042,CHEMBL414288,,IC50,20.0,nM,B,"Inhibition of 1,3-beta-glucan synthase",1997
+glucan synthase,CHEMBL2042,CHEMBL265537,,IC50,3.0,nM,B,"Inhibition of 1,3-beta-glucan synthase",1997
+glucan synthase,CHEMBL2042,CHEMBL385455,,IC50,1.5,nM,B,"Inhibition of 1,3-beta-glucan synthase",1997
+glucan synthase,CHEMBL2042,CHEMBL412790,,IC50,90.0,nM,B,"Inhibition of 1,3-beta-glucan synthase",1997
+glucan synthase,CHEMBL2042,CHEMBL264241,ANIDULAFUNGIN,IC50,0.0866,ug.mL-1,B,"Inhibition of Candida glabrata isolate 234 1,3-beta-D-glucan synthase wild type Fks1p/Fks2p F659V mutant",2009
+glucan synthase,CHEMBL2042,CHEMBL264241,ANIDULAFUNGIN,IC50,0.8581,ug.mL-1,B,"Inhibition of Candida glabrata isolate 41026 1,3-beta-D-glucan synthase wild type Fks1p/Fks2p F659S mutant",2009
+glucan synthase,CHEMBL2042,CHEMBL264241,ANIDULAFUNGIN,IC50,4.003,ug.mL-1,B,"Inhibition of Candida glabrata isolate 3830 1,3-beta-D-glucan synthase wild type Fks1p/Fks2p S663P mutant",2009
+glucan synthase,CHEMBL2042,CHEMBL264241,ANIDULAFUNGIN,IC50,0.1758,ug.mL-1,B,"Inhibition of Candida glabrata isolate 41400 1,3-beta-D-glucan synthase wild type Fks1p/Fks2p D666G mutant",2009
+glucan synthase,CHEMBL2042,CHEMBL264241,ANIDULAFUNGIN,IC50,0.1274,ug.mL-1,B,"Inhibition of Candida glabrata isolate 42031 1,3-beta-D-glucan synthase wild type Fks1p/Fks2p D666E mutant",2009
+glucan synthase,CHEMBL2042,CHEMBL264241,ANIDULAFUNGIN,IC50,0.0995,ug.mL-1,B,"Inhibition of Candida glabrata isolate 51916 1,3-beta-D-glucan synthase wild type Fks1p/Fks2p P667T mutant",2009
+glucan synthase,CHEMBL2042,CHEMBL264241,ANIDULAFUNGIN,IC50,0.0852,ug.mL-1,B,"Inhibition of Candida glabrata isolate 5416 1,3-beta-D-glucan synthase wild type Fks1p/Fks2p W1375L mutant",2009
+glucan synthase,CHEMBL2042,CHEMBL1630575,CASPOFUNGIN,IC50,0.1153,ug.mL-1,B,"Inhibition of Candida glabrata isolate 234 1,3-beta-D-glucan synthase wild type Fks1p/Fks2p F659V mutant",2009
+glucan synthase,CHEMBL2042,CHEMBL1630575,CASPOFUNGIN,IC50,1.064,ug.mL-1,B,"Inhibition of Candida glabrata isolate 41026 1,3-beta-D-glucan synthase wild type Fks1p/Fks2p F659S mutant",2009
+glucan synthase,CHEMBL2042,CHEMBL1630575,CASPOFUNGIN,IC50,5.115,ug.mL-1,B,"Inhibition of Candida glabrata isolate 3830 1,3-beta-D-glucan synthase wild type Fks1p/Fks2p S663P mutant",2009
+glucan synthase,CHEMBL2042,CHEMBL1630575,CASPOFUNGIN,IC50,0.5066,ug.mL-1,B,"Inhibition of Candida glabrata isolate 41400 1,3-beta-D-glucan synthase wild type Fks1p/Fks2p D666G mutant",2009
+glucan synthase,CHEMBL2042,CHEMBL1630575,CASPOFUNGIN,IC50,0.2579,ug.mL-1,B,"Inhibition of Candida glabrata isolate 42031 1,3-beta-D-glucan synthase wild type Fks1p/Fks2p D666E mutant",2009
+glucan synthase,CHEMBL2042,CHEMBL1630575,CASPOFUNGIN,IC50,0.1662,ug.mL-1,B,"Inhibition of Candida glabrata isolate 51916 1,3-beta-D-glucan synthase wild type Fks1p/Fks2p P667T mutant",2009
+glucan synthase,CHEMBL2042,CHEMBL1630575,CASPOFUNGIN,IC50,0.6084,ug.mL-1,B,"Inhibition of Candida glabrata isolate 5416 1,3-beta-D-glucan synthase wild type Fks1p/Fks2p W1375L mutant",2009
+glucan synthase,CHEMBL2042,CHEMBL457547,MICAFUNGIN,IC50,0.1135,ug.mL-1,B,"Inhibition of Candida glabrata isolate 234 1,3-beta-D-glucan synthase wild type Fks1p/Fks2p F659V mutant",2009
+glucan synthase,CHEMBL2042,CHEMBL457547,MICAFUNGIN,IC50,1.067,ug.mL-1,B,"Inhibition of Candida glabrata isolate 41026 1,3-beta-D-glucan synthase wild type Fks1p/Fks2p F659S mutant",2009
+glucan synthase,CHEMBL2042,CHEMBL457547,MICAFUNGIN,IC50,2.569,ug.mL-1,B,"Inhibition of Candida glabrata isolate 3830 1,3-beta-D-glucan synthase wild type Fks1p/Fks2p S663P mutant",2009
+glucan synthase,CHEMBL2042,CHEMBL457547,MICAFUNGIN,IC50,0.1006,ug.mL-1,B,"Inhibition of Candida glabrata isolate 41400 1,3-beta-D-glucan synthase wild type Fks1p/Fks2p D666G mutant",2009
+glucan synthase,CHEMBL2042,CHEMBL457547,MICAFUNGIN,IC50,0.0887,ug.mL-1,B,"Inhibition of Candida glabrata isolate 42031 1,3-beta-D-glucan synthase wild type Fks1p/Fks2p D666E mutant",2009
+glucan synthase,CHEMBL2042,CHEMBL457547,MICAFUNGIN,IC50,0.1109,ug.mL-1,B,"Inhibition of Candida glabrata isolate 51916 1,3-beta-D-glucan synthase wild type Fks1p/Fks2p P667T mutant",2009
+glucan synthase,CHEMBL2042,CHEMBL457547,MICAFUNGIN,IC50,0.0507,ug.mL-1,B,"Inhibition of Candida glabrata isolate 5416 1,3-beta-D-glucan synthase wild type Fks1p/Fks2p W1375L mutant",2009
+glucan synthase,CHEMBL1909,CHEMBL264241,ANIDULAFUNGIN,IC50,0.001003,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans 36082 assessed as incorporation of [3H]uridine diphosphoglucose,2007
+glucan synthase,CHEMBL1909,CHEMBL264241,ANIDULAFUNGIN,IC50,0.004715,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans 36082 assessed as incorporation of [3H]uridine diphosphoglucose in presence of 10% serum,2007
+glucan synthase,CHEMBL1909,CHEMBL264241,ANIDULAFUNGIN,IC50,0.01875,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans 36082 assessed as incorporation of [3H]uridine diphosphoglucose in presence of 20% serum,2007
+glucan synthase,CHEMBL1909,CHEMBL1630575,CASPOFUNGIN,IC50,0.0003,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans ATCC 90028,2007
+glucan synthase,CHEMBL1909,CHEMBL1630575,CASPOFUNGIN,IC50,0.0013,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans ATCC 90028 in presence of 10% human serum,2007
+glucan synthase,CHEMBL1909,CHEMBL1630575,CASPOFUNGIN,IC50,0.0021,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans ATCC 90028 in presence of 20% human serum,2007
+glucan synthase,CHEMBL1909,CHEMBL1630575,CASPOFUNGIN,IC50,0.0063,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans ATCC 90028 in presence of 50% human serum,2007
+glucan synthase,CHEMBL1909,CHEMBL1630575,CASPOFUNGIN,IC50,0.0009,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans ATCC 36082,2007
+glucan synthase,CHEMBL1909,CHEMBL1630575,CASPOFUNGIN,IC50,0.0028,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans ATCC 36082 in presence of 10% human serum,2007
+glucan synthase,CHEMBL1909,CHEMBL1630575,CASPOFUNGIN,IC50,0.0053,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans ATCC 36082 in presence of 20% human serum,2007
+glucan synthase,CHEMBL1909,CHEMBL1630575,CASPOFUNGIN,IC50,0.0087,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans ATCC 36082 in presence of 50% human serum,2007
+glucan synthase,CHEMBL1909,CHEMBL1630575,CASPOFUNGIN,IC50,0.0147,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans SC5314,2007
+glucan synthase,CHEMBL1909,CHEMBL1630575,CASPOFUNGIN,IC50,0.027,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans SC5314 in presence of 10% human serum,2007
+glucan synthase,CHEMBL1909,CHEMBL1630575,CASPOFUNGIN,IC50,0.0369,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans SC5314 in presence of 20% human serum,2007
+glucan synthase,CHEMBL1909,CHEMBL1630575,CASPOFUNGIN,IC50,0.0805,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans SC5314 in presence of 50% human serum,2007
+glucan synthase,CHEMBL1909,CHEMBL264241,ANIDULAFUNGIN,IC50,0.001,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans ATCC 90028,2007
+glucan synthase,CHEMBL1909,CHEMBL264241,ANIDULAFUNGIN,IC50,0.00472,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans ATCC 90028 in presence of 10% human serum,2007
+glucan synthase,CHEMBL1909,CHEMBL264241,ANIDULAFUNGIN,IC50,0.0186,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans ATCC 90028 in presence of 20% human serum,2007
+glucan synthase,CHEMBL1909,CHEMBL264241,ANIDULAFUNGIN,IC50,0.0247,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans ATCC 90028 in presence of 50% human serum,2007
+glucan synthase,CHEMBL1909,CHEMBL264241,ANIDULAFUNGIN,IC50,0.0185,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans ATCC 36082,2007
+glucan synthase,CHEMBL1909,CHEMBL264241,ANIDULAFUNGIN,IC50,0.024,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans ATCC 36082 in presence of 10% human serum,2007
+glucan synthase,CHEMBL1909,CHEMBL264241,ANIDULAFUNGIN,IC50,0.0715,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans ATCC 36082 in presence of 20% human serum,2007
+glucan synthase,CHEMBL1909,CHEMBL264241,ANIDULAFUNGIN,IC50,0.0171,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans SC5314,2007
+glucan synthase,CHEMBL1909,CHEMBL264241,ANIDULAFUNGIN,IC50,0.0153,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans SC5314 in presence of 10% human serum,2007
+glucan synthase,CHEMBL1909,CHEMBL264241,ANIDULAFUNGIN,IC50,0.0747,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans SC5314 in presence of 20% human serum,2007
+glucan synthase,CHEMBL1909,CHEMBL264241,ANIDULAFUNGIN,IC50,0.089,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans SC5314 in presence of 50% human serum,2007
+glucan synthase,CHEMBL1909,CHEMBL457547,MICAFUNGIN,IC50,0.018,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans ATCC 90028,2007
+glucan synthase,CHEMBL1909,CHEMBL457547,MICAFUNGIN,IC50,0.0284,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans ATCC 90028 in presence of 10% human serum,2007
+glucan synthase,CHEMBL1909,CHEMBL457547,MICAFUNGIN,IC50,0.0501,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans ATCC 90028 in presence of 20% human serum,2007
+glucan synthase,CHEMBL1909,CHEMBL457547,MICAFUNGIN,IC50,0.0902,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans ATCC 90028 in presence of 50% human serum,2007
+glucan synthase,CHEMBL1909,CHEMBL457547,MICAFUNGIN,IC50,0.0108,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans ATCC 36082,2007
+glucan synthase,CHEMBL1909,CHEMBL457547,MICAFUNGIN,IC50,0.0237,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans ATCC 36082 in presence of 10% human serum,2007
+glucan synthase,CHEMBL1909,CHEMBL457547,MICAFUNGIN,IC50,0.0314,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans ATCC 36082 in presence of 20% human serum,2007
+glucan synthase,CHEMBL1909,CHEMBL457547,MICAFUNGIN,IC50,0.057,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans ATCC 36082 in presence of 50% human serum,2007
+glucan synthase,CHEMBL1909,CHEMBL457547,MICAFUNGIN,IC50,0.0269,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans SC5314,2007
+glucan synthase,CHEMBL1909,CHEMBL457547,MICAFUNGIN,IC50,0.0326,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans SC5314 in presence of 10% human serum,2007
+glucan synthase,CHEMBL1909,CHEMBL457547,MICAFUNGIN,IC50,0.0506,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans SC5314 in presence of 20% human serum,2007
+glucan synthase,CHEMBL1909,CHEMBL457547,MICAFUNGIN,IC50,0.0897,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans SC5314 in presence of 50% human serum,2007
+glucan synthase,CHEMBL1909,CHEMBL264241,ANIDULAFUNGIN,IC50,0.02937,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans 36082 assessed as incorporation of [3H]uridine diphosphoglucose in presence of 50% serum,2007
+glucan synthase,CHEMBL1909,CHEMBL1630575,CASPOFUNGIN,IC50,0.0003301,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans 36082 assessed as incorporation of [3H]uridine diphosphoglucose,2007
+glucan synthase,CHEMBL1909,CHEMBL1630575,CASPOFUNGIN,IC50,0.001325,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans 36082 assessed as incorporation of [3H]uridine diphosphoglucose in presence of 10% serum,2007
+glucan synthase,CHEMBL1909,CHEMBL1630575,CASPOFUNGIN,IC50,0.002077,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans 36082 assessed as incorporation of [3H]uridine diphosphoglucose in presence of 20% serum,2007
+glucan synthase,CHEMBL1909,CHEMBL1630575,CASPOFUNGIN,IC50,0.006225,ug.mL-1,B,Inhibition of glucan synthase in Candida albicans 36082 assessed as incorporation of [3H]uridine diphosphoglucose in presence of 50% serum,2007
+glucan synthase,CHEMBL4844,CHEMBL3142889,,Inhibition,74.7,%,B,In vitro inhibition of glucan synthase obtained from Candida albicans at a concentration of 10 ug/mL.,1995
+glucan synthase,CHEMBL4844,CHEMBL3142869,,Inhibition,80.2,%,B,In vitro inhibition of glucan synthase obtained from Candida albicans at a concentration of 10 ug/mL.,1995
+glucan synthase,CHEMBL4844,CHEMBL3142886,,Inhibition,40.6,%,B,In vitro inhibition of glucan synthase obtained from Candida albicans at a concentration of 10 ug/mL.,1995
+glucan synthase,CHEMBL4844,CHEMBL3142887,,Inhibition,78.2,%,B,In vitro inhibition of glucan synthase obtained from Candida albicans at a concentration of 10 ug/mL.,1995
+glucan synthase,CHEMBL4844,CHEMBL3142890,,Inhibition,81.3,%,B,In vitro inhibition of glucan synthase obtained from Candida albicans at a concentration of 10 ug/mL.,1995
+glucan synthase,CHEMBL4844,CHEMBL264241,ANIDULAFUNGIN,Inhibition,75.0,%,B,In vitro inhibition of glucan synthase obtained from Candida albicans at a concentration of 10 ug/mL.,1995
+glucan synthase,CHEMBL4844,CHEMBL3142874,,Inhibition,54.8,%,B,In vitro inhibition of glucan synthase obtained from Candida albicans at a concentration of 10 ug/mL.,1995
+glucan synthase,CHEMBL4844,CHEMBL3142876,,Inhibition,66.7,%,B,In vitro inhibition of glucan synthase obtained from Candida albicans at a concentration of 10 ug/mL.,1995
+glucan synthase,CHEMBL4844,CHEMBL3142895,,Inhibition,81.9,%,B,In vitro inhibition of glucan synthase obtained from Candida albicans at a concentration of 10 ug/mL.,1995
+glucan synthase,CHEMBL4844,CHEMBL3142863,,Inhibition,69.1,%,B,In vitro inhibition of glucan synthase obtained from Candida albicans at a concentration of 10 ug/mL.,1995
+glucan synthase,CHEMBL4844,CHEMBL3142867,,Inhibition,68.9,%,B,In vitro inhibition of glucan synthase obtained from Candida albicans at a concentration of 10 ug/mL.,1995
+glucan synthase,CHEMBL4844,CHEMBL3142891,,Inhibition,72.3,%,B,In vitro inhibition of glucan synthase obtained from Candida albicans at a concentration of 10 ug/mL.,1995
+glucan synthase,CHEMBL4844,CHEMBL3142868,,Inhibition,71.4,%,B,In vitro inhibition of glucan synthase obtained from Candida albicans at a concentration of 10 ug/mL.,1995
+glucan synthase,CHEMBL4844,CHEMBL3142879,,Inhibition,81.0,%,B,In vitro inhibition of glucan synthase obtained from Candida albicans at a concentration of 10 ug/mL.,1995
+glucan synthase,CHEMBL4844,CHEMBL3142870,,Inhibition,83.0,%,B,In vitro inhibition of glucan synthase obtained from Candida albicans at a concentration of 10 ug/mL.,1995
+glucan synthase,CHEMBL4844,CHEMBL3142872,,Inhibition,71.4,%,B,In vitro inhibition of glucan synthase obtained from Candida albicans at a concentration of 10 ug/mL.,1995
+glucan synthase,CHEMBL4844,CHEMBL3142882,,Inhibition,19.4,%,B,In vitro inhibition of glucan synthase obtained from Candida albicans at a concentration of 10 ug/mL.,1995
+glucan synthase,CHEMBL4844,CHEMBL3142881,,Inhibition,83.5,%,B,In vitro inhibition of glucan synthase obtained from Candida albicans at a concentration of 10 ug/mL.,1995
+glucan synthase,CHEMBL4844,CHEMBL3142883,,Inhibition,77.7,%,B,In vitro inhibition of glucan synthase obtained from Candida albicans at a concentration of 10 ug/mL.,1995
+glucan synthase,CHEMBL4844,CHEMBL3142866,,Inhibition,82.2,%,B,In vitro inhibition of glucan synthase obtained from Candida albicans at a concentration of 10 ug/mL.,1995
+glucan synthase,CHEMBL4844,CHEMBL3142888,,Inhibition,75.8,%,B,In vitro inhibition of glucan synthase obtained from Candida albicans at a concentration of 10 ug/mL.,1995
+glucan synthase,CHEMBL4844,CHEMBL3142884,,Inhibition,81.5,%,B,In vitro inhibition of glucan synthase obtained from Candida albicans at a concentration of 10 ug/mL.,1995
+glucan synthase,CHEMBL4844,CHEMBL3142892,,Inhibition,80.1,%,B,In vitro inhibition of glucan synthase obtained from Candida albicans at a concentration of 10 ug/mL.,1995
+glucan synthase,CHEMBL4844,CHEMBL3142875,,Inhibition,43.4,%,B,In vitro inhibition of glucan synthase obtained from Candida albicans at a concentration of 10 ug/mL.,1995
+glucan synthase,CHEMBL4844,CHEMBL3142880,,Inhibition,76.1,%,B,In vitro inhibition of glucan synthase obtained from Candida albicans at a concentration of 10 ug/mL.,1995
+glucan synthase,CHEMBL4844,CHEMBL3142894,,Inhibition,82.4,%,B,In vitro inhibition of glucan synthase obtained from Candida albicans at a concentration of 10 ug/mL.,1995
+glucan synthase,CHEMBL4844,CHEMBL3142871,,Inhibition,55.1,%,B,In vitro inhibition of glucan synthase obtained from Candida albicans at a concentration of 10 ug/mL.,1995
+glucan synthase,CHEMBL4844,CHEMBL3142885,,Inhibition,78.8,%,B,In vitro inhibition of glucan synthase obtained from Candida albicans at a concentration of 10 ug/mL.,1995
+glucan synthase,CHEMBL4844,CHEMBL3142873,,Inhibition,82.3,%,B,In vitro inhibition of glucan synthase obtained from Candida albicans at a concentration of 10 ug/mL.,1995
+glucan synthase,CHEMBL4844,CHEMBL2103748,CILOFUNGIN,Inhibition,76.0,%,B,In vitro inhibition of glucan synthase obtained from Candida albicans at a concentration of 10 ug/mL.,1995
+glucan synthase,CHEMBL4844,CHEMBL3142878,,Inhibition,17.1,%,B,In vitro inhibition of glucan synthase obtained from Candida albicans at a concentration of 10 ug/mL.,1995
+glucan synthase,CHEMBL4844,CHEMBL218395,,IC50,100.0,nM,B,"Tested for inhibition of Beta-1,3-glucan synthase using a crude membrane of Candida albicans (MY 1208).",1995
+glucan synthase,CHEMBL4844,CHEMBL428798,,IC50,400.0,nM,B,"Tested for inhibition of Beta-1,3-glucan synthase using a crude membrane of Candida albicans (MY 1208).",1995
+glucan synthase,CHEMBL4844,CHEMBL413520,,IC50,200.0,nM,B,"Tested for inhibition of Beta-1,3-glucan synthase using a crude membrane of Candida albicans (MY 1208).",1995
+glucan synthase,CHEMBL4844,CHEMBL266683,,IC50,9.0,nM,B,"Tested for inhibition of Beta-1,3-glucan synthase using a crude membrane of Candida albicans (MY 1208).",1995
+glucan synthase,CHEMBL4844,CHEMBL408771,,IC50,110.0,nM,B,"Tested for inhibition of Beta-1,3-glucan synthase using a crude membrane of Candida albicans (MY 1208).",1995
+glucan synthase,CHEMBL4844,CHEMBL385931,,IC50,7.0,nM,B,"Tested for inhibition of Beta-1,3-glucan synthase using a crude membrane of Candida albicans (MY 1208).",1995
+glucan synthase,CHEMBL4844,CHEMBL408249,,IC50,38.0,nM,B,"Tested for inhibition of Beta-1,3-glucan synthase using a crude membrane of Candida albicans (MY 1208).",1995
+glucan synthase,CHEMBL4844,CHEMBL408820,,IC50,7.0,nM,B,"Tested for inhibition of Beta-1,3-glucan synthase using a crude membrane of Candida albicans (MY 1208).",1995
+glucan synthase,CHEMBL4844,CHEMBL415670,,IC50,10.0,nM,B,"Tested for inhibition of Beta-1,3-glucan synthase using a crude membrane of Candida albicans (MY 1208).",1995
+glucan synthase,CHEMBL4844,CHEMBL407122,,IC50,120.0,nM,B,"Tested for inhibition of Beta-1,3-glucan synthase using a crude membrane of Candida albicans (MY 1208).",1995
+glucan synthase,CHEMBL4844,CHEMBL412347,,IC50,100.0,nM,B,"Tested for inhibition of Beta-1,3-glucan synthase using a crude membrane of Candida albicans (MY 1208).",1995
+glucan synthase,CHEMBL4844,CHEMBL386918,,IC50,80.0,nM,B,"Tested for inhibition of Beta-1,3-glucan synthase using a crude membrane of Candida albicans (MY 1208).",1995
+glucan synthase,CHEMBL4844,CHEMBL263950,,IC50,300.0,nM,B,"Tested for inhibition of Beta-1,3-glucan synthase using a crude membrane of Candida albicans (MY 1208).",1995
+glucan synthase,CHEMBL4844,CHEMBL412847,,IC50,250.0,nM,B,"Tested for inhibition of Beta-1,3-glucan synthase using a crude membrane of Candida albicans (MY 1208).",1995
+glucan synthase,CHEMBL4844,CHEMBL442306,,IC50,900.0,nM,B,"Tested for inhibition of Beta-1,3-glucan synthase using a crude membrane of Candida albicans (MY 1208).",1995
+glucan synthase,CHEMBL4844,CHEMBL217306,,IC50,200.0,nM,B,"Tested for inhibition of Beta-1,3-glucan synthase using a crude membrane of Candida albicans (MY 1208).",1995
+glucan synthase,CHEMBL4844,CHEMBL437803,,IC50,10.0,nM,B,"Tested for inhibition of Beta-1,3-glucan synthase using a crude membrane of Candida albicans (MY 1208).",1995
+glucan synthase,CHEMBL4844,CHEMBL428110,,IC50,5.0,nM,B,"Tested for inhibition of Beta-1,3-glucan synthase using a crude membrane of Candida albicans (MY 1208).",1995
+glucan synthase,CHEMBL4844,CHEMBL413949,,IC50,180.0,nM,B,"Tested for inhibition of Beta-1,3-glucan synthase using a crude membrane of Candida albicans (MY 1208).",1995
+glucan synthase,CHEMBL4844,CHEMBL269311,,IC50,70.0,nM,B,"Tested for inhibition of Beta-1,3-glucan synthase using a crude membrane of Candida albicans (MY 1208).",1995
+glucan synthase,CHEMBL4844,CHEMBL437438,,IC50,70.0,nM,B,"Tested for inhibition of Beta-1,3-glucan synthase using a crude membrane of Candida albicans (MY 1208).",1995
+glucan synthase,CHEMBL4844,CHEMBL2370664,,IC50,45.0,nM,B,"Inhibition of 1,3-beta-D-glucan synthase (GS) from candida albicans",2001
+glucan synthase,CHEMBL4844,CHEMBL2370652,,IC50,20.0,nM,B,"Inhibition of 1,3-beta-D-glucan synthase (GS) from candida albicans",2001
+glucan synthase,CHEMBL4844,CHEMBL2370657,,IC50,19.0,nM,B,"Inhibition of 1,3-beta-D-glucan synthase (GS) from candida albicans",2001
+glucan synthase,CHEMBL4844,CHEMBL2370651,,IC50,230.0,nM,B,"Inhibition of 1,3-beta-D-glucan synthase (GS) from candida albicans",2001
+glucan synthase,CHEMBL4844,CHEMBL2370665,,IC50,2.0,nM,B,"Inhibition of 1,3-beta-D-glucan synthase (GS) from candida albicans",2001
+glucan synthase,CHEMBL4844,CHEMBL2370655,,IC50,12.0,nM,B,"Inhibition of 1,3-beta-D-glucan synthase (GS) from candida albicans",2001
+glucan synthase,CHEMBL4844,CHEMBL2370656,,IC50,130.0,nM,B,"Inhibition of 1,3-beta-D-glucan synthase (GS) from candida albicans",2001
+glucan synthase,CHEMBL4844,CHEMBL2369134,,IC50,8.0,nM,B,"Inhibition of 1,3-beta-D-glucan synthase (GS) from candida albicans",2001
+glucan synthase,CHEMBL4844,CHEMBL2370666,,IC50,6.0,nM,B,"Inhibition of 1,3-beta-D-glucan synthase (GS) from candida albicans",2001
+glucan synthase,CHEMBL4844,CHEMBL2370667,,IC50,520.0,nM,B,"Inhibition of 1,3-beta-D-glucan synthase (GS) from candida albicans",2001
+glucan synthase,CHEMBL4844,CHEMBL2370668,,IC50,24.0,nM,B,"Inhibition of 1,3-beta-D-glucan synthase (GS) from candida albicans",2001
+glucan synthase,CHEMBL4844,CHEMBL2370654,,IC50,5.0,nM,B,"Inhibition of 1,3-beta-D-glucan synthase (GS) from candida albicans",2001
+glucan synthase,CHEMBL4844,CHEMBL438198,FR-901469,IC50,8.5,nM,B,In vitro inhibitory activity against Beta glucan synthase,2001
+glucan synthase,CHEMBL4844,CHEMBL405487,,IC50,1.4,nM,B,In vitro inhibitory activity against Beta glucan synthase,2001
+glucan synthase,CHEMBL4844,CHEMBL2371715,,IC50,0.83,nM,B,In vitro inhibitory activity against Beta glucan synthase,2001
+glucan synthase,CHEMBL4844,CHEMBL407924,,IC50,3.6,nM,B,In vitro inhibitory activity against Beta glucan synthase,2001
+glucan synthase,CHEMBL4844,CHEMBL2371766,,IC50,0.9,nM,B,In vitro inhibitory activity against Beta glucan synthase,2001
+glucan synthase,CHEMBL4844,CHEMBL1793852,,IC50,1.3,nM,B,In vitro inhibitory activity against Beta glucan synthase,2001
+glucan synthase,CHEMBL4844,CHEMBL2371765,,IC50,0.63,nM,B,In vitro inhibitory activity against Beta glucan synthase,2001
+glucan synthase,CHEMBL4844,CHEMBL415843,,IC50,0.28,nM,B,In vitro inhibitory activity against Beta glucan synthase,2001
+glucan synthase,CHEMBL4844,CHEMBL267407,,IC50,0.25,nM,B,In vitro inhibitory activity against Beta glucan synthase,2001
+glucan synthase,CHEMBL4844,CHEMBL2371681,,IC50,0.2,nM,B,In vitro inhibitory activity against Beta glucan synthase,2001
+glucan synthase,CHEMBL4844,CHEMBL413199,,IC50,18.0,nM,B,In vitro inhibitory activity against Beta glucan synthase,2001
+glucan synthase,CHEMBL4844,CHEMBL2371727,,IC50,0.89,nM,B,In vitro inhibitory activity against Beta glucan synthase,2001
+glucan synthase,CHEMBL4844,CHEMBL1684744,,IC50,0.9,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-glucan synthase",2011
+glucan synthase,CHEMBL4844,CHEMBL1770496,,IC50,71.0,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-glucan synthase",2011
+glucan synthase,CHEMBL4844,CHEMBL1770497,,IC50,4.2,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-glucan synthase",2011
+glucan synthase,CHEMBL4844,CHEMBL1770498,,IC50,138.0,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-glucan synthase",2011
+glucan synthase,CHEMBL4844,CHEMBL1770155,,IC50,37.0,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-glucan synthase",2011
+glucan synthase,CHEMBL4844,CHEMBL1770499,,IC50,1.31,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-glucan synthase",2011
+glucan synthase,CHEMBL4844,CHEMBL1770500,,IC50,,,B,"Inhibition of Candida albicans BWP17 1,3-beta-glucan synthase",2011
+glucan synthase,CHEMBL4844,CHEMBL1770501,,IC50,2.4,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-glucan synthase",2011
+glucan synthase,CHEMBL4844,CHEMBL1770502,,IC50,0.41,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-glucan synthase",2011
+glucan synthase,CHEMBL4844,CHEMBL1770503,,IC50,0.62,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-glucan synthase",2011
+glucan synthase,CHEMBL4844,CHEMBL1770504,,IC50,0.43,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-glucan synthase",2011
+glucan synthase,CHEMBL4844,CHEMBL1770505,,IC50,109.3,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-glucan synthase",2011
+glucan synthase,CHEMBL4844,CHEMBL1770506,,IC50,0.42,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-glucan synthase",2011
+glucan synthase,CHEMBL4844,CHEMBL1770507,,IC50,,,B,"Inhibition of Candida albicans BWP17 1,3-beta-glucan synthase",2011
+glucan synthase,CHEMBL4844,CHEMBL1770508,,IC50,0.074,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-glucan synthase",2011
+glucan synthase,CHEMBL4844,CHEMBL1770509,,IC50,0.16,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-glucan synthase",2011
+glucan synthase,CHEMBL4844,CHEMBL1770510,,IC50,0.2,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-glucan synthase",2011
+glucan synthase,CHEMBL4844,CHEMBL1770511,,IC50,0.22,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-glucan synthase",2011
+glucan synthase,CHEMBL4844,CHEMBL1770512,,IC50,0.8,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-glucan synthase",2011
+glucan synthase,CHEMBL4844,CHEMBL1770513,,IC50,0.29,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-glucan synthase",2011
+glucan synthase,CHEMBL4844,CHEMBL1770514,,IC50,0.08,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-glucan synthase",2011
+glucan synthase,CHEMBL4844,CHEMBL1770515,,IC50,23.0,ug.mL-1,B,"Inhibition of Candida albicans BWP17 1,3-beta-glucan synthase",2011
+chitin synthase,CHEMBL1961,CHEMBL1182094,,IC50,22000.0,nM,B,Inhibition of Chitin synthase 2 in Candida albicans (chs3del::hisG/chs3del::hisG) microsomes using UDP-[U14C]-GlcNac as substrate,2020
+chitin synthase,CHEMBL3480,CHEMBL1791412,,ID50,0.0000049,M,F,Inhibitory activity against chitin synthetase from Candida albicans H-317,1983
+chitin synthase,CHEMBL3480,CHEMBL1791407,,ID50,0.000014,M,F,Inhibitory activity against chitin synthetase from Candida albicans H-317,1983
+chitin synthase,CHEMBL3480,CHEMBL1791175,,ID50,2.0,ug ml-1,B,Concentration at which chitin synthetase is inhibited by 50%,1988
+chitin synthase,CHEMBL3480,CHEMBL1791406,,ID50,0.0000038,M,F,Inhibitory activity against chitin synthetase from Candida albicans H-317,1983
+chitin synthase,CHEMBL3480,CHEMBL1791178,,ID50,0.0000018,M,F,Inhibitory activity against chitin synthetase from Candida albicans H-317,1983
+chitin synthase,CHEMBL3480,CHEMBL1791177,,ID50,10.0,ug ml-1,B,Concentration at which chitin synthetase is inhibited by 50%,1988
+chitin synthase,CHEMBL3480,CHEMBL1791178,,ID50,2.0,ug ml-1,B,Concentration at which chitin synthetase is inhibited by 50%,1988
+chitin synthase,CHEMBL3480,CHEMBL1791174,,ID50,100.0,ug ml-1,F,Concentration at which chitin synthetase is inhibited by 50%,1988
+chitin synthase,CHEMBL3480,CHEMBL1791175,,ID50,50.0,ug ml-1,B,Concentration at which chitin synthetase is inhibited by 50%,1988
+chitin synthase,CHEMBL3480,CHEMBL1791174,,ID50,0.0001,M,F,Inhibitory activity against chitin synthetase from Candida albicans H-317,1983
+chitin synthase,CHEMBL3480,CHEMBL1791408,,ID50,0.000016,M,F,Inhibitory activity against chitin synthetase from Candida albicans H-317,1983
+chitin synthase,CHEMBL3480,CHEMBL1791176,,ID50,0.3,ug ml-1,B,Concentration at which chitin synthetase is inhibited by 50%,1988
+chitin synthase,CHEMBL3480,CHEMBL3085448,,ID50,0.000068,M,F,Inhibitory activity against chitin synthetase from Candida albicans H-317,1983
+chitin synthase,CHEMBL3480,CHEMBL1791439,,ID50,0.0000017,M,F,Inhibitory activity against chitin synthetase from Candida albicans H-317,1983
+chitin synthase,CHEMBL3480,CHEMBL1791177,,ID50,100.0,ug ml-1,B,Concentration at which chitin synthetase is inhibited by 50%,1988
+chitin synthase,CHEMBL3480,CHEMBL1791178,,ID50,0.0000018,M,B,Compound was tested for the inhibitory activity against chitin synthetase in the mixed membrane preparation from Candida albicans,1986
+chitin synthase,CHEMBL3480,CHEMBL1791178,,Ki,590.0,nM,B,Inhibition constant (KI) for the mmf chitin synthetase assay performed at constant inhibitor and varying substrate concentrations,1986
+chitin synthase,CHEMBL3480,CHEMBL1791178,,ID50,0.000001,M,B,Compound was tested for the inhibitory activity against chitin synthetase in the permeabilised cell assay,1986
+chitin synthase,CHEMBL3480,CHEMBL1791436,,ID50,0.0000475,M,B,Compound was tested for the inhibitory activity against chitin synthetase in the mixed membrane preparation from Candida albicans,1986
+chitin synthase,CHEMBL3480,CHEMBL1791436,,Ki,7150.0,nM,B,Compound was tested for the inhibitory activity against chitin synthetase,1986
+chitin synthase,CHEMBL3480,CHEMBL1791436,,ID50,0.00005,M,B,Compound was tested for the inhibitory activity against chitin synthetase in the permeabilised cell assay,1986
+chitin synthase,CHEMBL3480,CHEMBL1791437,,ID50,0.0001,M,B,Compound was tested for the inhibitory activity against chitin synthetase in the mixed membrane preparation from Candida albicans,1986
+chitin synthase,CHEMBL3480,CHEMBL1791437,,Ki,978000.0,nM,B,Inhibition constant (KI) for the mmf chitin synthetase assay performed at constant inhibitor and varying substrate concentrations,1986
+chitin synthase,CHEMBL3480,CHEMBL1791437,,ID50,0.0001,M,B,Compound was tested for the inhibitory activity against chitin synthetase in the permeabilised cell assay,1986
+chitin synthase,CHEMBL3480,CHEMBL1791435,,ID50,0.00012,M,B,Compound was tested for the inhibitory activity against chitin synthetase in the mixed membrane preparation from Candida albicans,1986
+chitin synthase,CHEMBL3480,CHEMBL1791435,,Ki,218000.0,nM,B,Inhibition constant (KI) for the mmf chitin synthetase assay performed at constant inhibitor and varying substrate concentrations,1986
+chitin synthase,CHEMBL3480,CHEMBL1791435,,ID50,0.0000975,M,B,Compound was tested for the inhibitory activity against chitin synthetase in the permeabilised cell assay,1986
+chitin synthase,CHEMBL3480,CHEMBL1791441,,ID50,0.0001,M,B,Compound was tested for the inhibitory activity against chitin synthetase in the mixed membrane preparation from Candida albicans,1986
+chitin synthase,CHEMBL3480,CHEMBL1791441,,Ki,145000.0,nM,B,Compound was tested for the inhibitory activity against chitin synthetase,1986
+chitin synthase,CHEMBL3480,CHEMBL1791441,,ID50,0.0001,M,B,Compound was tested for the inhibitory activity against chitin synthetase in the permeabilised cell assay,1986
+chitin synthase,CHEMBL3480,CHEMBL1791440,,ID50,0.0002,M,B,Compound was tested for the inhibitory activity against chitin synthetase in the mixed membrane preparation from Candida albicans,1986
+chitin synthase,CHEMBL3480,CHEMBL1791440,,Ki,246000.0,nM,B,Inhibition constant (KI) for the mmf chitin synthetase assay performed at constant inhibitor and varying substrate concentrations,1986
+chitin synthase,CHEMBL3480,CHEMBL1791440,,ID50,0.0001,M,B,Compound was tested for the inhibitory activity against chitin synthetase in the permeabilised cell assay,1986
+chitin synthase,CHEMBL3480,CHEMBL1791439,,ID50,0.0001,M,B,Compound was tested for the inhibitory activity against chitin synthetase in the mixed membrane preparation from Candida albicans,1986
+chitin synthase,CHEMBL3480,CHEMBL1791439,,Ki,1060000.0,nM,B,Inhibition constant (KI) for the mmf chitin synthetase assay performed at constant inhibitor and varying substrate concentrations,1986
+chitin synthase,CHEMBL3480,CHEMBL1791439,,ID50,0.0001,M,B,Compound was tested for the inhibitory activity against chitin synthetase in the permeabilised cell assay,1986
+chitin synthase,CHEMBL3480,CHEMBL1791438,,ID50,0.00004,M,B,Compound was tested for the inhibitory activity against chitin synthetase in the mixed membrane preparation from Candida albicans,1986
+chitin synthase,CHEMBL3480,CHEMBL1791438,,Ki,11300.0,nM,B,Compound was tested for the inhibitory activity against chitin synthetase,1986
+chitin synthase,CHEMBL3480,CHEMBL1791438,,ID50,0.00008,M,B,Compound was tested for the inhibitory activity against chitin synthetase in the permeabilised cell assay,1986
+chitin synthase,CHEMBL3480,CHEMBL3706576,,Inhibition,79.0,%,B,Inhibitory activity against chitin synthase from Candida albicans at a concentration 5 uM,1985
+chitin synthase,CHEMBL3480,CHEMBL3706576,,Inhibition,96.0,%,B,Inhibitory activity against chitin synthase from Candida albicans at a concentration 25 uM,1985
+chitin synthase,CHEMBL3480,CHEMBL3706576,,Inhibition,100.0,%,B,Inhibitory activity against chitin synthase from Candida albicans at a concentration 100 uM,1985
+chitin synthase,CHEMBL3480,CHEMBL3706577,,Inhibition,0.0,%,B,Inhibitory activity against chitin synthase from Candida albicans at a concentration 5 uM,1985
+chitin synthase,CHEMBL3480,CHEMBL3706577,,Inhibition,0.0,%,B,Inhibitory activity against chitin synthase from Candida albicans at a concentration 25 uM,1985
+chitin synthase,CHEMBL3480,CHEMBL3706577,,Inhibition,0.0,%,B,Inhibitory activity against chitin synthase from Candida albicans at a concentration 100 uM,1985
+chitin synthase,CHEMBL3480,CHEMBL317147,,Inhibition,0.0,%,B,Inhibitory activity against chitin synthase from Candida albicans at a concentration 5 uM,1985
+chitin synthase,CHEMBL3480,CHEMBL317147,,Inhibition,0.0,%,B,Inhibitory activity against chitin synthase from Candida albicans at a concentration 25 uM,1985
+chitin synthase,CHEMBL3480,CHEMBL317147,,Inhibition,2.0,%,B,Inhibitory activity against chitin synthase from Candida albicans at a concentration 100 uM,1985
+chitin synthase,CHEMBL3480,CHEMBL3706580,,Inhibition,8.0,%,B,Inhibitory activity against chitin synthase from Candida albicans at a concentration 5 uM,1985
+chitin synthase,CHEMBL3480,CHEMBL3706580,,Inhibition,26.0,%,B,Inhibitory activity against chitin synthase from Candida albicans at a concentration 25 uM,1985
+chitin synthase,CHEMBL3480,CHEMBL3706580,,Inhibition,53.0,%,B,Inhibitory activity against chitin synthase from Candida albicans at a concentration 100 uM,1985
+chitin synthase,CHEMBL3480,CHEMBL3706579,,Inhibition,0.0,%,B,Inhibitory activity against chitin synthase from Candida albicans at a concentration 5 uM,1985
+chitin synthase,CHEMBL3480,CHEMBL3706579,,Inhibition,20.0,%,B,Inhibitory activity against chitin synthase from Candida albicans at a concentration 25 uM,1985
+chitin synthase,CHEMBL3480,CHEMBL3706579,,Inhibition,45.0,%,B,Inhibitory activity against chitin synthase from Candida albicans at a concentration 100 uM,1985
+chitin synthase,CHEMBL3480,CHEMBL3084335,,Inhibition,0.0,%,B,Inhibitory activity against chitin synthase from Candida albicans at a concentration 5 uM,1985
+chitin synthase,CHEMBL3480,CHEMBL3084335,,Inhibition,0.0,%,B,Inhibitory activity against chitin synthase from Candida albicans at a concentration 25 uM,1985
+chitin synthase,CHEMBL3480,CHEMBL3084335,,Inhibition,0.0,%,B,Inhibitory activity against chitin synthase from Candida albicans at a concentration 100 uM,1985
+chitin synthase,CHEMBL3480,CHEMBL3085449,,Inhibition,0.0,%,B,Inhibitory activity against chitin synthase from Candida albicans at a concentration 5 uM,1985
+chitin synthase,CHEMBL3480,CHEMBL3085449,,Inhibition,37.0,%,B,Inhibitory activity against chitin synthase from Candida albicans at a concentration 25 uM,1985
+chitin synthase,CHEMBL3480,CHEMBL3085449,,Inhibition,80.0,%,B,Inhibitory activity against chitin synthase from Candida albicans at a concentration 100 uM,1985
+chitin synthase,CHEMBL3480,CHEMBL3706578,,Inhibition,0.0,%,B,Inhibitory activity against chitin synthase from Candida albicans at a concentration 5 uM,1985
+chitin synthase,CHEMBL3480,CHEMBL3706578,,Inhibition,0.0,%,B,Inhibitory activity against chitin synthase from Candida albicans at a concentration 25 uM,1985
+chitin synthase,CHEMBL3480,CHEMBL3706578,,Inhibition,0.0,%,B,Inhibitory activity against chitin synthase from Candida albicans at a concentration 100 uM,1985
+chitin synthase,CHEMBL3480,CHEMBL35140,,Activity,,,B,Inhibitory activity against chitin synthase from Candida albicans at 128 ug/mL; No inhibition,2000
+chitin synthase,CHEMBL3480,CHEMBL3707072,,ID50,100.0,ug ml-1,F,Compound was tested for its ability to inhibit chitin synthetase using Candida albicans strain H-317.,1991
+chitin synthase,CHEMBL3480,CHEMBL604209,,ID50,100.0,ug ml-1,F,Compound was tested for its ability to inhibit chitin synthetase using Candida albicans strain H-317.,1991
+chitin synthase,CHEMBL3480,CHEMBL3707028,,ID50,0.5,ug ml-1,F,Compound was tested for its ability to inhibit chitin synthetase using Candida albicans strain H-317.,1991
+chitin synthase,CHEMBL3480,CHEMBL612147,,ID50,80.0,ug ml-1,F,Compound was tested for its ability to inhibit chitin synthetase using Candida albicans strain H-317.,1991
+chitin synthase,CHEMBL3480,CHEMBL611225,,ID50,30.0,ug ml-1,F,Compound was tested for its ability to inhibit chitin synthetase using Candida albicans strain H-317.,1991
+chitin synthase,CHEMBL3480,CHEMBL3707070,,ID50,0.1,ug ml-1,F,Compound was tested for its ability to inhibit chitin synthetase using Candida albicans strain H-317.,1991
+chitin synthase,CHEMBL3480,CHEMBL3707069,,ID50,100.0,ug ml-1,F,Compound was tested for its ability to inhibit chitin synthetase using Candida albicans strain H-317.,1991
+chitin synthase,CHEMBL3480,CHEMBL3707071,,ID50,2.0,ug ml-1,F,Compound was tested for its ability to inhibit chitin synthetase using Candida albicans strain H-317.,1991
+chitin synthase,CHEMBL3480,CHEMBL603575,,ID50,50.0,ug ml-1,F,Compound was tested for its ability to inhibit chitin synthetase using Candida albicans strain H-317.,1991
+chitin synthase,CHEMBL3480,CHEMBL603346,,ID50,20.0,ug ml-1,F,Compound was tested for its ability to inhibit chitin synthetase using Candida albicans strain H-317.,1991
+chitin synthase,CHEMBL3480,CHEMBL35306,NIKKOMYCIN,ID50,0.3,ug ml-1,F,Compound was tested for its ability to inhibit chitin synthetase using Candida albicans strain H-317.,1991
+chitin synthase,CHEMBL3480,CHEMBL2228796,POLYOXIN B,ID50,0.8,ug ml-1,F,Compound was tested for its ability to inhibit chitin synthetase using Candida albicans strain H-317.,1991
+chitin synthase,CHEMBL3480,CHEMBL285056,,IC50,0.35,nM,B,Inhibitory of Candida albicans chitin synthase 1,2000
+chitin synthase,CHEMBL3480,CHEMBL35306,NIKKOMYCIN,IC50,3200.0,nM,B,Inhibitory of Candida albicans chitin synthase 1,2000
+chitin synthase,CHEMBL3480,CHEMBL287024,,IC50,13700.0,nM,B,Inhibitory of Candida albicans chitin synthase 1,2000
+chitin synthase,CHEMBL3480,CHEMBL35760,,IC50,2.77,nM,B,Inhibitory of Candida albicans chitin synthase 1,2000
+chitin synthase,CHEMBL3480,CHEMBL287110,,IC50,54.0,nM,B,Inhibitory of Candida albicans chitin synthase 1,2000
+chitin synthase,CHEMBL3480,CHEMBL416596,,IC50,775.0,nM,B,Inhibitory of Candida albicans chitin synthase 1,2000
+chitin synthase,CHEMBL3480,CHEMBL35416,,IC50,211000.0,nM,B,Inhibitory of Candida albicans chitin synthase 1,2000
+chitin synthase,CHEMBL3480,CHEMBL35671,,IC50,7.88,nM,B,Inhibitory of Candida albicans chitin synthase 1,2000
+chitin synthase,CHEMBL3480,CHEMBL35735,,IC50,1.23,nM,B,Inhibitory of Candida albicans chitin synthase 1,2000
+chitin synthase,CHEMBL3480,CHEMBL265094,,IC50,71.3,nM,B,Inhibitory of Candida albicans chitin synthase 1,2000
+chitin synthase,CHEMBL3480,CHEMBL265094,,IC50,70.0,nM,B,Inhibitory of Candida albicans chitin synthase 1,2000
+chitin synthase,CHEMBL3480,CHEMBL35516,,IC50,70.9,nM,B,Inhibitory of Candida albicans chitin synthase 1,2000
+chitin synthase,CHEMBL3480,CHEMBL285445,,IC50,213.0,nM,B,Inhibitory of Candida albicans chitin synthase 1,2000
+chitin synthase,CHEMBL3480,CHEMBL32495,,IC50,1031.0,nM,B,Inhibitory of Candida albicans chitin synthase 1,2000
+chitin synthase,CHEMBL3480,CHEMBL443517,,IC50,7.22,nM,B,Inhibitory of Candida albicans chitin synthase 1,2000
+chitin synthase,CHEMBL3480,CHEMBL36446,,IC50,0.9,nM,B,Inhibitory of Candida albicans chitin synthase 1,2000
+chitin synthase,CHEMBL3480,CHEMBL32687,,IC50,391.0,nM,B,Inhibitory of Candida albicans chitin synthase 1,2000
+chitin synthase,CHEMBL3480,CHEMBL32658,,IC50,350000.0,nM,B,Inhibitory of Candida albicans chitin synthase 1,2000
+chitin synthase,CHEMBL3480,CHEMBL35365,,IC50,1000.0,nM,B,Inhibitory of Candida albicans chitin synthase 1,2000
+chitin synthase,CHEMBL3480,CHEMBL106,FLUCONAZOLE,IC50,,nM,B,Compound was tested for inhibitory activity against Candida albicans Chitin synthase 1; NT means not tested,2000
+chitin synthase,CHEMBL3480,CHEMBL422402,,IC50,4500.0,nM,B,Inhibitory of Candida albicans chitin synthase 1,2000
+chitin synthase,CHEMBL3480,CHEMBL36516,,IC50,16000.0,nM,B,Inhibitory of Candida albicans chitin synthase 1,2000
+chitin synthase,CHEMBL3480,CHEMBL32125,,IC50,0.76,nM,B,Inhibitory of Candida albicans chitin synthase 1,2000
+chitin synthase,CHEMBL3480,CHEMBL412808,,IC50,13.2,nM,B,Inhibitory of Candida albicans chitin synthase 1,2000
+chitin synthase,CHEMBL3827,CHEMBL258392,PHYTOLACCOSIDE B,Activity,189.7,%,B,Effect on chitin synthase 1-mediated incorporation of [14C]N-acetylglucosamine in Saccharomyces cerevisiae assessed as residual activity after 90 mins,2008
+chitin synthase,CHEMBL3827,CHEMBL258392,PHYTOLACCOSIDE B,IC50,400.0,nM,B,Inhibition of chitin synthase 1 in Saccharomyces cerevisiae assessed as incorporation of [14C]N-Acetylglucosamine after 90 mins,2008
+chitin synthase,CHEMBL3827,CHEMBL258392,PHYTOLACCOSIDE B,Activity,165.77,%,B,Effect on chitin synthase 1-mediated incorporation of [14C]N-Acetylglucosamine in Saccharomyces cerevisiae assessed as residual activity after 90 mins in presence of trypsin,2008
+chitin synthase,CHEMBL3827,CHEMBL258392,PHYTOLACCOSIDE B,IC50,400.0,nM,B,Inhibition of chitin synthase 1 in Saccharomyces cerevisiae after 90 mins in presence of trypsin,2008
+chitin synthase,CHEMBL3827,CHEMBL448981,PAPULACANDIN B,Activity,,,B,Effect on chitin synthase 1-mediated incorporation of [14C]N-acetylglucosamine in Saccharomyces cerevisiae assessed as residual activity after 90 mins,2008
+chitin synthase,CHEMBL3827,CHEMBL448981,PAPULACANDIN B,IC50,,,B,Inhibition of chitin synthase 1 in Saccharomyces cerevisiae assessed as incorporation of [14C]N-Acetylglucosamine after 90 mins,2008
+chitin synthase,CHEMBL3827,CHEMBL448981,PAPULACANDIN B,Activity,,,B,Effect on chitin synthase 1-mediated incorporation of [14C]N-Acetylglucosamine in Saccharomyces cerevisiae assessed as residual activity after 90 mins in presence of trypsin,2008
+chitin synthase,CHEMBL3827,CHEMBL448981,PAPULACANDIN B,IC50,,,B,Inhibition of chitin synthase 1 in Saccharomyces cerevisiae after 90 mins in presence of trypsin,2008
+chitin synthase,CHEMBL3827,CHEMBL35306,NIKKOMYCIN,Activity,,,B,Effect on chitin synthase 1-mediated incorporation of [14C]N-acetylglucosamine in Saccharomyces cerevisiae assessed as residual activity after 90 mins,2008
+chitin synthase,CHEMBL3827,CHEMBL35306,NIKKOMYCIN,IC50,0.2,nM,B,Inhibition of chitin synthase 1 in Saccharomyces cerevisiae assessed as incorporation of [14C]N-Acetylglucosamine after 90 mins,2008
+chitin synthase,CHEMBL3827,CHEMBL35306,NIKKOMYCIN,Activity,,,B,Effect on chitin synthase 1-mediated incorporation of [14C]N-Acetylglucosamine in Saccharomyces cerevisiae assessed as residual activity after 90 mins in presence of trypsin,2008
+chitin synthase,CHEMBL3827,CHEMBL35306,NIKKOMYCIN,IC50,0.2,nM,B,Inhibition of chitin synthase 1 in Saccharomyces cerevisiae after 90 mins in presence of trypsin,2008
+chitin synthase,CHEMBL3827,CHEMBL258392,PHYTOLACCOSIDE B,Activity,,,B,Enhancement of chitin synthase 1 activity in Saccharomyces cerevisiae assessed as increase in amount of cell wall chitin at 37 uM by calcofluor staining,2008
+chitin synthase,CHEMBL3827,CHEMBL258392,PHYTOLACCOSIDE B,Activity,23.0,%,B,Enhancement of chitin synthase 1 activity in Saccharomyces cerevisiae assessed as increase in amount of cell wall chitin at 100 mg by Reissig method,2008
+chitin synthase,CHEMBL5597,CHEMBL1098239,,IC50,94188.96,nM,B,Inhibition of Saccharomyces cerevisiae chitin synthase,2013
+chitin synthase,CHEMBL5597,CHEMBL2295882,,IC50,824138.12,nM,B,Inhibition of Saccharomyces cerevisiae chitin synthase,2013
+chitin synthase,CHEMBL5597,CHEMBL287855,,IC50,297851.64,nM,B,Inhibition of Saccharomyces cerevisiae chitin synthase,2013
+chitin synthase,CHEMBL5597,CHEMBL144626,,IC50,372391.71,nM,B,Inhibition of Saccharomyces cerevisiae chitin synthase,2013
+chitin synthase,CHEMBL5597,CHEMBL33943,,IC50,372391.71,nM,B,Inhibition of Saccharomyces cerevisiae chitin synthase,2013
+chitin synthase,CHEMBL5625,CHEMBL258392,PHYTOLACCOSIDE B,Activity,,,B,Enhancement of chitin synthase 1 activity in Neurospora crassa assessed as increase in amount of cell wall chitin at 37 uM by calcofluor staining,2008
+chitin synthase,CHEMBL5625,CHEMBL258392,PHYTOLACCOSIDE B,Activity,400.0,nm,B,Enhancement of chitin synthase 1 activity in Neurospora crassa assessed as increase in cell wall thickness at 37 uM by calcofluor staining,2008

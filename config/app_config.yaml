@@ -1,0 +1,32 @@
+# Application Operational Configuration
+
+app:
+  env: "development"
+  debug: false
+  host: "0.0.0.0"
+  port: 8000
+  api_prefix: "/api/v1"
+
+database:
+  table_name: "filtered_polymers"
+  connection_url_env: "DATABASE_URL"
+
+cache:
+  provider: "memory" # "memory" or "redis"
+  ttl_seconds: 1800 # 30 minutes
+  redis_url: "redis://localhost:6379/0"
+
+rate_limiting:
+  enabled: true
+  anonymous_limit: "10/minute"
+  user_limit: "60/minute"
+  admin_limit: "300/minute"
+
+model_registry:
+  path: "models/registry"
+  active_symlink: "latest"
+
+offline_catalogue:
+  output_path: "apppp/android/app/src/main/assets/curated_catalogue.json"
+  target_count: 40
+  generator_version: "1.0.0"

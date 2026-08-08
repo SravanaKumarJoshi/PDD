@@ -1,0 +1,101 @@
+{
+    "best_model": "GradientBoosting",
+    "best_accuracy": 0.8661538461538462,
+    "target_column": "category",
+    "target_classes": [
+        "Algal",
+        "Bacterial",
+        "Bioactive",
+        "Fungal",
+        "Simple_Carbohydrate",
+        "Storage",
+        "Structural"
+    ],
+    "n_features": 62,
+    "train_samples": 2599,
+    "test_samples": 650,
+    "results": [
+        {
+            "model": "RandomForest",
+            "accuracy": 0.7907692307692308,
+            "precision": 0.7930712204233538,
+            "recall": 0.7907692307692308,
+            "f1": 0.7882562245763852,
+            "cv_mean": 0.8239407372288727,
+            "cv_std": 0.0109935512452257
+        },
+        {
+            "model": "GradientBoosting",
+            "accuracy": 0.8661538461538462,
+            "precision": 0.8690246352346334,
+            "recall": 0.8661538461538462,
+            "f1": 0.865665513594269,
+            "cv_mean": 0.8719559084982814,
+            "cv_std": 0.01138097771344963
+        },
+        {
+            "model": "DecisionTree",
+            "accuracy": 0.8353846153846154,
+            "precision": 0.8364406399387343,
+            "recall": 0.8353846153846154,
+            "f1": 0.8356234080521171,
+            "cv_mean": 0.847644423373237,
+            "cv_std": 0.010357900022953734
+        },
+        {
+            "model": "KNN",
+            "accuracy": 0.4153846153846154,
+            "precision": 0.40450360840542343,
+            "recall": 0.4153846153846154,
+            "f1": 0.4036571792035841,
+            "cv_mean": 0.38658622733199005,
+            "cv_std": 0.013278893002454
+        },
+        {
+            "model": "SVM",
+            "accuracy": 0.49230769230769234,
+            "precision": 0.4555618353716714,
+            "recall": 0.49230769230769234,
+            "f1": 0.45564453000652827,
+            "cv_mean": 0.47060519141875073,
+            "cv_std": 0.007672586776960904
+        },
+        {
+            "model": "LogisticRegression",
+            "accuracy": 0.5061538461538462,
+            "precision": 0.4774389951772911,
+            "recall": 0.5061538461538462,
+            "f1": 0.4816565499706791,
+            "cv_mean": 0.4872196278297973,
+            "cv_std": 0.012363370585044995
+        },
+        {
+            "model": "MLP",
+            "accuracy": 0.6230769230769231,
+            "precision": 0.615185108942008,
+            "recall": 0.6230769230769231,
+            "f1": 0.6171359384602711,
+            "cv_mean": 0.6158786298447315,
+            "cv_std": 0.020529943183053033
+        }
+    ],
+    "tuning_results": {
+        "RandomForest": {
+            "best_params": {
+                "max_depth": null,
+                "min_samples_split": 2,
+                "n_estimators": 200
+            },
+            "tuned_accuracy": 0.7907692307692308
+        },
+        "GradientBoosting": {
+            "best_params": {
+                "learning_rate": 0.05,
+                "max_depth": 5,
+                "n_estimators": 100
+            },
+            "tuned_accuracy": 0.8615384615384616
+        }
+    },
+    "generated_at": "2026-03-18T09:04:13.621088"
+}

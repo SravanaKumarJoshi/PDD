@@ -1,0 +1,90 @@
+# Training Pipeline Configuration
+
+dataset:
+  target_column: "suitability_label"
+  group_by_column: "category"
+  test_size: 0.25
+  random_state: 42
+  cv_folds: 5
+
+feature_columns:
+  - "tensile_strength"
+  - "elastic_modulus"
+  - "elongation_pct"
+  - "flexibility"
+  - "wvtr"
+  - "oxygen_permeability"
+  - "biocompatibility"
+  - "toxicity_score"
+  - "antimicrobial"
+  - "biodegradation_days"
+  - "environmental_impact"
+  - "film_forming"
+  - "sterilization_gamma"
+  - "sterilization_eto"
+  - "sterilization_steam"
+
+algorithms:
+  xgboost:
+    enabled: true
+    params:
+      n_estimators: 200
+      max_depth: 4
+      learning_rate: 0.05
+      subsample: 0.8
+      colsample_bytree: 0.8
+      eval_metric: "logloss"
+      random_state: 42
+
+  lightgbm:
+    enabled: true
+    params:
+      n_estimators: 200
+      max_depth: 4
+      learning_rate: 0.05
+      subsample: 0.8
+      colsample_bytree: 0.8
+      random_state: 42
+      verbose: -1
+
+  catboost:
+    enabled: true
+    params:
+      iterations: 200
+      depth: 4
+      learning_rate: 0.05
+      random_seed: 42
+      verbose: false
+
+  random_forest:
+    enabled: true
+    params:
+      n_estimators: 150
+      max_depth: 6
+      class_weight: "balanced"
+      random_state: 42
+
+  extra_trees:
+    enabled: true
+    params:
+      n_estimators: 150
+      max_depth: 6
+      class_weight: "balanced"
+      random_state: 42
+
+  gradient_boosting:
+    enabled: true
+    params:
+      n_estimators: 150
+      max_depth: 4
+      learning_rate: 0.05
+      random_state: 42
+
+metric_weights:
+  f1: 0.35
+  accuracy: 0.25
+  precision: 0.15
+  recall: 0.15
+  cv_mean: 0.10
+
+selection_strategy: "best_composite_score"

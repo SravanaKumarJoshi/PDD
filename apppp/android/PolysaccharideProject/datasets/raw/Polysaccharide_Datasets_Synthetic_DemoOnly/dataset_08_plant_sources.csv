@@ -1,0 +1,251 @@
+name,category,scientific_name,common_name,plant_part,yield_percent,extraction_method,molecular_weight_kda,solubility,geographic_origin
+Cellulose Sulfate,Structural,Manihot esculenta,Cassava,Root,2.36,Water extraction,900.83,Soluble,Americas
+Pectin,Structural,Manihot esculenta,Cassava,Exudate,25.75,Ethanol precipitation,84.78,Soluble,Oceania
+Konjac Glucomannan,Storage,Triticum aestivum,Wheat,Exudate,0.6,Water extraction,965.48,Soluble,Oceania
+Locust Bean Gum,Storage,Plantago ovata,Psyllium,Root,14.69,Alkaline extraction,285.72,Soluble,Americas
+Guar Gum,Storage,Plantago ovata,Psyllium,Bark,17.79,Acid hydrolysis,227.47,Soluble,Oceania
+Locust Bean Gum,Storage,Ceratonia siliqua,Locust Bean,Stem,11.71,Ethanol precipitation,291.17,Soluble,Europe
+Starch,Storage,Aloe vera,Aloe,Fruit,11.03,Alkaline extraction,503.25,Soluble,Africa
+Cellulose Sulfate,Structural,Oryza sativa,Rice,Exudate,0.98,Water extraction,874.61,Soluble,Europe
+Cellulose Sulfate,Structural,Oryza sativa,Rice,Root,6.55,Acid hydrolysis,956.65,Soluble,Asia
+Konjac Glucomannan,Storage,Zea mays,Corn,Leaf,7.01,Alkaline extraction,943.69,Soluble,Asia
+Guar Gum,Storage,Solanum tuberosum,Potato,Root,27.59,Acid hydrolysis,203.29,Soluble,Americas
+Konjac Glucomannan,Storage,Ceratonia siliqua,Locust Bean,Seed,3.26,Alkaline extraction,1022.35,Soluble,Asia
+Pectin,Structural,Manihot esculenta,Cassava,Root,14.54,Enzymatic,80.66,Soluble,Asia
+Pectin,Structural,Cichorium intybus,Chicory,Rhizome,26.68,Water extraction,73.42,Soluble,Oceania
+Guar Gum,Storage,Oryza sativa,Rice,Root,13.1,Enzymatic,239.12,Soluble,Africa
+Inulin,Storage,Cyamopsis tetragonoloba,Guar,Root,22.3,Ethanol precipitation,4.52,Soluble,Americas
+Inulin,Storage,Oryza sativa,Rice,Leaf,7.41,Water extraction,5.23,Soluble,Europe
+Pectin,Structural,Oryza sativa,Rice,Leaf,9.2,Water extraction,82.59,Soluble,Europe
+Inulin,Storage,Ceratonia siliqua,Locust Bean,Root,3.98,Alkaline extraction,4.87,Soluble,Americas
+Inulin,Storage,Plantago ovata,Psyllium,Stem,25.09,Alkaline extraction,4.97,Soluble,Asia
+Locust Bean Gum,Storage,Triticum aestivum,Wheat,Root,16.22,Acid hydrolysis,285.73,Soluble,Europe
+Cellulose,Structural,Oryza sativa,Rice,Leaf,12.74,Acid hydrolysis,945.85,Insoluble,Europe
+Locust Bean Gum,Storage,Manihot esculenta,Cassava,Tuber,5.14,Ethanol precipitation,312.04,Soluble,Oceania
+Konjac Glucomannan,Storage,Oryza sativa,Rice,Rhizome,5.58,Acid hydrolysis,955.84,Soluble,Americas
+Pectin,Structural,Ceratonia siliqua,Locust Bean,Root,6.29,Enzymatic,78.01,Soluble,Oceania
+Cellulose,Structural,Cichorium intybus,Chicory,Stem,24.0,Alkaline extraction,1080.17,Insoluble,Europe
+Cellulose,Structural,Cyamopsis tetragonoloba,Guar,Exudate,14.64,Ethanol precipitation,1042.49,Insoluble,Europe
+Inulin,Storage,Solanum tuberosum,Potato,Exudate,26.34,Alkaline extraction,4.74,Soluble,Asia
+Cellulose,Structural,Cyamopsis tetragonoloba,Guar,Seed,16.4,Water extraction,967.82,Insoluble,Oceania
+Guar Gum,Storage,Zea mays,Corn,Bark,10.3,Alkaline extraction,234.44,Soluble,Asia
+Konjac Glucomannan,Storage,Plantago ovata,Psyllium,Seed,4.62,Alkaline extraction,1039.76,Soluble,Asia
+Inulin,Storage,Cyamopsis tetragonoloba,Guar,Tuber,2.61,Ethanol precipitation,4.58,Soluble,Americas
+Inulin,Storage,Cichorium intybus,Chicory,Bark,29.79,Enzymatic,4.53,Soluble,Asia
+Starch,Storage,Solanum tuberosum,Potato,Root,2.97,Alkaline extraction,525.76,Soluble,Oceania
+Cellulose,Structural,Zea mays,Corn,Seed,14.68,Water extraction,987.8,Insoluble,Oceania
+Starch,Storage,Aloe vera,Aloe,Root,21.72,Enzymatic,481.28,Soluble,Asia
+Guar Gum,Storage,Cyamopsis tetragonoloba,Guar,Bark,8.19,Water extraction,222.01,Soluble,Europe
+Konjac Glucomannan,Storage,Ceratonia siliqua,Locust Bean,Bark,14.99,Water extraction,930.12,Soluble,Americas
+Starch,Storage,Cyamopsis tetragonoloba,Guar,Fruit,11.69,Water extraction,500.71,Soluble,Africa
+Starch,Storage,Solanum tuberosum,Potato,Root,0.58,Enzymatic,538.58,Soluble,Africa
+Locust Bean Gum,Storage,Aloe vera,Aloe,Stem,11.16,Ethanol precipitation,296.05,Soluble,Europe
+Cellulose Sulfate,Structural,Plantago ovata,Psyllium,Stem,7.46,Alkaline extraction,1006.56,Soluble,Oceania
+Locust Bean Gum,Storage,Oryza sativa,Rice,Fruit,20.01,Enzymatic,298.23,Soluble,Europe
+Cellulose Sulfate,Structural,Ceratonia siliqua,Locust Bean,Root,16.8,Water extraction,973.75,Soluble,Asia
+Pectin,Structural,Plantago ovata,Psyllium,Seed,12.6,Ethanol precipitation,80.93,Soluble,Oceania
+Starch,Storage,Aloe vera,Aloe,Exudate,5.95,Water extraction,456.07,Soluble,Asia
+Cellulose Sulfate,Structural,Zea mays,Corn,Bark,25.13,Water extraction,1024.14,Soluble,Oceania
+Guar Gum,Storage,Solanum tuberosum,Potato,Bark,28.88,Alkaline extraction,222.09,Soluble,Africa
+Pectin,Structural,Cichorium intybus,Chicory,Exudate,6.22,Alkaline extraction,80.45,Soluble,Asia
+Guar Gum,Storage,Plantago ovata,Psyllium,Seed,5.07,Water extraction,204.23,Soluble,Africa
+Guar Gum,Storage,Ceratonia siliqua,Locust Bean,Leaf,15.89,Enzymatic,215.94,Soluble,Europe
+Pectin,Structural,Solanum tuberosum,Potato,Rhizome,22.82,Alkaline extraction,77.89,Soluble,Oceania
+Pectin,Structural,Plantago ovata,Psyllium,Stem,9.63,Enzymatic,73.31,Soluble,Asia
+Guar Gum,Storage,Plantago ovata,Psyllium,Rhizome,5.12,Enzymatic,231.34,Soluble,Asia
+Cellulose Sulfate,Structural,Triticum aestivum,Wheat,Seed,21.77,Enzymatic,919.59,Soluble,Europe
+Pectin,Structural,Manihot esculenta,Cassava,Root,20.23,Acid hydrolysis,78.04,Soluble,Africa
+Guar Gum,Storage,Manihot esculenta,Cassava,Exudate,17.48,Ethanol precipitation,220.23,Soluble,Asia
+Cellulose,Structural,Oryza sativa,Rice,Fruit,7.62,Ethanol precipitation,1003.75,Insoluble,Americas
+Inulin,Storage,Aloe vera,Aloe,Tuber,18.5,Water extraction,5.17,Soluble,Americas
+Guar Gum,Storage,Solanum tuberosum,Potato,Root,29.8,Enzymatic,208.51,Soluble,Europe
+Locust Bean Gum,Storage,Oryza sativa,Rice,Seed,24.94,Enzymatic,315.4,Soluble,Asia
+Pectin,Structural,Plantago ovata,Psyllium,Leaf,24.28,Water extraction,73.51,Soluble,Oceania
+Konjac Glucomannan,Storage,Cichorium intybus,Chicory,Stem,16.56,Ethanol precipitation,1095.12,Soluble,Europe
+Cellulose,Structural,Ceratonia siliqua,Locust Bean,Seed,15.03,Alkaline extraction,981.0,Insoluble,Americas
+Starch,Storage,Oryza sativa,Rice,Rhizome,25.72,Water extraction,545.62,Soluble,Oceania
+Konjac Glucomannan,Storage,Cyamopsis tetragonoloba,Guar,Fruit,29.75,Water extraction,992.34,Soluble,Oceania
+Starch,Storage,Plantago ovata,Psyllium,Root,27.39,Alkaline extraction,532.03,Soluble,Asia
+Cellulose,Structural,Ceratonia siliqua,Locust Bean,Fruit,23.47,Water extraction,1009.95,Insoluble,Oceania
+Starch,Storage,Cyamopsis tetragonoloba,Guar,Seed,20.81,Enzymatic,497.23,Soluble,Africa
+Guar Gum,Storage,Manihot esculenta,Cassava,Stem,28.83,Acid hydrolysis,238.33,Soluble,Oceania
+Cellulose Sulfate,Structural,Oryza sativa,Rice,Fruit,18.49,Enzymatic,880.45,Soluble,Asia
+Guar Gum,Storage,Zea mays,Corn,Stem,24.35,Ethanol precipitation,226.13,Soluble,Oceania
+Cellulose,Structural,Manihot esculenta,Cassava,Exudate,9.12,Alkaline extraction,979.4,Insoluble,Africa
+Starch,Storage,Aloe vera,Aloe,Leaf,22.82,Acid hydrolysis,469.47,Soluble,Europe
+Inulin,Storage,Oryza sativa,Rice,Stem,7.58,Enzymatic,4.84,Soluble,Africa
+Cellulose,Structural,Zea mays,Corn,Bark,28.05,Enzymatic,926.01,Insoluble,Oceania
+Starch,Storage,Plantago ovata,Psyllium,Fruit,19.1,Enzymatic,473.76,Soluble,Africa
+Cellulose Sulfate,Structural,Plantago ovata,Psyllium,Root,15.82,Water extraction,877.14,Soluble,Europe
+Starch,Storage,Plantago ovata,Psyllium,Root,28.34,Water extraction,502.03,Soluble,Europe
+Cellulose Sulfate,Structural,Aloe vera,Aloe,Rhizome,26.59,Water extraction,1010.45,Soluble,Asia
+Inulin,Storage,Plantago ovata,Psyllium,Tuber,2.64,Alkaline extraction,4.6,Soluble,Europe
+Guar Gum,Storage,Oryza sativa,Rice,Fruit,11.0,Acid hydrolysis,220.4,Soluble,Europe
+Cellulose,Structural,Plantago ovata,Psyllium,Tuber,18.98,Acid hydrolysis,984.89,Insoluble,Oceania
+Pectin,Structural,Triticum aestivum,Wheat,Exudate,25.03,Enzymatic,83.99,Soluble,Asia
+Pectin,Structural,Zea mays,Corn,Bark,26.94,Water extraction,84.7,Soluble,Africa
+Locust Bean Gum,Storage,Oryza sativa,Rice,Bark,7.5,Ethanol precipitation,324.67,Soluble,Oceania
+Cellulose Sulfate,Structural,Triticum aestivum,Wheat,Root,6.75,Enzymatic,971.76,Soluble,Asia
+Cellulose,Structural,Solanum tuberosum,Potato,Fruit,13.82,Water extraction,1021.14,Insoluble,Asia
+Locust Bean Gum,Storage,Cyamopsis tetragonoloba,Guar,Stem,24.2,Enzymatic,314.59,Soluble,Asia
+Guar Gum,Storage,Cichorium intybus,Chicory,Leaf,12.38,Ethanol precipitation,229.07,Soluble,Oceania
+Cellulose Sulfate,Structural,Plantago ovata,Psyllium,Bark,24.99,Ethanol precipitation,999.3,Soluble,Africa
+Guar Gum,Storage,Zea mays,Corn,Leaf,16.29,Enzymatic,223.49,Soluble,Oceania
+Inulin,Storage,Oryza sativa,Rice,Fruit,17.18,Enzymatic,4.52,Soluble,Oceania
+Pectin,Structural,Manihot esculenta,Cassava,Leaf,26.77,Water extraction,74.96,Soluble,Europe
+Inulin,Storage,Manihot esculenta,Cassava,Rhizome,12.42,Ethanol precipitation,5.46,Soluble,Asia
+Starch,Storage,Plantago ovata,Psyllium,Exudate,14.45,Acid hydrolysis,514.02,Soluble,Africa
+Starch,Storage,Plantago ovata,Psyllium,Tuber,5.63,Alkaline extraction,480.95,Soluble,Europe
+Pectin,Structural,Cyamopsis tetragonoloba,Guar,Fruit,20.27,Ethanol precipitation,86.53,Soluble,Europe
+Inulin,Storage,Cyamopsis tetragonoloba,Guar,Exudate,22.83,Enzymatic,5.33,Soluble,Americas
+Cellulose,Structural,Plantago ovata,Psyllium,Leaf,27.12,Ethanol precipitation,1022.0,Insoluble,Americas
+Inulin,Storage,Solanum tuberosum,Potato,Rhizome,17.92,Enzymatic,5.04,Soluble,Europe
+Guar Gum,Storage,Plantago ovata,Psyllium,Stem,23.62,Acid hydrolysis,223.21,Soluble,Americas
+Cellulose,Structural,Plantago ovata,Psyllium,Seed,0.94,Acid hydrolysis,1061.75,Insoluble,Asia
+Pectin,Structural,Triticum aestivum,Wheat,Exudate,9.75,Enzymatic,87.69,Soluble,Asia
+Pectin,Structural,Manihot esculenta,Cassava,Bark,12.26,Alkaline extraction,75.85,Soluble,Americas
+Guar Gum,Storage,Cyamopsis tetragonoloba,Guar,Root,25.71,Alkaline extraction,219.05,Soluble,Europe
+Starch,Storage,Solanum tuberosum,Potato,Exudate,13.31,Acid hydrolysis,540.73,Soluble,Africa
+Starch,Storage,Zea mays,Corn,Stem,25.09,Acid hydrolysis,500.39,Soluble,Asia
+Pectin,Structural,Zea mays,Corn,Fruit,24.8,Water extraction,72.77,Soluble,Asia
+Starch,Storage,Plantago ovata,Psyllium,Bark,2.86,Ethanol precipitation,457.32,Soluble,Americas
+Konjac Glucomannan,Storage,Solanum tuberosum,Potato,Rhizome,23.32,Ethanol precipitation,939.18,Soluble,Oceania
+Cellulose Sulfate,Structural,Cichorium intybus,Chicory,Leaf,1.98,Enzymatic,896.9,Soluble,Americas
+Starch,Storage,Manihot esculenta,Cassava,Tuber,13.5,Ethanol precipitation,478.15,Soluble,Europe
+Konjac Glucomannan,Storage,Solanum tuberosum,Potato,Leaf,21.92,Acid hydrolysis,1034.28,Soluble,Oceania
+Locust Bean Gum,Storage,Triticum aestivum,Wheat,Root,16.89,Water extraction,325.24,Soluble,Africa
+Cellulose Sulfate,Structural,Cichorium intybus,Chicory,Root,29.47,Ethanol precipitation,987.86,Soluble,Oceania
+Guar Gum,Storage,Zea mays,Corn,Root,12.22,Ethanol precipitation,227.68,Soluble,Americas
+Pectin,Structural,Zea mays,Corn,Seed,6.48,Alkaline extraction,73.43,Soluble,Europe
+Locust Bean Gum,Storage,Aloe vera,Aloe,Leaf,6.48,Acid hydrolysis,285.74,Soluble,Oceania
+Konjac Glucomannan,Storage,Zea mays,Corn,Root,6.55,Alkaline extraction,1035.61,Soluble,Asia
+Inulin,Storage,Ceratonia siliqua,Locust Bean,Root,11.7,Alkaline extraction,5.25,Soluble,Europe
+Locust Bean Gum,Storage,Cyamopsis tetragonoloba,Guar,Leaf,14.3,Ethanol precipitation,314.55,Soluble,Americas
+Cellulose,Structural,Plantago ovata,Psyllium,Seed,6.94,Water extraction,1078.28,Insoluble,Oceania
+Guar Gum,Storage,Manihot esculenta,Cassava,Bark,17.98,Alkaline extraction,236.04,Soluble,Americas
+Inulin,Storage,Solanum tuberosum,Potato,Rhizome,9.17,Water extraction,5.47,Soluble,Asia
+Guar Gum,Storage,Plantago ovata,Psyllium,Bark,29.85,Alkaline extraction,217.88,Soluble,Americas
+Cellulose Sulfate,Structural,Zea mays,Corn,Tuber,16.26,Alkaline extraction,1026.96,Soluble,Africa
+Inulin,Storage,Cyamopsis tetragonoloba,Guar,Leaf,2.72,Alkaline extraction,5.14,Soluble,Africa
+Inulin,Storage,Ceratonia siliqua,Locust Bean,Stem,19.03,Enzymatic,5.02,Soluble,Africa
+Locust Bean Gum,Storage,Triticum aestivum,Wheat,Tuber,23.64,Ethanol precipitation,306.15,Soluble,Africa
+Pectin,Structural,Oryza sativa,Rice,Stem,25.52,Alkaline extraction,80.7,Soluble,Americas
+Starch,Storage,Plantago ovata,Psyllium,Fruit,7.25,Acid hydrolysis,545.98,Soluble,Asia
+Cellulose Sulfate,Structural,Cichorium intybus,Chicory,Rhizome,20.58,Water extraction,941.18,Soluble,Asia
+Konjac Glucomannan,Storage,Plantago ovata,Psyllium,Seed,27.06,Ethanol precipitation,1055.98,Soluble,Europe
+Locust Bean Gum,Storage,Solanum tuberosum,Potato,Root,11.6,Alkaline extraction,284.23,Soluble,Europe
+Pectin,Structural,Triticum aestivum,Wheat,Fruit,10.17,Alkaline extraction,73.38,Soluble,Africa
+Starch,Storage,Aloe vera,Aloe,Fruit,16.4,Acid hydrolysis,543.71,Soluble,Americas
+Inulin,Storage,Plantago ovata,Psyllium,Stem,15.92,Alkaline extraction,4.57,Soluble,Oceania
+Locust Bean Gum,Storage,Triticum aestivum,Wheat,Rhizome,29.08,Ethanol precipitation,338.2,Soluble,Oceania
+Guar Gum,Storage,Ceratonia siliqua,Locust Bean,Seed,13.18,Ethanol precipitation,221.84,Soluble,Oceania
+Inulin,Storage,Solanum tuberosum,Potato,Leaf,26.82,Water extraction,5.35,Soluble,Asia
+Pectin,Structural,Ceratonia siliqua,Locust Bean,Exudate,13.28,Ethanol precipitation,83.47,Soluble,Americas
+Guar Gum,Storage,Cyamopsis tetragonoloba,Guar,Leaf,9.3,Ethanol precipitation,212.86,Soluble,Oceania
+Cellulose,Structural,Cyamopsis tetragonoloba,Guar,Stem,8.87,Acid hydrolysis,1025.21,Insoluble,Oceania
+Starch,Storage,Cichorium intybus,Chicory,Tuber,3.2,Alkaline extraction,473.53,Soluble,Oceania
+Konjac Glucomannan,Storage,Plantago ovata,Psyllium,Rhizome,14.59,Ethanol precipitation,1053.82,Soluble,Europe
+Konjac Glucomannan,Storage,Solanum tuberosum,Potato,Bark,11.72,Water extraction,1092.7,Soluble,Asia
+Konjac Glucomannan,Storage,Cichorium intybus,Chicory,Exudate,15.03,Ethanol precipitation,929.98,Soluble,Oceania
+Cellulose Sulfate,Structural,Ceratonia siliqua,Locust Bean,Exudate,15.17,Alkaline extraction,1014.04,Soluble,Europe
+Pectin,Structural,Aloe vera,Aloe,Tuber,29.83,Water extraction,84.65,Soluble,Oceania
+Starch,Storage,Aloe vera,Aloe,Rhizome,19.48,Alkaline extraction,486.87,Soluble,Americas
+Locust Bean Gum,Storage,Solanum tuberosum,Potato,Rhizome,11.74,Ethanol precipitation,299.58,Soluble,Africa
+Starch,Storage,Ceratonia siliqua,Locust Bean,Root,20.35,Alkaline extraction,477.96,Soluble,Oceania
+Locust Bean Gum,Storage,Triticum aestivum,Wheat,Fruit,8.42,Alkaline extraction,336.92,Soluble,Africa
+Cellulose Sulfate,Structural,Cichorium intybus,Chicory,Seed,4.64,Ethanol precipitation,910.89,Soluble,Europe
+Guar Gum,Storage,Triticum aestivum,Wheat,Rhizome,24.99,Alkaline extraction,236.12,Soluble,Europe
+Cellulose,Structural,Cyamopsis tetragonoloba,Guar,Fruit,12.44,Enzymatic,915.92,Insoluble,Americas
+Locust Bean Gum,Storage,Triticum aestivum,Wheat,Tuber,5.75,Enzymatic,303.12,Soluble,Oceania
+Cellulose Sulfate,Structural,Triticum aestivum,Wheat,Seed,26.12,Alkaline extraction,920.23,Soluble,Oceania
+Cellulose,Structural,Aloe vera,Aloe,Seed,25.88,Ethanol precipitation,921.24,Insoluble,Africa
+Locust Bean Gum,Storage,Aloe vera,Aloe,Root,28.57,Acid hydrolysis,311.17,Soluble,Africa
+Locust Bean Gum,Storage,Cyamopsis tetragonoloba,Guar,Root,18.49,Acid hydrolysis,326.93,Soluble,Americas
+Pectin,Structural,Manihot esculenta,Cassava,Root,6.23,Ethanol precipitation,73.92,Soluble,Oceania
+Cellulose,Structural,Ceratonia siliqua,Locust Bean,Stem,27.46,Ethanol precipitation,996.85,Insoluble,Asia
+Locust Bean Gum,Storage,Oryza sativa,Rice,Seed,8.44,Water extraction,284.33,Soluble,Americas
+Cellulose Sulfate,Structural,Oryza sativa,Rice,Bark,3.1,Enzymatic,941.2,Soluble,Americas
+Pectin,Structural,Aloe vera,Aloe,Stem,6.89,Alkaline extraction,77.86,Soluble,Europe
+Konjac Glucomannan,Storage,Plantago ovata,Psyllium,Exudate,3.37,Acid hydrolysis,989.47,Soluble,Americas
+Starch,Storage,Solanum tuberosum,Potato,Bark,28.61,Alkaline extraction,519.71,Soluble,Asia
+Cellulose,Structural,Manihot esculenta,Cassava,Root,23.4,Alkaline extraction,991.33,Insoluble,Oceania
+Cellulose,Structural,Cyamopsis tetragonoloba,Guar,Exudate,14.45,Water extraction,1021.01,Insoluble,Europe
+Starch,Storage,Cichorium intybus,Chicory,Bark,11.15,Alkaline extraction,534.47,Soluble,Oceania
+Locust Bean Gum,Storage,Cyamopsis tetragonoloba,Guar,Rhizome,5.3,Alkaline extraction,336.98,Soluble,Oceania
+Cellulose Sulfate,Structural,Plantago ovata,Psyllium,Root,28.69,Ethanol precipitation,951.22,Soluble,Africa
+Konjac Glucomannan,Storage,Cyamopsis tetragonoloba,Guar,Bark,9.31,Alkaline extraction,927.64,Soluble,Americas
+Locust Bean Gum,Storage,Cyamopsis tetragonoloba,Guar,Bark,16.47,Enzymatic,324.44,Soluble,Africa
+Locust Bean Gum,Storage,Aloe vera,Aloe,Bark,5.74,Alkaline extraction,297.88,Soluble,Oceania
+Cellulose,Structural,Zea mays,Corn,Rhizome,29.57,Water extraction,927.23,Insoluble,Asia
+Starch,Storage,Solanum tuberosum,Potato,Leaf,24.15,Enzymatic,513.92,Soluble,Oceania
+Cellulose,Structural,Oryza sativa,Rice,Seed,4.37,Water extraction,1059.86,Insoluble,Americas
+Pectin,Structural,Zea mays,Corn,Root,10.06,Acid hydrolysis,72.54,Soluble,Europe
+Inulin,Storage,Plantago ovata,Psyllium,Stem,8.88,Enzymatic,5.35,Soluble,Oceania
+Cellulose Sulfate,Structural,Ceratonia siliqua,Locust Bean,Rhizome,17.8,Acid hydrolysis,882.37,Soluble,Europe
+Konjac Glucomannan,Storage,Plantago ovata,Psyllium,Tuber,21.72,Enzymatic,1028.63,Soluble,Europe
+Inulin,Storage,Solanum tuberosum,Potato,Fruit,25.46,Alkaline extraction,5.42,Soluble,Americas
+Cellulose,Structural,Oryza sativa,Rice,Exudate,6.94,Alkaline extraction,1041.51,Insoluble,Asia
+Pectin,Structural,Triticum aestivum,Wheat,Stem,4.23,Ethanol precipitation,74.29,Soluble,Asia
+Cellulose,Structural,Manihot esculenta,Cassava,Root,11.63,Water extraction,1077.1,Insoluble,Oceania
+Cellulose Sulfate,Structural,Oryza sativa,Rice,Bark,14.94,Alkaline extraction,991.33,Soluble,Africa
+Starch,Storage,Aloe vera,Aloe,Exudate,5.37,Acid hydrolysis,490.4,Soluble,Asia
+Inulin,Storage,Cichorium intybus,Chicory,Leaf,27.05,Acid hydrolysis,4.96,Soluble,Americas
+Guar Gum,Storage,Aloe vera,Aloe,Tuber,4.5,Alkaline extraction,235.96,Soluble,Asia
+Inulin,Storage,Aloe vera,Aloe,Stem,15.57,Acid hydrolysis,4.88,Soluble,Oceania
+Cellulose,Structural,Oryza sativa,Rice,Rhizome,2.07,Alkaline extraction,1043.66,Insoluble,Asia
+Inulin,Storage,Cichorium intybus,Chicory,Stem,13.99,Alkaline extraction,4.7,Soluble,Europe
+Inulin,Storage,Ceratonia siliqua,Locust Bean,Root,10.11,Alkaline extraction,4.66,Soluble,Oceania
+Pectin,Structural,Ceratonia siliqua,Locust Bean,Rhizome,26.51,Water extraction,83.72,Soluble,Americas
+Cellulose,Structural,Ceratonia siliqua,Locust Bean,Bark,7.47,Ethanol precipitation,928.77,Insoluble,Europe
+Locust Bean Gum,Storage,Aloe vera,Aloe,Seed,23.79,Ethanol precipitation,291.6,Soluble,Oceania
+Guar Gum,Storage,Manihot esculenta,Cassava,Rhizome,4.1,Acid hydrolysis,230.43,Soluble,Africa
+Inulin,Storage,Oryza sativa,Rice,Rhizome,9.05,Water extraction,5.07,Soluble,Americas
+Konjac Glucomannan,Storage,Manihot esculenta,Cassava,Stem,5.82,Acid hydrolysis,1020.72,Soluble,Oceania
+Starch,Storage,Cichorium intybus,Chicory,Leaf,17.35,Acid hydrolysis,456.99,Soluble,Asia
+Pectin,Structural,Aloe vera,Aloe,Tuber,22.91,Acid hydrolysis,83.5,Soluble,Europe
+Locust Bean Gum,Storage,Cichorium intybus,Chicory,Leaf,17.6,Ethanol precipitation,337.64,Soluble,Oceania
+Inulin,Storage,Oryza sativa,Rice,Leaf,1.33,Water extraction,4.63,Soluble,Americas
+Starch,Storage,Plantago ovata,Psyllium,Exudate,6.06,Water extraction,538.34,Soluble,Americas
+Konjac Glucomannan,Storage,Cyamopsis tetragonoloba,Guar,Tuber,15.8,Ethanol precipitation,1072.72,Soluble,Africa
+Pectin,Structural,Aloe vera,Aloe,Fruit,20.19,Enzymatic,74.95,Soluble,Oceania
+Starch,Storage,Plantago ovata,Psyllium,Root,6.46,Enzymatic,547.8,Soluble,Europe
+Cellulose,Structural,Plantago ovata,Psyllium,Fruit,3.73,Water extraction,969.38,Insoluble,Europe
+Cellulose,Structural,Oryza sativa,Rice,Root,23.48,Ethanol precipitation,933.5,Insoluble,Oceania
+Starch,Storage,Aloe vera,Aloe,Stem,9.43,Acid hydrolysis,477.72,Soluble,Oceania
+Starch,Storage,Oryza sativa,Rice,Seed,27.39,Ethanol precipitation,491.56,Soluble,Africa
+Pectin,Structural,Zea mays,Corn,Tuber,3.24,Water extraction,74.32,Soluble,Asia
+Inulin,Storage,Triticum aestivum,Wheat,Stem,6.61,Water extraction,5.37,Soluble,Africa
+Konjac Glucomannan,Storage,Plantago ovata,Psyllium,Leaf,2.08,Ethanol precipitation,1054.28,Soluble,Asia
+Cellulose,Structural,Zea mays,Corn,Rhizome,12.38,Alkaline extraction,1082.66,Insoluble,Asia
+Starch,Storage,Zea mays,Corn,Tuber,4.51,Enzymatic,516.17,Soluble,Oceania
+Pectin,Structural,Cichorium intybus,Chicory,Seed,27.8,Alkaline extraction,72.59,Soluble,Oceania
+Cellulose Sulfate,Structural,Oryza sativa,Rice,Rhizome,10.45,Ethanol precipitation,857.55,Soluble,Europe
+Guar Gum,Storage,Cichorium intybus,Chicory,Exudate,3.56,Enzymatic,205.75,Soluble,Asia
+Starch,Storage,Manihot esculenta,Cassava,Exudate,20.65,Ethanol precipitation,464.06,Soluble,Americas
+Locust Bean Gum,Storage,Solanum tuberosum,Potato,Leaf,4.93,Enzymatic,302.29,Soluble,Asia
+Pectin,Structural,Ceratonia siliqua,Locust Bean,Fruit,29.84,Enzymatic,83.55,Soluble,Asia
+Pectin,Structural,Solanum tuberosum,Potato,Fruit,4.28,Ethanol precipitation,79.94,Soluble,Asia
+Pectin,Structural,Zea mays,Corn,Tuber,4.0,Enzymatic,75.05,Soluble,Americas
+Locust Bean Gum,Storage,Cyamopsis tetragonoloba,Guar,Exudate,11.32,Enzymatic,326.28,Soluble,Europe
+Starch,Storage,Oryza sativa,Rice,Bark,28.27,Alkaline extraction,452.56,Soluble,Africa
+Cellulose Sulfate,Structural,Solanum tuberosum,Potato,Stem,11.17,Alkaline extraction,946.07,Soluble,Oceania
+Guar Gum,Storage,Cichorium intybus,Chicory,Root,5.41,Ethanol precipitation,200.71,Soluble,Asia
+Cellulose Sulfate,Structural,Plantago ovata,Psyllium,Root,12.66,Alkaline extraction,879.03,Soluble,Americas
+Cellulose,Structural,Cyamopsis tetragonoloba,Guar,Fruit,9.92,Alkaline extraction,1065.55,Insoluble,Asia
+Guar Gum,Storage,Oryza sativa,Rice,Root,7.87,Water extraction,198.74,Soluble,Americas
+Konjac Glucomannan,Storage,Plantago ovata,Psyllium,Tuber,11.37,Enzymatic,1024.58,Soluble,Americas
+Locust Bean Gum,Storage,Cichorium intybus,Chicory,Fruit,8.91,Alkaline extraction,337.64,Soluble,Americas
+Cellulose,Structural,Cichorium intybus,Chicory,Leaf,25.18,Enzymatic,992.35,Insoluble,Asia
+Starch,Storage,Zea mays,Corn,Exudate,2.25,Water extraction,529.73,Soluble,Oceania
+Starch,Storage,Zea mays,Corn,Seed,1.29,Acid hydrolysis,505.38,Soluble,Asia
+Cellulose Sulfate,Structural,Cichorium intybus,Chicory,Bark,23.02,Water extraction,947.91,Soluble,Africa
+Starch,Storage,Cyamopsis tetragonoloba,Guar,Exudate,0.89,Water extraction,531.23,Soluble,Americas
+Cellulose,Structural,Cichorium intybus,Chicory,Leaf,17.99,Water extraction,1094.84,Insoluble,Asia
+Cellulose,Structural,Cichorium intybus,Chicory,Seed,15.5,Acid hydrolysis,990.59,Insoluble,Europe
+Konjac Glucomannan,Storage,Solanum tuberosum,Potato,Seed,10.3,Water extraction,1062.6,Soluble,Americas
+Guar Gum,Storage,Aloe vera,Aloe,Tuber,9.36,Acid hydrolysis,205.7,Soluble,Europe
+Starch,Storage,Solanum tuberosum,Potato,Rhizome,5.86,Ethanol precipitation,535.94,Soluble,Americas
+Cellulose Sulfate,Structural,Cichorium intybus,Chicory,Rhizome,18.09,Acid hydrolysis,860.64,Soluble,Asia
+Starch,Storage,Cyamopsis tetragonoloba,Guar,Fruit,6.37,Alkaline extraction,510.7,Soluble,Europe
+Guar Gum,Storage,Cichorium intybus,Chicory,Rhizome,26.74,Acid hydrolysis,234.22,Soluble,Asia
+Cellulose,Structural,Aloe vera,Aloe,Exudate,7.6,Alkaline extraction,1039.9,Insoluble,Africa

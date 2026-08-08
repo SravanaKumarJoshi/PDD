@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Google "G" logo vector drawable.
+    Based on Google's brand guidelines for the multi-color "G" mark.
+    Used as the icon for "Continue with Google" buttons.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Blue arc (right side) -->
+    <path
+        android:fillColor="#4285F4"
+        android:pathData="M44.5,20H24v8.5h11.8C34.7,33.9,30.1,37,24,37c-7.2,0-13-5.8-13-13s5.8-13,13-13c3.1,0,5.9,1.1,8.1,2.9l6.4-6.4C34.6,4.1,29.6,2,24,2C11.8,2,2,11.8,2,24s9.8,22,22,22c11,0,21-8,21-22C45,22.7,44.8,21.3,44.5,20z" />
+
+    <!-- Green arc (bottom-right) -->
+    <path
+        android:fillColor="#34A853"
+        android:pathData="M6.3,14.7l7.1,5.2C15.2,16,19.2,13,24,13c3.1,0,5.9,1.1,8.1,2.9l6.4-6.4C34.6,4.1,29.6,2,24,2C16.3,2,9.7,6.6,6.3,14.7z"
+        android:fillAlpha="0" />
+    <path
+        android:fillColor="#34A853"
+        android:pathData="M24,46c5.4,0,10.3-1.8,14.1-5l-6.9-5.7C29.1,36.7,26.7,37.5,24,37.5c-6,0-11.1-4-12.9-9.5l-7.1,5.5C7.4,41.3,15,46,24,46z" />
+
+    <!-- Yellow arc (bottom-left) -->
+    <path
+        android:fillColor="#FBBC05"
+        android:pathData="M11.1,28C10.4,26.1,10,24.1,10,22s0.4-4.1,1.1-6L4,10.7C2.4,14,1.5,17.9,1.5,22s0.9,8,2.5,11.3L11.1,28z" />
+
+    <!-- Red arc (top-left) -->
+    <path
+        android:fillColor="#EA4335"
+        android:pathData="M24,10c3.1,0,5.9,1.1,8.1,2.9l6.4-6.4C34.6,4.1,29.6,2,24,2C15,2,7.4,6.7,4,14.7l7.1,5.2C12.9,14,18,10,24,10z" />
+</vector>

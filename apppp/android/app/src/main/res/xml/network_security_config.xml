@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Network Security Configuration — FALLBACK (main sourceSet).
+
+  This file exists solely as a compile-time safety net.
+
+  WHY THIS FILE EXISTS:
+    AndroidManifest.xml references @xml/network_security_config.  In a
+    flavor-based project each flavor (dev / staging / production) provides its
+    own copy under src/<flavor>/res/xml/network_security_config.xml.  Gradle's
+    resource merger always picks the flavor-specific copy when a flavor is
+    active, so this file is never packaged into a real build.
+
+    However, if the IDE has not completed a full Gradle sync yet, or if a
+    developer is working on the main sourceSet without a flavor selected, the
+    resource reference in the manifest would be unresolvable, which causes
+    an AAPT2 compile error or — worse — the app silently falls back to the
+    Android 9+ (API 28) default policy, which blocks ALL cleartext traffic.
+
+    This fallback prevents both failure modes by guaranteeing the resource is
+    always resolvable.
+
+  POLICY:
+    Matches the strictest flavor (production): HTTPS only, cleartext denied.
+    The dev flavor overrides this at build time with its own permissive copy.
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

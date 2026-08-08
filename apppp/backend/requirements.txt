@@ -1,0 +1,61 @@
+# ==============================================================================
+# BioPolymer Backend — Python 3.12 dependency manifest
+#
+# Python version: 3.12.x  (python3.12)
+# All packages below have pre-built wheels for cp312-win_amd64 on PyPI.
+# No C-compiler or Meson build toolchain is required on Windows.
+#
+# Upgrade notes vs. original pinned versions:
+#   pandas      2.2.0  → 2.2.3   first release with cp312 + cp313 win_amd64 wheels
+#   numpy       (implicit) → 2.0.2  pandas 2.2.x on py3.12 requires numpy>=1.26.0;
+#                                    2.0.2 is the latest stable cp312 wheel
+#   ruff        0.2.2  → 0.4.10  cp312 wheel available; 0.2.x has no cp312 wheel
+#   All other packages are pure-Python or already had cp312 wheels — versions kept
+#   or bumped only to the latest patch within the same minor series.
+# ==============================================================================
+
+# ── Web framework ──────────────────────────────────────────────────────────────
+fastapi==0.110.0
+uvicorn[standard]==0.29.0
+
+# ── Database ───────────────────────────────────────────────────────────────────
+sqlalchemy[asyncio]==2.0.30
+aiomysql==0.2.0
+alembic==1.13.1
+
+# ── Validation / settings ──────────────────────────────────────────────────────
+pydantic==2.7.1
+pydantic-settings==2.2.1
+
+# ── Auth ───────────────────────────────────────────────────────────────────────
+python-jose[cryptography]==3.3.0
+python-multipart==0.0.9
+
+# ── HTTP client ────────────────────────────────────────────────────────────────
+httpx==0.27.0
+
+# ── Rate limiting ──────────────────────────────────────────────────────────────
+slowapi==0.1.9
+
+# ── Firebase ───────────────────────────────────────────────────────────────────
+firebase-admin==6.5.0
+
+# ── MySQL connector (used by start_backend.bat health-check) ───────────────────
+mysql-connector-python==8.4.0
+
+# ── Data processing  (wheels exist for cp312-win_amd64) ───────────────────────
+# pandas 2.2.3 ships: pandas-2.2.3-cp312-cp312-win_amd64.whl
+# numpy  2.0.2 ships: numpy-2.0.2-cp312-cp312-win_amd64.whl
+numpy==2.0.2
+pandas==2.2.3
+scikit-learn>=1.4.0
+
+# ── Testing ────────────────────────────────────────────────────────────────────
+pytest==8.2.0
+pytest-asyncio==0.23.8
+pytest-cov==5.0.0
+testcontainers[mysql]==4.4.0
+
+# ── Linting ────────────────────────────────────────────────────────────────────
+# ruff 0.4.x is the first series with a cp312-win_amd64 wheel.
+ruff==0.4.10

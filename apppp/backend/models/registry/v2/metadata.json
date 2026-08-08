@@ -1,0 +1,108 @@
+{
+  "model_version": "v2",
+  "model_type": "Baseline Suitability Model (Policy Approximation)",
+  "label_source": "Rule-Based Threshold Policy",
+  "label_version": "v1.0",
+  "dataset_version": "v1.0.0",
+  "policy_version": "v1.0",
+  "algorithm": "RandomForest",
+  "git_commit_hash": "untracked_commit",
+  "dataset_hash": "452deaec3e3fb0ca",
+  "training_dataset": "filtered_polymers",
+  "artifact_checksums": {
+    "model.joblib": "c8d014547ec40b5b90b14f13751bf09007d77cf6ecfa546ba810e9f773aae3b6",
+    "scaler.joblib": "ffdffc7a03d00c66025c5bdb6719634484dc23bf5f2c28cb77fbf26fade840f0",
+    "feature_matrix.npy": "84b91e56f5aa845d92e13bcb878316b6b7f72a69e14ad1a6cade450253f55bdf"
+  },
+  "selected_metrics": {
+    "algorithm": "RandomForest",
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "roc_auc": 1.0,
+    "group_cv_f1_mean": 1.0,
+    "group_cv_f1_std": 0.0,
+    "platt_calibrated": false,
+    "train_time_ms": 505.68,
+    "inference_latency_ms": 14.208,
+    "composite_score": 1.0
+  },
+  "leaderboard": [
+    {
+      "algorithm": "RandomForest",
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0,
+      "group_cv_f1_mean": 1.0,
+      "group_cv_f1_std": 0.0,
+      "platt_calibrated": false,
+      "train_time_ms": 505.68,
+      "inference_latency_ms": 14.208,
+      "composite_score": 1.0
+    },
+    {
+      "algorithm": "ExtraTrees",
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0,
+      "group_cv_f1_mean": 1.0,
+      "group_cv_f1_std": 0.0,
+      "platt_calibrated": false,
+      "train_time_ms": 338.31,
+      "inference_latency_ms": 22.267,
+      "composite_score": 1.0
+    },
+    {
+      "algorithm": "GradientBoosting",
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0,
+      "group_cv_f1_mean": 1.0,
+      "group_cv_f1_std": 0.0,
+      "platt_calibrated": false,
+      "train_time_ms": 1595.47,
+      "inference_latency_ms": 2.269,
+      "composite_score": 1.0
+    },
+    {
+      "algorithm": "SupportVectorMachine",
+      "accuracy": 0.9403,
+      "precision": 0.9516,
+      "recall": 0.9615,
+      "f1": 0.9565,
+      "roc_auc": 0.9607,
+      "group_cv_f1_mean": 0.956,
+      "group_cv_f1_std": 0.0018,
+      "platt_calibrated": false,
+      "train_time_ms": 2170.0,
+      "inference_latency_ms": 342.997,
+      "composite_score": 0.9524
+    }
+  ],
+  "dataset_metadata": {
+    "total_rows": 5000,
+    "feature_count": 15,
+    "positive_labels": 3325,
+    "negative_labels": 1675
+  },
+  "trained_at": "2026-07-26T10:02:25.391451+00:00",
+  "training_config": {},
+  "governance": {
+    "is_empirical_lab_data": false,
+    "policy_approximation_note": "Trained on rule-derived baseline suitability policy. Transition to lab outcome labels scheduled for Phase 2."
+  },
+  "leakage_prevention": {
+    "strategy": "GroupShuffleSplit & GroupKFold by polymer name",
+    "unique_train_groups": 3630,
+    "unique_holdout_groups": 1211,
+    "holdout_size": 1256
+  },
+  "digital_signature": "8cbe424d6621669b4300b914a60b5c7ea2c32977956b064c1039c7d7820315cf"
+}

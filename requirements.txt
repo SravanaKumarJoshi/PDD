@@ -1,0 +1,13 @@
+streamlit
+pandas
+scikit-learn
+plotly
+numpy
+xgboost
+shap
+deap
+joblib
+faiss-cpu
+scipy   
+mysql-connector-python
+python-dotenv

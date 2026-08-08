@@ -1,0 +1,22 @@
+[
+  "molecular_weight_kda",
+  "degree_of_polymerization_log",
+  "xcomplexity_norm",
+  "hb_acceptors",
+  "sulfation_present",
+  "acetylation_present",
+  "is_heteropolymer",
+  "known_medical_use",
+  "known_food_use",
+  "biodegradable",
+  "biocompatible",
+  "monomer_type",
+  "backbone_type",
+  "linkage_type",
+  "branching_category",
+  "source_kingdom",
+  "solubility_category",
+  "charge_character",
+  "crystallinity_category",
+  "viscosity_category"
+]

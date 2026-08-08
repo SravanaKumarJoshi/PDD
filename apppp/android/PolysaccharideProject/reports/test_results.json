@@ -1,0 +1,78 @@
+{
+    "model": "GradientBoosting",
+    "sanity_accuracy": 0.0,
+    "sanity_results": [
+        {
+            "polysaccharide": "Starch",
+            "expected": "Storage",
+            "predicted": "Simple_Carbohydrate",
+            "confidence": 0.9329,
+            "match": false
+        },
+        {
+            "polysaccharide": "Cellulose",
+            "expected": "Structural",
+            "predicted": "Simple_Carbohydrate",
+            "confidence": 0.9736,
+            "match": false
+        },
+        {
+            "polysaccharide": "Glycogen",
+            "expected": "Storage",
+            "predicted": "Simple_Carbohydrate",
+            "confidence": 0.9432,
+            "match": false
+        },
+        {
+            "polysaccharide": "Xanthan Gum",
+            "expected": "Bacterial",
+            "predicted": "Simple_Carbohydrate",
+            "confidence": 0.9876,
+            "match": false
+        },
+        {
+            "polysaccharide": "Heparin",
+            "expected": "Bioactive",
+            "predicted": "Simple_Carbohydrate",
+            "confidence": 0.6427,
+            "match": false
+        },
+        {
+            "polysaccharide": "Agar",
+            "expected": "Algal",
+            "predicted": "Simple_Carbohydrate",
+            "confidence": 0.9692,
+            "match": false
+        },
+        {
+            "polysaccharide": "Pullulan",
+            "expected": "Fungal",
+            "predicted": "Simple_Carbohydrate",
+            "confidence": 0.9905,
+            "match": false
+        },
+        {
+            "polysaccharide": "Hyaluronic Acid",
+            "expected": "Bioactive",
+            "predicted": "Simple_Carbohydrate",
+            "confidence": 0.6072,
+            "match": false
+        },
+        {
+            "polysaccharide": "Inulin",
+            "expected": "Storage",
+            "predicted": "Simple_Carbohydrate",
+            "confidence": 0.9753,
+            "match": false
+        },
+        {
+            "polysaccharide": "Chitin",
+            "expected": "Structural",
+            "predicted": "Simple_Carbohydrate",
+            "confidence": 0.9871,
+            "match": false
+        }
+    ],
+    "confusion_matrix_saved": "D:\\Sravan\\PDD\\apppp\\android\\PolysaccharideProject\\reports\\confusion_matrix.png",
+    "model_comparison_saved": "D:\\Sravan\\PDD\\apppp\\android\\PolysaccharideProject\\reports\\model_comparison.png"
+}

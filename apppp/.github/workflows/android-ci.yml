@@ -1,0 +1,124 @@
+name: Android CI
+
+on:
+  push:
+    paths:
+      - 'android/**'
+  pull_request:
+    paths:
+      - 'android/**'
+
+# Cancel any in-progress run for the same branch/PR to save runner minutes.
+concurrency:
+  group: android-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # ---------------------------------------------------------------------------
+  # Build & test all three flavors.
+  #
+  # Why a matrix?
+  #   - dev    → assembleDevDebug (used by engineers daily, fastest feedback)
+  #   - staging  → assembleStagingRelease (pre-prod validation)
+  #   - production → assembleProductionRelease (release candidate gate)
+  #
+  # Each flavor has its own BASE_URL injected via BuildConfig at compile time.
+  # No hardcoded IP/URL appears in any Kotlin source file.
+  # ---------------------------------------------------------------------------
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false     # Run all flavors even if one fails
+      matrix:
+        flavor:
+          - name: dev
+            gradle_task: assembleDevDebug
+            test_task: testDevDebugUnitTest
+            lint_task: lintDevDebug
+          - name: staging
+            gradle_task: assembleStagingRelease
+            test_task: testStagingReleaseUnitTest
+            lint_task: lintStagingRelease
+          - name: production
+            gradle_task: assembleProductionRelease
+            test_task: testProductionReleaseUnitTest
+            lint_task: lintProductionRelease
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          # Cache Gradle dependencies across runs to speed up builds.
+          cache-read-only: ${{ github.ref != 'refs/heads/main' }}
+
+      # -----------------------------------------------------------------------
+      # For staging and production release builds we need a keystore.
+      # The keystore and its credentials are stored as GitHub Secrets and
+      # decoded here into a temporary file.
+      #
+      # Required secrets:
+      #   RELEASE_KEYSTORE_BASE64   — base64-encoded .jks file
+      #   KEYSTORE_PASSWORD         — store password
+      #   KEY_ALIAS                 — key alias inside the store
+      #   KEY_PASSWORD              — key password
+      #
+      # For dev/debug builds the default debug keystore is used automatically.
+      # -----------------------------------------------------------------------
+      - name: Decode release keystore
+        if: matrix.flavor.name != 'dev'
+        run: |
+          echo "${{ secrets.RELEASE_KEYSTORE_BASE64 }}" | base64 --decode \
+            > android/app/release.jks
+        # File is cleaned up at the end of the job automatically.
+
+      - name: Build ${{ matrix.flavor.name }} APK
+        working-directory: android
+        env:
+          # Signing credentials — only used for non-debug builds.
+          KEYSTORE_PATH: ${{ matrix.flavor.name != 'dev' && 'app/release.jks' || '' }}
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+        run: ./gradlew ${{ matrix.flavor.gradle_task }} --stacktrace
+
+      - name: Run unit tests (${{ matrix.flavor.name }})
+        working-directory: android
+        run: ./gradlew ${{ matrix.flavor.test_task }} --stacktrace
+
+      - name: Lint (${{ matrix.flavor.name }})
+        working-directory: android
+        run: ./gradlew ${{ matrix.flavor.lint_task }} --stacktrace
+
+      # -----------------------------------------------------------------------
+      # Upload build artifacts so they can be downloaded from the Actions UI
+      # or promoted to a release without rebuilding.
+      # -----------------------------------------------------------------------
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: apk-${{ matrix.flavor.name }}
+          # Glob picks up both debug and release APK locations.
+          path: android/app/build/outputs/apk/**/*.apk
+          retention-days: 14
+
+      - name: Upload lint report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lint-${{ matrix.flavor.name }}
+          path: android/app/build/reports/lint-results-*.html
+          retention-days: 7
+
+      # Clean up keystore — do not leave it on the runner disk.
+      - name: Remove keystore
+        if: always() && matrix.flavor.name != 'dev'
+        run: rm -f android/app/release.jks

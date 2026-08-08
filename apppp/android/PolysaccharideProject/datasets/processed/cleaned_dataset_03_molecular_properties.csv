@@ -1,0 +1,401 @@
+name,category,molecular_weight_kda,degree_of_polymerization,branching_degree,crystallinity_percent,water_content_percent,viscosity_mPas,ph_stability_min,ph_stability_max,thermal_stability_celsius,solubility
+Locust Bean Gum,Storage,269.03,24961,5.1,31.5,25.1,7305.3,2.7,7.7,131.9,Soluble
+Glycogen,Storage,755.56,16170,21.6,49.7,51.3,22898.5,2.5,6.0,155.0,Soluble
+Laminarin,Algal,4.76,21606,13.2,44.4,66.8,32555.3,4.4,7.8,204.8,Soluble
+Welan Gum,Bacterial,1760.68,20600,5.3,41.9,28.9,36746.4,4.5,11.8,247.7,Soluble
+Pectin,Structural,76.03,25761,11.0,84.6,20.0,49863.3,2.7,10.6,66.5,Soluble
+Gellan Gum,Bacterial,984.65,46433,6.3,73.8,67.3,3467.2,5.4,10.8,221.5,Soluble
+Heparin,Bioactive,15.8,15871,7.6,22.3,36.7,18855.8,3.8,9.6,199.7,Soluble
+Cellulose Sulfate,Structural,952.51,45341,12.5,12.9,77.6,35084.7,5.2,9.6,279.5,Soluble
+Chitin,Structural,775.31,43106,19.9,23.3,51.0,28165.4,4.6,9.9,292.0,Insoluble
+Pectin,Structural,94.9,28220,3.2,17.9,21.7,37345.2,4.2,10.1,113.0,Soluble
+Alginate,Algal,191.29,44545,17.7,50.0,30.9,1237.9,2.4,8.5,290.8,Soluble
+Chitin,Structural,792.77,47861,4.3,35.0,39.1,10351.3,3.9,8.9,165.2,Insoluble
+Welan Gum,Bacterial,1961.96,4412,9.0,74.8,13.6,42460.5,4.6,10.1,99.4,Soluble
+Gellan Gum,Bacterial,897.57,11442,16.6,36.5,37.0,23108.1,5.2,9.8,104.7,Soluble
+Scleroglucan,Fungal,1167.42,1923,22.1,80.6,38.7,21483.3,2.0,7.3,126.8,Soluble
+Welan Gum,Bacterial,2246.98,4110,17.3,74.0,45.3,18296.0,2.8,6.7,221.0,Soluble
+Guar Gum,Storage,222.44,41894,9.4,41.1,34.4,5720.5,3.4,8.7,101.4,Soluble
+Scleroglucan,Fungal,1298.87,19503,27.6,57.2,55.4,15666.2,3.0,6.7,149.6,Soluble
+Heparin,Bioactive,15.06,27419,17.9,56.0,36.7,24338.6,4.1,11.5,283.4,Soluble
+Hyaluronic Acid,Bioactive,2043.93,32099,8.7,25.0,68.1,30974.3,5.5,11.7,176.3,Soluble
+Xanthan Gum,Bacterial,3378.26,36813,15.2,49.6,56.4,20787.4,5.4,8.9,79.8,Soluble
+Starch,Storage,559.18,14462,8.8,32.0,45.3,8418.8,3.8,10.5,243.8,Soluble
+Cellulose Sulfate,Structural,954.11,37543,3.4,72.0,66.7,18349.4,5.3,6.2,232.6,Soluble
+Cellulose Sulfate,Structural,843.05,27872,3.1,76.4,61.4,14892.5,6.0,8.7,143.7,Soluble
+Glycogen,Storage,780.5,7703,23.3,29.0,65.8,29400.3,3.4,10.3,211.9,Soluble
+Hyaluronic Acid,Bioactive,2092.92,13551,24.4,74.4,47.8,26618.7,4.4,7.0,295.0,Soluble
+Dextran,Bacterial,91.57,17530,28.6,51.2,72.5,40760.9,2.5,10.5,158.8,Soluble
+Cellulose,Structural,1196.99,42994,3.8,79.3,23.7,35572.6,5.3,10.6,222.3,Insoluble
+Guar Gum,Storage,188.51,41455,8.1,43.1,38.9,31685.1,5.5,6.6,183.7,Soluble
+Inulin,Storage,5.39,24197,13.6,49.0,48.6,43446.7,5.4,6.6,293.3,Soluble
+Fucoidan,Algal,106.57,23486,25.5,73.7,34.8,48406.7,5.3,9.0,137.5,Soluble
+Dextran,Bacterial,93.51,37885,3.9,78.2,64.1,44708.8,5.0,6.3,210.3,Soluble
+Pullulan,Fungal,241.95,10363,13.2,10.1,76.9,10123.9,4.8,6.8,216.0,Soluble
+Hyaluronic Acid,Bioactive,2299.54,17968,2.8,38.8,11.2,33228.8,4.6,6.3,210.1,Soluble
+Gellan Gum,Bacterial,1079.78,15354,12.9,17.3,12.1,10678.9,2.3,9.6,184.7,Soluble
+Pullulan,Fungal,241.11,45596,10.3,19.6,69.5,34704.6,3.9,7.4,81.4,Soluble
+Chitin,Structural,588.9,24098,26.4,21.0,63.0,37660.4,2.5,12.0,94.3,Insoluble
+Locust Bean Gum,Storage,317.85,40007,19.5,45.2,59.2,31407.7,2.6,8.5,224.8,Soluble
+Xanthan Gum,Bacterial,2504.03,6594,4.2,19.9,59.8,17583.3,3.7,10.7,119.5,Soluble
+Fucoidan,Algal,83.37,36277,18.0,67.7,26.4,47064.5,2.1,11.1,270.2,Soluble
+Xanthan Gum,Bacterial,3021.3,33402,5.7,41.3,53.5,39192.2,5.2,7.4,152.6,Soluble
+Agar,Algal,149.97,38933,2.1,81.1,5.9,18061.3,3.3,8.3,261.4,Soluble (Hot)
+Levan,Bacterial,1892.33,44767,5.2,47.7,79.1,3658.9,4.3,6.1,111.8,Soluble
+Cellulose,Structural,1179.47,26091,15.2,60.3,42.6,20777.4,4.8,6.5,188.8,Insoluble
+Laminarin,Algal,4.31,5488,9.3,50.9,20.2,40404.9,4.1,8.3,212.2,Soluble
+Fucoidan,Algal,107.24,4342,9.3,45.0,76.5,11939.5,3.0,11.5,87.8,Soluble
+Laminarin,Algal,5.22,20279,20.0,62.6,18.2,643.1,2.5,6.1,179.1,Soluble
+Alginate,Algal,201.84,47246,7.8,39.7,61.2,43674.3,4.9,6.7,276.0,Soluble
+Pectin,Structural,89.83,17834,15.7,31.0,78.1,31380.4,4.0,9.1,73.3,Soluble
+Curdlan,Bacterial,64.14,10319,7.7,18.2,48.0,36141.7,2.9,9.1,70.6,Insoluble
+Starch,Storage,448.91,30927,10.9,83.6,18.4,48017.5,2.1,10.8,231.4,Soluble
+Fucoidan,Algal,96.77,21099,7.4,83.3,29.0,41301.6,4.3,6.7,221.6,Soluble
+Cellulose,Structural,871.74,33811,29.4,86.3,10.2,23260.1,3.1,11.1,138.6,Insoluble
+Cellulose Sulfate,Structural,933.56,24187,6.0,55.1,27.8,31139.6,3.9,9.6,178.4,Soluble
+Konjac Glucomannan,Storage,1110.35,48012,27.0,70.8,23.4,328.8,3.6,7.4,143.1,Soluble
+Welan Gum,Bacterial,2301.76,21965,0.0,62.6,68.7,36363.5,2.4,9.2,117.2,Soluble
+Guar Gum,Storage,260.58,9340,21.3,17.4,74.1,44865.4,4.1,10.2,149.4,Soluble
+Gellan Gum,Bacterial,833.96,6273,15.2,61.0,34.6,29598.9,2.2,10.0,91.4,Soluble
+Dextran,Bacterial,90.44,20654,27.8,41.4,67.4,16319.3,3.8,7.4,286.5,Soluble
+Heparin,Bioactive,16.68,38329,3.3,18.5,38.7,15708.5,2.5,8.1,244.9,Soluble
+Pullulan,Fungal,277.0,17377,25.6,17.2,65.6,15217.7,4.8,9.6,111.6,Soluble
+Pectin,Structural,68.75,46616,7.4,38.5,43.5,33862.4,3.0,11.9,67.5,Soluble
+Carrageenan,Algal,570.92,36444,22.4,30.0,39.7,40196.8,2.6,6.1,259.3,Soluble
+Agar,Algal,127.84,26262,11.2,60.4,53.4,29120.4,3.0,10.9,65.2,Soluble (Hot)
+Glycogen,Storage,703.28,42345,13.3,20.3,72.9,41469.5,3.3,6.3,170.6,Soluble
+Hyaluronic Acid,Bioactive,2339.31,28397,24.7,41.6,7.2,34163.8,2.7,7.3,104.9,Soluble
+Inulin,Storage,4.89,9750,1.0,59.5,23.4,14762.3,3.6,9.3,74.6,Soluble
+Inulin,Storage,4.77,27484,6.0,80.8,44.4,31541.4,5.2,10.8,297.5,Soluble
+Welan Gum,Bacterial,1887.29,35695,23.4,37.5,47.4,16087.0,3.1,6.2,203.3,Soluble
+Starch,Storage,579.15,18421,1.8,89.3,44.7,38344.4,6.0,11.8,84.0,Soluble
+Scleroglucan,Fungal,1075.75,34985,24.5,83.4,9.2,49819.6,2.9,11.1,251.4,Soluble
+Alginate,Algal,234.82,11394,5.3,57.4,65.5,34884.4,5.7,6.2,228.1,Soluble
+Curdlan,Bacterial,75.88,36913,28.5,76.9,65.8,48519.7,4.2,7.1,69.1,Insoluble
+Cellulose,Structural,893.05,14349,0.6,48.2,29.9,30710.6,5.2,8.0,102.6,Insoluble
+Pectin,Structural,65.91,9690,17.6,83.4,63.1,42325.6,5.4,11.8,149.7,Soluble
+Scleroglucan,Fungal,1149.89,6631,10.1,35.8,78.2,36620.3,3.7,9.8,176.9,Soluble
+Pectin,Structural,69.57,36839,20.8,84.3,64.0,11169.6,4.4,7.1,133.6,Soluble
+Welan Gum,Bacterial,1835.61,11656,21.9,85.9,76.2,19586.2,6.0,11.8,67.8,Soluble
+Laminarin,Algal,4.64,40077,6.6,55.2,75.3,7040.8,5.0,7.4,295.8,Soluble
+Hyaluronic Acid,Bioactive,2108.95,5824,24.6,63.6,59.7,16794.1,2.0,7.3,226.4,Soluble
+Alginate,Algal,180.53,7090,21.6,13.9,37.9,20988.5,2.7,8.5,271.6,Soluble
+Alginate,Algal,203.68,6657,24.9,73.1,48.4,37914.6,2.9,8.7,251.8,Soluble
+Cellulose,Structural,917.96,20897,7.8,18.4,30.6,44397.7,2.6,6.5,286.0,Insoluble
+Glycogen,Storage,748.14,40225,26.8,66.4,37.3,32685.2,4.4,8.6,72.9,Soluble
+Pectin,Structural,70.58,12460,12.3,54.3,74.4,27010.9,4.6,7.8,83.0,Soluble
+Carrageenan,Algal,514.35,32184,4.6,38.9,37.1,14734.5,4.6,9.6,107.9,Soluble
+Starch,Storage,441.39,41834,8.8,16.6,68.3,15424.6,3.6,8.9,218.6,Soluble
+Glycogen,Storage,845.4,25406,5.5,80.8,32.7,22294.3,3.1,8.8,114.3,Soluble
+Inulin,Storage,5.13,9914,22.6,63.4,11.4,17196.1,4.2,11.8,201.5,Soluble
+Cellulose Sulfate,Structural,783.17,25379,24.6,43.5,45.2,43346.0,3.9,11.3,174.3,Soluble
+Glycogen,Storage,766.34,46822,1.0,55.7,43.8,28578.6,5.9,6.9,287.8,Soluble
+Pullulan,Fungal,260.75,10965,29.2,74.7,14.5,21174.5,6.0,8.6,299.3,Soluble
+Fucoidan,Algal,85.92,39007,7.7,82.9,73.6,3359.9,3.6,8.4,138.3,Soluble
+Inulin,Storage,5.04,820,23.6,59.8,44.2,20985.5,3.7,6.9,201.1,Soluble
+Konjac Glucomannan,Storage,1185.93,6576,27.7,55.0,12.6,14311.8,4.1,8.1,158.6,Soluble
+Carrageenan,Algal,530.96,37498,18.3,13.0,25.7,7201.2,4.4,10.2,69.3,Soluble
+Pectin,Structural,86.1,3240,22.4,83.7,72.3,1021.4,5.3,7.8,127.3,Soluble
+Guar Gum,Storage,251.52,44892,2.9,79.5,15.1,48711.2,3.8,11.0,124.7,Soluble
+Levan,Bacterial,2083.98,5861,5.6,26.9,66.8,37049.8,5.0,11.2,257.0,Soluble
+Locust Bean Gum,Storage,346.14,4310,9.3,50.5,15.2,42566.3,5.5,6.2,106.3,Soluble
+Xanthan Gum,Bacterial,3404.37,16360,1.0,14.0,32.0,9963.5,3.5,8.8,155.3,Soluble
+Chitin,Structural,750.73,15865,11.2,57.5,18.3,43525.3,4.3,8.1,99.2,Insoluble
+Inulin,Storage,5.5,45154,2.7,12.2,8.7,42692.5,5.1,7.3,113.1,Soluble
+Agar,Algal,160.66,17644,19.5,51.1,69.8,48357.2,4.7,8.8,91.8,Soluble (Hot)
+Hyaluronic Acid,Bioactive,2080.91,564,6.7,58.7,75.7,35639.9,4.8,7.7,274.9,Soluble
+Alginate,Algal,196.72,14310,14.0,64.2,66.8,19863.7,2.4,9.1,219.0,Soluble
+Alginate,Algal,204.92,38923,18.3,33.9,13.1,3201.2,6.0,9.8,266.8,Soluble
+Inulin,Storage,5.31,42704,9.0,22.0,62.4,44985.4,5.2,10.8,204.0,Soluble
+Scleroglucan,Fungal,1113.4,9180,21.6,62.4,79.8,12978.7,3.7,8.3,68.5,Soluble
+Welan Gum,Bacterial,2395.8,12456,10.3,67.1,56.5,31919.3,3.9,11.6,146.0,Soluble
+Dextran,Bacterial,113.82,43107,26.3,24.5,12.3,6405.9,3.0,10.9,243.1,Soluble
+Hyaluronic Acid,Bioactive,2357.54,22006,19.6,27.8,21.7,43572.9,3.7,11.3,149.2,Soluble
+Curdlan,Bacterial,67.9,7728,14.1,79.3,48.8,47215.6,2.3,11.3,180.1,Insoluble
+Scleroglucan,Fungal,1143.2,19563,12.4,79.7,16.3,49617.5,3.4,11.9,274.3,Soluble
+Pullulan,Fungal,257.19,46912,5.4,16.5,29.9,49332.2,3.3,6.3,168.5,Soluble
+Xanthan Gum,Bacterial,3313.43,11059,17.3,22.7,63.9,38989.8,2.5,8.6,163.1,Soluble
+Levan,Bacterial,2372.26,25131,0.1,52.7,59.8,47503.9,5.6,10.5,187.4,Soluble
+Starch,Storage,535.35,41080,22.0,28.1,70.8,15611.5,2.4,9.0,133.5,Soluble
+Glycogen,Storage,903.63,19552,28.5,46.5,44.0,26210.6,3.7,10.1,92.1,Soluble
+Guar Gum,Storage,207.61,12358,4.9,82.6,65.9,966.0,2.9,11.9,110.7,Soluble
+Starch,Storage,517.94,11084,3.7,66.9,64.4,18765.9,4.6,10.6,209.6,Soluble
+Laminarin,Algal,5.99,43392,3.2,76.9,8.6,5798.3,3.8,6.7,120.7,Soluble
+Welan Gum,Bacterial,1722.5,45570,20.6,10.7,36.6,5058.0,4.1,9.7,228.2,Soluble
+Levan,Bacterial,2264.52,6885,15.3,59.4,26.2,39240.2,4.0,9.7,246.7,Soluble
+Locust Bean Gum,Storage,368.67,23466,21.1,33.6,8.0,24822.8,2.8,11.6,139.3,Soluble
+Starch,Storage,402.55,5842,27.2,76.8,55.2,7465.7,2.4,9.1,233.7,Soluble
+Chitin,Structural,813.34,42237,6.9,89.1,27.2,23219.2,2.4,7.0,69.5,Insoluble
+Dextran,Bacterial,94.41,44362,9.4,69.1,12.1,37912.6,2.2,11.1,219.2,Soluble
+Hyaluronic Acid,Bioactive,1862.93,28696,28.7,31.5,60.0,18637.4,3.4,6.7,156.1,Soluble
+Pullulan,Fungal,272.62,25288,20.7,48.3,36.6,44307.3,2.7,6.8,234.3,Soluble
+Hyaluronic Acid,Bioactive,1682.97,38725,14.5,55.5,37.9,30570.0,5.1,9.7,267.0,Soluble
+Gellan Gum,Bacterial,1189.38,8572,14.5,49.0,71.6,22040.0,2.3,9.9,63.0,Soluble
+Scleroglucan,Fungal,1211.91,48744,17.3,55.2,78.3,33495.5,3.4,9.1,228.1,Soluble
+Chitin,Structural,681.2,47631,7.5,37.7,55.7,19250.0,5.4,9.4,297.1,Insoluble
+Cellulose,Structural,804.66,10294,15.2,47.5,42.2,8278.5,5.0,7.9,139.4,Insoluble
+Inulin,Storage,4.1,14605,16.5,40.3,66.3,3950.7,3.8,9.4,81.1,Soluble
+Guar Gum,Storage,215.34,7789,29.4,69.6,6.3,20177.9,2.1,9.3,258.2,Soluble
+Laminarin,Algal,5.93,41791,9.1,50.7,20.5,33577.0,5.8,8.2,73.0,Soluble
+Agar,Algal,170.66,21766,16.8,59.6,40.5,32861.8,4.9,6.7,242.2,Soluble (Hot)
+Agar,Algal,120.13,23284,24.9,87.2,26.9,26104.0,4.8,6.3,99.4,Soluble (Hot)
+Heparin,Bioactive,16.93,48671,21.6,18.6,50.8,9385.3,5.7,8.4,169.7,Soluble
+Xanthan Gum,Bacterial,3260.15,7072,22.7,13.7,52.5,33610.4,2.5,11.4,169.8,Soluble
+Curdlan,Bacterial,87.5,8833,28.9,10.3,60.2,27665.8,3.7,9.5,281.8,Insoluble
+Konjac Glucomannan,Storage,1168.46,11623,20.8,23.9,66.1,5186.7,4.6,9.6,137.2,Soluble
+Carrageenan,Algal,483.73,39921,27.5,71.0,25.5,48180.0,5.9,8.7,92.0,Soluble
+Levan,Bacterial,2082.02,49058,15.4,77.4,46.1,15702.4,4.9,9.3,112.2,Soluble
+Xanthan Gum,Bacterial,3149.0,19053,20.6,83.7,15.0,35522.7,5.9,7.1,190.2,Soluble
+Fucoidan,Algal,92.9,7573,22.8,55.0,48.7,47134.3,4.8,10.0,274.5,Soluble
+Cellulose Sulfate,Structural,868.65,27691,24.2,51.8,6.9,7274.9,4.7,7.2,240.0,Soluble
+Hyaluronic Acid,Bioactive,2386.83,44796,7.5,77.2,56.8,14764.1,5.0,6.2,255.4,Soluble
+Chitin,Structural,732.51,44281,22.2,79.2,60.7,28067.9,3.0,10.7,251.7,Insoluble
+Dextran,Bacterial,107.72,3088,27.8,41.0,76.8,48791.4,3.3,9.3,63.1,Soluble
+Inulin,Storage,4.41,29046,24.9,82.9,57.8,32385.1,5.0,9.3,204.8,Soluble
+Konjac Glucomannan,Storage,1089.97,12691,8.8,24.2,56.2,9357.0,2.7,9.1,150.5,Soluble
+Levan,Bacterial,1823.29,17327,3.9,56.7,24.1,16534.8,4.8,6.9,96.9,Soluble
+Pectin,Structural,83.1,40994,18.5,63.0,41.8,28638.1,3.4,10.7,136.3,Soluble
+Agar,Algal,177.42,34128,2.0,50.4,36.2,26856.4,2.4,7.3,111.2,Soluble (Hot)
+Pectin,Structural,74.59,19249,6.6,70.2,44.8,49831.6,5.3,11.9,62.1,Soluble
+Scleroglucan,Fungal,1126.08,15761,27.1,59.1,51.6,47945.3,4.7,7.9,279.8,Soluble
+Chitin,Structural,668.05,35414,21.7,12.0,43.8,38527.0,4.1,9.1,176.8,Insoluble
+Dextran,Bacterial,115.93,12626,9.6,16.6,12.2,48581.7,5.1,9.2,210.5,Soluble
+Xanthan Gum,Bacterial,3204.4,13980,25.9,43.9,12.8,26892.3,4.8,11.9,246.0,Soluble
+Fucoidan,Algal,112.67,4736,22.4,22.3,39.4,16592.5,2.4,6.3,250.6,Soluble
+Cellulose Sulfate,Structural,786.77,14928,27.3,42.6,38.8,20228.4,3.3,8.3,88.4,Soluble
+Starch,Storage,528.28,40534,1.9,69.7,8.4,42414.1,3.4,9.0,129.6,Soluble
+Scleroglucan,Fungal,1104.65,5679,8.4,84.1,33.6,41107.9,2.1,6.9,112.8,Soluble
+Gellan Gum,Bacterial,956.4,35774,8.8,60.7,27.4,44350.0,5.9,11.2,215.5,Soluble
+Starch,Storage,510.7,36387,4.2,13.3,48.0,19710.1,4.2,6.5,110.4,Soluble
+Gellan Gum,Bacterial,1161.42,22544,6.4,82.5,68.9,7131.3,2.7,9.7,120.7,Soluble
+Chitin,Structural,610.78,37188,25.6,78.1,74.9,49715.7,3.8,9.3,129.8,Insoluble
+Glycogen,Storage,720.22,12947,21.8,49.0,29.8,6419.5,4.6,6.6,208.7,Soluble
+Xanthan Gum,Bacterial,2781.34,29543,9.9,62.8,57.0,7628.2,4.3,10.8,290.1,Soluble
+Hyaluronic Acid,Bioactive,1603.87,16143,23.6,67.0,53.1,13841.2,3.4,10.1,139.6,Soluble
+Guar Gum,Storage,216.73,23520,23.2,49.0,13.2,32281.1,2.3,7.7,258.3,Soluble
+Cellulose Sulfate,Structural,834.64,48083,26.6,16.1,10.7,941.3,4.0,6.2,199.7,Soluble
+Carrageenan,Algal,553.84,13953,27.2,54.1,45.8,49936.4,3.9,10.7,147.8,Soluble
+Agar,Algal,173.49,38650,22.0,33.3,39.9,25525.5,3.6,9.0,219.0,Soluble (Hot)
+Laminarin,Algal,5.37,49634,15.4,45.7,18.4,47436.1,4.6,11.8,236.6,Soluble
+Guar Gum,Storage,258.65,2658,6.6,49.0,9.7,18478.1,2.2,7.2,277.9,Soluble
+Alginate,Algal,191.05,29805,26.4,13.2,53.6,5170.2,5.9,9.8,125.6,Soluble
+Gellan Gum,Bacterial,905.33,35684,17.1,40.1,33.4,29388.1,5.6,6.5,120.4,Soluble
+Agar,Algal,150.98,23137,24.5,37.6,64.4,44359.7,2.0,11.3,165.6,Soluble (Hot)
+Agar,Algal,124.63,42180,8.4,22.0,16.8,30105.0,5.3,10.0,159.5,Soluble (Hot)
+Pectin,Structural,87.05,31566,20.3,48.3,49.3,32366.5,3.6,7.5,90.7,Soluble
+Curdlan,Bacterial,63.97,41267,15.4,81.3,16.0,8325.4,5.7,9.1,157.3,Insoluble
+Curdlan,Bacterial,78.07,47166,21.8,75.7,76.0,10837.5,4.4,8.8,175.6,Insoluble
+Agar,Algal,169.82,39386,4.3,56.6,62.6,31164.4,4.0,7.0,224.5,Soluble (Hot)
+Pullulan,Fungal,311.58,4521,6.9,40.8,13.1,10125.4,5.4,9.0,160.8,Soluble
+Heparin,Bioactive,15.63,11637,14.3,59.2,7.9,39195.6,4.0,6.7,175.7,Soluble
+Heparin,Bioactive,17.41,35352,24.8,81.8,63.1,32465.1,4.1,8.2,70.4,Soluble
+Locust Bean Gum,Storage,301.19,31606,23.7,40.5,49.2,37072.3,5.0,10.2,83.5,Soluble
+Heparin,Bioactive,13.53,15247,27.3,16.7,49.9,27191.1,3.0,6.0,238.5,Soluble
+Starch,Storage,515.6,7732,15.6,40.0,20.4,40216.3,3.6,6.6,162.3,Soluble
+Curdlan,Bacterial,66.71,35144,12.7,39.3,25.7,34033.5,5.0,8.5,248.1,Insoluble
+Guar Gum,Storage,191.73,36650,16.6,30.3,28.0,17224.4,4.8,10.4,265.2,Soluble
+Scleroglucan,Fungal,1017.16,15068,13.4,65.9,17.1,10730.8,3.6,8.0,192.1,Soluble
+Welan Gum,Bacterial,2147.65,3421,4.8,87.2,5.4,4563.5,2.6,11.6,164.5,Soluble
+Glycogen,Storage,724.19,24313,2.4,13.0,33.8,49222.6,4.5,9.1,230.8,Soluble
+Laminarin,Algal,4.11,11496,19.2,45.1,20.1,32847.6,5.2,7.7,68.1,Soluble
+Laminarin,Algal,5.02,45783,7.0,23.6,7.7,11970.4,2.0,6.9,299.2,Soluble
+Konjac Glucomannan,Storage,959.77,43896,11.9,56.9,43.8,36848.9,2.3,6.5,128.3,Soluble
+Cellulose Sulfate,Structural,1107.7,22822,10.4,75.2,22.0,48153.2,3.8,8.4,61.1,Soluble
+Hyaluronic Acid,Bioactive,1925.71,6987,16.8,50.3,30.5,5859.3,4.1,7.5,189.1,Soluble
+Curdlan,Bacterial,66.6,29027,29.0,55.1,62.7,37876.1,5.8,8.8,170.6,Insoluble
+Curdlan,Bacterial,84.72,31596,3.5,15.4,52.5,49710.0,4.7,7.4,135.8,Insoluble
+Alginate,Algal,201.32,647,21.0,31.1,26.5,19952.5,5.0,8.1,193.1,Soluble
+Hyaluronic Acid,Bioactive,1981.24,23179,6.6,55.9,18.7,37310.4,5.7,7.1,236.9,Soluble
+Agar,Algal,164.13,17403,6.2,26.2,23.7,30933.7,2.6,6.6,280.8,Soluble (Hot)
+Scleroglucan,Fungal,1418.77,32297,18.4,71.1,45.6,2122.7,3.9,9.7,178.2,Soluble
+Curdlan,Bacterial,84.92,32175,5.5,71.1,43.3,19900.0,5.0,6.8,186.2,Insoluble
+Levan,Bacterial,1982.66,35449,1.0,37.8,69.5,38797.4,3.8,6.7,184.4,Soluble
+Pectin,Structural,86.05,784,20.2,40.4,12.6,18086.5,5.4,7.1,123.1,Soluble
+Inulin,Storage,4.94,40189,10.3,24.7,36.8,20960.5,5.0,8.2,156.1,Soluble
+Pullulan,Fungal,261.59,8604,29.4,64.9,66.1,36043.6,5.2,9.3,265.5,Soluble
+Xanthan Gum,Bacterial,2575.01,48411,4.5,74.5,18.2,24984.9,6.0,11.1,184.1,Soluble
+Gellan Gum,Bacterial,926.29,31901,9.0,55.0,47.6,19926.1,4.8,6.4,255.3,Soluble
+Guar Gum,Storage,249.83,6321,13.5,36.8,32.1,28021.9,5.7,7.5,64.8,Soluble
+Chitin,Structural,658.31,44547,28.9,25.9,48.2,32460.1,2.7,10.7,145.2,Insoluble
+Scleroglucan,Fungal,1205.01,48278,13.4,16.3,51.0,23193.0,5.8,11.2,213.7,Soluble
+Pectin,Structural,77.5,40138,17.1,77.9,10.4,8108.4,2.9,7.9,129.9,Soluble
+Inulin,Storage,5.21,25926,8.1,45.6,69.7,18164.6,4.3,11.8,159.4,Soluble
+Hyaluronic Acid,Bioactive,2283.37,8204,21.8,63.0,75.5,35037.8,2.3,7.0,84.7,Soluble
+Glycogen,Storage,939.77,31020,16.5,12.1,34.8,38252.2,2.3,7.6,97.3,Soluble
+Fucoidan,Algal,117.26,25558,9.3,29.8,26.3,31327.8,2.5,11.0,66.9,Soluble
+Scleroglucan,Fungal,1131.28,21322,25.9,47.4,70.3,46743.5,4.2,6.8,287.6,Soluble
+Cellulose Sulfate,Structural,827.27,39173,13.7,69.9,70.8,21754.5,4.6,9.2,278.1,Soluble
+Guar Gum,Storage,223.49,5879,13.3,39.3,24.5,15185.6,2.0,10.9,263.5,Soluble
+Alginate,Algal,182.94,35078,0.2,83.8,76.0,23858.6,2.0,8.6,130.3,Soluble
+Agar,Algal,167.81,35937,11.2,42.9,47.0,19743.7,2.7,10.4,153.5,Soluble (Hot)
+Carrageenan,Algal,444.12,5201,12.7,29.2,62.3,45498.6,5.2,10.1,128.3,Soluble
+Gellan Gum,Bacterial,1012.78,17627,12.4,78.3,18.7,14486.9,4.5,9.7,125.3,Soluble
+Laminarin,Algal,4.98,21023,0.6,14.0,45.1,9305.0,2.4,7.6,231.6,Soluble
+Gellan Gum,Bacterial,803.28,5921,4.5,49.5,30.6,15585.7,5.2,12.0,171.3,Soluble
+Cellulose,Structural,932.1,49199,28.5,14.5,63.2,3578.5,3.9,7.2,262.0,Insoluble
+Carrageenan,Algal,565.65,8002,29.2,67.2,33.9,48748.9,3.0,12.0,107.8,Soluble
+Gellan Gum,Bacterial,1108.4,34163,20.0,26.7,34.2,48061.1,5.7,7.0,234.8,Soluble
+Gellan Gum,Bacterial,1174.97,34149,3.7,48.5,27.4,18027.7,2.2,10.0,293.6,Soluble
+Agar,Algal,157.97,21277,0.5,73.6,48.9,19796.5,3.0,11.8,199.5,Soluble (Hot)
+Welan Gum,Bacterial,1980.22,39083,4.6,71.7,23.7,25001.0,4.7,8.0,292.7,Soluble
+Konjac Glucomannan,Storage,1050.05,3927,10.7,22.3,45.2,5378.5,4.0,7.9,194.0,Soluble
+Fucoidan,Algal,110.27,28761,22.0,11.7,33.3,36222.7,3.0,6.2,229.6,Soluble
+Cellulose Sulfate,Structural,871.99,45691,14.7,55.3,45.8,16190.8,3.9,11.2,203.7,Soluble
+Cellulose Sulfate,Structural,820.93,34818,4.7,33.7,24.8,18362.0,2.0,9.8,151.0,Soluble
+Hyaluronic Acid,Bioactive,2306.35,40624,25.7,72.1,22.9,36053.0,4.6,9.2,153.0,Soluble
+Locust Bean Gum,Storage,332.72,36150,4.6,32.7,35.7,16108.0,2.4,10.0,70.5,Soluble
+Heparin,Bioactive,13.07,2059,6.1,48.8,12.4,28554.9,5.3,9.9,186.2,Soluble
+Welan Gum,Bacterial,2072.24,3226,11.0,58.5,10.3,46511.2,2.8,8.9,273.5,Soluble
+Glycogen,Storage,789.78,41882,1.8,54.6,75.4,20803.5,3.5,10.3,257.7,Soluble
+Inulin,Storage,5.06,48133,2.1,34.3,75.8,48029.7,2.4,10.4,187.6,Soluble
+Xanthan Gum,Bacterial,2631.74,43059,7.5,60.0,18.4,37462.2,3.7,6.6,213.3,Soluble
+Alginate,Algal,213.96,46052,20.0,80.6,17.5,9028.0,3.6,8.0,98.0,Soluble
+Laminarin,Algal,4.89,23099,27.1,54.0,79.8,42244.3,3.6,9.8,258.3,Soluble
+Pectin,Structural,83.47,36916,16.4,40.0,46.3,37231.5,3.4,8.7,290.4,Soluble
+Starch,Storage,545.26,18653,17.9,51.4,79.5,15099.1,3.2,7.3,265.4,Soluble
+Starch,Storage,554.3,45211,24.7,83.5,43.3,28537.7,4.3,6.6,170.5,Soluble
+Heparin,Bioactive,12.83,24067,26.7,30.0,24.2,15022.1,4.3,9.4,112.2,Soluble
+Glycogen,Storage,871.55,31633,5.2,76.1,56.7,28815.9,5.6,9.6,132.1,Soluble
+Gellan Gum,Bacterial,1123.34,25015,2.4,14.5,62.8,17403.0,5.3,8.5,268.3,Soluble
+Konjac Glucomannan,Storage,890.69,42790,25.5,84.3,52.5,31613.4,2.2,9.1,136.6,Soluble
+Curdlan,Bacterial,63.63,32935,20.9,22.3,55.5,49868.4,5.9,10.5,198.1,Insoluble
+Glycogen,Storage,711.07,19001,23.6,21.8,30.2,23798.0,5.0,9.3,123.0,Soluble
+Carrageenan,Algal,500.36,45745,3.9,20.8,46.9,24398.2,4.6,7.2,207.8,Soluble
+Gellan Gum,Bacterial,1009.7,15890,2.1,72.1,29.3,46207.7,2.4,10.0,161.6,Soluble
+Alginate,Algal,175.24,22588,17.8,11.9,27.9,49382.7,4.5,11.9,166.1,Soluble
+Heparin,Bioactive,14.64,15311,6.0,39.9,61.8,42639.7,2.4,6.3,287.7,Soluble
+Heparin,Bioactive,17.21,18863,0.4,65.5,13.3,22508.6,2.1,7.3,189.1,Soluble
+Xanthan Gum,Bacterial,3055.71,49185,7.8,48.6,59.7,7076.0,4.8,6.1,199.9,Soluble
+Scleroglucan,Fungal,1212.86,16751,5.1,32.7,64.2,30902.1,2.2,9.9,62.0,Soluble
+Carrageenan,Algal,532.07,43459,25.6,62.8,69.8,963.7,5.5,9.9,115.5,Soluble
+Carrageenan,Algal,501.71,46520,3.0,35.2,70.0,26582.7,2.7,9.0,169.9,Soluble
+Welan Gum,Bacterial,1617.19,16223,27.7,34.4,41.7,37222.1,2.1,10.1,145.3,Soluble
+Dextran,Bacterial,89.45,32860,8.3,15.0,24.3,19364.7,6.0,11.9,286.6,Soluble
+Inulin,Storage,4.45,22409,26.9,62.6,11.6,19116.5,5.8,9.7,210.1,Soluble
+Agar,Algal,145.04,37555,4.6,87.6,73.2,16470.9,4.2,7.2,93.3,Soluble (Hot)
+Cellulose Sulfate,Structural,1019.94,13268,25.9,34.7,57.9,26195.0,2.5,12.0,294.2,Soluble
+Heparin,Bioactive,15.94,37027,27.5,35.4,46.8,47430.6,2.5,7.9,271.1,Soluble
+Gellan Gum,Bacterial,811.79,20895,26.4,43.1,35.8,22155.8,5.7,11.4,284.0,Soluble
+Inulin,Storage,4.3,12326,3.2,24.8,62.2,30603.0,3.1,9.4,115.4,Soluble
+Agar,Algal,133.85,1719,10.8,65.1,40.7,25121.2,4.4,10.3,149.8,Soluble (Hot)
+Carrageenan,Algal,498.29,9022,4.9,28.1,35.6,48441.1,5.7,11.7,113.4,Soluble
+Scleroglucan,Fungal,1434.36,49671,6.1,24.2,76.6,21969.9,4.5,10.1,268.0,Soluble
+Agar,Algal,145.65,2751,18.2,75.9,59.0,19713.6,5.8,9.4,188.7,Soluble (Hot)
+Fucoidan,Algal,115.03,2533,15.6,46.1,67.0,2130.4,6.0,9.1,154.9,Soluble
+Gellan Gum,Bacterial,815.7,25398,15.5,60.5,8.7,14566.1,3.6,7.8,258.6,Soluble
+Pullulan,Fungal,259.98,19305,18.4,14.4,43.8,7120.6,5.3,8.7,233.4,Soluble
+Chitin,Structural,610.34,38377,28.1,65.7,15.1,20683.8,3.8,7.1,201.7,Insoluble
+Welan Gum,Bacterial,2316.64,29808,2.7,35.9,53.6,35576.4,2.7,10.4,81.9,Soluble
+Welan Gum,Bacterial,1959.52,23795,2.6,66.6,59.5,48759.8,4.4,7.0,192.1,Soluble
+Cellulose,Structural,1107.3,21977,17.0,62.8,16.3,43442.2,2.7,10.3,160.7,Insoluble
+Dextran,Bacterial,109.21,29255,8.7,24.5,72.4,48022.1,2.0,10.6,62.9,Soluble
+Guar Gum,Storage,251.28,35628,24.2,58.6,42.0,10851.5,4.6,8.7,166.1,Soluble
+Laminarin,Algal,5.2,16047,26.5,32.2,52.1,41007.9,2.8,7.1,73.2,Soluble
+Alginate,Algal,162.94,2135,20.0,77.0,27.4,46020.0,2.2,8.5,102.8,Soluble
+Scleroglucan,Fungal,1096.5,43324,20.7,57.6,64.0,8879.2,3.8,9.5,283.6,Soluble
+Glycogen,Storage,885.92,21166,11.1,40.3,10.1,21371.9,4.2,7.8,92.3,Soluble
+Welan Gum,Bacterial,2287.53,21585,15.8,52.0,57.2,30606.6,2.4,10.4,211.0,Soluble
+Glycogen,Storage,794.77,45141,18.1,73.1,58.0,21358.4,5.4,7.6,198.0,Soluble
+Laminarin,Algal,4.71,8510,18.4,49.7,59.7,24892.1,5.2,11.3,115.9,Soluble
+Dextran,Bacterial,119.17,113,3.5,47.2,64.8,36876.0,2.8,9.7,159.5,Soluble
+Cellulose,Structural,933.52,36737,24.2,27.0,53.0,34504.0,3.0,6.4,132.1,Insoluble
+Cellulose Sulfate,Structural,883.09,411,3.4,36.7,34.7,28450.4,5.8,11.0,106.6,Soluble
+Pectin,Structural,93.51,31408,27.5,73.8,53.4,24080.0,4.5,11.4,188.9,Soluble
+Pectin,Structural,78.8,27138,27.8,14.5,44.1,28251.5,4.7,9.3,64.5,Soluble
+Curdlan,Bacterial,79.49,23183,2.0,21.9,68.1,16964.2,3.5,9.2,99.8,Insoluble
+Laminarin,Algal,4.78,39016,3.5,72.6,28.1,42892.4,4.8,7.6,80.8,Soluble
+Agar,Algal,142.3,19843,6.5,34.2,13.4,39249.3,5.1,11.5,166.5,Soluble (Hot)
+Starch,Storage,559.81,32781,4.6,37.2,41.3,43695.2,3.2,8.0,244.7,Soluble
+Chitin,Structural,790.2,33836,20.3,20.6,59.3,22973.8,4.9,9.1,61.0,Insoluble
+Cellulose,Structural,1074.82,38957,26.2,36.7,71.7,5164.1,5.1,10.5,65.4,Insoluble
+Konjac Glucomannan,Storage,924.86,13762,9.6,25.4,25.7,15964.3,3.8,6.7,95.8,Soluble
+Inulin,Storage,4.23,40835,16.8,18.2,45.7,27472.8,3.1,11.7,253.0,Soluble
+Curdlan,Bacterial,66.45,4678,9.3,81.4,45.5,2545.8,2.1,11.4,72.1,Insoluble
+Carrageenan,Algal,410.76,27958,11.8,66.4,71.8,31477.2,4.8,8.7,145.3,Soluble
+Pectin,Structural,90.16,46730,22.8,74.7,10.9,46140.0,5.1,9.4,82.3,Soluble
+Welan Gum,Bacterial,1974.62,29867,9.3,61.6,62.5,23532.6,5.8,6.9,275.0,Soluble
+Inulin,Storage,5.83,25705,5.5,83.4,29.8,43041.0,3.3,8.9,75.7,Soluble
+Chitin,Structural,658.4,30237,25.4,32.6,31.1,28738.2,4.0,8.4,231.4,Insoluble
+Chitin,Structural,651.24,42572,2.1,34.2,39.6,29530.9,3.0,7.5,98.2,Insoluble
+Guar Gum,Storage,209.78,22339,6.2,65.5,37.3,49010.5,4.3,8.1,226.6,Soluble
+Hyaluronic Acid,Bioactive,2130.09,5114,22.2,67.0,67.8,5725.0,4.4,8.0,83.4,Soluble
+Pullulan,Fungal,261.14,26604,2.1,18.7,66.1,38569.5,3.5,9.0,218.4,Soluble
+Glycogen,Storage,709.64,9114,26.6,82.3,52.7,19.2,2.6,6.9,187.5,Soluble
+Carrageenan,Algal,523.11,29315,5.9,64.5,28.7,28518.1,5.7,7.8,286.4,Soluble
+Levan,Bacterial,2174.23,22571,29.7,56.6,50.9,25526.1,5.4,11.1,75.0,Soluble
+Cellulose Sulfate,Structural,1127.8,65,21.1,75.7,31.9,43063.8,5.5,7.4,228.5,Soluble
+Carrageenan,Algal,525.04,46656,11.5,40.5,45.9,33127.8,3.9,7.1,152.3,Soluble
+Alginate,Algal,227.2,10120,8.7,79.8,14.4,590.0,4.6,6.9,272.4,Soluble
+Scleroglucan,Fungal,1169.63,8908,2.5,61.4,36.2,22806.9,5.2,9.6,162.2,Soluble
+Hyaluronic Acid,Bioactive,1963.52,27805,16.6,46.0,31.6,9297.7,4.4,9.5,263.2,Soluble
+Agar,Algal,162.73,17655,12.3,53.7,32.5,48911.9,4.3,10.2,87.2,Soluble (Hot)
+Guar Gum,Storage,260.63,5257,4.3,68.5,78.8,49183.6,5.1,8.8,78.8,Soluble
+Laminarin,Algal,4.18,30972,18.9,63.1,55.2,34206.9,4.2,9.5,207.1,Soluble
+Pectin,Structural,81.12,716,14.1,51.0,40.2,36693.4,3.7,11.8,251.6,Soluble
+Dextran,Bacterial,86.7,45560,27.7,70.0,59.5,28189.7,2.2,8.8,100.6,Soluble
+Cellulose,Structural,1062.53,19130,24.3,59.9,26.5,4134.7,4.0,11.1,126.7,Insoluble
+Heparin,Bioactive,15.69,18046,25.7,11.1,13.4,8738.9,4.4,6.9,167.2,Soluble
+Hyaluronic Acid,Bioactive,1809.0,45935,7.1,24.5,44.6,1664.2,5.9,11.8,202.9,Soluble
+Heparin,Bioactive,17.03,49342,29.8,71.6,22.8,22014.8,4.6,7.3,236.2,Soluble
+Alginate,Algal,164.35,17337,22.7,19.3,17.6,19943.3,3.2,10.5,240.6,Soluble
+Cellulose Sulfate,Structural,848.79,44804,21.2,48.0,15.9,43515.2,2.0,11.6,167.7,Soluble
+Scleroglucan,Fungal,1111.53,34760,20.5,13.3,73.8,31874.8,5.8,8.6,280.3,Soluble
+Inulin,Storage,4.67,17513,24.1,30.4,48.8,23060.8,4.7,7.5,221.3,Soluble
+Konjac Glucomannan,Storage,877.97,22122,20.3,89.5,28.5,538.8,2.0,6.4,158.7,Soluble
+Locust Bean Gum,Storage,260.88,29235,10.5,68.0,23.9,1711.7,4.5,6.3,202.6,Soluble
+Xanthan Gum,Bacterial,3540.59,41827,3.7,86.6,11.5,30238.2,3.5,10.6,215.5,Soluble
+Hyaluronic Acid,Bioactive,2316.8,45600,5.5,33.6,54.5,3795.0,3.8,12.0,244.6,Soluble
+Welan Gum,Bacterial,2322.71,21204,7.7,72.5,25.8,3128.7,3.6,12.0,122.0,Soluble
+Inulin,Storage,4.36,4558,14.8,84.3,50.8,8930.3,4.0,6.9,244.5,Soluble
+Xanthan Gum,Bacterial,3136.76,6973,27.4,67.2,12.7,3655.2,4.3,7.5,167.0,Soluble
+Guar Gum,Storage,189.1,41975,0.0,13.0,34.3,7588.9,3.3,8.3,60.9,Soluble
+Welan Gum,Bacterial,2351.93,32167,14.3,42.3,59.6,40615.7,2.3,7.4,152.3,Soluble
+Welan Gum,Bacterial,2254.38,31602,3.6,52.8,79.4,16678.7,3.2,6.3,299.3,Soluble
+Fucoidan,Algal,83.63,35047,25.6,37.2,68.1,38025.0,3.2,7.2,193.1,Soluble
+Carrageenan,Algal,532.15,19596,20.9,81.7,52.3,17969.5,2.3,9.8,236.5,Soluble
+Heparin,Bioactive,12.21,1672,21.6,57.4,41.7,3159.0,4.2,7.8,188.1,Soluble
+Pullulan,Fungal,355.99,1085,1.1,14.5,64.1,2150.3,2.5,10.8,220.2,Soluble
+Pullulan,Fungal,352.81,35174,4.5,56.3,74.4,1853.5,2.6,9.9,173.1,Soluble
+Laminarin,Algal,4.09,45970,19.5,11.1,52.4,45234.1,5.3,6.6,206.7,Soluble
+Curdlan,Bacterial,61.09,6978,3.4,57.6,51.2,3164.9,2.8,8.0,260.6,Insoluble
+Gellan Gum,Bacterial,1071.36,21259,3.6,64.7,45.9,16086.3,5.9,7.3,70.9,Soluble
+Hyaluronic Acid,Bioactive,1868.4,7923,8.2,70.6,17.6,18502.7,2.7,7.5,199.7,Soluble
+Heparin,Bioactive,12.6,41441,18.4,72.2,6.2,24353.5,2.0,7.1,81.4,Soluble
+Fucoidan,Algal,103.75,18604,12.5,74.6,62.9,34621.0,2.8,9.8,185.5,Soluble
+Levan,Bacterial,1791.4,11449,18.3,13.0,18.5,24999.4,5.8,9.8,247.8,Soluble
+Alginate,Algal,193.5,36560,7.1,19.4,44.8,4793.2,3.4,10.6,189.5,Soluble
+Agar,Algal,147.85,41065,19.8,32.1,19.5,39832.7,4.7,11.8,173.9,Soluble (Hot)
+Hyaluronic Acid,Bioactive,1727.81,2835,1.6,39.1,20.7,12576.6,4.5,11.3,168.8,Soluble
+Chitin,Structural,767.32,35226,5.3,72.8,41.4,5812.1,5.6,10.3,202.2,Insoluble
+Pectin,Structural,77.41,48971,20.3,36.1,63.4,16313.3,2.4,10.4,268.8,Soluble
+Carrageenan,Algal,578.27,4828,14.1,48.8,71.8,7255.6,5.7,8.7,153.0,Soluble
+Heparin,Bioactive,14.75,12734,19.0,88.0,20.2,6369.3,4.8,6.4,92.8,Soluble
+Pullulan,Fungal,295.03,11229,22.8,27.6,27.1,7847.8,5.2,11.7,277.3,Soluble
+Curdlan,Bacterial,87.92,15063,2.6,78.6,41.7,49783.3,4.4,11.0,127.0,Insoluble
+Gellan Gum,Bacterial,971.24,16174,7.4,44.7,21.7,46374.7,5.8,11.5,275.6,Soluble
+Levan,Bacterial,2384.15,2635,29.7,68.7,42.8,21290.6,3.6,10.9,227.2,Soluble
+Chitin,Structural,686.68,15772,2.5,70.2,57.0,20336.8,2.9,8.2,117.4,Insoluble
+Glycogen,Storage,645.1,43855,9.1,66.3,69.3,37366.9,2.1,8.7,245.2,Soluble
+Welan Gum,Bacterial,1924.29,24285,18.8,66.3,5.1,31369.0,3.5,10.1,187.4,Soluble
+Dextran,Bacterial,97.04,17690,20.9,59.0,48.1,10365.2,4.7,9.7,140.6,Soluble
+Cellulose,Structural,1005.89,44224,10.9,14.1,33.7,23273.0,2.2,8.2,215.6,Insoluble
+Welan Gum,Bacterial,1653.6,46497,23.2,21.1,30.1,26986.3,4.6,10.4,240.5,Soluble
+Welan Gum,Bacterial,1767.84,48835,22.8,35.6,72.3,25183.3,3.7,6.3,149.5,Soluble
+Pullulan,Fungal,298.35,34526,24.9,47.6,44.9,41270.7,5.6,8.7,148.4,Soluble
+Scleroglucan,Fungal,1413.78,4310,5.7,80.7,11.5,19540.2,2.7,11.7,78.5,Soluble
+Hyaluronic Acid,Bioactive,1820.75,45693,4.4,22.0,20.3,47605.7,2.1,8.5,223.8,Soluble
+Heparin,Bioactive,14.84,27543,13.3,61.6,26.9,3156.8,5.5,7.4,287.4,Soluble
+Fucoidan,Algal,93.44,37935,10.3,61.7,29.5,29671.9,4.8,11.1,166.9,Soluble
+Dextran,Bacterial,102.69,20096,5.2,30.8,41.3,48536.5,5.1,6.3,144.7,Soluble
+Pullulan,Fungal,354.75,40552,27.7,66.9,26.4,48660.6,5.4,10.2,219.9,Soluble
+Heparin,Bioactive,12.97,7672,1.2,35.3,14.5,13027.8,2.7,9.4,68.3,Soluble
+Pectin,Structural,95.3,9705,11.2,53.2,17.2,15085.0,5.7,8.4,179.9,Soluble
+Heparin,Bioactive,17.69,20995,4.7,87.6,46.0,25375.4,4.6,7.8,275.0,Soluble
+Konjac Glucomannan,Storage,1192.28,37609,20.0,74.0,59.6,46115.4,3.4,6.7,175.0,Soluble
+Cellulose,Structural,855.77,36117,3.5,12.0,51.3,11026.0,3.4,8.0,206.0,Insoluble
+Xanthan Gum,Bacterial,3100.12,14568,23.4,71.4,19.7,4188.6,5.4,10.1,289.8,Soluble
+Locust Bean Gum,Storage,296.91,32153,9.5,58.4,75.8,45423.3,3.4,6.9,264.9,Soluble
+Alginate,Algal,190.89,808,8.5,38.1,78.3,43716.3,2.4,10.4,166.6,Soluble
+Levan,Bacterial,2242.95,18925,4.9,68.2,72.3,36433.0,3.7,11.0,203.5,Soluble
+Heparin,Bioactive,13.25,31114,29.7,52.0,30.2,46658.3,4.4,8.3,61.6,Soluble
+Fucoidan,Algal,116.58,27175,5.2,47.0,47.6,45744.5,2.8,11.0,129.5,Soluble

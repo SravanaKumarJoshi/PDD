@@ -1,0 +1,351 @@
+name,category,bioactivity,ic50_ug_ml,minimum_inhibitory_concentration_ug_ml,in_vitro_tested,in_vivo_tested,mechanism,source_organism
+Guar Gum,Storage,Antibacterial,411.42,302.34,No,No,Radical scavenging,Plants
+Gellan Gum,Bacterial,Prebiotic,112.34,791.32,Yes,No,Enzyme inhibition,Bacteria
+Fucoidan,Algal,Prebiotic,62.18,666.08,No,No,Receptor binding,Brown Algae
+Guar Gum,Storage,Antitumor,14.32,764.84,No,Yes,Radical scavenging,Plants
+Gellan Gum,Bacterial,Anticoagulant,290.57,565.79,No,No,Unknown,Bacteria
+Chitin,Structural,Anticoagulant,256.31,575.48,No,Yes,Radical scavenging,Fungi/Exoskeletons
+Cellulose,Structural,Antiviral,159.91,878.38,Yes,No,Receptor binding,Plants
+Cellulose,Structural,Immunostimulant,180.65,636.43,No,Yes,Enzyme inhibition,Plants
+Dextran,Bacterial,Anti-inflammatory,319.51,77.29,Yes,Yes,Cell wall disruption,Bacteria
+Laminarin,Algal,Antiviral,271.9,872.51,No,No,Unknown,Brown Algae
+Welan Gum,Bacterial,Anticoagulant,48.01,580.26,Yes,Yes,Receptor binding,Bacteria
+Locust Bean Gum,Storage,Immunostimulant,186.57,485.16,No,Yes,Cell wall disruption,Plants
+Xanthan Gum,Bacterial,Antiviral,251.74,831.66,Yes,No,Immune modulation,Bacteria
+Glycogen,Storage,Antifungal,409.44,923.45,No,No,Enzyme inhibition,Animals
+Welan Gum,Bacterial,Anticoagulant,69.59,442.22,No,Yes,Unknown,Bacteria
+Dextran,Bacterial,Antibacterial,372.26,119.04,Yes,Yes,Unknown,Bacteria
+Agar,Algal,Immunostimulant,62.76,130.65,Yes,No,Unknown,Red Algae
+Konjac Glucomannan,Storage,Antifungal,38.96,774.8,No,Yes,Receptor binding,Plants
+Chitin,Structural,Antibacterial,396.55,513.72,Yes,No,Cell wall disruption,Fungi/Exoskeletons
+Inulin,Storage,Antibacterial,33.22,667.75,Yes,Yes,Radical scavenging,Plants
+Xanthan Gum,Bacterial,Hepatoprotective,450.6,185.19,No,Yes,Cell wall disruption,Bacteria
+Heparin,Bioactive,Immunostimulant,474.4,348.16,Yes,Yes,Radical scavenging,Animals
+Curdlan,Bacterial,Antifungal,49.64,578.34,Yes,Yes,Unknown,Bacteria
+Xanthan Gum,Bacterial,Immunostimulant,85.97,754.14,Yes,Yes,Receptor binding,Bacteria
+Locust Bean Gum,Storage,Prebiotic,183.29,589.59,No,Yes,Receptor binding,Plants
+Alginate,Algal,Antioxidant,212.1,514.49,No,Yes,Enzyme inhibition,Brown Algae
+Chitin,Structural,Prebiotic,55.25,136.34,No,No,Radical scavenging,Fungi/Exoskeletons
+Gellan Gum,Bacterial,Antibacterial,41.22,493.97,No,No,Immune modulation,Bacteria
+Laminarin,Algal,Immunostimulant,343.55,841.17,Yes,No,Enzyme inhibition,Brown Algae
+Levan,Bacterial,Antitumor,428.4,894.81,No,No,Receptor binding,Bacteria
+Starch,Storage,Prebiotic,336.08,396.67,Yes,Yes,Receptor binding,Plants
+Carrageenan,Algal,Antioxidant,347.55,977.58,Yes,Yes,Enzyme inhibition,Red Algae
+Xanthan Gum,Bacterial,Anticoagulant,100.21,844.11,No,Yes,Receptor binding,Bacteria
+Levan,Bacterial,Prebiotic,139.33,713.64,No,No,Enzyme inhibition,Bacteria
+Guar Gum,Storage,Hepatoprotective,475.07,987.53,No,Yes,Immune modulation,Plants
+Chitin,Structural,Antifungal,125.42,497.53,Yes,Yes,Cell wall disruption,Fungi/Exoskeletons
+Gellan Gum,Bacterial,Antibacterial,415.17,498.39,Yes,Yes,Immune modulation,Bacteria
+Laminarin,Algal,Anticoagulant,76.45,622.16,Yes,Yes,Unknown,Brown Algae
+Konjac Glucomannan,Storage,Anti-inflammatory,383.81,792.84,Yes,No,Unknown,Plants
+Guar Gum,Storage,Prebiotic,252.45,542.67,Yes,Yes,Immune modulation,Plants
+Chitin,Structural,Antioxidant,225.11,852.95,No,No,Cell wall disruption,Fungi/Exoskeletons
+Cellulose,Structural,Antiviral,278.38,860.43,No,Yes,Immune modulation,Plants
+Levan,Bacterial,Antiviral,156.3,389.39,Yes,No,Unknown,Bacteria
+Cellulose Sulfate,Structural,Anti-inflammatory,286.15,476.17,Yes,Yes,Immune modulation,Plants (Modified)
+Inulin,Storage,Prebiotic,295.56,378.11,No,No,Enzyme inhibition,Plants
+Cellulose,Structural,Antibacterial,295.27,128.63,No,No,Unknown,Plants
+Curdlan,Bacterial,Antibacterial,382.62,625.34,No,Yes,Immune modulation,Bacteria
+Alginate,Algal,Anticoagulant,206.02,56.92,Yes,Yes,Receptor binding,Brown Algae
+Fucoidan,Algal,Immunostimulant,296.31,910.43,Yes,No,Cell wall disruption,Brown Algae
+Pectin,Structural,Antiviral,9.95,326.45,No,No,Radical scavenging,Plants
+Locust Bean Gum,Storage,Antioxidant,133.38,696.11,Yes,No,Immune modulation,Plants
+Curdlan,Bacterial,Antioxidant,161.28,98.18,No,Yes,Unknown,Bacteria
+Scleroglucan,Fungal,Antitumor,168.05,503.02,No,Yes,Radical scavenging,Fungi
+Dextran,Bacterial,Anticoagulant,484.72,202.16,Yes,Yes,Enzyme inhibition,Bacteria
+Inulin,Storage,Antibacterial,148.73,573.73,Yes,Yes,Unknown,Plants
+Curdlan,Bacterial,Antifungal,295.97,273.73,No,No,Receptor binding,Bacteria
+Alginate,Algal,Antifungal,325.8,302.2,No,No,Unknown,Brown Algae
+Cellulose Sulfate,Structural,Anticoagulant,100.12,402.6,No,Yes,Cell wall disruption,Plants (Modified)
+Fucoidan,Algal,Anti-inflammatory,431.37,577.05,Yes,No,Enzyme inhibition,Brown Algae
+Fucoidan,Algal,Anti-inflammatory,404.49,852.85,No,Yes,Radical scavenging,Brown Algae
+Xanthan Gum,Bacterial,Anticoagulant,231.3,240.75,No,No,Immune modulation,Bacteria
+Pectin,Structural,Antifungal,317.0,846.04,No,No,Unknown,Plants
+Hyaluronic Acid,Bioactive,Immunostimulant,343.46,236.51,Yes,Yes,Receptor binding,Animals/Bacteria
+Xanthan Gum,Bacterial,Antibacterial,122.87,827.32,No,No,Radical scavenging,Bacteria
+Levan,Bacterial,Antioxidant,323.5,37.49,Yes,No,Receptor binding,Bacteria
+Starch,Storage,Immunostimulant,394.86,278.13,Yes,Yes,Unknown,Plants
+Guar Gum,Storage,Antibacterial,27.76,896.56,No,No,Cell wall disruption,Plants
+Levan,Bacterial,Anticoagulant,335.87,885.78,No,Yes,Receptor binding,Bacteria
+Chitin,Structural,Hepatoprotective,367.27,932.97,No,No,Cell wall disruption,Fungi/Exoskeletons
+Agar,Algal,Hepatoprotective,61.23,806.78,No,No,Unknown,Red Algae
+Gellan Gum,Bacterial,Antitumor,467.76,218.4,Yes,Yes,Receptor binding,Bacteria
+Inulin,Storage,Prebiotic,204.25,862.97,Yes,No,Radical scavenging,Plants
+Alginate,Algal,Antifungal,158.31,424.07,Yes,No,Receptor binding,Brown Algae
+Alginate,Algal,Prebiotic,357.86,821.45,Yes,Yes,Unknown,Brown Algae
+Scleroglucan,Fungal,Antibacterial,345.37,788.91,Yes,No,Radical scavenging,Fungi
+Carrageenan,Algal,Immunostimulant,319.51,700.77,Yes,Yes,Immune modulation,Red Algae
+Carrageenan,Algal,Antibacterial,454.9,393.28,No,No,Cell wall disruption,Red Algae
+Konjac Glucomannan,Storage,Antitumor,148.78,859.49,Yes,No,Unknown,Plants
+Pectin,Structural,Antioxidant,394.68,274.4,Yes,No,Immune modulation,Plants
+Gellan Gum,Bacterial,Antioxidant,463.26,333.06,No,Yes,Receptor binding,Bacteria
+Welan Gum,Bacterial,Immunostimulant,253.22,352.18,No,No,Unknown,Bacteria
+Starch,Storage,Antibacterial,320.72,184.15,No,Yes,Cell wall disruption,Plants
+Carrageenan,Algal,Antitumor,314.19,314.06,Yes,Yes,Receptor binding,Red Algae
+Agar,Algal,Anti-inflammatory,356.81,767.72,Yes,No,Enzyme inhibition,Red Algae
+Pullulan,Fungal,Prebiotic,436.77,133.94,Yes,No,Enzyme inhibition,Fungi
+Xanthan Gum,Bacterial,Antifungal,207.31,182.3,No,Yes,Cell wall disruption,Bacteria
+Starch,Storage,Anti-inflammatory,323.59,626.81,Yes,No,Receptor binding,Plants
+Inulin,Storage,Antiviral,24.99,618.2,No,Yes,Cell wall disruption,Plants
+Alginate,Algal,Antiviral,473.63,117.79,No,No,Unknown,Brown Algae
+Guar Gum,Storage,Antifungal,112.32,203.54,No,No,Unknown,Plants
+Guar Gum,Storage,Antioxidant,65.19,856.41,Yes,No,Unknown,Plants
+Scleroglucan,Fungal,Antitumor,209.22,408.82,Yes,Yes,Enzyme inhibition,Fungi
+Inulin,Storage,Antitumor,308.88,907.37,No,No,Cell wall disruption,Plants
+Starch,Storage,Prebiotic,66.69,323.58,No,Yes,Unknown,Plants
+Carrageenan,Algal,Antioxidant,368.08,256.6,Yes,Yes,Cell wall disruption,Red Algae
+Pectin,Structural,Antitumor,235.52,354.62,Yes,Yes,Enzyme inhibition,Plants
+Locust Bean Gum,Storage,Hepatoprotective,190.53,977.54,No,Yes,Radical scavenging,Plants
+Cellulose,Structural,Hepatoprotective,89.77,170.28,No,No,Immune modulation,Plants
+Heparin,Bioactive,Antifungal,158.73,530.66,Yes,No,Cell wall disruption,Animals
+Pectin,Structural,Antibacterial,489.26,499.46,No,No,Immune modulation,Plants
+Dextran,Bacterial,Immunostimulant,306.5,761.68,No,No,Immune modulation,Bacteria
+Hyaluronic Acid,Bioactive,Anticoagulant,368.46,491.53,Yes,No,Cell wall disruption,Animals/Bacteria
+Xanthan Gum,Bacterial,Antiviral,27.38,183.55,No,No,Receptor binding,Bacteria
+Welan Gum,Bacterial,Prebiotic,218.27,995.2,No,Yes,Immune modulation,Bacteria
+Alginate,Algal,Anti-inflammatory,242.65,493.24,Yes,Yes,Enzyme inhibition,Brown Algae
+Glycogen,Storage,Antitumor,434.1,181.06,Yes,No,Radical scavenging,Animals
+Scleroglucan,Fungal,Hepatoprotective,106.28,998.01,Yes,Yes,Immune modulation,Fungi
+Glycogen,Storage,Antitumor,384.15,677.07,No,Yes,Enzyme inhibition,Animals
+Scleroglucan,Fungal,Antifungal,197.15,590.54,Yes,No,Receptor binding,Fungi
+Starch,Storage,Antifungal,230.17,707.85,No,No,Unknown,Plants
+Inulin,Storage,Hepatoprotective,329.04,329.76,Yes,No,Enzyme inhibition,Plants
+Gellan Gum,Bacterial,Hepatoprotective,64.75,863.35,No,No,Cell wall disruption,Bacteria
+Gellan Gum,Bacterial,Antifungal,273.62,602.49,Yes,No,Enzyme inhibition,Bacteria
+Hyaluronic Acid,Bioactive,Antitumor,482.53,865.58,Yes,Yes,Receptor binding,Animals/Bacteria
+Hyaluronic Acid,Bioactive,Antioxidant,389.77,285.29,Yes,Yes,Enzyme inhibition,Animals/Bacteria
+Guar Gum,Storage,Antioxidant,367.97,921.74,Yes,No,Unknown,Plants
+Chitin,Structural,Anticoagulant,256.38,489.88,No,No,Enzyme inhibition,Fungi/Exoskeletons
+Curdlan,Bacterial,Hepatoprotective,211.59,756.61,No,Yes,Immune modulation,Bacteria
+Fucoidan,Algal,Antioxidant,46.56,513.58,No,Yes,Unknown,Brown Algae
+Scleroglucan,Fungal,Antiviral,465.34,527.52,Yes,No,Immune modulation,Fungi
+Levan,Bacterial,Antifungal,453.61,477.87,Yes,Yes,Unknown,Bacteria
+Dextran,Bacterial,Antitumor,261.59,295.83,Yes,Yes,Cell wall disruption,Bacteria
+Locust Bean Gum,Storage,Antifungal,255.37,413.31,No,No,Enzyme inhibition,Plants
+Inulin,Storage,Hepatoprotective,40.98,503.69,Yes,No,Receptor binding,Plants
+Hyaluronic Acid,Bioactive,Antioxidant,22.72,416.54,No,No,Radical scavenging,Animals/Bacteria
+Gellan Gum,Bacterial,Prebiotic,378.7,450.22,No,No,Receptor binding,Bacteria
+Xanthan Gum,Bacterial,Antiviral,39.2,982.2,No,Yes,Immune modulation,Bacteria
+Cellulose Sulfate,Structural,Antibacterial,3.02,117.12,Yes,No,Immune modulation,Plants (Modified)
+Welan Gum,Bacterial,Antioxidant,434.4,965.82,No,No,Radical scavenging,Bacteria
+Laminarin,Algal,Anticoagulant,345.36,963.16,No,No,Cell wall disruption,Brown Algae
+Heparin,Bioactive,Antiviral,7.04,112.36,Yes,Yes,Cell wall disruption,Animals
+Xanthan Gum,Bacterial,Prebiotic,324.35,649.91,No,Yes,Cell wall disruption,Bacteria
+Dextran,Bacterial,Prebiotic,74.17,422.17,Yes,Yes,Receptor binding,Bacteria
+Gellan Gum,Bacterial,Prebiotic,481.94,471.75,No,Yes,Receptor binding,Bacteria
+Dextran,Bacterial,Hepatoprotective,414.74,392.04,No,Yes,Cell wall disruption,Bacteria
+Fucoidan,Algal,Antioxidant,489.75,848.69,No,Yes,Immune modulation,Brown Algae
+Carrageenan,Algal,Prebiotic,256.73,724.75,No,Yes,Unknown,Red Algae
+Cellulose,Structural,Anti-inflammatory,9.61,576.62,Yes,No,Unknown,Plants
+Levan,Bacterial,Prebiotic,58.56,622.89,No,No,Unknown,Bacteria
+Levan,Bacterial,Antibacterial,80.75,726.35,No,No,Immune modulation,Bacteria
+Agar,Algal,Anti-inflammatory,109.93,909.12,No,No,Receptor binding,Red Algae
+Dextran,Bacterial,Antioxidant,479.91,833.16,No,No,Receptor binding,Bacteria
+Laminarin,Algal,Antitumor,141.3,749.38,No,Yes,Receptor binding,Brown Algae
+Xanthan Gum,Bacterial,Antiviral,302.91,101.35,No,No,Enzyme inhibition,Bacteria
+Agar,Algal,Antitumor,278.46,999.26,No,No,Enzyme inhibition,Red Algae
+Scleroglucan,Fungal,Antiviral,87.44,859.53,Yes,Yes,Enzyme inhibition,Fungi
+Levan,Bacterial,Antifungal,308.82,121.13,Yes,No,Enzyme inhibition,Bacteria
+Pectin,Structural,Anticoagulant,384.71,770.21,No,Yes,Unknown,Plants
+Locust Bean Gum,Storage,Hepatoprotective,334.78,706.55,No,No,Cell wall disruption,Plants
+Chitin,Structural,Hepatoprotective,304.87,858.46,Yes,Yes,Radical scavenging,Fungi/Exoskeletons
+Chitin,Structural,Antiviral,315.0,870.93,No,Yes,Unknown,Fungi/Exoskeletons
+Dextran,Bacterial,Prebiotic,381.01,498.64,Yes,Yes,Unknown,Bacteria
+Alginate,Algal,Anticoagulant,409.6,123.42,Yes,No,Immune modulation,Brown Algae
+Konjac Glucomannan,Storage,Antibacterial,122.73,809.24,No,No,Radical scavenging,Plants
+Hyaluronic Acid,Bioactive,Antifungal,133.08,715.34,No,No,Unknown,Animals/Bacteria
+Scleroglucan,Fungal,Antitumor,75.89,753.63,No,Yes,Receptor binding,Fungi
+Levan,Bacterial,Antioxidant,459.02,898.12,No,Yes,Immune modulation,Bacteria
+Heparin,Bioactive,Antibacterial,358.84,517.59,Yes,Yes,Enzyme inhibition,Animals
+Pectin,Structural,Antioxidant,490.97,164.74,Yes,No,Cell wall disruption,Plants
+Scleroglucan,Fungal,Antiviral,451.27,58.28,No,No,Immune modulation,Fungi
+Scleroglucan,Fungal,Anti-inflammatory,436.79,721.69,No,No,Cell wall disruption,Fungi
+Inulin,Storage,Anti-inflammatory,305.24,147.29,No,No,Unknown,Plants
+Xanthan Gum,Bacterial,Anti-inflammatory,312.22,618.38,No,No,Unknown,Bacteria
+Carrageenan,Algal,Antitumor,440.5,84.74,No,No,Unknown,Red Algae
+Gellan Gum,Bacterial,Antiviral,260.28,541.02,Yes,Yes,Radical scavenging,Bacteria
+Cellulose Sulfate,Structural,Immunostimulant,260.72,757.17,Yes,Yes,Cell wall disruption,Plants (Modified)
+Cellulose Sulfate,Structural,Hepatoprotective,129.42,832.31,No,No,Radical scavenging,Plants (Modified)
+Chitin,Structural,Antibacterial,420.81,260.13,No,Yes,Cell wall disruption,Fungi/Exoskeletons
+Konjac Glucomannan,Storage,Antifungal,224.42,572.65,Yes,No,Enzyme inhibition,Plants
+Agar,Algal,Hepatoprotective,282.84,894.39,Yes,No,Enzyme inhibition,Red Algae
+Dextran,Bacterial,Hepatoprotective,336.25,714.49,Yes,Yes,Enzyme inhibition,Bacteria
+Locust Bean Gum,Storage,Hepatoprotective,96.36,778.66,No,Yes,Receptor binding,Plants
+Welan Gum,Bacterial,Antioxidant,414.24,82.41,Yes,No,Receptor binding,Bacteria
+Guar Gum,Storage,Antitumor,223.14,369.61,No,No,Enzyme inhibition,Plants
+Curdlan,Bacterial,Prebiotic,318.27,996.51,No,No,Receptor binding,Bacteria
+Heparin,Bioactive,Anti-inflammatory,63.65,711.29,Yes,Yes,Unknown,Animals
+Xanthan Gum,Bacterial,Prebiotic,236.73,746.62,No,Yes,Radical scavenging,Bacteria
+Levan,Bacterial,Antifungal,60.52,571.98,Yes,Yes,Cell wall disruption,Bacteria
+Alginate,Algal,Immunostimulant,495.51,303.61,No,Yes,Receptor binding,Brown Algae
+Heparin,Bioactive,Hepatoprotective,210.94,936.85,No,No,Receptor binding,Animals
+Hyaluronic Acid,Bioactive,Prebiotic,1.14,547.76,Yes,Yes,Immune modulation,Animals/Bacteria
+Guar Gum,Storage,Hepatoprotective,154.92,452.65,No,No,Immune modulation,Plants
+Gellan Gum,Bacterial,Hepatoprotective,66.49,138.95,No,No,Unknown,Bacteria
+Pullulan,Fungal,Antiviral,433.19,325.55,No,No,Receptor binding,Fungi
+Carrageenan,Algal,Anticoagulant,270.54,958.1,No,No,Unknown,Red Algae
+Glycogen,Storage,Antiviral,353.63,572.21,No,Yes,Unknown,Animals
+Cellulose Sulfate,Structural,Antifungal,96.29,618.89,Yes,Yes,Immune modulation,Plants (Modified)
+Locust Bean Gum,Storage,Antibacterial,60.23,936.21,Yes,Yes,Enzyme inhibition,Plants
+Xanthan Gum,Bacterial,Antitumor,414.86,839.0,No,Yes,Radical scavenging,Bacteria
+Laminarin,Algal,Anticoagulant,200.96,45.46,Yes,No,Immune modulation,Brown Algae
+Hyaluronic Acid,Bioactive,Antioxidant,12.13,528.14,No,No,Cell wall disruption,Animals/Bacteria
+Chitin,Structural,Antifungal,270.94,285.71,Yes,No,Cell wall disruption,Fungi/Exoskeletons
+Heparin,Bioactive,Immunostimulant,476.09,678.77,Yes,No,Receptor binding,Animals
+Starch,Storage,Antibacterial,149.08,99.19,Yes,No,Enzyme inhibition,Plants
+Inulin,Storage,Antioxidant,470.79,899.55,Yes,Yes,Receptor binding,Plants
+Konjac Glucomannan,Storage,Hepatoprotective,293.06,493.23,No,Yes,Enzyme inhibition,Plants
+Cellulose,Structural,Anticoagulant,232.47,407.37,No,Yes,Immune modulation,Plants
+Fucoidan,Algal,Antitumor,456.88,19.11,Yes,Yes,Radical scavenging,Brown Algae
+Fucoidan,Algal,Antiviral,152.38,407.04,Yes,Yes,Receptor binding,Brown Algae
+Alginate,Algal,Anti-inflammatory,492.66,782.13,No,No,Cell wall disruption,Brown Algae
+Starch,Storage,Prebiotic,480.56,620.92,Yes,Yes,Cell wall disruption,Plants
+Guar Gum,Storage,Immunostimulant,298.97,839.57,No,No,Unknown,Plants
+Xanthan Gum,Bacterial,Hepatoprotective,420.36,281.67,Yes,Yes,Enzyme inhibition,Bacteria
+Glycogen,Storage,Antioxidant,349.24,830.58,No,No,Receptor binding,Animals
+Laminarin,Algal,Anti-inflammatory,478.71,318.64,No,No,Unknown,Brown Algae
+Pullulan,Fungal,Immunostimulant,123.04,983.03,No,Yes,Immune modulation,Fungi
+Laminarin,Algal,Anticoagulant,8.04,692.0,Yes,No,Cell wall disruption,Brown Algae
+Starch,Storage,Antiviral,206.64,895.32,No,No,Radical scavenging,Plants
+Glycogen,Storage,Antifungal,269.37,892.63,No,Yes,Enzyme inhibition,Animals
+Carrageenan,Algal,Hepatoprotective,179.05,177.6,Yes,Yes,Immune modulation,Red Algae
+Alginate,Algal,Antitumor,222.34,221.91,Yes,No,Unknown,Brown Algae
+Welan Gum,Bacterial,Anticoagulant,95.84,816.37,No,Yes,Receptor binding,Bacteria
+Guar Gum,Storage,Anticoagulant,18.49,493.09,Yes,Yes,Receptor binding,Plants
+Fucoidan,Algal,Antioxidant,55.56,277.71,No,Yes,Radical scavenging,Brown Algae
+Xanthan Gum,Bacterial,Hepatoprotective,336.12,603.17,Yes,Yes,Radical scavenging,Bacteria
+Heparin,Bioactive,Antifungal,63.8,933.6,Yes,No,Receptor binding,Animals
+Scleroglucan,Fungal,Antibacterial,495.98,693.14,No,No,Cell wall disruption,Fungi
+Levan,Bacterial,Antibacterial,426.94,323.34,No,No,Cell wall disruption,Bacteria
+Scleroglucan,Fungal,Anti-inflammatory,233.35,361.79,Yes,Yes,Cell wall disruption,Fungi
+Inulin,Storage,Antioxidant,266.25,316.58,No,Yes,Enzyme inhibition,Plants
+Glycogen,Storage,Hepatoprotective,403.86,990.27,Yes,No,Cell wall disruption,Animals
+Agar,Algal,Antitumor,82.32,311.15,Yes,Yes,Immune modulation,Red Algae
+Levan,Bacterial,Antibacterial,296.31,626.48,No,No,Receptor binding,Bacteria
+Chitin,Structural,Prebiotic,119.26,341.13,Yes,No,Radical scavenging,Fungi/Exoskeletons
+Agar,Algal,Antifungal,387.9,619.76,Yes,No,Radical scavenging,Red Algae
+Chitin,Structural,Antifungal,487.27,916.76,No,No,Unknown,Fungi/Exoskeletons
+Glycogen,Storage,Antiviral,31.09,802.49,Yes,No,Radical scavenging,Animals
+Fucoidan,Algal,Antioxidant,32.99,677.73,Yes,No,Immune modulation,Brown Algae
+Carrageenan,Algal,Antifungal,308.69,411.4,Yes,No,Immune modulation,Red Algae
+Pullulan,Fungal,Antioxidant,439.98,619.42,No,Yes,Immune modulation,Fungi
+Locust Bean Gum,Storage,Anticoagulant,293.95,108.45,Yes,Yes,Radical scavenging,Plants
+Xanthan Gum,Bacterial,Hepatoprotective,63.08,509.14,No,No,Immune modulation,Bacteria
+Gellan Gum,Bacterial,Hepatoprotective,222.37,243.53,Yes,Yes,Receptor binding,Bacteria
+Dextran,Bacterial,Hepatoprotective,217.98,959.76,No,No,Radical scavenging,Bacteria
+Cellulose Sulfate,Structural,Antiviral,73.79,309.02,No,No,Enzyme inhibition,Plants (Modified)
+Starch,Storage,Anti-inflammatory,293.26,678.46,Yes,Yes,Radical scavenging,Plants
+Cellulose Sulfate,Structural,Antibacterial,211.09,195.81,Yes,Yes,Cell wall disruption,Plants (Modified)
+Pectin,Structural,Antitumor,333.96,694.93,No,No,Radical scavenging,Plants
+Curdlan,Bacterial,Anticoagulant,308.09,418.99,Yes,Yes,Immune modulation,Bacteria
+Cellulose,Structural,Prebiotic,109.78,4.2,Yes,Yes,Immune modulation,Plants
+Laminarin,Algal,Antitumor,119.59,734.72,No,No,Receptor binding,Brown Algae
+Carrageenan,Algal,Antiviral,413.06,7.22,Yes,Yes,Enzyme inhibition,Red Algae
+Starch,Storage,Anti-inflammatory,57.68,290.93,Yes,No,Cell wall disruption,Plants
+Starch,Storage,Antitumor,98.99,174.56,No,Yes,Enzyme inhibition,Plants
+Cellulose Sulfate,Structural,Antitumor,89.35,21.98,No,Yes,Cell wall disruption,Plants (Modified)
+Scleroglucan,Fungal,Antiviral,189.52,787.52,Yes,No,Receptor binding,Fungi
+Dextran,Bacterial,Prebiotic,120.15,809.58,Yes,No,Unknown,Bacteria
+Glycogen,Storage,Antifungal,72.3,924.19,Yes,Yes,Radical scavenging,Animals
+Carrageenan,Algal,Anticoagulant,159.04,429.83,Yes,Yes,Radical scavenging,Red Algae
+Curdlan,Bacterial,Antitumor,427.23,294.54,Yes,No,Receptor binding,Bacteria
+Cellulose,Structural,Immunostimulant,436.44,851.58,No,Yes,Unknown,Plants
+Glycogen,Storage,Prebiotic,395.52,615.08,Yes,No,Unknown,Animals
+Konjac Glucomannan,Storage,Anti-inflammatory,187.2,519.13,Yes,No,Unknown,Plants
+Alginate,Algal,Anti-inflammatory,347.29,715.79,No,No,Enzyme inhibition,Brown Algae
+Curdlan,Bacterial,Antioxidant,319.09,790.73,Yes,Yes,Receptor binding,Bacteria
+Xanthan Gum,Bacterial,Prebiotic,431.6,396.2,No,No,Immune modulation,Bacteria
+Curdlan,Bacterial,Antiviral,467.76,374.42,Yes,Yes,Cell wall disruption,Bacteria
+Dextran,Bacterial,Prebiotic,259.46,230.56,Yes,No,Radical scavenging,Bacteria
+Laminarin,Algal,Anticoagulant,213.11,467.82,No,No,Immune modulation,Brown Algae
+Pectin,Structural,Immunostimulant,191.25,179.98,Yes,No,Unknown,Plants
+Glycogen,Storage,Anticoagulant,450.75,294.87,Yes,No,Receptor binding,Animals
+Chitin,Structural,Antifungal,35.77,38.76,Yes,No,Receptor binding,Fungi/Exoskeletons
+Scleroglucan,Fungal,Anticoagulant,125.09,745.34,No,Yes,Unknown,Fungi
+Laminarin,Algal,Antiviral,499.2,752.51,No,Yes,Enzyme inhibition,Brown Algae
+Dextran,Bacterial,Anticoagulant,391.59,404.11,No,Yes,Immune modulation,Bacteria
+Fucoidan,Algal,Anti-inflammatory,494.64,951.51,No,Yes,Receptor binding,Brown Algae
+Gellan Gum,Bacterial,Antitumor,237.27,516.07,No,No,Enzyme inhibition,Bacteria
+Glycogen,Storage,Anticoagulant,422.92,429.08,No,Yes,Immune modulation,Animals
+Pullulan,Fungal,Anti-inflammatory,15.15,139.38,Yes,No,Unknown,Fungi
+Starch,Storage,Prebiotic,405.22,834.38,No,Yes,Immune modulation,Plants
+Levan,Bacterial,Antioxidant,381.44,690.67,No,No,Radical scavenging,Bacteria
+Starch,Storage,Hepatoprotective,392.7,922.18,Yes,No,Radical scavenging,Plants
+Fucoidan,Algal,Hepatoprotective,456.88,574.09,No,No,Receptor binding,Brown Algae
+Carrageenan,Algal,Antifungal,267.29,188.74,Yes,No,Radical scavenging,Red Algae
+Pullulan,Fungal,Immunostimulant,46.71,104.76,Yes,Yes,Unknown,Fungi
+Laminarin,Algal,Prebiotic,13.52,199.4,No,No,Receptor binding,Brown Algae
+Agar,Algal,Immunostimulant,329.82,70.44,Yes,No,Radical scavenging,Red Algae
+Starch,Storage,Antiviral,163.45,909.86,No,Yes,Cell wall disruption,Plants
+Heparin,Bioactive,Anti-inflammatory,209.26,743.27,No,Yes,Receptor binding,Animals
+Xanthan Gum,Bacterial,Immunostimulant,216.16,709.82,No,Yes,Radical scavenging,Bacteria
+Curdlan,Bacterial,Immunostimulant,293.79,502.72,No,No,Receptor binding,Bacteria
+Starch,Storage,Antiviral,222.92,824.67,Yes,No,Radical scavenging,Plants
+Guar Gum,Storage,Prebiotic,231.4,39.57,Yes,No,Unknown,Plants
+Pullulan,Fungal,Anticoagulant,350.19,711.79,No,No,Radical scavenging,Fungi
+Hyaluronic Acid,Bioactive,Antioxidant,124.64,900.01,No,No,Immune modulation,Animals/Bacteria
+Scleroglucan,Fungal,Antiviral,349.29,95.99,Yes,Yes,Receptor binding,Fungi
+Inulin,Storage,Anti-inflammatory,146.02,916.34,Yes,No,Immune modulation,Plants
+Konjac Glucomannan,Storage,Anti-inflammatory,60.7,369.05,Yes,No,Immune modulation,Plants
+Pullulan,Fungal,Antiviral,126.46,506.31,No,Yes,Cell wall disruption,Fungi
+Fucoidan,Algal,Prebiotic,190.64,746.08,Yes,No,Cell wall disruption,Brown Algae
+Starch,Storage,Immunostimulant,57.43,917.18,No,No,Immune modulation,Plants
+Pullulan,Fungal,Antifungal,41.37,657.19,No,Yes,Immune modulation,Fungi
+Inulin,Storage,Antiviral,85.38,18.56,Yes,Yes,Enzyme inhibition,Plants
+Chitin,Structural,Anti-inflammatory,370.75,168.87,Yes,No,Receptor binding,Fungi/Exoskeletons
+Pullulan,Fungal,Anticoagulant,89.05,714.56,Yes,No,Unknown,Fungi
+Cellulose,Structural,Anti-inflammatory,320.54,716.55,Yes,No,Unknown,Plants
+Dextran,Bacterial,Prebiotic,26.3,5.16,No,Yes,Receptor binding,Bacteria
+Alginate,Algal,Antitumor,100.07,16.53,Yes,Yes,Enzyme inhibition,Brown Algae
+Xanthan Gum,Bacterial,Antifungal,110.36,882.34,Yes,Yes,Cell wall disruption,Bacteria
+Levan,Bacterial,Anti-inflammatory,53.93,327.48,Yes,Yes,Radical scavenging,Bacteria
+Carrageenan,Algal,Antioxidant,60.49,214.17,No,No,Receptor binding,Red Algae
+Starch,Storage,Antioxidant,327.03,12.48,Yes,No,Receptor binding,Plants
+Glycogen,Storage,Immunostimulant,325.01,369.3,Yes,Yes,Immune modulation,Animals
+Dextran,Bacterial,Hepatoprotective,249.84,990.48,Yes,No,Cell wall disruption,Bacteria
+Laminarin,Algal,Anticoagulant,490.71,696.47,Yes,No,Receptor binding,Brown Algae
+Fucoidan,Algal,Anticoagulant,489.01,666.54,Yes,No,Cell wall disruption,Brown Algae
+Laminarin,Algal,Hepatoprotective,224.51,511.27,Yes,Yes,Receptor binding,Brown Algae
+Starch,Storage,Hepatoprotective,379.49,124.49,Yes,No,Receptor binding,Plants
+Laminarin,Algal,Antifungal,30.06,374.84,No,Yes,Receptor binding,Brown Algae
+Carrageenan,Algal,Antitumor,321.06,238.44,No,No,Receptor binding,Red Algae
+Inulin,Storage,Anticoagulant,321.84,760.61,No,No,Cell wall disruption,Plants
+Agar,Algal,Anticoagulant,171.43,206.21,Yes,Yes,Unknown,Red Algae
+Welan Gum,Bacterial,Antitumor,304.07,381.8,No,Yes,Immune modulation,Bacteria
+Fucoidan,Algal,Antibacterial,32.4,491.9,Yes,Yes,Unknown,Brown Algae
+Heparin,Bioactive,Antitumor,62.87,174.09,Yes,Yes,Radical scavenging,Animals
+Glycogen,Storage,Antioxidant,362.52,311.81,Yes,Yes,Immune modulation,Animals
+Hyaluronic Acid,Bioactive,Hepatoprotective,124.56,285.71,No,Yes,Enzyme inhibition,Animals/Bacteria
+Guar Gum,Storage,Antifungal,475.51,359.9,No,Yes,Immune modulation,Plants
+Pullulan,Fungal,Antioxidant,252.7,735.06,Yes,No,Cell wall disruption,Fungi
+Konjac Glucomannan,Storage,Antioxidant,213.76,83.69,No,Yes,Radical scavenging,Plants
+Gellan Gum,Bacterial,Antiviral,128.72,463.92,No,No,Immune modulation,Bacteria
+Cellulose Sulfate,Structural,Hepatoprotective,240.47,333.57,No,Yes,Receptor binding,Plants (Modified)
+Xanthan Gum,Bacterial,Antibacterial,6.52,500.95,No,No,Immune modulation,Bacteria
+Levan,Bacterial,Antioxidant,485.25,373.46,No,No,Unknown,Bacteria
+Curdlan,Bacterial,Antifungal,204.45,39.31,Yes,No,Radical scavenging,Bacteria
+Hyaluronic Acid,Bioactive,Antitumor,381.5,957.12,No,No,Unknown,Animals/Bacteria
+Welan Gum,Bacterial,Anticoagulant,348.26,651.08,No,Yes,Receptor binding,Bacteria
+Guar Gum,Storage,Antibacterial,460.74,361.73,Yes,Yes,Enzyme inhibition,Plants
+Laminarin,Algal,Prebiotic,472.14,147.79,Yes,Yes,Cell wall disruption,Brown Algae
+Chitin,Structural,Antifungal,322.23,916.92,No,Yes,Radical scavenging,Fungi/Exoskeletons
+Xanthan Gum,Bacterial,Antioxidant,83.0,427.16,No,No,Radical scavenging,Bacteria
+Dextran,Bacterial,Antioxidant,376.26,924.36,Yes,Yes,Unknown,Bacteria
+Curdlan,Bacterial,Anticoagulant,407.13,269.39,Yes,No,Unknown,Bacteria
+Dextran,Bacterial,Antibacterial,493.51,816.48,Yes,Yes,Cell wall disruption,Bacteria
+Konjac Glucomannan,Storage,Antioxidant,262.53,654.69,No,Yes,Receptor binding,Plants
+Alginate,Algal,Antiviral,352.05,198.42,Yes,Yes,Immune modulation,Brown Algae
+Curdlan,Bacterial,Antitumor,92.9,59.45,Yes,Yes,Enzyme inhibition,Bacteria
+Levan,Bacterial,Prebiotic,313.46,624.61,Yes,Yes,Enzyme inhibition,Bacteria
+Glycogen,Storage,Antioxidant,62.43,64.73,Yes,Yes,Immune modulation,Animals
+Guar Gum,Storage,Antifungal,4.85,266.45,Yes,Yes,Cell wall disruption,Plants
+Xanthan Gum,Bacterial,Anti-inflammatory,395.91,375.98,No,No,Immune modulation,Bacteria
+Konjac Glucomannan,Storage,Anticoagulant,302.23,336.88,No,No,Receptor binding,Plants
+Alginate,Algal,Antioxidant,189.28,57.71,No,No,Cell wall disruption,Brown Algae
+Starch,Storage,Prebiotic,435.28,402.11,Yes,Yes,Radical scavenging,Plants
+Chitin,Structural,Anti-inflammatory,139.81,699.41,Yes,No,Immune modulation,Fungi/Exoskeletons
+Laminarin,Algal,Prebiotic,257.51,660.4,Yes,No,Cell wall disruption,Brown Algae
+Fucoidan,Algal,Anticoagulant,436.73,969.61,No,No,Receptor binding,Brown Algae
+Laminarin,Algal,Prebiotic,200.14,612.79,Yes,No,Immune modulation,Brown Algae
+Guar Gum,Storage,Antifungal,367.17,294.22,Yes,Yes,Radical scavenging,Plants
+Curdlan,Bacterial,Anti-inflammatory,15.97,498.18,Yes,No,Unknown,Bacteria

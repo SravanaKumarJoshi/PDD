@@ -1,0 +1,133 @@
+[2026-03-18 09:45:32] ============================================================
+[2026-03-18 09:45:32] POLYSACCHARIDE CLINICAL PIPELINE - PHASE 1: REAL DATA DOWNLOAD
+[2026-03-18 09:45:32] Started: 2026-03-18 09:45:32
+[2026-03-18 09:45:32] ============================================================
+[2026-03-18 09:45:32] Dirs ready. RAW_ALL = D:\Sravan\PDD\apppp\android\PolysaccharideProject\datasets\raw\Polysaccharide_Datasets_All
+[2026-03-18 09:45:32]   Moved synthetic file to DemoOnly: dataset_01_polysaccharide_types.csv
+[2026-03-18 09:45:32]   Moved synthetic file to DemoOnly: dataset_02_carbohydrate_classification.csv
+[2026-03-18 09:45:32]   Moved synthetic file to DemoOnly: dataset_03_molecular_properties.csv
+[2026-03-18 09:45:32]   Moved synthetic file to DemoOnly: dataset_04_bioactivity_data.csv
+[2026-03-18 09:45:32]   Moved synthetic file to DemoOnly: dataset_05_food_applications.csv
+[2026-03-18 09:45:32]   Moved synthetic file to DemoOnly: dataset_06_medical_applications.csv
+[2026-03-18 09:45:32]   Moved synthetic file to DemoOnly: dataset_07_chemical_compositions.csv
+[2026-03-18 09:45:32]   Moved synthetic file to DemoOnly: dataset_08_plant_sources.csv
+[2026-03-18 09:45:32]   Moved synthetic file to DemoOnly: dataset_09_structural_data.json
+[2026-03-18 09:45:32]   Moved synthetic file to DemoOnly: dataset_10_pharmacological_data.csv
+[2026-03-18 09:45:32]   Moved 10 synthetic files to Polysaccharide_Datasets_Synthetic_DemoOnly/
+[2026-03-18 09:45:32] 
+--- Real Dataset Downloads ---
+[2026-03-18 09:45:32] ============================================================
+[2026-03-18 09:45:32] Downloading PubChem polysaccharide compounds...
+[2026-03-18 09:45:33]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/polysaccharide/cids/JSON
+[2026-03-18 09:45:33]   PubChem keyword search: no CIDs returned; will try classification-based fetch
+[2026-03-18 09:45:35]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/cellulose/cids/JSON
+[2026-03-18 09:45:36]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/starch/cids/JSON
+[2026-03-18 09:45:40]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/chitin/cids/JSON
+[2026-03-18 09:45:42]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/chitosan/cids/JSON
+[2026-03-18 09:45:43]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/hyaluronic%20acid/cids/JSON
+[2026-03-18 09:45:45]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/heparin/cids/JSON
+[2026-03-18 09:45:54]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/carrageenan/cids/JSON
+[2026-03-18 09:45:56]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/xanthan%20gum/cids/JSON
+[2026-03-18 09:45:58]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/dextran/cids/JSON
+[2026-03-18 09:45:59]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/pullulan/cids/JSON
+[2026-03-18 09:46:01]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/fucoidan/cids/JSON
+[2026-03-18 09:46:07]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/levan/cids/JSON
+[2026-03-18 09:46:09]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/curdlan/cids/JSON
+[2026-03-18 09:46:10]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/guar%20gum/cids/JSON
+[2026-03-18 09:46:13]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/locust%20bean%20gum/cids/JSON
+[2026-03-18 09:46:14]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/gum%20arabic/cids/JSON
+[2026-03-18 09:46:16]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/inulin/cids/JSON
+[2026-03-18 09:46:20]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/amylose/cids/JSON
+[2026-03-18 09:46:21]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/amylopectin/cids/JSON
+[2026-03-18 09:46:22]   Total unique CIDs to fetch properties for: 10
+[2026-03-18 09:46:24]   PubChem batch 1: fetched 10 compounds
+[2026-03-18 09:53:19] ============================================================
+[2026-03-18 09:53:19] POLYSACCHARIDE CLINICAL PIPELINE - PHASE 1: REAL DATA DOWNLOAD
+[2026-03-18 09:53:19] Started: 2026-03-18 09:53:19
+[2026-03-18 09:53:19] ============================================================
+[2026-03-18 09:53:19] Dirs ready. RAW_ALL = D:\Sravan\PDD\apppp\android\PolysaccharideProject\datasets\raw\Polysaccharide_Datasets_All
+[2026-03-18 09:53:19]   Moved 0 synthetic files to Polysaccharide_Datasets_Synthetic_DemoOnly/
+[2026-03-18 09:53:19] 
+--- Real Dataset Downloads ---
+[2026-03-18 09:53:19] ============================================================
+[2026-03-18 09:53:19] Downloading PubChem polysaccharide compounds...
+[2026-03-18 09:53:21]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/polysaccharide/cids/JSON
+[2026-03-18 09:53:21]   PubChem keyword search: no CIDs returned; will try classification-based fetch
+[2026-03-18 09:53:24]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/cellulose/cids/JSON
+[2026-03-18 09:53:26]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/starch/cids/JSON
+[2026-03-18 09:53:31]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/chitin/cids/JSON
+[2026-03-18 09:53:33]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/chitosan/cids/JSON
+[2026-03-18 09:53:38]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/hyaluronic%20acid/cids/JSON
+[2026-03-18 09:53:40]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/heparin/cids/JSON
+[2026-03-18 09:53:50]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/carrageenan/cids/JSON
+[2026-03-18 09:53:52]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/xanthan%20gum/cids/JSON
+[2026-03-18 09:53:53]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/dextran/cids/JSON
+[2026-03-18 09:53:55]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/pullulan/cids/JSON
+[2026-03-18 09:53:57]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/fucoidan/cids/JSON
+[2026-03-18 09:54:02]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/levan/cids/JSON
+[2026-03-18 09:54:04]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/curdlan/cids/JSON
+[2026-03-18 09:54:06]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/guar%20gum/cids/JSON
+[2026-03-18 09:54:10]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/locust%20bean%20gum/cids/JSON
+[2026-03-18 09:54:12]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/gum%20arabic/cids/JSON
+[2026-03-18 09:54:14]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/inulin/cids/JSON
+[2026-03-18 09:54:18]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/amylose/cids/JSON
+[2026-03-18 09:54:19]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/amylopectin/cids/JSON
+[2026-03-18 09:54:19]   Total unique CIDs to fetch properties for: 10
+[2026-03-18 09:54:22]   PubChem batch 1: fetched 10 compounds
+[2026-03-18 09:54:23]   [OK] Saved realdata_01_pubchem_polysaccharides.csv: 10 compounds, 13 columns
+[2026-03-18 09:54:23] ============================================================
+[2026-03-18 09:54:23] Downloading ChEMBL glycan/carbohydrate molecules...
+[2026-03-18 09:54:42]   [OK] Saved realdata_02_chembl_glycan_molecules.csv: 60 molecules, 16 columns
+[2026-03-18 09:54:42] ============================================================
+[2026-03-18 09:54:42] Downloading GlyConnect glycan structures...
+[2026-03-18 09:54:44]   HTTP 500 for https://glyconnect.expasy.org/api/glycans
+[2026-03-18 09:54:44]   GlyConnect: endpoint returned no usable data. Trying alternative endpoint...
+[2026-03-18 09:54:45]   HTTP 404 for https://glyconnect.expasy.org/api/glycans/?format=json&limit=500
+[2026-03-18 09:54:45]   GlyConnect: No data retrieved.
+[2026-03-18 09:54:45] ============================================================
+[2026-03-18 09:54:45] Downloading UniProt glycan-related protein records...
+[2026-03-18 09:54:46]   HTTP 400 for https://rest.uniprot.org/uniprotkb/search
+[2026-03-18 09:54:46]   UniProt: no results for 'polysaccharide biosynthesis'
+[2026-03-18 09:54:47]   HTTP 400 for https://rest.uniprot.org/uniprotkb/search
+[2026-03-18 09:54:47]   UniProt: no results for 'glycosyltransferase carbohydrate'
+[2026-03-18 09:54:49]   HTTP 400 for https://rest.uniprot.org/uniprotkb/search
+[2026-03-18 09:54:49]   UniProt: no results for 'carbohydrate binding polysaccharide'
+[2026-03-18 09:54:49]   UniProt: No data retrieved.
+[2026-03-18 09:54:49] ============================================================
+[2026-03-18 09:54:49] Downloading PubChem polysaccharide bioassay records...
+[2026-03-18 09:55:07]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/53477508/synonyms/JSON
+[2026-03-18 09:55:13]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/72565654/synonyms/JSON
+[2026-03-18 09:55:26]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/5102571/synonyms/JSON
+[2026-03-18 09:55:30]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/92832570/synonyms/JSON
+[2026-03-18 09:55:36]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/16693080/synonyms/JSON
+[2026-03-18 09:55:42]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/44134861/synonyms/JSON
+[2026-03-18 09:55:45]   HTTP 404 for https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/24771262/synonyms/JSON
+[2026-03-18 09:55:52]   [OK] Saved realdata_05_pubchem_polysaccharide_properties.csv: 20 polysaccharide records (expert-curated categories)
+[2026-03-18 09:55:52] ============================================================
+[2026-03-18 09:55:52] Downloading ChEMBL bioactivity data for polysaccharides...
+[2026-03-18 09:56:23]   [OK] Saved realdata_06_chembl_polysaccharide_bioactivity.csv: 430 bioactivity records
+[2026-03-18 09:56:23] ============================================================
+[2026-03-18 09:56:23] Downloading GlyCosmos glycan list...
+[2026-03-18 09:56:23]   HTTP 404 for https://glycosmos.org/api/glycans?format=json&limit=500
+[2026-03-18 09:56:24]   HTTP 404 for https://glycosmos.org/api/glycans?limit=500
+[2026-03-18 09:56:26]   HTTP 404 for https://glycosmos.org/api/glycans/list
+[2026-03-18 09:56:30]   Request error (attempt 1): Expecting value: line 1 column 1 (char 0)
+[2026-03-18 09:56:34]   Request error (attempt 2): Expecting value: line 1 column 1 (char 0)
+[2026-03-18 09:56:37]   Request error (attempt 3): Expecting value: line 1 column 1 (char 0)
+[2026-03-18 09:56:40]   GlyCosmos: No data returned from any endpoint.
+[2026-03-18 09:56:40] 
+Catalog saved -> D:\Sravan\PDD\apppp\android\PolysaccharideProject\datasets\metadata\dataset_catalog.json
+[2026-03-18 09:56:40] ============================================================
+[2026-03-18 09:56:40] DOWNLOAD SUMMARY
+[2026-03-18 09:56:40] Total datasets in catalog: 4
+[2026-03-18 09:56:40]   [real_01 ] PubChem Polysaccharide Compounds                   |    10 rows | Success
+[2026-03-18 09:56:40]   [real_02 ] ChEMBL Glycan/Carbohydrate Molecules               |    60 rows | Success
+[2026-03-18 09:56:40]   [real_05 ] PubChem Polysaccharide Properties (Expert-Curated) |    20 rows | Success
+[2026-03-18 09:56:40]   [real_06 ] ChEMBL Polysaccharide Synthase Bioactivity         |   430 rows | Success
+[2026-03-18 09:56:40] Total rows across all datasets: 520
+[2026-03-18 09:56:40] All RAW datasets stored in: D:\Sravan\PDD\apppp\android\PolysaccharideProject\datasets\raw\Polysaccharide_Datasets_All
+[2026-03-18 09:56:40] ============================================================
+[2026-03-18 09:56:40] 
+[DONE] Phase 1 complete -- download_real_datasets.py finished.
+[2026-03-18 09:56:40] All raw datasets stored in ONE folder:
+  D:\Sravan\PDD\apppp\android\PolysaccharideProject\datasets\raw\Polysaccharide_Datasets_All

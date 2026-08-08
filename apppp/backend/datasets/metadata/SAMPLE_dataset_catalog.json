@@ -1,0 +1,31 @@
+{
+  "datasets": [
+    {
+      "dataset_id": "bundled_sample",
+      "is_sample": true
+    }
+  ],
+  "master_dataset": {
+    "row_count": 34,
+    "columns": [
+      "polymer_name",
+      "smiles",
+      "tensile_strength_mpa_max",
+      "elastic_modulus_gpa_max",
+      "wvtr",
+      "cytotoxicity_safe",
+      "backbone_group"
+    ],
+    "generated_at": "2026-04-24T03:30:34.628187",
+    "missing_rates": {
+      "polymer_name": 0.0,
+      "smiles": 0.0,
+      "tensile_strength_mpa_max": 0.0,
+      "elastic_modulus_gpa_max": 0.0,
+      "wvtr": 0.0,
+      "cytotoxicity_safe": 1.0,
+      "backbone_group": 0.0
+    },
+    "is_sample": true
+  }
+}

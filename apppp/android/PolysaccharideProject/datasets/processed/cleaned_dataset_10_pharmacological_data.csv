@@ -1,0 +1,401 @@
+name,category,drug_class,administration_route,half_life_hours,bioavailability_percent,plasma_protein_binding_percent,volume_of_distribution_L_kg,clearance_ml_min_kg,ld50_mg_kg,adverse_effects,source
+Glycogen,Storage,Anticoagulant,Topical,66.0,55.3,66.0,1.848,12.19,2657.0,Allergic reaction,Animals
+Dextran,Bacterial,Prebiotic agent,Subcutaneous,17.0,39.8,28.9,3.873,6.3,8751.0,GI disturbance,Bacteria
+Chitin,Structural,Antifungal,Oral,26.0,33.5,80.9,2.877,4.39,2965.0,None reported,Fungi/Exoskeletons
+Xanthan Gum,Bacterial,Anticoagulant,Topical,17.0,53.5,12.7,1.016,10.83,4271.0,Minimal,Bacteria
+Welan Gum,Bacterial,Immunosuppressant,IV,59.5,54.5,62.9,0.952,18.76,5179.0,None reported,Bacteria
+Cellulose Sulfate,Structural,Antineoplastic,Inhalation,5.4,80.5,52.2,2.402,0.69,8289.0,Allergic reaction,Plants (Modified)
+Hyaluronic Acid,Bioactive,Mucolytic,Transdermal,5.0,22.2,49.2,1.563,6.87,6643.0,GI disturbance,Animals/Bacteria
+Gellan Gum,Bacterial,Immunosuppressant,Subcutaneous,58.6,79.5,14.4,2.584,17.34,3627.0,Allergic reaction,Bacteria
+Xanthan Gum,Bacterial,Prebiotic agent,Topical,62.7,52.2,74.7,2.241,7.89,1710.0,Allergic reaction,Bacteria
+Curdlan,Bacterial,Anti-inflammatory,Topical,16.6,82.3,22.0,3.043,5.51,3823.0,Allergic reaction,Bacteria
+Inulin,Storage,Mucolytic,Oral,44.1,59.6,79.5,3.463,2.69,5369.0,None reported,Plants
+Pectin,Structural,Antifungal,IV,41.8,55.5,30.6,4.659,14.32,1721.0,Minimal,Plants
+Cellulose Sulfate,Structural,Hepatoprotective,Subcutaneous,47.9,32.6,35.3,3.27,8.1,7388.0,None reported,Plants (Modified)
+Konjac Glucomannan,Storage,Antibacterial,Topical,44.8,94.2,83.9,3.095,9.43,3770.0,Bleeding risk,Plants
+Cellulose Sulfate,Structural,Mucolytic,Subcutaneous,24.0,72.4,40.7,2.624,18.94,7445.0,None reported,Plants (Modified)
+Cellulose,Structural,Antineoplastic,IV,5.6,75.8,50.7,2.717,13.38,6659.0,Minimal,Plants
+Heparin,Bioactive,Prebiotic agent,Inhalation,39.1,65.7,89.8,2.287,2.1,242.0,GI disturbance,Animals
+Konjac Glucomannan,Storage,Hepatoprotective,Inhalation,21.9,96.7,91.4,4.064,15.9,7969.0,Bleeding risk,Plants
+Levan,Bacterial,Antifungal,IV,37.9,42.2,56.1,0.461,14.66,6418.0,Bleeding risk,Bacteria
+Locust Bean Gum,Storage,Antibacterial,Topical,54.3,85.6,20.0,0.455,5.29,9862.0,Allergic reaction,Plants
+Cellulose Sulfate,Structural,Anti-inflammatory,Topical,68.1,37.0,11.0,4.114,14.89,6210.0,None reported,Plants (Modified)
+Fucoidan,Algal,Antineoplastic,Oral,32.3,59.8,42.6,0.782,17.3,9254.0,None reported,Brown Algae
+Xanthan Gum,Bacterial,Immunosuppressant,Topical,6.9,83.8,37.6,2.548,15.14,7570.0,Allergic reaction,Bacteria
+Gellan Gum,Bacterial,Anticoagulant,Transdermal,23.3,17.0,44.7,3.743,2.87,5799.0,None reported,Bacteria
+Glycogen,Storage,Anticoagulant,IV,69.0,55.6,85.0,4.925,6.49,6499.0,GI disturbance,Animals
+Alginate,Algal,Anti-inflammatory,IV,52.2,9.0,15.2,2.679,16.61,7996.0,None reported,Brown Algae
+Welan Gum,Bacterial,Anti-inflammatory,Oral,20.8,10.8,21.9,1.1,9.49,4065.0,GI disturbance,Bacteria
+Welan Gum,Bacterial,Antibacterial,Subcutaneous,15.2,77.0,22.3,2.227,4.73,3552.0,None reported,Bacteria
+Carrageenan,Algal,Hepatoprotective,IV,15.4,28.0,64.4,3.536,12.72,5491.0,Allergic reaction,Red Algae
+Glycogen,Storage,Mucolytic,Transdermal,68.8,47.8,31.7,3.271,17.29,8222.0,Bleeding risk,Animals
+Curdlan,Bacterial,Antifungal,Inhalation,13.8,37.9,87.2,0.551,6.16,3990.0,None reported,Bacteria
+Cellulose,Structural,Antineoplastic,Inhalation,65.6,49.8,26.0,0.189,3.59,5986.0,Allergic reaction,Plants
+Levan,Bacterial,Anticoagulant,Topical,65.9,33.0,55.9,1.92,5.47,780.0,Allergic reaction,Bacteria
+Glycogen,Storage,Anticoagulant,Oral,45.1,71.2,94.4,1.65,17.89,3414.0,GI disturbance,Animals
+Levan,Bacterial,Prebiotic agent,Oral,70.2,96.5,13.3,3.363,11.16,1440.0,Bleeding risk,Bacteria
+Starch,Storage,Prebiotic agent,IV,35.3,24.8,21.8,4.293,17.51,2707.0,GI disturbance,Plants
+Scleroglucan,Fungal,Prebiotic agent,Subcutaneous,8.8,76.7,30.2,1.619,4.62,314.0,Allergic reaction,Fungi
+Curdlan,Bacterial,Anticoagulant,Subcutaneous,35.9,29.7,76.5,4.591,17.28,6304.0,Minimal,Bacteria
+Curdlan,Bacterial,Antineoplastic,IV,36.7,77.5,34.5,3.088,9.36,2769.0,GI disturbance,Bacteria
+Konjac Glucomannan,Storage,Mucolytic,Oral,61.7,27.5,83.2,1.677,15.1,4591.0,Allergic reaction,Plants
+Chitin,Structural,Antifungal,Topical,64.0,7.0,95.2,4.04,19.22,9853.0,Minimal,Fungi/Exoskeletons
+Konjac Glucomannan,Storage,Antiviral,Topical,56.0,77.7,13.1,1.56,4.56,5088.0,None reported,Plants
+Glycogen,Storage,Antibacterial,Subcutaneous,15.2,49.6,67.4,1.828,10.48,7350.0,Bleeding risk,Animals
+Carrageenan,Algal,Prebiotic agent,Subcutaneous,32.6,83.8,18.3,3.601,12.3,6265.0,Minimal,Red Algae
+Alginate,Algal,Immunosuppressant,Inhalation,59.6,88.0,95.3,0.972,2.99,1419.0,GI disturbance,Brown Algae
+Hyaluronic Acid,Bioactive,Anticoagulant,Topical,5.3,85.5,85.9,1.202,2.16,445.0,GI disturbance,Animals/Bacteria
+Pullulan,Fungal,Antifungal,IV,1.0,77.0,15.8,0.33,13.96,6926.0,GI disturbance,Fungi
+Chitin,Structural,Hepatoprotective,IV,11.9,40.3,78.7,4.209,13.04,689.0,Allergic reaction,Fungi/Exoskeletons
+Welan Gum,Bacterial,Hepatoprotective,Topical,7.6,65.3,22.7,3.766,11.11,4710.0,None reported,Bacteria
+Gellan Gum,Bacterial,Antibacterial,Subcutaneous,11.3,42.0,32.5,4.67,8.43,1915.0,GI disturbance,Bacteria
+Glycogen,Storage,Antifungal,Topical,57.2,22.6,11.2,4.17,14.03,6767.0,Bleeding risk,Animals
+Levan,Bacterial,Anti-inflammatory,Oral,38.7,64.1,13.1,1.562,10.75,1082.0,Allergic reaction,Bacteria
+Xanthan Gum,Bacterial,Anticoagulant,Subcutaneous,1.4,56.9,49.5,3.281,1.59,9307.0,Minimal,Bacteria
+Cellulose,Structural,Hepatoprotective,Topical,56.2,27.5,88.6,2.1,3.14,5755.0,Bleeding risk,Plants
+Levan,Bacterial,Antibacterial,Inhalation,2.7,37.2,51.9,1.599,1.67,5000.0,Bleeding risk,Bacteria
+Pectin,Structural,Hepatoprotective,Oral,2.4,48.8,64.1,0.493,15.18,443.0,Allergic reaction,Plants
+Hyaluronic Acid,Bioactive,Antineoplastic,Oral,8.3,56.4,43.5,0.254,10.43,8858.0,Allergic reaction,Animals/Bacteria
+Guar Gum,Storage,Antineoplastic,IV,9.1,81.4,32.3,4.357,14.34,2865.0,Allergic reaction,Plants
+Chitin,Structural,Antifungal,Oral,41.2,57.0,97.4,0.389,16.77,4602.0,GI disturbance,Fungi/Exoskeletons
+Agar,Algal,Antiviral,Oral,70.8,18.7,29.9,1.543,17.21,9314.0,Bleeding risk,Red Algae
+Hyaluronic Acid,Bioactive,Mucolytic,IV,7.1,42.7,22.7,0.946,18.27,2772.0,Minimal,Animals/Bacteria
+Heparin,Bioactive,Anticoagulant,Inhalation,19.9,75.5,49.3,4.221,17.72,3821.0,Minimal,Animals
+Xanthan Gum,Bacterial,Antineoplastic,Subcutaneous,46.4,38.5,18.3,4.619,9.67,881.0,Allergic reaction,Bacteria
+Laminarin,Algal,Prebiotic agent,Transdermal,40.3,97.2,69.6,1.388,7.23,6951.0,None reported,Brown Algae
+Cellulose Sulfate,Structural,Mucolytic,Oral,27.8,17.5,19.4,3.354,6.73,9308.0,None reported,Plants (Modified)
+Glycogen,Storage,Antineoplastic,Subcutaneous,39.1,43.4,76.7,1.463,12.33,5405.0,Allergic reaction,Animals
+Inulin,Storage,Antifungal,Inhalation,31.1,88.5,96.3,3.389,2.97,4690.0,Minimal,Plants
+Starch,Storage,Antibacterial,Inhalation,19.8,48.3,12.1,3.759,9.05,6608.0,Minimal,Plants
+Curdlan,Bacterial,Anti-inflammatory,Inhalation,2.8,32.7,84.5,0.697,9.03,532.0,Allergic reaction,Bacteria
+Curdlan,Bacterial,Antibacterial,IV,28.6,96.4,65.0,4.176,15.82,9799.0,GI disturbance,Bacteria
+Cellulose Sulfate,Structural,Prebiotic agent,Inhalation,31.7,47.7,93.7,2.546,2.79,5783.0,None reported,Plants (Modified)
+Levan,Bacterial,Mucolytic,Topical,31.4,19.1,85.3,0.882,19.96,2073.0,Allergic reaction,Bacteria
+Scleroglucan,Fungal,Antineoplastic,Oral,26.2,36.2,87.3,3.819,0.54,304.0,None reported,Fungi
+Locust Bean Gum,Storage,Antiviral,IV,57.2,75.7,97.5,2.295,12.08,6161.0,Minimal,Plants
+Locust Bean Gum,Storage,Antibacterial,Inhalation,55.4,59.0,17.9,1.298,8.42,126.0,None reported,Plants
+Glycogen,Storage,Antiviral,Inhalation,54.3,64.6,82.2,0.737,10.14,9345.0,None reported,Animals
+Scleroglucan,Fungal,Antibacterial,Inhalation,52.5,75.3,64.4,1.972,11.06,7357.0,GI disturbance,Fungi
+Cellulose Sulfate,Structural,Anti-inflammatory,Inhalation,30.9,100.0,44.2,0.251,0.95,6008.0,None reported,Plants (Modified)
+Locust Bean Gum,Storage,Prebiotic agent,Transdermal,16.2,46.3,88.3,3.629,5.26,4512.0,Minimal,Plants
+Locust Bean Gum,Storage,Anti-inflammatory,Topical,7.1,62.4,66.8,3.487,6.93,1501.0,None reported,Plants
+Dextran,Bacterial,Antineoplastic,Oral,14.0,29.7,84.6,0.11,7.58,3307.0,Bleeding risk,Bacteria
+Inulin,Storage,Antiviral,Subcutaneous,2.6,35.6,93.0,3.056,5.38,5862.0,GI disturbance,Plants
+Carrageenan,Algal,Antiviral,Subcutaneous,11.1,10.1,15.2,0.733,17.68,7238.0,Bleeding risk,Red Algae
+Welan Gum,Bacterial,Antibacterial,Oral,49.7,19.5,22.1,1.151,9.21,9232.0,GI disturbance,Bacteria
+Starch,Storage,Antineoplastic,Subcutaneous,10.6,55.4,54.1,0.397,5.61,3315.0,Bleeding risk,Plants
+Pullulan,Fungal,Immunosuppressant,Topical,46.1,23.3,37.4,4.758,4.83,9958.0,Minimal,Fungi
+Starch,Storage,Prebiotic agent,Oral,11.9,14.0,77.9,4.755,11.26,3387.0,None reported,Plants
+Chitin,Structural,Antiviral,Oral,45.4,79.7,95.8,1.762,0.85,6689.0,Allergic reaction,Fungi/Exoskeletons
+Chitin,Structural,Anticoagulant,Oral,33.7,21.4,14.9,2.161,0.96,944.0,None reported,Fungi/Exoskeletons
+Agar,Algal,Antibacterial,IV,33.3,7.8,73.7,3.741,3.93,9838.0,Bleeding risk,Red Algae
+Curdlan,Bacterial,Antiviral,Oral,25.6,16.9,67.6,1.359,10.88,3805.0,Allergic reaction,Bacteria
+Gellan Gum,Bacterial,Antiviral,Subcutaneous,54.2,26.3,81.7,4.461,18.31,7564.0,GI disturbance,Bacteria
+Carrageenan,Algal,Anticoagulant,Topical,47.3,89.9,96.1,2.124,4.77,6377.0,Allergic reaction,Red Algae
+Starch,Storage,Anti-inflammatory,Inhalation,6.8,27.5,42.2,3.61,16.07,9832.0,GI disturbance,Plants
+Guar Gum,Storage,Antineoplastic,Topical,17.3,58.0,47.1,2.481,8.49,1774.0,GI disturbance,Plants
+Konjac Glucomannan,Storage,Anti-inflammatory,Transdermal,49.1,83.5,68.8,0.957,9.33,138.0,Allergic reaction,Plants
+Levan,Bacterial,Antiviral,Topical,67.1,79.4,93.8,4.287,5.88,858.0,None reported,Bacteria
+Pullulan,Fungal,Antiviral,Inhalation,32.1,86.3,33.7,3.137,9.73,8316.0,Bleeding risk,Fungi
+Curdlan,Bacterial,Anticoagulant,Transdermal,15.4,6.4,46.3,4.667,16.22,3103.0,None reported,Bacteria
+Guar Gum,Storage,Prebiotic agent,IV,9.5,34.8,33.9,1.087,1.55,7288.0,Allergic reaction,Plants
+Cellulose Sulfate,Structural,Antineoplastic,Oral,11.3,36.9,66.1,4.225,12.29,7537.0,Bleeding risk,Plants (Modified)
+Alginate,Algal,Prebiotic agent,Inhalation,56.7,6.6,45.2,3.47,16.12,6464.0,Minimal,Brown Algae
+Konjac Glucomannan,Storage,Anti-inflammatory,Oral,48.4,63.2,78.1,2.756,2.07,1553.0,Bleeding risk,Plants
+Starch,Storage,Antiviral,IV,22.4,37.0,61.6,1.473,17.55,5077.0,Bleeding risk,Plants
+Gellan Gum,Bacterial,Anti-inflammatory,Inhalation,37.5,60.7,46.9,0.165,8.4,2671.0,Minimal,Bacteria
+Alginate,Algal,Anti-inflammatory,Oral,71.5,22.3,24.2,4.397,6.56,6599.0,GI disturbance,Brown Algae
+Glycogen,Storage,Antineoplastic,IV,62.2,16.3,45.3,1.589,15.01,5326.0,Minimal,Animals
+Agar,Algal,Antifungal,IV,7.7,74.3,86.8,1.956,19.76,2106.0,Minimal,Red Algae
+Welan Gum,Bacterial,Immunosuppressant,Oral,43.0,57.3,62.1,3.042,19.18,894.0,GI disturbance,Bacteria
+Cellulose,Structural,Anticoagulant,IV,21.8,94.0,81.6,1.241,15.13,5014.0,Minimal,Plants
+Curdlan,Bacterial,Antifungal,Transdermal,40.2,9.3,75.9,4.429,15.27,8853.0,Bleeding risk,Bacteria
+Konjac Glucomannan,Storage,Mucolytic,Transdermal,51.6,97.9,97.2,3.623,5.54,5860.0,GI disturbance,Plants
+Fucoidan,Algal,Antifungal,Inhalation,24.0,39.6,10.8,0.646,4.52,4432.0,Bleeding risk,Brown Algae
+Pectin,Structural,Antibacterial,IV,51.0,7.2,91.2,2.813,13.68,8387.0,None reported,Plants
+Gellan Gum,Bacterial,Anticoagulant,Subcutaneous,10.3,49.5,76.9,3.59,9.62,9460.0,Minimal,Bacteria
+Levan,Bacterial,Anticoagulant,Inhalation,49.9,15.6,64.2,4.881,3.52,8948.0,None reported,Bacteria
+Konjac Glucomannan,Storage,Hepatoprotective,Transdermal,71.1,28.9,53.2,0.647,4.36,3455.0,Bleeding risk,Plants
+Cellulose,Structural,Antifungal,Subcutaneous,40.5,15.1,89.5,0.951,6.09,248.0,None reported,Plants
+Alginate,Algal,Mucolytic,Subcutaneous,62.5,52.5,11.3,3.274,13.55,3002.0,Bleeding risk,Brown Algae
+Xanthan Gum,Bacterial,Antiviral,IV,12.1,83.3,44.4,0.238,19.87,6064.0,Allergic reaction,Bacteria
+Cellulose Sulfate,Structural,Mucolytic,Subcutaneous,19.1,68.3,11.8,4.014,13.8,3629.0,Allergic reaction,Plants (Modified)
+Laminarin,Algal,Anti-inflammatory,IV,41.8,98.3,92.0,3.5,18.82,9439.0,Minimal,Brown Algae
+Pectin,Structural,Anticoagulant,Transdermal,8.8,43.6,36.2,0.769,1.92,4855.0,Minimal,Plants
+Xanthan Gum,Bacterial,Immunosuppressant,Topical,3.8,94.4,81.6,2.637,5.53,7840.0,GI disturbance,Bacteria
+Xanthan Gum,Bacterial,Anti-inflammatory,Inhalation,39.0,26.1,22.1,2.732,6.21,753.0,Minimal,Bacteria
+Starch,Storage,Prebiotic agent,Oral,53.3,62.1,81.2,4.08,6.67,2363.0,Bleeding risk,Plants
+Chitin,Structural,Mucolytic,Oral,27.5,73.4,77.2,3.586,19.79,7013.0,Allergic reaction,Fungi/Exoskeletons
+Welan Gum,Bacterial,Immunosuppressant,IV,48.2,93.9,85.9,1.202,11.22,1025.0,GI disturbance,Bacteria
+Starch,Storage,Anti-inflammatory,Topical,65.7,45.0,77.6,0.82,10.36,8103.0,Allergic reaction,Plants
+Chitin,Structural,Mucolytic,Subcutaneous,18.1,37.0,75.5,4.576,2.67,5505.0,Minimal,Fungi/Exoskeletons
+Pullulan,Fungal,Antifungal,Topical,58.2,17.7,62.1,3.837,10.21,1075.0,GI disturbance,Fungi
+Inulin,Storage,Antineoplastic,Subcutaneous,61.6,65.8,77.1,4.07,9.51,2348.0,Allergic reaction,Plants
+Starch,Storage,Antineoplastic,Topical,56.8,46.3,75.0,4.954,15.55,4286.0,Allergic reaction,Plants
+Pullulan,Fungal,Antineoplastic,Oral,26.1,46.9,12.4,1.058,16.62,4692.0,GI disturbance,Fungi
+Carrageenan,Algal,Prebiotic agent,Transdermal,34.9,99.5,76.2,2.432,14.59,2243.0,Allergic reaction,Red Algae
+Pectin,Structural,Prebiotic agent,IV,38.4,78.8,88.2,1.518,1.92,3087.0,GI disturbance,Plants
+Welan Gum,Bacterial,Antifungal,Transdermal,13.4,9.7,59.5,1.695,15.53,4005.0,None reported,Bacteria
+Carrageenan,Algal,Antineoplastic,Subcutaneous,13.8,54.0,36.4,0.276,8.62,2582.0,Minimal,Red Algae
+Pullulan,Fungal,Antiviral,Transdermal,15.3,50.4,15.9,4.182,4.53,3449.0,None reported,Fungi
+Carrageenan,Algal,Antifungal,Subcutaneous,50.0,39.0,21.0,4.471,8.91,5089.0,Allergic reaction,Red Algae
+Laminarin,Algal,Anticoagulant,Subcutaneous,64.6,70.9,80.2,2.609,18.75,9937.0,None reported,Brown Algae
+Scleroglucan,Fungal,Immunosuppressant,IV,4.6,36.8,42.6,1.215,0.62,7903.0,None reported,Fungi
+Laminarin,Algal,Antineoplastic,Subcutaneous,14.8,44.7,17.4,4.529,12.13,4549.0,GI disturbance,Brown Algae
+Konjac Glucomannan,Storage,Anticoagulant,Topical,14.2,67.3,38.3,2.279,14.87,5052.0,Allergic reaction,Plants
+Guar Gum,Storage,Mucolytic,Topical,18.7,46.5,16.8,3.537,1.04,8329.0,None reported,Plants
+Inulin,Storage,Antineoplastic,IV,34.6,86.7,76.0,0.695,14.71,1885.0,Bleeding risk,Plants
+Hyaluronic Acid,Bioactive,Antineoplastic,Subcutaneous,7.9,77.3,83.6,4.159,13.2,4952.0,None reported,Animals/Bacteria
+Chitin,Structural,Antifungal,Oral,30.7,10.4,35.9,3.103,11.09,1229.0,GI disturbance,Fungi/Exoskeletons
+Cellulose Sulfate,Structural,Antiviral,Inhalation,40.1,8.1,25.5,0.563,8.78,5828.0,Bleeding risk,Plants (Modified)
+Curdlan,Bacterial,Antineoplastic,IV,2.6,22.1,46.4,4.807,11.59,5541.0,Minimal,Bacteria
+Inulin,Storage,Antineoplastic,Transdermal,28.9,52.1,16.8,2.14,0.99,807.0,Allergic reaction,Plants
+Konjac Glucomannan,Storage,Anticoagulant,IV,58.1,12.6,91.3,2.256,15.68,8893.0,Minimal,Plants
+Cellulose,Structural,Prebiotic agent,Inhalation,14.7,22.6,83.5,0.959,18.38,3830.0,Bleeding risk,Plants
+Chitin,Structural,Antifungal,IV,40.8,79.3,48.1,1.246,11.33,5445.0,None reported,Fungi/Exoskeletons
+Cellulose,Structural,Antiviral,Topical,19.1,19.8,40.8,3.656,16.44,5545.0,Minimal,Plants
+Welan Gum,Bacterial,Hepatoprotective,IV,53.3,26.4,50.7,0.832,15.28,1884.0,Minimal,Bacteria
+Hyaluronic Acid,Bioactive,Hepatoprotective,Oral,59.3,26.1,67.4,1.527,15.56,8189.0,Minimal,Animals/Bacteria
+Heparin,Bioactive,Antiviral,Transdermal,30.5,42.5,39.1,0.9,17.33,5574.0,GI disturbance,Animals
+Alginate,Algal,Immunosuppressant,Inhalation,35.5,64.2,65.1,1.899,9.33,106.0,None reported,Brown Algae
+Levan,Bacterial,Prebiotic agent,Oral,30.4,52.0,42.0,2.093,17.49,1779.0,None reported,Bacteria
+Starch,Storage,Anti-inflammatory,Inhalation,69.1,85.2,62.4,0.871,15.55,9051.0,GI disturbance,Plants
+Agar,Algal,Hepatoprotective,Oral,20.5,56.5,90.4,2.945,3.88,1653.0,Bleeding risk,Red Algae
+Agar,Algal,Immunosuppressant,IV,1.0,20.9,41.5,0.252,16.29,9068.0,GI disturbance,Red Algae
+Alginate,Algal,Anticoagulant,Oral,44.7,74.3,97.1,1.454,16.03,6861.0,Minimal,Brown Algae
+Agar,Algal,Antiviral,Inhalation,36.6,57.7,59.3,3.491,4.56,2017.0,Bleeding risk,Red Algae
+Xanthan Gum,Bacterial,Antineoplastic,Topical,61.3,42.4,24.4,2.162,0.64,5420.0,GI disturbance,Bacteria
+Curdlan,Bacterial,Antibacterial,Transdermal,17.0,17.0,95.0,1.384,5.77,1701.0,None reported,Bacteria
+Cellulose,Structural,Antifungal,Topical,54.2,42.3,89.9,3.078,12.49,9519.0,Minimal,Plants
+Heparin,Bioactive,Immunosuppressant,Subcutaneous,29.2,12.1,50.5,2.961,5.92,749.0,Minimal,Animals
+Carrageenan,Algal,Antineoplastic,Inhalation,55.9,30.5,18.2,1.056,9.24,6259.0,Minimal,Red Algae
+Curdlan,Bacterial,Antineoplastic,IV,28.8,12.2,30.2,2.434,5.03,4068.0,Allergic reaction,Bacteria
+Inulin,Storage,Antifungal,Topical,11.3,86.0,65.4,2.023,7.97,8983.0,Bleeding risk,Plants
+Welan Gum,Bacterial,Anticoagulant,Inhalation,30.9,47.6,77.4,0.181,11.64,1668.0,None reported,Bacteria
+Inulin,Storage,Mucolytic,IV,19.8,23.1,72.1,0.361,13.98,8615.0,GI disturbance,Plants
+Starch,Storage,Mucolytic,Oral,19.9,73.4,22.3,2.93,2.55,2454.0,Minimal,Plants
+Locust Bean Gum,Storage,Antifungal,Subcutaneous,66.1,48.8,22.3,2.357,19.49,3806.0,GI disturbance,Plants
+Heparin,Bioactive,Antineoplastic,Oral,36.4,27.4,82.0,3.16,13.67,7034.0,None reported,Animals
+Chitin,Structural,Hepatoprotective,IV,53.1,97.1,36.6,2.737,10.11,4371.0,Allergic reaction,Fungi/Exoskeletons
+Curdlan,Bacterial,Immunosuppressant,IV,63.5,77.0,61.8,4.932,8.88,1043.0,None reported,Bacteria
+Cellulose,Structural,Antineoplastic,Topical,33.9,56.6,35.5,2.195,1.62,5246.0,None reported,Plants
+Alginate,Algal,Antibacterial,Inhalation,14.2,75.2,25.1,3.885,14.14,7135.0,Allergic reaction,Brown Algae
+Heparin,Bioactive,Antiviral,IV,1.8,53.3,45.0,0.67,11.9,1766.0,GI disturbance,Animals
+Xanthan Gum,Bacterial,Mucolytic,Transdermal,27.2,79.6,44.5,2.799,3.87,8709.0,Minimal,Bacteria
+Konjac Glucomannan,Storage,Anti-inflammatory,Inhalation,13.6,74.3,68.4,3.196,3.78,8841.0,GI disturbance,Plants
+Pullulan,Fungal,Antineoplastic,Inhalation,29.9,61.0,32.2,0.942,0.75,8526.0,Bleeding risk,Fungi
+Hyaluronic Acid,Bioactive,Immunosuppressant,Topical,6.7,59.1,25.4,0.107,0.76,7051.0,Allergic reaction,Animals/Bacteria
+Carrageenan,Algal,Antineoplastic,Transdermal,32.2,17.8,45.1,1.348,16.71,3493.0,Minimal,Red Algae
+Curdlan,Bacterial,Mucolytic,Subcutaneous,14.4,11.3,83.6,3.253,0.87,2393.0,Minimal,Bacteria
+Cellulose,Structural,Anti-inflammatory,Inhalation,16.2,40.2,27.7,3.115,3.12,3049.0,Allergic reaction,Plants
+Glycogen,Storage,Anti-inflammatory,Inhalation,16.4,86.0,71.1,2.128,0.91,5336.0,Allergic reaction,Animals
+Guar Gum,Storage,Anticoagulant,Topical,29.1,43.0,91.3,3.754,16.7,643.0,Allergic reaction,Plants
+Heparin,Bioactive,Antiviral,Topical,16.1,54.9,92.7,0.101,11.66,2360.0,Bleeding risk,Animals
+Xanthan Gum,Bacterial,Prebiotic agent,Subcutaneous,6.9,83.5,68.0,4.294,13.63,2135.0,Bleeding risk,Bacteria
+Levan,Bacterial,Anti-inflammatory,Oral,46.5,80.3,32.8,3.577,19.32,3067.0,Bleeding risk,Bacteria
+Welan Gum,Bacterial,Anti-inflammatory,Subcutaneous,25.5,90.5,35.3,4.581,4.33,1869.0,Allergic reaction,Bacteria
+Scleroglucan,Fungal,Antiviral,Inhalation,26.4,95.3,88.7,3.773,8.73,6956.0,GI disturbance,Fungi
+Laminarin,Algal,Prebiotic agent,IV,45.1,9.3,34.4,2.171,1.85,3345.0,GI disturbance,Brown Algae
+Chitin,Structural,Antibacterial,Inhalation,32.1,99.8,83.6,2.497,12.5,1969.0,GI disturbance,Fungi/Exoskeletons
+Welan Gum,Bacterial,Antineoplastic,Oral,63.6,32.3,29.3,1.573,15.54,870.0,Allergic reaction,Bacteria
+Hyaluronic Acid,Bioactive,Immunosuppressant,Topical,25.2,79.2,80.1,2.53,8.08,2630.0,None reported,Animals/Bacteria
+Konjac Glucomannan,Storage,Anticoagulant,IV,26.2,32.9,57.2,3.74,7.88,7635.0,Allergic reaction,Plants
+Cellulose Sulfate,Structural,Hepatoprotective,Oral,20.6,49.4,27.4,2.198,14.27,726.0,Minimal,Plants (Modified)
+Starch,Storage,Hepatoprotective,Topical,16.7,88.1,65.1,1.599,14.97,2752.0,Minimal,Plants
+Carrageenan,Algal,Prebiotic agent,IV,23.5,61.0,11.4,4.001,11.84,2282.0,None reported,Red Algae
+Glycogen,Storage,Prebiotic agent,Transdermal,31.1,33.9,84.5,3.194,14.87,3007.0,Allergic reaction,Animals
+Locust Bean Gum,Storage,Antibacterial,Topical,20.2,48.4,44.9,1.907,11.07,4569.0,GI disturbance,Plants
+Levan,Bacterial,Prebiotic agent,Subcutaneous,61.2,17.5,87.2,3.787,8.38,9254.0,Minimal,Bacteria
+Alginate,Algal,Prebiotic agent,Transdermal,6.7,40.4,55.5,3.064,1.15,692.0,Allergic reaction,Brown Algae
+Guar Gum,Storage,Antineoplastic,Inhalation,60.8,6.1,55.5,1.706,14.1,6533.0,None reported,Plants
+Carrageenan,Algal,Anticoagulant,Topical,70.3,39.5,76.3,2.171,7.08,461.0,Bleeding risk,Red Algae
+Pullulan,Fungal,Prebiotic agent,Subcutaneous,42.8,28.3,12.4,2.441,9.08,2189.0,Allergic reaction,Fungi
+Guar Gum,Storage,Anti-inflammatory,Inhalation,67.2,22.4,26.1,2.081,17.22,9121.0,GI disturbance,Plants
+Konjac Glucomannan,Storage,Anti-inflammatory,Inhalation,1.7,53.6,54.7,2.56,6.92,5074.0,GI disturbance,Plants
+Scleroglucan,Fungal,Hepatoprotective,Oral,28.2,76.4,60.4,1.062,13.75,1775.0,None reported,Fungi
+Welan Gum,Bacterial,Hepatoprotective,Inhalation,54.5,98.8,12.1,4.227,16.08,6413.0,Minimal,Bacteria
+Scleroglucan,Fungal,Prebiotic agent,Inhalation,10.4,83.7,71.1,0.34,13.13,5654.0,Minimal,Fungi
+Cellulose Sulfate,Structural,Antiviral,Transdermal,52.2,7.8,44.4,0.975,1.69,790.0,Bleeding risk,Plants (Modified)
+Curdlan,Bacterial,Anticoagulant,Subcutaneous,14.2,81.9,61.2,3.845,10.42,6196.0,None reported,Bacteria
+Cellulose Sulfate,Structural,Antineoplastic,Subcutaneous,9.1,19.6,71.8,4.831,15.5,7749.0,Bleeding risk,Plants (Modified)
+Pullulan,Fungal,Anti-inflammatory,Subcutaneous,53.2,92.6,57.0,4.121,6.51,2698.0,Allergic reaction,Fungi
+Curdlan,Bacterial,Prebiotic agent,IV,2.7,73.2,62.0,3.45,13.46,9728.0,Minimal,Bacteria
+Scleroglucan,Fungal,Immunosuppressant,Topical,22.1,99.0,62.9,0.145,6.0,7773.0,None reported,Fungi
+Levan,Bacterial,Antifungal,Oral,71.6,61.9,15.6,1.733,11.0,1980.0,GI disturbance,Bacteria
+Inulin,Storage,Hepatoprotective,Inhalation,12.1,99.9,30.4,4.567,14.98,2852.0,Bleeding risk,Plants
+Cellulose,Structural,Antineoplastic,Transdermal,49.0,75.3,51.0,2.717,8.58,5070.0,Minimal,Plants
+Carrageenan,Algal,Antiviral,Transdermal,19.9,26.1,20.0,4.421,10.79,8651.0,Minimal,Red Algae
+Chitin,Structural,Antiviral,Transdermal,61.3,88.8,61.1,3.627,3.27,8514.0,None reported,Fungi/Exoskeletons
+Glycogen,Storage,Mucolytic,Oral,14.8,47.6,14.1,2.406,18.77,9776.0,Allergic reaction,Animals
+Fucoidan,Algal,Prebiotic agent,Oral,32.4,9.6,12.7,3.164,1.11,6442.0,Minimal,Brown Algae
+Pullulan,Fungal,Antineoplastic,Subcutaneous,11.2,20.7,93.2,2.774,13.2,7727.0,GI disturbance,Fungi
+Locust Bean Gum,Storage,Mucolytic,Oral,47.7,6.8,23.0,2.563,11.8,3455.0,None reported,Plants
+Hyaluronic Acid,Bioactive,Antifungal,Transdermal,20.2,12.1,57.5,2.144,12.05,1212.0,None reported,Animals/Bacteria
+Carrageenan,Algal,Anti-inflammatory,IV,57.7,43.6,21.7,2.809,10.84,8423.0,Bleeding risk,Red Algae
+Laminarin,Algal,Anti-inflammatory,Subcutaneous,4.6,77.0,25.4,4.618,4.3,9023.0,GI disturbance,Brown Algae
+Inulin,Storage,Prebiotic agent,IV,23.8,61.5,65.5,0.96,5.44,9983.0,Allergic reaction,Plants
+Starch,Storage,Anti-inflammatory,IV,1.3,75.9,81.3,4.656,3.28,1707.0,GI disturbance,Plants
+Xanthan Gum,Bacterial,Antiviral,Inhalation,1.8,13.6,91.5,4.786,9.44,2562.0,Bleeding risk,Bacteria
+Cellulose Sulfate,Structural,Prebiotic agent,Inhalation,32.8,83.2,91.6,0.341,12.4,6525.0,Allergic reaction,Plants (Modified)
+Starch,Storage,Antineoplastic,Topical,17.8,35.2,84.3,4.462,6.51,3584.0,Bleeding risk,Plants
+Welan Gum,Bacterial,Antiviral,Topical,36.3,12.5,56.9,2.226,7.66,9422.0,Minimal,Bacteria
+Agar,Algal,Antiviral,Transdermal,19.9,88.3,54.9,0.777,7.37,7197.0,Allergic reaction,Red Algae
+Guar Gum,Storage,Immunosuppressant,Inhalation,26.9,94.2,45.2,0.804,4.35,1359.0,Allergic reaction,Plants
+Cellulose,Structural,Antiviral,Subcutaneous,58.2,62.4,65.0,2.668,6.03,830.0,GI disturbance,Plants
+Curdlan,Bacterial,Prebiotic agent,Inhalation,58.9,96.9,85.3,3.35,3.9,7510.0,GI disturbance,Bacteria
+Hyaluronic Acid,Bioactive,Hepatoprotective,Inhalation,28.2,20.7,46.1,3.118,0.72,4228.0,Minimal,Animals/Bacteria
+Pullulan,Fungal,Hepatoprotective,Inhalation,29.7,23.0,40.3,3.071,12.01,8908.0,None reported,Fungi
+Scleroglucan,Fungal,Antineoplastic,Inhalation,65.9,62.3,93.7,2.763,4.7,7540.0,Allergic reaction,Fungi
+Carrageenan,Algal,Antibacterial,Inhalation,33.7,52.1,63.8,1.892,15.73,222.0,Minimal,Red Algae
+Agar,Algal,Prebiotic agent,Inhalation,12.8,54.7,86.3,1.295,12.36,2545.0,GI disturbance,Red Algae
+Xanthan Gum,Bacterial,Hepatoprotective,Inhalation,53.8,97.7,62.8,0.816,2.96,197.0,Minimal,Bacteria
+Glycogen,Storage,Prebiotic agent,Topical,4.1,98.0,71.5,4.653,3.36,6208.0,Minimal,Animals
+Dextran,Bacterial,Immunosuppressant,Oral,62.8,74.5,59.6,1.128,2.81,2121.0,None reported,Bacteria
+Guar Gum,Storage,Mucolytic,IV,64.9,85.1,51.4,0.214,12.45,4404.0,GI disturbance,Plants
+Scleroglucan,Fungal,Antiviral,Topical,11.9,79.7,92.7,0.72,18.22,3362.0,Bleeding risk,Fungi
+Cellulose,Structural,Antibacterial,IV,17.2,84.0,12.7,4.666,19.87,4338.0,Minimal,Plants
+Laminarin,Algal,Prebiotic agent,Inhalation,65.3,43.1,90.6,2.864,19.55,7790.0,Minimal,Brown Algae
+Fucoidan,Algal,Mucolytic,Subcutaneous,38.7,88.5,17.5,3.311,5.3,9359.0,Allergic reaction,Brown Algae
+Laminarin,Algal,Antiviral,Subcutaneous,7.7,55.0,60.3,4.892,3.48,7668.0,GI disturbance,Brown Algae
+Starch,Storage,Prebiotic agent,IV,57.4,34.2,32.7,3.569,6.7,9647.0,Bleeding risk,Plants
+Guar Gum,Storage,Hepatoprotective,Topical,61.3,14.2,14.6,2.476,4.33,1779.0,Allergic reaction,Plants
+Alginate,Algal,Anticoagulant,IV,30.5,77.0,77.0,0.938,1.38,6981.0,None reported,Brown Algae
+Gellan Gum,Bacterial,Hepatoprotective,Inhalation,52.1,61.1,55.4,1.007,9.46,1980.0,Bleeding risk,Bacteria
+Dextran,Bacterial,Prebiotic agent,Topical,61.0,32.2,63.6,3.91,10.12,354.0,None reported,Bacteria
+Levan,Bacterial,Antineoplastic,IV,23.0,11.2,95.2,0.075,16.82,4194.0,Minimal,Bacteria
+Konjac Glucomannan,Storage,Hepatoprotective,Oral,56.7,64.8,96.0,3.456,17.14,9752.0,Minimal,Plants
+Guar Gum,Storage,Immunosuppressant,Transdermal,12.4,56.1,40.5,1.377,7.98,9719.0,Minimal,Plants
+Laminarin,Algal,Anti-inflammatory,Inhalation,57.3,53.3,40.3,2.746,2.04,7392.0,Minimal,Brown Algae
+Pectin,Structural,Antifungal,Topical,19.9,81.1,44.5,1.86,12.24,1258.0,Allergic reaction,Plants
+Cellulose,Structural,Antifungal,Subcutaneous,0.7,32.1,61.7,4.467,16.12,7197.0,GI disturbance,Plants
+Dextran,Bacterial,Anti-inflammatory,Inhalation,20.3,6.7,77.0,3.041,15.88,5505.0,Bleeding risk,Bacteria
+Glycogen,Storage,Antibacterial,Oral,49.2,60.9,44.6,0.844,18.83,7341.0,Bleeding risk,Animals
+Locust Bean Gum,Storage,Mucolytic,Inhalation,40.2,70.0,34.5,4.862,15.0,6635.0,None reported,Plants
+Cellulose Sulfate,Structural,Anticoagulant,IV,28.5,20.0,71.4,0.498,18.08,2897.0,Allergic reaction,Plants (Modified)
+Welan Gum,Bacterial,Hepatoprotective,IV,62.5,73.6,40.1,2.117,4.4,9332.0,None reported,Bacteria
+Pullulan,Fungal,Prebiotic agent,Topical,61.3,52.8,54.6,0.314,15.49,4377.0,Minimal,Fungi
+Locust Bean Gum,Storage,Hepatoprotective,Inhalation,35.0,97.0,62.5,0.253,13.75,1263.0,None reported,Plants
+Glycogen,Storage,Antibacterial,Transdermal,59.3,64.8,96.2,4.335,2.04,2077.0,Bleeding risk,Animals
+Carrageenan,Algal,Antiviral,Oral,7.4,56.0,58.7,2.826,7.19,8023.0,Bleeding risk,Red Algae
+Hyaluronic Acid,Bioactive,Anti-inflammatory,Oral,43.0,43.3,36.0,2.301,13.83,9879.0,Bleeding risk,Animals/Bacteria
+Starch,Storage,Mucolytic,IV,43.4,49.7,10.6,2.413,5.82,7141.0,GI disturbance,Plants
+Guar Gum,Storage,Anticoagulant,Inhalation,49.0,69.5,22.1,3.221,4.34,4494.0,Minimal,Plants
+Dextran,Bacterial,Antiviral,Transdermal,5.8,63.7,39.8,1.257,5.81,8776.0,Allergic reaction,Bacteria
+Carrageenan,Algal,Antiviral,IV,62.9,22.1,38.8,3.807,7.83,127.0,Bleeding risk,Red Algae
+Starch,Storage,Antineoplastic,Transdermal,28.0,75.3,36.5,0.692,9.98,5600.0,Allergic reaction,Plants
+Starch,Storage,Immunosuppressant,Subcutaneous,37.5,9.6,91.7,0.307,5.11,4023.0,Bleeding risk,Plants
+Levan,Bacterial,Anticoagulant,Topical,3.6,74.4,88.1,0.484,12.85,2733.0,Minimal,Bacteria
+Laminarin,Algal,Antibacterial,Inhalation,9.1,86.7,61.6,2.982,19.77,681.0,Bleeding risk,Brown Algae
+Fucoidan,Algal,Anticoagulant,IV,26.6,7.2,33.1,0.832,4.4,9433.0,GI disturbance,Brown Algae
+Curdlan,Bacterial,Antifungal,Transdermal,43.2,27.0,19.9,3.264,4.14,3985.0,Minimal,Bacteria
+Laminarin,Algal,Antibacterial,Subcutaneous,3.6,87.0,50.8,4.59,18.98,9351.0,GI disturbance,Brown Algae
+Inulin,Storage,Prebiotic agent,Transdermal,42.7,18.0,38.1,3.748,19.27,2887.0,GI disturbance,Plants
+Pectin,Structural,Immunosuppressant,Inhalation,7.0,58.0,65.5,0.648,11.19,3954.0,GI disturbance,Plants
+Locust Bean Gum,Storage,Immunosuppressant,Topical,63.9,85.3,77.1,2.021,8.42,8683.0,None reported,Plants
+Scleroglucan,Fungal,Mucolytic,IV,9.3,63.6,14.6,3.512,7.91,2424.0,Allergic reaction,Fungi
+Chitin,Structural,Antiviral,IV,22.6,45.2,49.4,1.517,17.34,1627.0,Allergic reaction,Fungi/Exoskeletons
+Carrageenan,Algal,Anticoagulant,IV,14.6,81.0,15.5,2.545,1.03,3807.0,Bleeding risk,Red Algae
+Scleroglucan,Fungal,Anticoagulant,Oral,32.0,69.5,65.9,0.496,10.19,1030.0,Allergic reaction,Fungi
+Cellulose,Structural,Mucolytic,Inhalation,32.0,10.9,21.3,1.316,1.96,2528.0,GI disturbance,Plants
+Dextran,Bacterial,Antifungal,Inhalation,19.5,72.4,95.2,3.673,7.62,1061.0,GI disturbance,Bacteria
+Welan Gum,Bacterial,Antifungal,Inhalation,4.4,73.7,20.8,4.671,2.06,6466.0,None reported,Bacteria
+Fucoidan,Algal,Hepatoprotective,Inhalation,28.9,96.6,92.4,4.246,8.39,2227.0,GI disturbance,Brown Algae
+Carrageenan,Algal,Anti-inflammatory,Inhalation,17.3,88.7,72.8,2.5,12.73,5640.0,Allergic reaction,Red Algae
+Cellulose Sulfate,Structural,Anticoagulant,Topical,49.6,9.7,26.3,1.252,15.05,4835.0,Allergic reaction,Plants (Modified)
+Gellan Gum,Bacterial,Anti-inflammatory,Inhalation,19.5,86.3,80.9,0.546,4.12,353.0,GI disturbance,Bacteria
+Levan,Bacterial,Antifungal,IV,16.0,85.8,22.6,3.547,14.12,2206.0,Bleeding risk,Bacteria
+Xanthan Gum,Bacterial,Hepatoprotective,Subcutaneous,21.2,8.8,86.4,4.612,6.78,7655.0,Allergic reaction,Bacteria
+Pullulan,Fungal,Antiviral,Inhalation,62.0,67.0,32.7,2.225,18.41,6257.0,Bleeding risk,Fungi
+Agar,Algal,Antibacterial,Topical,47.1,9.4,31.0,0.953,11.72,2588.0,Minimal,Red Algae
+Glycogen,Storage,Antiviral,Inhalation,14.0,77.3,25.4,1.431,3.2,9619.0,Allergic reaction,Animals
+Scleroglucan,Fungal,Anti-inflammatory,Inhalation,42.8,19.2,63.5,4.008,9.92,8217.0,Minimal,Fungi
+Pectin,Structural,Prebiotic agent,Transdermal,25.0,90.2,15.1,4.634,6.81,5727.0,None reported,Plants
+Laminarin,Algal,Anti-inflammatory,IV,39.9,26.0,12.6,3.597,8.17,2915.0,Bleeding risk,Brown Algae
+Xanthan Gum,Bacterial,Antineoplastic,IV,55.8,46.1,65.0,3.906,18.32,4978.0,Allergic reaction,Bacteria
+Pullulan,Fungal,Immunosuppressant,IV,67.7,44.3,73.9,3.514,1.16,4044.0,GI disturbance,Fungi
+Gellan Gum,Bacterial,Antifungal,Oral,66.7,47.1,28.2,1.839,5.14,7996.0,GI disturbance,Bacteria
+Laminarin,Algal,Mucolytic,IV,45.1,80.6,21.9,1.474,14.69,472.0,Allergic reaction,Brown Algae
+Welan Gum,Bacterial,Prebiotic agent,Transdermal,4.3,90.3,33.8,3.393,17.44,4785.0,GI disturbance,Bacteria
+Locust Bean Gum,Storage,Antineoplastic,Subcutaneous,32.9,18.1,60.1,0.062,18.56,8321.0,Minimal,Plants
+Cellulose,Structural,Immunosuppressant,Transdermal,29.4,81.5,68.3,1.816,17.02,8115.0,Allergic reaction,Plants
+Inulin,Storage,Antiviral,Transdermal,5.6,59.5,33.5,2.995,13.09,2168.0,None reported,Plants
+Xanthan Gum,Bacterial,Hepatoprotective,Transdermal,55.6,69.5,75.9,4.201,14.31,8437.0,None reported,Bacteria
+Glycogen,Storage,Prebiotic agent,Inhalation,65.8,53.1,13.0,3.713,17.83,8157.0,Minimal,Animals
+Dextran,Bacterial,Hepatoprotective,Transdermal,57.7,24.7,82.5,3.887,9.01,2243.0,Bleeding risk,Bacteria
+Gellan Gum,Bacterial,Immunosuppressant,Inhalation,18.9,41.2,21.5,0.827,11.19,7068.0,None reported,Bacteria
+Fucoidan,Algal,Anti-inflammatory,Transdermal,62.5,14.9,64.2,2.834,7.12,2590.0,Minimal,Brown Algae
+Welan Gum,Bacterial,Anti-inflammatory,IV,49.5,46.5,71.5,4.6,3.69,9105.0,None reported,Bacteria
+Locust Bean Gum,Storage,Prebiotic agent,Subcutaneous,22.0,83.5,91.8,0.85,8.25,4665.0,None reported,Plants
+Welan Gum,Bacterial,Antifungal,Oral,61.1,78.6,56.3,4.55,3.01,4557.0,None reported,Bacteria
+Fucoidan,Algal,Antifungal,Oral,24.1,56.9,84.6,0.384,10.68,3906.0,Minimal,Brown Algae
+Gellan Gum,Bacterial,Immunosuppressant,Transdermal,52.2,59.7,42.6,1.564,15.08,5792.0,None reported,Bacteria
+Inulin,Storage,Antiviral,Oral,54.3,35.8,47.7,2.247,5.75,7773.0,Allergic reaction,Plants
+Xanthan Gum,Bacterial,Antibacterial,IV,69.9,86.4,85.5,2.252,4.43,8059.0,Minimal,Bacteria
+Cellulose Sulfate,Structural,Anticoagulant,Inhalation,63.4,44.6,43.8,0.705,2.43,3294.0,GI disturbance,Plants (Modified)
+Gellan Gum,Bacterial,Antifungal,Transdermal,36.7,95.4,39.1,3.344,10.69,4046.0,GI disturbance,Bacteria
+Konjac Glucomannan,Storage,Mucolytic,Subcutaneous,25.7,99.2,25.1,2.378,5.85,168.0,Allergic reaction,Plants
+Locust Bean Gum,Storage,Antifungal,Topical,37.8,81.9,81.1,4.286,6.18,669.0,Minimal,Plants
+Levan,Bacterial,Antiviral,Topical,18.8,15.1,25.4,1.321,6.4,780.0,None reported,Bacteria
+Curdlan,Bacterial,Hepatoprotective,Subcutaneous,67.2,5.5,80.5,4.174,4.43,4125.0,None reported,Bacteria
+Levan,Bacterial,Anticoagulant,Inhalation,56.0,84.5,82.2,4.343,14.74,4581.0,Bleeding risk,Bacteria
+Levan,Bacterial,Immunosuppressant,Oral,63.6,33.3,92.4,0.812,4.64,6466.0,Minimal,Bacteria
+Hyaluronic Acid,Bioactive,Anticoagulant,Transdermal,24.3,9.6,63.8,2.697,1.09,6126.0,GI disturbance,Animals/Bacteria
+Gellan Gum,Bacterial,Anti-inflammatory,IV,19.7,59.9,61.4,2.195,1.79,6113.0,None reported,Bacteria
+Guar Gum,Storage,Hepatoprotective,Subcutaneous,10.1,30.9,97.1,2.798,2.64,3690.0,None reported,Plants
+Inulin,Storage,Antibacterial,Oral,21.9,91.9,50.8,1.802,15.52,7543.0,Allergic reaction,Plants
+Dextran,Bacterial,Antibacterial,Oral,41.5,52.3,66.2,1.153,5.4,287.0,GI disturbance,Bacteria
+Curdlan,Bacterial,Antibacterial,Oral,10.5,98.3,10.1,3.6,5.39,1557.0,Minimal,Bacteria
+Agar,Algal,Anti-inflammatory,Topical,65.7,62.0,77.1,1.694,5.97,8431.0,Minimal,Red Algae
+Pullulan,Fungal,Immunosuppressant,Topical,11.5,26.6,59.6,2.228,9.47,2928.0,Allergic reaction,Fungi
+Pullulan,Fungal,Mucolytic,Inhalation,26.6,95.1,67.8,0.38,18.04,7404.0,None reported,Fungi
+Gellan Gum,Bacterial,Antineoplastic,IV,0.8,54.6,73.7,4.204,6.74,6450.0,Allergic reaction,Bacteria
+Welan Gum,Bacterial,Antibacterial,Topical,8.1,44.9,31.5,3.844,3.78,8926.0,Minimal,Bacteria
+Gellan Gum,Bacterial,Mucolytic,Transdermal,39.7,73.1,76.6,0.87,8.69,4858.0,None reported,Bacteria
+Xanthan Gum,Bacterial,Anti-inflammatory,Subcutaneous,14.3,5.2,45.5,4.225,4.67,9669.0,Minimal,Bacteria
+Alginate,Algal,Anti-inflammatory,Inhalation,66.5,80.8,17.9,2.727,3.42,7812.0,Allergic reaction,Brown Algae
+Alginate,Algal,Mucolytic,Inhalation,22.8,64.2,62.2,0.166,8.7,1612.0,Bleeding risk,Brown Algae
+Pullulan,Fungal,Antineoplastic,IV,47.2,16.3,65.0,4.732,1.03,1600.0,Bleeding risk,Fungi
+Agar,Algal,Antifungal,Transdermal,59.7,10.4,72.3,3.993,19.58,3232.0,GI disturbance,Red Algae
+Welan Gum,Bacterial,Antibacterial,Transdermal,46.1,10.3,88.2,1.439,9.59,4522.0,GI disturbance,Bacteria
+Welan Gum,Bacterial,Prebiotic agent,Oral,45.3,47.3,53.7,1.604,12.07,866.0,None reported,Bacteria
+Cellulose Sulfate,Structural,Hepatoprotective,Transdermal,3.3,48.0,28.5,2.595,7.38,742.0,Allergic reaction,Plants (Modified)
+Laminarin,Algal,Anticoagulant,Inhalation,42.0,40.1,96.9,3.822,12.73,1760.0,None reported,Brown Algae
+Xanthan Gum,Bacterial,Antibacterial,Topical,39.9,47.1,28.1,0.163,3.53,267.0,Allergic reaction,Bacteria
+Carrageenan,Algal,Anti-inflammatory,IV,17.5,42.9,19.6,0.617,12.82,6712.0,Minimal,Red Algae
+Fucoidan,Algal,Mucolytic,Transdermal,6.8,88.5,58.1,0.816,11.56,7912.0,None reported,Brown Algae
+Fucoidan,Algal,Antiviral,Transdermal,56.6,14.3,77.5,4.087,1.02,8292.0,Minimal,Brown Algae
+Carrageenan,Algal,Antiviral,Transdermal,54.9,96.7,13.2,0.636,9.37,1406.0,Allergic reaction,Red Algae
+Konjac Glucomannan,Storage,Antineoplastic,Inhalation,40.2,41.8,63.4,1.193,5.86,7094.0,Allergic reaction,Plants
+Scleroglucan,Fungal,Prebiotic agent,Inhalation,65.0,92.5,31.3,1.615,8.7,3346.0,None reported,Fungi
+Laminarin,Algal,Antiviral,Inhalation,56.5,87.2,97.7,0.995,7.41,4516.0,Allergic reaction,Brown Algae
+Pullulan,Fungal,Immunosuppressant,Transdermal,7.8,21.2,80.9,4.499,4.75,3297.0,GI disturbance,Fungi
+Fucoidan,Algal,Anticoagulant,Transdermal,60.9,35.2,69.5,0.212,2.98,1027.0,Allergic reaction,Brown Algae
+Laminarin,Algal,Hepatoprotective,Transdermal,63.2,26.2,34.1,4.12,5.64,3181.0,None reported,Brown Algae
+Cellulose Sulfate,Structural,Immunosuppressant,Oral,70.0,34.6,37.2,2.443,1.5,9205.0,Minimal,Plants (Modified)
+Konjac Glucomannan,Storage,Antineoplastic,IV,70.4,80.4,84.9,1.032,10.95,4495.0,GI disturbance,Plants
+Fucoidan,Algal,Antiviral,Inhalation,43.5,75.6,61.3,2.218,17.52,6217.0,None reported,Brown Algae
+Cellulose,Structural,Antineoplastic,IV,46.2,33.7,78.5,1.372,8.81,2990.0,Allergic reaction,Plants
+Guar Gum,Storage,Hepatoprotective,Topical,2.3,77.3,30.4,3.872,14.65,4330.0,GI disturbance,Plants
+Starch,Storage,Anti-inflammatory,Subcutaneous,16.1,17.8,38.1,1.132,10.22,6653.0,Minimal,Plants
+Alginate,Algal,Hepatoprotective,Subcutaneous,26.7,72.1,24.1,4.555,13.55,6659.0,Bleeding risk,Brown Algae
+Chitin,Structural,Antibacterial,Subcutaneous,69.3,78.5,28.3,0.237,11.52,978.0,None reported,Fungi/Exoskeletons
+Alginate,Algal,Prebiotic agent,Transdermal,12.2,83.1,29.9,1.535,7.83,9927.0,GI disturbance,Brown Algae
+Glycogen,Storage,Antibacterial,Topical,45.3,29.2,31.8,2.193,8.09,9473.0,Bleeding risk,Animals
+Dextran,Bacterial,Prebiotic agent,Subcutaneous,61.0,72.4,44.2,3.649,7.23,6359.0,GI disturbance,Bacteria
+Cellulose Sulfate,Structural,Prebiotic agent,Transdermal,6.4,64.6,33.6,4.663,18.62,1238.0,Minimal,Plants (Modified)
+Pullulan,Fungal,Anticoagulant,Topical,1.4,20.3,24.6,2.592,2.33,5689.0,Minimal,Fungi
+Fucoidan,Algal,Prebiotic agent,Oral,16.8,77.5,83.7,3.355,8.04,8905.0,None reported,Brown Algae
+Inulin,Storage,Antibacterial,IV,50.1,82.0,35.3,3.693,3.0,8123.0,Bleeding risk,Plants
+Cellulose Sulfate,Structural,Antiviral,Topical,48.0,99.7,95.5,3.865,1.06,1600.0,GI disturbance,Plants (Modified)
+Gellan Gum,Bacterial,Anticoagulant,Inhalation,52.4,60.6,72.2,0.976,11.38,1967.0,Allergic reaction,Bacteria
+Pullulan,Fungal,Antifungal,Oral,43.4,40.9,46.6,2.206,2.02,1482.0,GI disturbance,Fungi
+Gellan Gum,Bacterial,Antiviral,IV,20.4,82.1,91.1,0.715,17.06,1367.0,Bleeding risk,Bacteria
+Inulin,Storage,Hepatoprotective,Inhalation,39.4,11.9,97.0,3.64,19.45,5582.0,Allergic reaction,Plants
+Guar Gum,Storage,Mucolytic,Inhalation,53.4,13.9,86.1,3.091,6.88,6393.0,GI disturbance,Plants
+Carrageenan,Algal,Anti-inflammatory,Topical,21.5,63.6,28.6,3.895,7.33,4633.0,Allergic reaction,Red Algae
+Alginate,Algal,Antiviral,Topical,10.5,81.9,81.6,0.595,7.98,4947.0,Bleeding risk,Brown Algae
+Carrageenan,Algal,Immunosuppressant,Oral,41.1,79.3,41.4,4.528,7.94,6162.0,GI disturbance,Red Algae
+Alginate,Algal,Hepatoprotective,IV,46.2,51.2,48.6,4.261,5.62,1018.0,None reported,Brown Algae
+Cellulose,Structural,Anticoagulant,IV,66.8,97.0,90.9,2.76,0.55,1871.0,GI disturbance,Plants
+Pectin,Structural,Anti-inflammatory,Transdermal,52.1,24.8,92.4,4.844,15.7,9261.0,GI disturbance,Plants
+Cellulose Sulfate,Structural,Antiviral,Subcutaneous,10.6,55.7,57.2,2.885,6.36,7575.0,Bleeding risk,Plants (Modified)

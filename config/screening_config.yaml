@@ -1,0 +1,30 @@
+# Screening Rules and Multi-Criteria Weights Configuration
+
+safety_gate:
+  min_toxicity_score: 3.0
+  min_biocompatibility_default: 5.0
+  biodegradation_days_min: 1.0
+  biodegradation_days_max: 1000.0
+
+scoring_weights:
+  mechanical: 1.0
+  barrier: 1.0
+  biological: 1.2
+  degradation: 1.0
+  processing: 0.8
+  sterilization: 1.0
+  sustainability: 0.6
+  cost: 0.4
+
+nsga2_optimization:
+  population_size: 40
+  generations: 50
+  random_seed: 42
+
+explainability:
+  default_method: "shap"
+  top_n_features: 4
+
+candidate_reduction:
+  faiss_top_k: 30
+  max_final_results: 20

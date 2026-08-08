@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+.eggs/
+*.egg
+.env
+venv/
+.venv/
+
+# Android
+*.iml
+.gradle/
+/local.properties
+.idea/
+*.hprof
+/build/
+/captures/
+*.apk
+*.aab
+*.jks
+*.keystore
+google-services.json
+
+# IDEs
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+*.log
+
+# ML model artifacts (build outputs, not source)
+*.pkl
+*.tflite
+*.h5
+*.onnx
+
+# Test / coverage artifacts
+htmlcov/
+coverage.xml
+.coverage
+*.cover

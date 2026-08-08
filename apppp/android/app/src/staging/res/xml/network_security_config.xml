@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Network Security Configuration — STAGING flavor.
+
+  All traffic must use HTTPS.  Cleartext is explicitly denied.
+  Trust anchors: system CA store only (the staging server must have a valid
+  certificate from a publicly trusted CA, e.g. Let's Encrypt).
+
+  If you use a private/internal CA for staging, add it as a trust anchor:
+    <certificates src="@raw/staging_ca" />
+  and place the PEM file at res/raw/staging_ca.pem.
+-->
+<network-security-config>
+
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+
+</network-security-config>

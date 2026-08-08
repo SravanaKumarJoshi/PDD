@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_heading_large">26sp</dimen>
+    <dimen name="text_heading_medium">22sp</dimen>
+    <dimen name="text_body">16sp</dimen>
+    <dimen name="text_caption">14sp</dimen>
+    <dimen name="text_button">18sp</dimen>
+    <dimen name="margin_extra_small">5dp</dimen>
+    <dimen name="margin_small">10dp</dimen>
+    <dimen name="margin_standard">18dp</dimen>
+    <dimen name="margin_large">26dp</dimen>
+    <dimen name="margin_extra_large">36dp</dimen>
+    <dimen name="button_height">54dp</dimen>
+    <dimen name="input_field_height">60dp</dimen>
+    <dimen name="text_body_small">14sp</dimen>
+</resources>

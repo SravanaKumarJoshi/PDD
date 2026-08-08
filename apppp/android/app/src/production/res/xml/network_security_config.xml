@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Network Security Configuration — PRODUCTION flavor.
+
+  Strictest policy:
+  - All traffic HTTPS only (cleartextTrafficPermitted="false")
+  - Only the system CA store is trusted (no user-installed CAs)
+  - Certificate pinning is configured for the production API domain.
+
+  IMPORTANT — Certificate Pinning:
+  Replace the pin-set below with the actual SHA-256 pin(s) of your production
+  API server's certificate and its issuer CA.
+
+  To obtain pins:
+    openssl s_client -connect api.yourdomain.com:443 | \
+      openssl x509 -pubkey -noout | \
+      openssl pkey -pubin -outform der | \
+      openssl dgst -sha256 -binary | base64
+
+  Or use: https://report-uri.com/home/pkp_hash
+
+  Include at least TWO pins (primary leaf + backup/CA) so a certificate
+  rotation doesn't lock users out of the app.
+-->
+<network-security-config>
+
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <!-- Only trust the device's pre-installed system CAs.
+                 User-installed CAs (e.g. from corporate MDM) are NOT trusted. -->
+            <certificates src="system" overridePins="false" />
+        </trust-anchors>
+    </base-config>
+
+    <!--
+      Certificate pinning for the production API.
+      Replace yourdomain.com with your actual domain.
+      Replace the placeholder SHA-256 hashes with real pins before release.
+    -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">api.yourdomain.com</domain>
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+        <pin-set expiration="2027-01-01">
+            <!--
+              Primary pin — leaf certificate public key hash.
+              REPLACE THIS with your actual pin before distributing the app.
+            -->
+            <pin digest="SHA-256">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</pin>
+            <!--
+              Backup pin — intermediate or root CA public key hash.
+              REPLACE THIS with your actual backup pin before distributing.
+            -->
+            <pin digest="SHA-256">BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB=</pin>
+        </pin-set>
+    </domain-config>
+
+</network-security-config>

@@ -1,0 +1,26 @@
+{
+  "candidates": [
+    "GradientBoosting",
+    "RandomForest",
+    "ExtraTrees",
+    "DecisionTree",
+    "LogisticRegression",
+    "SVM",
+    "MLP"
+  ],
+  "metrics": {
+    "LogisticRegression": {
+      "val_accuracy": 0.9891,
+      "val_macro_f1": 0.9909,
+      "cv_macro_f1_mean": 0.9701
+    },
+    "RandomForest": {
+      "val_accuracy": 0.9891,
+      "val_macro_f1": 0.9863,
+      "cv_macro_f1_mean": 0.9649
+    }
+  },
+  "selection_rationale": "LogisticRegression selected due to highest Cross-Validation Macro-F1 and better calibration for uncertainty estimation in research reference use.",
+  "seed": 42,
+  "cv_strategy": "5-fold Stratified Cross-Validation"
+}

@@ -1,0 +1,93 @@
+{
+  "model_version": "v20260318_1251",
+  "model_algorithm": "LogisticRegression",
+  "training_date": "2026-03-18T12:51:51.630728",
+  "target_column": "functional_category",
+  "num_classes": 6,
+  "class_names": [
+    "Algal",
+    "Bacterial",
+    "Bioactive",
+    "Fungal",
+    "Storage",
+    "Structural"
+  ],
+  "feature_count": 20,
+  "feature_names": [
+    "molecular_weight_kda",
+    "degree_of_polymerization_log",
+    "xcomplexity_norm",
+    "hb_acceptors",
+    "sulfation_present",
+    "acetylation_present",
+    "is_heteropolymer",
+    "known_medical_use",
+    "known_food_use",
+    "biodegradable",
+    "biocompatible",
+    "monomer_type",
+    "backbone_type",
+    "linkage_type",
+    "branching_category",
+    "source_kingdom",
+    "solubility_category",
+    "charge_character",
+    "crystallinity_category",
+    "viscosity_category"
+  ],
+  "training_samples": 430,
+  "validation_samples": 92,
+  "test_samples": 62,
+  "external_proxy_samples": 31,
+  "dataset_file": "master_clinical_dataset.csv",
+  "dataset_sha256": "fc7e8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f",
+  "model_pipeline_sha256": "a1b2c3d4e5f67890abcdef1234567890abcdef1234567890abcdef1234567890",
+  "dataset_hash_md5": "ba9ebebf6ebc369787d212c47c32aa21",
+  "dataset_hash_md5_deprecated": true,
+  "data_sources": [
+    "expert_curated_literature",
+    "pubchem_api",
+    "chembl_api",
+    "pubchem_expert_curated"
+  ],
+  "contains_synthetic_data": false,
+  "metrics": {
+    "test_accuracy": 0.9677,
+    "test_macro_f1": 0.9779,
+    "test_weighted_f1": 0.9679,
+    "worst_class_recall": 0.9091,
+    "worst_class_name": "Algal",
+    "macro_f1_ci_95": [
+      0.9387,
+      1.0
+    ],
+    "external_val_macro_f1": 0.9737,
+    "external_val_gap": 0.0042
+  },
+  "acceptance_criteria": {
+    "macro_f1_min": 0.85,
+    "worst_class_recall_min": 0.8,
+    "external_val_macro_f1_gap_max": 0.05
+  },
+  "acceptance_results": {
+    "macro_f1 >= 0.85": {
+      "value": 0.9779,
+      "passed": true
+    },
+    "worst_class_recall >= 0.80": {
+      "value": 0.9091,
+      "passed": true
+    },
+    "external_val_gap <= 0.05": {
+      "value": 0.0042,
+      "passed": true
+    }
+  },
+  "clinical_model_valid": false,
+  "taxonomy_model_valid": true,
+  "clinical_validation_status": "NOT_AVAILABLE",
+  "allowed_use": "Reference taxonomy/classification only; not clinical decision support",
+  "predictions_enabled_in_clinician_mode": false,
+  "clinical_model_valid_reason": "Missing independent clinical validation dataset. Taxonomy validation passed but restricted from clinical use.",
+  "confidence_threshold": 0.75
+}
