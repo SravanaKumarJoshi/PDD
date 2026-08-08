@@ -28,10 +28,13 @@ import pandas as pd
 import numpy as np
 from sklearn.model_selection import GroupShuffleSplit
 
-# Ensure root directory is on sys.path
+# Ensure root directory and apppp/backend directory are on sys.path
 ROOT_DIR = Path(__file__).resolve().parent.parent
+BACKEND_DIR = ROOT_DIR / "apppp" / "backend"
 if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
+if str(BACKEND_DIR) not in sys.path:
+    sys.path.insert(0, str(BACKEND_DIR))
 
 from shared.ml.config import load_yaml_config, MATERIAL_TABLE_NAME, FEATURE_COLUMNS
 from shared.ml.data_pipeline import prepare_training_dataset

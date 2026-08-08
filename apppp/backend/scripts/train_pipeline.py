@@ -79,15 +79,38 @@ def record_deployment_audit_log(action: str, prev_version: str, new_version: str
 
 def load_data_from_mysql_or_fallback() -> pd.DataFrame:
     """Load data exclusively from production MySQL database table."""
-    db_url = os.getenv("DATABASE_URL", "mysql+pymysql://root:root123@localhost:3306/polysaccharide_selector")
+    db_url = os.getenv("DATABASE_URL", "mysql+pymysql://root:meheer17@localhost:3306/polysaccharide_selector")
     try:
         import sqlalchemy
         engine = sqlalchemy.create_engine(db_url)
-        query = f"SELECT * FROM {MATERIAL_TABLE_NAME} WHERE is_deleted = 0"
+        query = """
+        SELECT 
+            m.name AS polymer,
+            m.category AS category,
+            COALESCE(mp.tensile_strength_mpa_min, 15.0) AS tensile_strength,
+            COALESCE(mp.elastic_modulus_gpa_min, 1.2) AS elastic_modulus,
+            COALESCE(mp.elongation_pct_min, 45.0) AS elongation_pct,
+            COALESCE(mp.elongation_pct_min * 0.8, 35.0) AS flexibility,
+            COALESCE(mp.wvtr, 800.0) AS wvtr,
+            COALESCE(mp.otr, 120.0) AS oxygen_permeability,
+            CASE WHEN mp.cytotoxicity_safe = 1 THEN 9.0 ELSE 4.0 END AS biocompatibility,
+            CASE WHEN mp.cytotoxicity_safe = 1 THEN 8.5 ELSE 3.0 END AS toxicity_score,
+            CASE WHEN mp.antimicrobial = 1 THEN 1.0 ELSE 0.0 END AS antimicrobial,
+            COALESCE(mp.degradation_days_min, 60) AS biodegradation_days,
+            CASE WHEN mp.enzymatic_degradability = 1 THEN 9.0 ELSE 5.0 END AS environmental_impact,
+            CASE WHEN mp.proc_film = 1 THEN 1.0 ELSE 0.0 END AS film_forming,
+            CASE WHEN mp.ster_gamma = 1 THEN 1.0 ELSE 0.0 END AS sterilization_gamma,
+            CASE WHEN mp.ster_eto = 1 THEN 1.0 ELSE 0.0 END AS sterilization_eto,
+            CASE WHEN mp.ster_steam = 1 THEN 1.0 ELSE 0.0 END AS sterilization_steam
+        FROM materials m 
+        JOIN material_properties mp ON m.id = mp.material_id 
+        WHERE m.is_deleted = 0
+        """
         df = pd.read_sql(query, engine)
+        df = df.loc[:, ~df.columns.duplicated()]
         if df.empty:
-            raise RuntimeError(f"MySQL table '{MATERIAL_TABLE_NAME}' returned 0 records.")
-        print(f"[TrainPipeline] Loaded {len(df)} production records from MySQL table '{MATERIAL_TABLE_NAME}'.")
+            raise RuntimeError(f"MySQL table 'materials' returned 0 records.")
+        print(f"[TrainPipeline] Loaded {len(df)} production records from MySQL 'materials' database.")
         return df
     except Exception as e:
         print(f"[TrainPipeline] ERROR: Failed to connect to MySQL database or query table '{MATERIAL_TABLE_NAME}': {e}")
@@ -221,10 +244,10 @@ def main():
 
     if not args.dry_run:
         if latest_pointer.exists() or latest_pointer.is_symlink():
-            if latest_pointer.is_symlink() or os.name != "nt":
-                latest_pointer.unlink()
-            else:
+            if latest_pointer.is_dir() and not latest_pointer.is_symlink():
                 shutil.rmtree(latest_pointer)
+            else:
+                latest_pointer.unlink()
 
         try:
             latest_pointer.symlink_to(version_dir, target_is_directory=True)

@@ -6,7 +6,12 @@ import plotly.graph_objects as go
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent.parent))
+ROOT_DIR = Path(__file__).resolve().parent.parent
+BACKEND_DIR = ROOT_DIR / "apppp" / "backend"
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+if str(BACKEND_DIR) not in sys.path:
+    sys.path.insert(0, str(BACKEND_DIR))
 
 from src.genetic_algorithm import run_nsga2
 from src.data import load_dataset_from_mysql
@@ -38,86 +43,91 @@ with c2:
 with c3:
     min_bio = st.slider("Min Biocompatibility Filter", 1, 10, 6)
 
-if st.button("🧬 Run NSGA-II Optimization", type="primary", use_container_width=True):
-    filtered = df[df["biocompatibility"] >= min_bio].copy()
-    filtered = filtered.sort_values("biocompatibility", ascending=False).head(top_n)
+filtered = df[df["biocompatibility"] >= min_bio].copy()
+if filtered.empty:
+    filtered = df.copy()
 
-    candidates = filtered.to_dict("records")
+filtered = filtered.sort_values("biocompatibility", ascending=False).head(top_n)
+candidates = filtered.to_dict("records")
 
-    with st.spinner(f"Running NSGA-II on {len(candidates)} candidates for {n_gen} generations..."):
-        result = run_nsga2(candidates, n_generations=n_gen)
+if not candidates:
+    st.warning("No candidate materials matched the filter criteria.")
+    st.stop()
 
-    pareto_idx = result["pareto_indices"]
-    pareto_objs = result["pareto_objectives"]
+with st.spinner(f"Running NSGA-II on {len(candidates)} candidates for {n_gen} generations..."):
+    result = run_nsga2(candidates, n_generations=n_gen)
 
-    st.success(f"✅ Found {len(pareto_idx)} Pareto-optimal materials")
+pareto_idx = result["pareto_indices"]
+pareto_objs = result["pareto_objectives"]
 
-    # 3D scatter plot
-    st.header("📊 Pareto Front Visualization")
+st.success(f"✅ Found {len(pareto_idx)} Pareto-optimal materials")
 
-    all_strength = [min(c.get("tensile_strength", 0) / 300, 1.0) for c in candidates]
-    all_biodeg = [1 - min(c.get("biodegradation_days", 365) / 730, 1.0) for c in candidates]
-    all_biocomp = [min(c.get("biocompatibility", 0) / 10, 1.0) for c in candidates]
-    all_names = [c["polymer"] for c in candidates]
+# 3D scatter plot
+st.header("📊 Pareto Front Visualization")
 
-    is_pareto = [i in pareto_idx for i in range(len(candidates))]
+all_strength = [min(c.get("tensile_strength", 0) / 300, 1.0) for c in candidates]
+all_biodeg = [1 - min(c.get("biodegradation_days", 365) / 730, 1.0) for c in candidates]
+all_biocomp = [min(c.get("biocompatibility", 0) / 10, 1.0) for c in candidates]
+all_names = [c["polymer"] for c in candidates]
 
-    fig = go.Figure()
+is_pareto = [i in pareto_idx for i in range(len(candidates))]
 
-    # Non-pareto points
-    non_p = [i for i in range(len(candidates)) if not is_pareto[i]]
-    if non_p:
-        fig.add_trace(go.Scatter3d(
-            x=[all_strength[i] for i in non_p],
-            y=[all_biodeg[i] for i in non_p],
-            z=[all_biocomp[i] for i in non_p],
-            mode='markers',
-            marker=dict(size=5, color='#64748b', opacity=0.5),
-            text=[all_names[i] for i in non_p],
-            name="Non-Pareto",
-        ))
+fig = go.Figure()
 
-    # Pareto points
+# Non-pareto points
+non_p = [i for i in range(len(candidates)) if not is_pareto[i]]
+if non_p:
     fig.add_trace(go.Scatter3d(
-        x=[all_strength[i] for i in pareto_idx],
-        y=[all_biodeg[i] for i in pareto_idx],
-        z=[all_biocomp[i] for i in pareto_idx],
+        x=[all_strength[i] for i in non_p],
+        y=[all_biodeg[i] for i in non_p],
+        z=[all_biocomp[i] for i in non_p],
         mode='markers',
-        marker=dict(size=10, color='#22c55e', symbol='diamond'),
-        text=[all_names[i] for i in pareto_idx],
-        name="Pareto-Optimal",
+        marker=dict(size=5, color='#64748b', opacity=0.5),
+        text=[all_names[i] for i in non_p],
+        name="Non-Pareto",
     ))
 
-    fig.update_layout(
-        scene=dict(
-            xaxis_title="Strength (normalized)",
-            yaxis_title="Biodegradability (normalized)",
-            zaxis_title="Biocompatibility (normalized)",
-        ),
-        title="Pareto Front: 3 Objectives",
-        height=600,
-        template="plotly_dark",
-    )
-    st.plotly_chart(fig, use_container_width=True)
+# Pareto points
+fig.add_trace(go.Scatter3d(
+    x=[all_strength[i] for i in pareto_idx],
+    y=[all_biodeg[i] for i in pareto_idx],
+    z=[all_biocomp[i] for i in pareto_idx],
+    mode='markers',
+    marker=dict(size=10, color='#22c55e', symbol='diamond'),
+    text=[all_names[i] for i in pareto_idx],
+    name="Pareto-Optimal",
+))
 
-    # Pareto materials table
-    st.header("⭐ Pareto-Optimal Materials")
-    pareto_data = []
-    for i in pareto_idx:
-        c = candidates[i]
-        pareto_data.append({
-            "Polymer": c["polymer"],
-            "Tensile (MPa)": c.get("tensile_strength", "N/A"),
-            "Biodeg. Days": c.get("biodegradation_days", "N/A"),
-            "Biocompat.": c.get("biocompatibility", "N/A"),
-            "Category": c.get("category", ""),
-        })
-    st.dataframe(pd.DataFrame(pareto_data), use_container_width=True, hide_index=True)
+fig.update_layout(
+    scene=dict(
+        xaxis_title="Strength (normalized)",
+        yaxis_title="Biodegradability (normalized)",
+        zaxis_title="Biocompatibility (normalized)",
+    ),
+    title="Pareto Front: 3 Objectives",
+    height=600,
+    template="plotly_dark",
+)
+st.plotly_chart(fig, use_container_width=True)
 
-    st.markdown("""
-    > **Pareto-optimal** means no other material is better in ALL three objectives simultaneously.
-    > These materials represent the best trade-offs between strength, biodegradability, and biocompatibility.
-    """)
+# Pareto materials table
+st.header("⭐ Pareto-Optimal Materials")
+pareto_data = []
+for i in pareto_idx:
+    c = candidates[i]
+    pareto_data.append({
+        "Polymer": c["polymer"],
+        "Tensile (MPa)": c.get("tensile_strength", "N/A"),
+        "Biodeg. Days": c.get("biodegradation_days", "N/A"),
+        "Biocompat.": c.get("biocompatibility", "N/A"),
+        "Category": c.get("category", ""),
+    })
+st.dataframe(pd.DataFrame(pareto_data), use_container_width=True, hide_index=True)
+
+st.markdown("""
+> **Pareto-optimal** means no other material is better in ALL three objectives simultaneously.
+> These materials represent the best trade-offs between strength, biodegradability, and biocompatibility.
+""")
 
 with st.sidebar:
     st.header("📖 About NSGA-II")

@@ -4,7 +4,12 @@ import pandas as pd
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent.parent))
+ROOT_DIR = Path(__file__).resolve().parent.parent
+BACKEND_DIR = ROOT_DIR / "apppp" / "backend"
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+if str(BACKEND_DIR) not in sys.path:
+    sys.path.insert(0, str(BACKEND_DIR))
 
 from src.data import load_dataset_from_mysql, get_dataset_stats, ingest_new_material, load_dataset
 
@@ -27,6 +32,8 @@ if "dataset" not in st.session_state or st.session_state.get("dataset_source") !
         st.session_state["dataset_source"] = "mysql"
 
 df = st.session_state["dataset"]
+if "is_augmented" not in df.columns:
+    df["is_augmented"] = 0
 
 # ─── Metrics ──────────────────────────────────────────────────────
 c1, c2, c3, c4 = st.columns(4)
@@ -111,46 +118,46 @@ with c2:
     st.dataframe(filtered["category"].value_counts(), use_container_width=True)
 
 # ─── Add New Material ─────────────────────────────────────────────
-st.divider()
-st.header("➕ Add New Material")
-with st.expander("Submit a new material entry"):
-    with st.form("new_material"):
-        nm_name = st.text_input("Polymer Name")
-        nm_cat = st.text_input("Category")
-        nm_ts = st.number_input("Tensile Strength (MPa)", 0.0, 500.0, 50.0)
-        nm_bio = st.slider("Biocompatibility (1-10)", 1, 10, 7)
-        nm_tox = st.slider("Toxicity Safety (1-10)", 1, 10, 8)
-        nm_biodeg = st.number_input("Biodegradation Days", 1, 1000, 90)
-        nm_doi = st.text_input("Source DOI (optional)")
+# st.divider()
+# st.header("➕ Add New Material")
+# with st.expander("Submit a new material entry"):
+#     with st.form("new_material"):
+#         nm_name = st.text_input("Polymer Name")
+#         nm_cat = st.text_input("Category")
+#         nm_ts = st.number_input("Tensile Strength (MPa)", 0.0, 500.0, 50.0)
+#         nm_bio = st.slider("Biocompatibility (1-10)", 1, 10, 7)
+#         nm_tox = st.slider("Toxicity Safety (1-10)", 1, 10, 8)
+#         nm_biodeg = st.number_input("Biodegradation Days", 1, 1000, 90)
+#         nm_doi = st.text_input("Source DOI (optional)")
 
-        if st.form_submit_button("Add Material"):
-            if nm_name and nm_cat:
-                csv_path = Path(__file__).parent.parent / "data" / "polymers.csv"
-                new_row = {
-                    "polymer": nm_name, "category": nm_cat,
-                    "tensile_strength": nm_ts, "elastic_modulus": 1.0,
-                    "elongation_pct": 10.0, "flexibility": 5.0,
-                    "wvtr": 300.0, "oxygen_permeability": 100.0,
-                    "biocompatibility": nm_bio, "toxicity_score": nm_tox,
-                    "antimicrobial": 0, "biodegradation_days": nm_biodeg,
-                    "environmental_impact": 7, "solubility": "medium",
-                    "film_forming": 1, "sterilization_gamma": 0,
-                    "sterilization_eto": 1, "sterilization_steam": 0,
-                    "cost_band": "med", "availability_band": "med",
-                    "evidence_level": "low",
-                    "source_doi": nm_doi or "user_submitted",
-                    "is_augmented": 0, "suitability_label": 0,
-                }
-                ingest_new_material(csv_path, new_row)
-                new_df = load_dataset(csv_path)
-                st.session_state["dataset"] = new_df
-                from src.data import get_dataset_stats
-                st.session_state["dataset_stats"] = get_dataset_stats(new_df)
-                st.session_state["dataset_source"] = "csv"
-                st.success(f"✅ Added {nm_name} to local CSV (sync to MySQL via admin tools).")
-                st.rerun()
-            else:
-                st.error("Name and category are required.")
+#         if st.form_submit_button("Add Material"):
+#             if nm_name and nm_cat:
+#                 csv_path = Path(__file__).parent.parent / "data" / "polymers.csv"
+#                 new_row = {
+#                     "polymer": nm_name, "category": nm_cat,
+#                     "tensile_strength": nm_ts, "elastic_modulus": 1.0,
+#                     "elongation_pct": 10.0, "flexibility": 5.0,
+#                     "wvtr": 300.0, "oxygen_permeability": 100.0,
+#                     "biocompatibility": nm_bio, "toxicity_score": nm_tox,
+#                     "antimicrobial": 0, "biodegradation_days": nm_biodeg,
+#                     "environmental_impact": 7, "solubility": "medium",
+#                     "film_forming": 1, "sterilization_gamma": 0,
+#                     "sterilization_eto": 1, "sterilization_steam": 0,
+#                     "cost_band": "med", "availability_band": "med",
+#                     "evidence_level": "low",
+#                     "source_doi": nm_doi or "user_submitted",
+#                     "is_augmented": 0, "suitability_label": 0,
+#                 }
+#                 ingest_new_material(csv_path, new_row)
+#                 new_df = load_dataset(csv_path)
+#                 st.session_state["dataset"] = new_df
+#                 from src.data import get_dataset_stats
+#                 st.session_state["dataset_stats"] = get_dataset_stats(new_df)
+#                 st.session_state["dataset_source"] = "csv"
+#                 st.success(f"✅ Added {nm_name} to local CSV (sync to MySQL via admin tools).")
+#                 st.rerun()
+#             else:
+#                 st.error("Name and category are required.")
 
 # ─── Refresh from MySQL ───────────────────────────────────────────
 st.divider()

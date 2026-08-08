@@ -5,7 +5,12 @@ import plotly.graph_objects as go
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent.parent))
+ROOT_DIR = Path(__file__).resolve().parent.parent
+BACKEND_DIR = ROOT_DIR / "apppp" / "backend"
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+if str(BACKEND_DIR) not in sys.path:
+    sys.path.insert(0, str(BACKEND_DIR))
 
 from shared.ml.config import FEATURE_COLUMNS
 from scripts.train_pipeline import load_data_from_mysql_or_fallback

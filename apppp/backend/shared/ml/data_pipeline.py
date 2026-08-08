@@ -81,12 +81,13 @@ def prepare_training_dataset(df_raw: pd.DataFrame) -> Tuple[pd.DataFrame, Standa
             pd.to_numeric(df_clean["suitability_label"], errors="coerce").fillna(0.0) >= 0.5
         ).astype(int)
     else:
-        # Synthesize binary suitability_label if not present
+        # Synthesize binary suitability_label with balanced distribution
         biocompat = df_clean.get("biocompatibility", 5.0)
         toxicity = df_clean.get("toxicity_score", 5.0)
         tensile = df_clean.get("tensile_strength", 20.0)
+        wvtr = df_clean.get("wvtr", 1000.0)
         df_clean["suitability_label"] = (
-            (biocompat >= 4.0) & (toxicity >= 3.0) & (tensile >= 5.0)
+            (biocompat >= 8.0) & (toxicity >= 7.5) & (tensile >= 18.0) & (wvtr <= 1200.0)
         ).astype(int)
 
     _, scaler = normalize_features(df_clean, fit=True)

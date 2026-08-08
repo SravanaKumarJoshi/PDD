@@ -40,5 +40,5 @@ FEATURE_COLUMNS: List[str] = TRAINING_CONFIG.get("feature_columns", [
 
 MATERIAL_TABLE_NAME: str = os.getenv(
     "MATERIAL_TABLE_NAME",
-    APP_CONFIG.get("database", {}).get("table_name", "filtered_polymers")
+    APP_CONFIG.get("database", {}).get("table_name", "materials")
 )

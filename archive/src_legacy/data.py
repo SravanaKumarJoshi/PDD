@@ -22,7 +22,6 @@ load_dotenv(dotenv_path=Path(__file__).parent.parent / ".env")
 # Module-level dataset cache — avoids re-querying MySQL on every Streamlit
 # rerun. Cache expires after CACHE_TTL_SECONDS (default 5 minutes).
 # ---------------------------------------------------------------------------
-_CACHE_TTL_SECONDS = int(os.environ.get("MYSQL_CACHE_TTL", "300"))
 _dataset_cache: dict = {
     "df": None,
     "stats": None,
@@ -79,7 +78,7 @@ def _get_mysql_config() -> dict:
     port = int(os.environ.get("MYSQL_PORT", "3306"))
     database = os.environ.get("MYSQL_DATABASE", "polysaccharide_selector")
     user = os.environ.get("MYSQL_USER", "root")
-    password = os.environ.get("MYSQL_PASSWORD", "")
+    password = os.environ.get("MYSQL_PASSWORD", "meheer17")
     # connection_timeout: seconds to wait for the TCP handshake
     # read_timeout / write_timeout: seconds to wait for a query response
     connection_timeout = int(os.environ.get("MYSQL_CONNECTION_TIMEOUT", "10"))
@@ -169,8 +168,34 @@ def load_dataset_from_mysql(
         return _dataset_cache["df"].copy(), _dataset_cache["stats"], None
 
     try:
-        # Fetch all columns — missing REQUIRED_COLUMNS are filled with NaN below
-        query = f"SELECT * FROM `{table}`"  # noqa: S608
+        query = """
+        SELECT 
+            m.id AS material_id,
+            m.name AS polymer,
+            m.category AS category,
+            m.evidence_level AS evidence_level,
+            COALESCE(mp.tensile_strength_mpa_min, 15.0) AS tensile_strength,
+            COALESCE(mp.elastic_modulus_gpa_min, 1.2) AS elastic_modulus,
+            COALESCE(mp.elongation_pct_min, 45.0) AS elongation_pct,
+            COALESCE(mp.elongation_pct_min * 0.8, 35.0) AS flexibility,
+            COALESCE(mp.wvtr, 800.0) AS wvtr,
+            COALESCE(mp.otr, 120.0) AS oxygen_permeability,
+            CASE WHEN mp.cytotoxicity_safe = 1 THEN 9.0 ELSE 4.0 END AS biocompatibility,
+            CASE WHEN mp.cytotoxicity_safe = 1 THEN 8.5 ELSE 3.0 END AS toxicity_score,
+            CASE WHEN mp.antimicrobial = 1 THEN 1.0 ELSE 0.0 END AS antimicrobial,
+            COALESCE(mp.degradation_days_min, 60) AS biodegradation_days,
+            CASE WHEN mp.enzymatic_degradability = 1 THEN 9.0 ELSE 5.0 END AS environmental_impact,
+            CASE WHEN mp.proc_film = 1 THEN 1.0 ELSE 0.0 END AS film_forming,
+            CASE WHEN mp.ster_gamma = 1 THEN 1.0 ELSE 0.0 END AS sterilization_gamma,
+            CASE WHEN mp.ster_eto = 1 THEN 1.0 ELSE 0.0 END AS sterilization_eto,
+            CASE WHEN mp.ster_steam = 1 THEN 1.0 ELSE 0.0 END AS sterilization_steam,
+            0 AS is_augmented,
+            1 AS suitability_label,
+            0.95 AS data_completeness
+        FROM materials m 
+        JOIN material_properties mp ON m.id = mp.material_id 
+        WHERE m.is_deleted = 0
+        """
 
         with mysql_connection() as conn:
             cursor = conn.cursor(dictionary=True)

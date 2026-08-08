@@ -32,9 +32,12 @@ FEATURE_LABELS = {
 
 def compute_shap_values(model, X: pd.DataFrame) -> shap.Explanation:
     """Compute SHAP values for a model and feature matrix."""
-    explainer = shap.TreeExplainer(model)
-    shap_values = explainer(X)
-    return shap_values
+    try:
+        explainer = shap.TreeExplainer(model)
+        return explainer(X)
+    except Exception:
+        explainer = shap.Explainer(model.predict if hasattr(model, 'predict') else model, X)
+        return explainer(X)
 
 
 def generate_explanation_text(

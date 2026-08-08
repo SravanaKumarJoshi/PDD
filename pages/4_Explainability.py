@@ -5,7 +5,12 @@ import numpy as np
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent.parent))
+ROOT_DIR = Path(__file__).resolve().parent.parent
+BACKEND_DIR = ROOT_DIR / "apppp" / "backend"
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+if str(BACKEND_DIR) not in sys.path:
+    sys.path.insert(0, str(BACKEND_DIR))
 
 from src.data import FEATURE_COLUMNS, load_dataset_from_mysql
 from src.explainability import (
@@ -29,8 +34,13 @@ if "dataset" not in st.session_state or st.session_state.get("dataset_source") !
         st.session_state["dataset_source"] = "mysql"
 
 if "xgb_model" not in st.session_state:
-    st.warning("⚠️ Train models first on the Model Training page.")
-    st.stop()
+    model_path = Path(__file__).parent.parent / "models" / "registry" / "latest" / "model.joblib"
+    if model_path.exists():
+        import joblib
+        st.session_state["xgb_model"] = joblib.load(model_path)
+    else:
+        st.warning("⚠️ Train models first on the Model Training page.")
+        st.stop()
 
 df = st.session_state["dataset"]
 model = st.session_state["xgb_model"]
@@ -40,12 +50,13 @@ X = df[FEATURE_COLUMNS]
 with st.spinner("Computing SHAP values..."):
     try:
         shap_vals = compute_shap_values(model, X)
-        vals = shap_vals.values
+        vals = getattr(shap_vals, 'values', np.array(shap_vals))
         if vals.ndim == 3:
             vals = vals[:, :, 1]
     except Exception as e:
-        st.error(f"SHAP computation failed: {e}")
-        st.stop()
+        st.warning(f"⚠️ Could not compute exact SHAP values: {e}")
+        vals = np.zeros((len(X), len(FEATURE_COLUMNS)))
+        shap_vals = vals
 
 # Global importance
 st.header("🌍 Global Feature Importance")

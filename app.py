@@ -7,7 +7,12 @@ import sys
 import pandas as pd
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent))
+ROOT_DIR = Path(__file__).resolve().parent
+BACKEND_DIR = ROOT_DIR / "apppp" / "backend"
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+if str(BACKEND_DIR) not in sys.path:
+    sys.path.insert(0, str(BACKEND_DIR))
 
 from scripts.train_pipeline import load_data_from_mysql_or_fallback
 
