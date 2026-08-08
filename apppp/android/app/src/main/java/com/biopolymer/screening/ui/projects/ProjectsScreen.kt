@@ -51,6 +51,16 @@ class ProjectsViewModel @Inject constructor(
     private val _favoritesOnly = MutableStateFlow(false)
     val favoritesOnly = _favoritesOnly.asStateFlow()
 
+    init {
+        viewModelScope.launch {
+            try {
+                savedScreeningRepository.syncWithBackend()
+            } catch (e: Exception) {
+                Log.w(TAG, "ProjectsViewModel init sync failed: ${e.message}")
+            }
+        }
+    }
+
     @OptIn(ExperimentalCoroutinesApi::class)
     val savedScreenings: StateFlow<List<SavedScreening>> = combine(
         _searchQuery,
@@ -61,6 +71,16 @@ class ProjectsViewModel @Inject constructor(
     }.flatMapLatest { (query, sort, favOnly) ->
         savedScreeningRepository.getSavedScreenings(query, sort, favOnly)
     }.stateIn(viewModelScope, SharingStarted.Eagerly, emptyList())
+
+    fun refreshProjects() {
+        viewModelScope.launch {
+            try {
+                savedScreeningRepository.syncWithBackend()
+            } catch (e: Exception) {
+                Log.w(TAG, "ProjectsViewModel refresh failed: ${e.message}")
+            }
+        }
+    }
 
     fun updateSearchQuery(query: String) {
         _searchQuery.value = query
@@ -150,6 +170,9 @@ fun ProjectsScreen(
             TopAppBar(
                 title = { Text("Saved Screening Results") },
                 actions = {
+                    IconButton(onClick = { viewModel.refreshProjects() }) {
+                        Icon(Icons.Filled.Refresh, contentDescription = "Refresh Projects")
+                    }
                     IconButton(onClick = { viewModel.toggleFavoritesOnly() }) {
                         Icon(
                             imageVector = if (favoritesOnly) Icons.Filled.Star else Icons.Outlined.StarBorder,

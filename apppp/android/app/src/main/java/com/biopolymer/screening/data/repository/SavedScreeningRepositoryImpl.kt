@@ -8,6 +8,7 @@ import com.biopolymer.screening.data.mapper.SavedScreeningMapper
 import com.biopolymer.screening.domain.model.Requirement
 import com.biopolymer.screening.domain.model.SavedScreening
 import com.biopolymer.screening.domain.scoring.ScoringEngine
+import com.biopolymer.screening.data.remote.ApiService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
@@ -23,6 +24,7 @@ class SavedScreeningRepositoryImpl @Inject constructor(
     private val database: AppDatabase,
     private val dao: SavedScreeningDao,
     private val mapper: SavedScreeningMapper,
+    private val apiService: ApiService,
 ) : SavedScreeningRepository {
 
     override fun getSavedScreenings(
@@ -131,10 +133,26 @@ class SavedScreeningRepositoryImpl @Inject constructor(
                 val entity = mapper.toEntity(domainObject)
                 dao.insertScreening(entity)
 
-                // Verify insertion
+                // Verify insertion & fire backend REST sync
                 val verified = dao.getScreeningById(targetId)
                 if (verified != null) {
                     Log.d(TAG, "saveScreening: Insert Successful - ID=$targetId, Title='$trimmedTitle'")
+                    try {
+                        val projectMap = mapOf(
+                            "id" to targetId,
+                            "title" to trimmedTitle,
+                            "requirements" to (verified.requirementsJson.ifBlank { "{}" }),
+                            "results" to (verified.rawBackendResponseJson.ifBlank { "{}" })
+                        )
+                        val resp = apiService.createProject(projectMap)
+                        if (resp.isSuccessful) {
+                            Log.d(TAG, "saveScreening: Backend sync successful for ID=$targetId")
+                        } else {
+                            Log.w(TAG, "saveScreening: Backend HTTP ${resp.code()} for ID=$targetId")
+                        }
+                    } catch (netErr: Exception) {
+                        Log.w(TAG, "saveScreening: Backend sync skipped/offline: ${netErr.message}")
+                    }
                     SaveScreeningResult.Success(mapper.toDomain(verified))
                 } else {
                     Log.e(TAG, "saveScreening: Insert Failed - Database query post-insert returned null")
@@ -172,6 +190,9 @@ class SavedScreeningRepositoryImpl @Inject constructor(
                 database.withTransaction {
                     dao.softDeleteScreening(id, System.currentTimeMillis())
                 }
+                try {
+                    apiService.deleteProject(id)
+                } catch (_: Exception) {}
                 Log.d(TAG, "deleteScreening: Delete Successful for id=$id")
                 Result.success(Unit)
             } catch (e: Exception) {
@@ -215,4 +236,53 @@ class SavedScreeningRepositoryImpl @Inject constructor(
                 Result.failure(e)
             }
         }
+
+    override suspend fun syncWithBackend(): Result<Unit> = withContext(Dispatchers.IO) {
+        try {
+            Log.d(TAG, "syncWithBackend: Fetching projects from backend REST API")
+            val resp = apiService.getProjects()
+            if (resp.isSuccessful) {
+                val remoteProjects = resp.body() ?: emptyList()
+                Log.d(TAG, "syncWithBackend: Retrieved ${remoteProjects.size} remote projects")
+                for (p in remoteProjects) {
+                    val pId = p["id"]?.toString() ?: continue
+                    val pTitle = p["title"]?.toString() ?: "Saved Screening"
+                    val reqJson = p["requirements_json"]?.toString() ?: p["requirements"]?.toString() ?: "{}"
+                    val resJson = p["results_json"]?.toString() ?: p["results"]?.toString() ?: "{}"
+                    val isDeleted = p["is_deleted"] as? Boolean ?: false
+
+                    if (isDeleted) {
+                        dao.softDeleteScreening(pId, System.currentTimeMillis())
+                        continue
+                    }
+
+                    val existing = dao.getScreeningById(pId)
+                    if (existing == null) {
+                        val domain = SavedScreening(
+                            id = pId,
+                            title = pTitle,
+                            contentHash = pId,
+                            topMaterialName = pTitle,
+                            topMatchScore = 0.85f,
+                            safetyScore = 0.90f,
+                            summaryText = "Synced from server",
+                            requirement = com.biopolymer.screening.domain.model.Requirement(),
+                            scoringResult = ScoringEngine.ScoringResult(emptyList(), 0, 0),
+                            rawBackendResponseJson = resJson,
+                            createdAt = System.currentTimeMillis(),
+                            updatedAt = System.currentTimeMillis()
+                        )
+                        val entity = mapper.toEntity(domain).copy(requirementsJson = reqJson, rawBackendResponseJson = resJson)
+                        dao.insertScreening(entity)
+                    }
+                }
+                Result.success(Unit)
+            } else {
+                Result.failure(Exception("Backend HTTP ${resp.code()}"))
+            }
+        } catch (e: Exception) {
+            Log.w(TAG, "syncWithBackend error: ${e.message}")
+            Result.failure(e)
+        }
+    }
 }

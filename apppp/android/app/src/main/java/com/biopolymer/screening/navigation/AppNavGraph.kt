@@ -43,6 +43,20 @@ fun AppNavGraph() {
     // Track whether onboarding has been shown
     var showOnboarding by remember { mutableStateOf(true) }
 
+    // Single shared RequirementsViewModel instance across all screens
+    val sharedRequirementsViewModel: RequirementsViewModel = hiltViewModel()
+
+    // Listen to screening navigation events globally
+    LaunchedEffect(Unit) {
+        sharedRequirementsViewModel.events.collect { event ->
+            when (event) {
+                is RequirementsEvent.NavigateToResults -> {
+                    navController.navigate("results") { launchSingleTop = true }
+                }
+            }
+        }
+    }
+
     val showBottomBar = currentRoute in bottomNavScreens.map { it.route } || 
                       currentRoute == "home" || currentRoute == "results"
 
@@ -118,36 +132,32 @@ fun AppNavGraph() {
                 )
             }
 
-            navigation(startDestination = "home", route = Screen.Home.route) {
-                composable("home") { backStackEntry ->
-                    val parentEntry = remember(backStackEntry) {
-                        navController.getBackStackEntry(Screen.Home.route)
-                    }
-                    val viewModel: RequirementsViewModel = hiltViewModel(parentEntry)
-                    RequirementsScreen(
-                        onViewResults = { navController.navigate("results") { launchSingleTop = true } },
-                        viewModel = viewModel
-                    )
-                }
+            composable(Screen.Home.route) {
+                RequirementsScreen(
+                    onViewResults = { navController.navigate("results") { launchSingleTop = true } },
+                    viewModel = sharedRequirementsViewModel
+                )
+            }
 
-                composable("results") { backStackEntry ->
-                    val parentEntry = remember(backStackEntry) {
-                        navController.getBackStackEntry(Screen.Home.route)
-                    }
-                    val viewModel: RequirementsViewModel = hiltViewModel(parentEntry)
-                    ResultsScreen(
-                        onNavigateBack = { navController.popBackStack() },
-                        onMaterialDetail = { id -> navController.navigate("material/$id") },
-                        onNavigateHome = {
-                            viewModel.relaxConstraints()
-                            navController.navigate("home") {
-                                popUpTo(navController.graph.findStartDestination().id)
-                                launchSingleTop = true
-                            }
-                        },
-                        viewModel = viewModel
-                    )
-                }
+            composable("home") {
+                RequirementsScreen(
+                    onViewResults = { navController.navigate("results") { launchSingleTop = true } },
+                    viewModel = sharedRequirementsViewModel
+                )
+            }
+
+            composable("results") {
+                ResultsScreen(
+                    onNavigateBack = { navController.popBackStack() },
+                    onMaterialDetail = { id -> navController.navigate("material/$id") },
+                    onNavigateHome = {
+                        sharedRequirementsViewModel.resetWizard()
+                        navController.navigate(Screen.Home.route) {
+                            launchSingleTop = true
+                        }
+                    },
+                    viewModel = sharedRequirementsViewModel
+                )
             }
 
             composable(Screen.Catalog.route) {
@@ -165,23 +175,9 @@ fun AppNavGraph() {
             }
 
             composable(Screen.Projects.route) {
-                val homeEntry = remember(it) { navController.getBackStackEntry(Screen.Home.route) }
-                val requirementsViewModel: RequirementsViewModel = hiltViewModel(homeEntry)
-                
-                // Listen to navigation events
-                LaunchedEffect(Unit) {
-                    requirementsViewModel.events.collect { event ->
-                        when (event) {
-                            is RequirementsEvent.NavigateToResults -> {
-                                navController.navigate("results") { launchSingleTop = true }
-                            }
-                        }
-                    }
-                }
-                
                 ProjectsScreen(
                     onScreeningClick = { screening ->
-                        requirementsViewModel.loadSavedScreening(screening)
+                        sharedRequirementsViewModel.loadSavedScreening(screening)
                         navController.navigate("results") { launchSingleTop = true }
                     }
                 )

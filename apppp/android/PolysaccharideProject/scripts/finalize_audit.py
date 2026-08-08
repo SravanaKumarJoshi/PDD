@@ -55,7 +55,8 @@ def main():
 
     # 4. Generate datasets_used.md
     inventory_rows = ""
-         license = entry.get("license") or "UNKNOWN"
+    for entry in catalog:
+        license = entry.get("license") or "UNKNOWN"
         url = entry.get("source_url") or "UNKNOWN"
         date = entry.get("retrieval_date") or "UNKNOWN"
         inventory_rows += f"| {entry.get('id')} | {entry.get('name')} | {entry.get('source_name')} | {url} | {license} | {date} | {entry.get('local_path')} | {entry.get('file_format')} | {entry.get('rows')} | {entry.get('columns')} |\n"

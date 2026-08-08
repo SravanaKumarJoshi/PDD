@@ -106,6 +106,20 @@ class RequirementsViewModel @Inject constructor(
         }
     }
 
+    fun resetWizard() {
+        currentStep = 0
+        _results.value = null
+        mechanical = MechanicalReq()
+        barrier = BarrierReq()
+        biological = BiologicalReq()
+        degradation = DegradationReq()
+        processing = ProcessingReq()
+        sterilization = SterilizationReq()
+        sustainability = SustainabilityReq()
+        cost = CostReq()
+        activePreset = null
+    }
+
     fun clearError() {
         _error.value = null
     }
@@ -196,7 +210,12 @@ class RequirementsViewModel @Inject constructor(
         sterilization = req.sterilization
         sustainability = req.sustainability
         cost = req.cost
-        _results.value = screening.scoringResult
+        
+        if (screening.scoringResult.recommendations.isNotEmpty()) {
+            _results.value = screening.scoringResult
+        } else {
+            runScreening()
+        }
     }
 
     fun loadProject(

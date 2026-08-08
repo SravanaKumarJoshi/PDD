@@ -112,6 +112,7 @@ fun ResultsScreen(
     var projectName by remember { mutableStateOf("Polysaccharide Screening") }
 
     var sortMode by remember { mutableStateOf("Best match") }
+    var displayLimit by remember { mutableStateOf(20) }
     val sortedRecommendations = remember(scoringResult, sortMode) {
         when (sortMode) {
             "Highest confidence" -> scoringResult?.recommendations?.sortedByDescending { it.confidence } ?: emptyList()
@@ -397,8 +398,10 @@ fun ResultsScreen(
                     }
                 }
 
+                val visibleRecommendations = sortedRecommendations.take(displayLimit)
+
                 items(
-                    items = sortedRecommendations,
+                    items = visibleRecommendations,
                     key = { it.materialId }
                 ) { rec ->
                     RecommendationCard(
@@ -406,6 +409,45 @@ fun ResultsScreen(
                         rank = scoringResult.recommendations.indexOf(rec) + 1,
                         onClick = { onMaterialDetail(rec.materialId) }
                     )
+                }
+
+                if (displayLimit < sortedRecommendations.size) {
+                    item {
+                        androidx.compose.runtime.LaunchedEffect(displayLimit) {
+                            kotlinx.coroutines.delay(200)
+                            displayLimit = (displayLimit + 30).coerceAtMost(sortedRecommendations.size)
+                        }
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(vertical = 16.dp),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.spacedBy(8.dp)
+                            ) {
+                                androidx.compose.material3.CircularProgressIndicator(
+                                    modifier = Modifier.size(20.dp),
+                                    strokeWidth = 2.dp
+                                )
+                                Text(
+                                    "Showing ${visibleRecommendations.size} of ${sortedRecommendations.size} biopolymers...",
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                                )
+                            }
+                            Spacer(modifier = Modifier.height(12.dp))
+                            androidx.compose.material3.OutlinedButton(
+                                onClick = {
+                                    displayLimit = (displayLimit + 50).coerceAtMost(sortedRecommendations.size)
+                                },
+                                modifier = Modifier.fillMaxWidth(0.8f)
+                            ) {
+                                Text("⚡ Load 50 More Biopolymers")
+                            }
+                        }
+                    }
                 }
             }
         }

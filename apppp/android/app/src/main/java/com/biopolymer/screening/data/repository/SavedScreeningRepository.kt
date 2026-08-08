@@ -43,4 +43,6 @@ interface SavedScreeningRepository {
     suspend fun toggleFavorite(id: String): Result<Boolean>
 
     suspend fun renameScreening(id: String, newTitle: String): Result<Unit>
+
+    suspend fun syncWithBackend(): Result<Unit>
 }

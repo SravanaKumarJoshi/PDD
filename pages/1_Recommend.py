@@ -25,15 +25,13 @@ st.info(
 if "dataset" not in st.session_state:
     with st.spinner("Loading materials from MySQL..."):
         df = load_data_from_mysql_or_fallback()
-        st.session_state["dataset"] = df.copy(deep=True)
-        st.session_state["dataset_source"] = "mysql"
+        if df.empty:
             st.info(
                 "💡 Ensure MySQL is running and MYSQL_HOST / MYSQL_DATABASE / "
                 "MYSQL_USER / MYSQL_PASSWORD are set in your .env file."
             )
             st.stop()
         st.session_state["dataset"] = df.copy(deep=True)
-        st.session_state["dataset_stats"] = stats
         st.session_state["dataset_source"] = "mysql"
 
 if "xgb_model" not in st.session_state:

@@ -72,9 +72,6 @@ fun SettingsScreen(
                 context.startActivity(Intent(context, com.biopolymer.screening.LoginActivity::class.java))
             })
 
-            // ── Server Configuration Section ───────────────────────────
-            ServerConfigurationSection(viewModel = viewModel)
-
             if (currentUser != null) {
                 SettingsSection("Account") {
                     SettingsItem(
@@ -94,31 +91,31 @@ fun SettingsScreen(
                 }
             }
 
-            // ── Data section ───────────────────────────────────────────
-            SettingsSection("Data & Export") {
-                SettingsItem(
-                    icon     = Icons.Filled.Download,
-                    title    = "Export My Data",
-                    subtitle = "Share all projects as text",
-                    onClick  = {
-                        viewModel.exportData { jsonString ->
-                            context.startActivity(Intent.createChooser(Intent().apply {
-                                action = Intent.ACTION_SEND
-                                putExtra(Intent.EXTRA_TEXT, jsonString)
-                                type = "text/plain"
-                            }, "Export Data"))
-                        }
-                    },
-                )
+            // // ── Data section ───────────────────────────────────────────
+            // SettingsSection("Data & Export") {
+            //     SettingsItem(
+            //         icon     = Icons.Filled.Download,
+            //         title    = "Export My Data",
+            //         subtitle = "Share all projects as text",
+            //         onClick  = {
+            //             viewModel.exportData { jsonString ->
+            //                 context.startActivity(Intent.createChooser(Intent().apply {
+            //                     action = Intent.ACTION_SEND
+            //                     putExtra(Intent.EXTRA_TEXT, jsonString)
+            //                     type = "text/plain"
+            //                 }, "Export Data"))
+            //             }
+            //         },
+            //     )
 
-                SettingsItem(
-                    icon       = Icons.Filled.DeleteForever,
-                    title      = "Delete Saved Projects",
-                    subtitle   = "Remove all saved projects",
-                    onClick    = { showDeleteDialog = true },
-                    titleColor = MaterialTheme.colorScheme.error,
-                )
-            }
+            //     SettingsItem(
+            //         icon       = Icons.Filled.DeleteForever,
+            //         title      = "Delete Saved Projects",
+            //         subtitle   = "Remove all saved projects",
+            //         onClick    = { showDeleteDialog = true },
+            //         titleColor = MaterialTheme.colorScheme.error,
+            //     )
+            // }
 
             // ── Privacy section ───────────────────────────────────────────────
             SettingsSection("Privacy & Analytics") {
@@ -294,193 +291,4 @@ fun SettingsToggle(
             )
         },
     )
-}
-
-@Composable
-fun ServerConfigurationSection(viewModel: SettingsViewModel) {
-    val activeBaseUrl by viewModel.currentBaseUrl.collectAsState()
-    val userPrefs by viewModel.userPreferences.collectAsState()
-    val testResult by viewModel.connectionTestResult.collectAsState()
-    val discoveryResult by viewModel.discoveryResult.collectAsState()
-
-    var inputUrl by remember(activeBaseUrl) { mutableStateOf(userPrefs.customBaseUrl ?: activeBaseUrl) }
-
-    LaunchedEffect(discoveryResult.discoveredUrl) {
-        discoveryResult.discoveredUrl?.let {
-            inputUrl = it
-        }
-    }
-
-    SettingsSection("Server Configuration") {
-        Card(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 16.dp, vertical = 8.dp),
-            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
-        ) {
-            Column(modifier = Modifier.padding(16.dp)) {
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    Text(
-                        text = "Active Server URL",
-                        style = MaterialTheme.typography.titleSmall,
-                        fontWeight = FontWeight.Bold,
-                    )
-                    Surface(
-                        color = if (userPrefs.customBaseUrl != null) MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.secondaryContainer,
-                        shape = CircleShape,
-                    ) {
-                        Text(
-                            text = if (userPrefs.customBaseUrl != null) "Custom Override" else "Auto-Detected",
-                            style = MaterialTheme.typography.labelSmall,
-                            modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
-                            color = if (userPrefs.customBaseUrl != null) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onSecondaryContainer,
-                        )
-                    }
-                }
-
-                Text(
-                    text = activeBaseUrl,
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    modifier = Modifier.padding(top = 4.dp, bottom = 12.dp)
-                )
-
-                OutlinedTextField(
-                    value = inputUrl,
-                    onValueChange = { inputUrl = it },
-                    label = { Text("FastAPI Server URL") },
-                    placeholder = { Text("http://192.168.1.50:8000/") },
-                    singleLine = true,
-                    modifier = Modifier.fillMaxWidth(),
-                    trailingIcon = {
-                        if (inputUrl.isNotEmpty()) {
-                            IconButton(onClick = { inputUrl = "" }) {
-                                Icon(Icons.Filled.Clear, contentDescription = "Clear")
-                            }
-                        }
-                    }
-                )
-
-                Spacer(modifier = Modifier.height(12.dp))
-
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.spacedBy(8.dp)
-                ) {
-                    Button(
-                        onClick = { viewModel.testConnection(inputUrl) },
-                        enabled = !testResult.isTesting,
-                        modifier = Modifier.weight(1f)
-                    ) {
-                        if (testResult.isTesting) {
-                            CircularProgressIndicator(modifier = Modifier.size(16.dp), strokeWidth = 2.dp)
-                        } else {
-                            Icon(Icons.Filled.NetworkCheck, contentDescription = null, modifier = Modifier.size(18.dp))
-                            Spacer(Modifier.width(4.dp))
-                            Text("Test")
-                        }
-                    }
-
-                    OutlinedButton(
-                        onClick = { viewModel.saveServerUrl(inputUrl) },
-                        enabled = inputUrl.isNotBlank() && !testResult.isTesting,
-                        modifier = Modifier.weight(1f)
-                    ) {
-                        Icon(Icons.Filled.Save, contentDescription = null, modifier = Modifier.size(18.dp))
-                        Spacer(Modifier.width(4.dp))
-                        Text("Save")
-                    }
-                }
-
-                Spacer(modifier = Modifier.height(8.dp))
-
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.spacedBy(8.dp)
-                ) {
-                    OutlinedButton(
-                        onClick = { viewModel.discoverServer() },
-                        enabled = !discoveryResult.isScanning,
-                        modifier = Modifier.weight(1f)
-                    ) {
-                        if (discoveryResult.isScanning) {
-                            CircularProgressIndicator(modifier = Modifier.size(16.dp), strokeWidth = 2.dp)
-                        } else {
-                            Icon(Icons.Filled.Search, contentDescription = null, modifier = Modifier.size(18.dp))
-                            Spacer(Modifier.width(4.dp))
-                            Text("Auto Discover")
-                        }
-                    }
-
-                    if (userPrefs.customBaseUrl != null) {
-                        TextButton(
-                            onClick = {
-                                viewModel.resetServerUrl()
-                            },
-                            modifier = Modifier.weight(0.8f)
-                        ) {
-                            Text("Reset")
-                        }
-                    }
-                }
-
-                // Subnet discovery result message
-                discoveryResult.statusMessage?.let { status ->
-                    Text(
-                        text = status,
-                        style = MaterialTheme.typography.bodySmall,
-                        color = if (discoveryResult.discoveredUrl != null) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant,
-                        modifier = Modifier.padding(top = 8.dp)
-                    )
-                }
-
-                // Connection Test Feedback
-                testResult.message?.let { msg ->
-                    Spacer(modifier = Modifier.height(12.dp))
-                    val isSuccess = testResult.isSuccess == true
-                    Card(
-                        colors = CardDefaults.cardColors(
-                            containerColor = if (isSuccess) MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.errorContainer
-                        ),
-                        modifier = Modifier.fillMaxWidth()
-                    ) {
-                        Column(modifier = Modifier.padding(12.dp)) {
-                            Row(verticalAlignment = Alignment.CenterVertically) {
-                                Icon(
-                                    imageVector = if (isSuccess) Icons.Filled.CheckCircle else Icons.Filled.Warning,
-                                    contentDescription = null,
-                                    tint = if (isSuccess) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onErrorContainer
-                                )
-                                Spacer(Modifier.width(8.dp))
-                                Text(
-                                    text = if (isSuccess) "Connection Successful" else "Connection Failed",
-                                    style = MaterialTheme.typography.titleSmall,
-                                    fontWeight = FontWeight.Bold,
-                                    color = if (isSuccess) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onErrorContainer
-                                )
-                                testResult.latencyMs?.let { latency ->
-                                    Spacer(Modifier.weight(1f))
-                                    Text(
-                                        text = "${latency}ms",
-                                        style = MaterialTheme.typography.labelSmall,
-                                        color = if (isSuccess) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onErrorContainer
-                                    )
-                                }
-                            }
-                            Spacer(Modifier.height(4.dp))
-                            Text(
-                                text = msg,
-                                style = MaterialTheme.typography.bodySmall,
-                                color = if (isSuccess) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onErrorContainer
-                            )
-                        }
-                    }
-                }
-            }
-        }
-    }
 }
