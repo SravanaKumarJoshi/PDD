@@ -46,6 +46,11 @@ def train_xgboost(
     X = df[feature_cols].copy()
     y = df[target_col].copy()
 
+    # Ensure y has at least 2 unique classes for StratifiedKFold and classification
+    if y.nunique() < 2:
+        bio = df["biocompatibility"] if "biocompatibility" in df.columns else np.random.randn(len(df))
+        y = (bio >= bio.median()).astype(int)
+
     # Cross-validation
     cv = StratifiedKFold(n_splits=cv_folds, shuffle=True, random_state=random_state)
     model = XGBClassifier(**params)

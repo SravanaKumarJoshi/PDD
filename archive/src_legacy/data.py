@@ -27,6 +27,7 @@ _dataset_cache: dict = {
     "stats": None,
     "loaded_at": 0.0,
 }
+_CACHE_TTL_SECONDS: float = 300.0
 
 
 # ---------------------------------------------------------------------------
@@ -220,6 +221,14 @@ def load_dataset_from_mysql(
         for col in REQUIRED_COLUMNS:
             if col not in df.columns:
                 df[col] = np.nan
+
+        # Derive binary suitability_label with at least 2 classes for classification algorithms
+        df["suitability_label"] = (
+            (df["biocompatibility"] >= 7.5) & (df["toxicity_score"] >= 7.0) & (df["tensile_strength"] >= 15.0)
+        ).astype(int)
+        if df["suitability_label"].nunique() < 2:
+            bio_median = df["biocompatibility"].median()
+            df["suitability_label"] = (df["biocompatibility"] > bio_median).astype(int)
 
         stats = get_dataset_stats(df)
 

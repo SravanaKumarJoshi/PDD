@@ -58,6 +58,8 @@ class Settings(BaseSettings):
     # Auth
     # ------------------------------------------------------------------
     FIREBASE_PROJECT_ID: str = ""
+    JWT_SECRET_KEY: str = "biopolymer_jwt_secret_key_2026_super_secure"
+    JWT_ALGORITHM: str = "HS256"
 
     # ------------------------------------------------------------------
     # Admin — MUST be overridden via environment variable / .env

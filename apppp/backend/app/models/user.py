@@ -20,6 +20,7 @@ class User(Base):
     )
     email: Mapped[str | None] = mapped_column(String(255), nullable=True)
     display_name: Mapped[str | None] = mapped_column(String(255), nullable=True)
+    password_hash: Mapped[str | None] = mapped_column(String(255), nullable=True)
     role: Mapped[str] = mapped_column(String(50), default="user", nullable=False)
 
     created_at: Mapped[datetime] = mapped_column(

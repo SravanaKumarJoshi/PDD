@@ -11,17 +11,29 @@ from app.api.v1.materials_stream import router as materials_stream_router
 from app.api.v1.statistics import router as statistics_router
 from app.api.v1.model_info import router as model_info_router
 from app.api.v1.projects import router as projects_router
+from app.api.v1.auth import router as auth_router
+from app.api.v1.training_api import router as training_router
+from app.api.v1.explainability_api import router as explainability_router
+from app.api.v1.optimization_api import router as optimization_router
 from app.api.v1.admin import router as admin_router
 
 api_router = APIRouter(prefix="/api/v1")
 
+# Auth endpoints
+api_router.include_router(auth_router)
+
 # Operational & System endpoints
 api_router.include_router(ops_router)
 
-# AI Screening endpoints
+# AI Screening & Explainability endpoints
 api_router.include_router(screening_router)
 api_router.include_router(screening_explain_router)
 api_router.include_router(screening_history_router)
+api_router.include_router(explainability_router)
+
+# Model Training & Optimization endpoints
+api_router.include_router(training_router)
+api_router.include_router(optimization_router)
 
 # Materials Catalog & Streaming Sync endpoints
 api_router.include_router(materials_stream_router)

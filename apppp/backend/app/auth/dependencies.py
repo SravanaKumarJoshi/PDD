@@ -46,19 +46,25 @@ async def get_current_user_id(
         # Reject dev tokens outside development mode
         raise HTTPException(status_code=401, detail="Authentication failed")
 
-    # Firebase token verification
+    # Custom JWT token verification
+    try:
+        import jwt
+        payload = jwt.decode(token, settings.JWT_SECRET_KEY, algorithms=[settings.JWT_ALGORITHM])
+        return payload.get("sub")
+    except jwt.InvalidTokenError:
+        pass
+
+    # Firebase token verification fallback
     try:
         import firebase_admin
         from firebase_admin import auth as firebase_auth
 
-        # Initialize Firebase Admin SDK if not already done
         if not firebase_admin._apps:
             firebase_admin.initialize_app()
 
         decoded = firebase_auth.verify_id_token(token)
         return decoded["uid"]
     except Exception as e:
-        # Log full error server-side; return generic message to client
         logger.error("Token verification failed", exc_info=e)
         raise HTTPException(status_code=401, detail="Authentication failed")
 

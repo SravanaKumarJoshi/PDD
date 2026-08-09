@@ -55,11 +55,11 @@ async def get_db() -> AsyncSession:  # type: ignore[override]
 
 
 async def create_all_tables() -> None:
-    """Create all tables that don't yet exist.
-
-    Called from the app lifespan on startup.  In production, prefer explicit
-    SQL migrations (see scripts/migrate.sql); this function is kept as a
-    convenience for development and CI.
-    """
+    """Create all tables that don't yet exist and migrate schema changes."""
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
+        try:
+            from sqlalchemy import text
+            await conn.execute(text("ALTER TABLE users ADD COLUMN password_hash VARCHAR(255) NULL AFTER display_name"))
+        except Exception:
+            pass
