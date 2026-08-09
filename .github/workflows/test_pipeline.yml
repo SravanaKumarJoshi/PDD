@@ -1,0 +1,71 @@
+name: BioPolymer AI QA & Compliance Test Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  test_and_report:
+    name: Run Selenium, API, Load & Security Test Suite
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root123
+          MYSQL_DATABASE: polysaccharide_selector
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Python Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install openpyxl requests selenium pandas scikit-learn xgboost fastapi uvicorn passlib bcrypt pyjwt email-validator mysql-connector-python aiomysql pydantic-settings
+
+      - name: Seed MySQL Database
+        env:
+          MYSQL_HOST: 127.0.0.1
+          MYSQL_PORT: 3306
+          MYSQL_USER: root
+          MYSQL_PASSWORD: root123
+          MYSQL_DATABASE: polysaccharide_selector
+        run: |
+          python apppp/backend/seed_data.py || echo "Seed completed or already populated"
+
+      - name: Start FastAPI Backend Server
+        env:
+          DATABASE_URL: mysql+aiomysql://root:root123@127.0.0.1:3306/polysaccharide_selector
+          APP_ENV: development
+        run: |
+          cd apppp/backend
+          python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 &
+          sleep 5
+
+      - name: Execute Full QA Test Suite & Generate Excel Dashboard
+        env:
+          API_URL: http://127.0.0.1:8000
+          FRONTEND_URL: http://localhost:3000
+        run: |
+          python tests/generate_test_report.py
+
+      - name: Upload Excel Test Results Dashboard Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: test_results_dashboard.xlsx
+          path: test_results_dashboard.xlsx
+          retention-days: 30
