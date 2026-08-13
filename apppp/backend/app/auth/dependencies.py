@@ -5,6 +5,7 @@ In development mode, allows a bypass for testing (with logged warning).
 """
 
 import logging
+import uuid
 
 from fastapi import Depends, HTTPException, status, Header
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -77,16 +78,56 @@ async def get_current_user(
     if uid is None:
         return None
 
+    if db is None:
+        return User(
+            id=str(uuid.uuid4()),
+            auth_provider_id=uid,
+            email=f"{uid}@biopolymer.ai" if "@" not in uid else uid,
+            display_name=uid,
+            role="user",
+        )
+
     result = await db.execute(
         select(User).where(User.auth_provider_id == uid)
     )
     user = result.scalar_one_or_none()
 
     if not user:
+        email = None
+        display_name = None
+        try:
+            from firebase_admin import auth as firebase_auth
+            fb_user = firebase_auth.get_user(uid)
+            email = fb_user.email
+            display_name = fb_user.display_name or (email.split("@")[0] if email else None)
+        except Exception:
+            pass
+
         # Auto-create user on first login
-        user = User(auth_provider_id=uid)
+        user = User(
+            auth_provider_id=uid,
+            email=email,
+            display_name=display_name,
+            role="user"
+        )
         db.add(user)
-        await db.flush()
+        await db.commit()
+        await db.refresh(user)
+    elif not user.email or not user.display_name:
+        try:
+            from firebase_admin import auth as firebase_auth
+            fb_user = firebase_auth.get_user(uid)
+            updated = False
+            if not user.email and fb_user.email:
+                user.email = fb_user.email
+                updated = True
+            if not user.display_name and fb_user.display_name:
+                user.display_name = fb_user.display_name
+                updated = True
+            if updated:
+                await db.commit()
+        except Exception:
+            pass
 
     return user
 

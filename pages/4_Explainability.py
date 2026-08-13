@@ -22,25 +22,25 @@ st.set_page_config(page_title="Explainability", page_icon="🔍", layout="wide")
 st.title("🔍 SHAP Explainability Dashboard")
 st.markdown("Understand **why** the AI recommends specific materials.")
 
-if "dataset" not in st.session_state or st.session_state.get("dataset_source") != "mysql":
-    with st.spinner("Loading materials from MySQL..."):
+if "dataset" not in st.session_state:
+    with st.spinner("Loading materials..."):
+        from src.data import standardize_material_dataframe
+        from scripts.train_pipeline import load_data_from_mysql_or_fallback
         df, stats, error = load_dataset_from_mysql()
-        if error:
-            st.error(f"⚠️ {error}")
-            st.info("Ensure MYSQL_HOST / MYSQL_DATABASE / MYSQL_USER / MYSQL_PASSWORD are set in .env")
-            st.stop()
+        if error or df is None or df.empty:
+            df = load_data_from_mysql_or_fallback()
+        df = standardize_material_dataframe(df)
         st.session_state["dataset"] = df.copy(deep=True)
-        st.session_state["dataset_stats"] = stats
         st.session_state["dataset_source"] = "mysql"
 
+df = st.session_state["dataset"]
+from src.data import standardize_material_dataframe
+from src.scoring import ensure_models_trained
+df = standardize_material_dataframe(df)
+st.session_state["dataset"] = df
+
 if "xgb_model" not in st.session_state:
-    model_path = Path(__file__).parent.parent / "models" / "registry" / "latest" / "model.joblib"
-    if model_path.exists():
-        import joblib
-        st.session_state["xgb_model"] = joblib.load(model_path)
-    else:
-        st.warning("⚠️ Train models first on the Model Training page.")
-        st.stop()
+    ensure_models_trained(df)
 
 df = st.session_state["dataset"]
 model = st.session_state["xgb_model"]

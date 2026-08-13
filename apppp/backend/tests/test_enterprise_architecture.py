@@ -43,7 +43,7 @@ def test_screening_api_endpoint():
         "explainability_method": "shap"
     }
 
-    resp = client.post("/api/v1/screening", json=payload)
+    resp = client.post("/api/v1/screening", json=payload, headers={"Authorization": "Bearer dev-testuser"})
     assert resp.status_code == 200
     data = resp.json()
 

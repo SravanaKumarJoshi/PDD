@@ -282,21 +282,18 @@ fun ResultsScreen(
                     )
                     Spacer(modifier = Modifier.height(16.dp))
                     
-                    if (scoringResult == null) {
+                    if (scoringResult == null || scoringResult.recommendations.isEmpty()) {
                         Text(
-                            "No results yet",
-                            style = MaterialTheme.typography.titleMedium
+                            "No Screening Criteria Provided",
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.Bold
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                         Text(
-                            "Run a screening to see recommendations.",
+                            "No screening criteria provided. Please enter at least one requirement to analyze materials.",
                             style = MaterialTheme.typography.bodyMedium,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant
-                        )
-                    } else {
-                        Text(
-                            "No matching materials found",
-                            style = MaterialTheme.typography.titleMedium
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            textAlign = androidx.compose.ui.text.style.TextAlign.Center
                         )
                     }
                     
@@ -359,23 +356,6 @@ fun ResultsScreen(
             ) {
                 item {
                     SummaryCard(scoringResult)
-                    Spacer(modifier = Modifier.height(8.dp))
-                    
-                    androidx.compose.material3.OutlinedButton(
-                        onClick = {
-                            val intent = android.content.Intent(
-                                android.content.Intent.ACTION_VIEW,
-                                android.net.Uri.parse("http://localhost:8000/catalog")
-                            )
-                            context.startActivity(intent)
-                        },
-                        modifier = Modifier.fillMaxWidth()
-                    ) {
-                        androidx.compose.material3.Icon(Icons.AutoMirrored.Filled.OpenInNew, contentDescription = null, modifier = Modifier.size(18.dp))
-                        androidx.compose.foundation.layout.Spacer(modifier = Modifier.width(8.dp))
-                        androidx.compose.material3.Text("View Complete Material Catalogue on Web")
-                    }
-                    Spacer(modifier = Modifier.height(8.dp))
                 }
 
                 item {
@@ -504,7 +484,7 @@ private fun RecommendationCard(
     var expanded by remember { mutableStateOf(false) }
 
     ElevatedCard(
-        onClick = { expanded = !expanded },
+        onClick = onClick,
         modifier = Modifier.fillMaxWidth(),
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
@@ -624,7 +604,7 @@ private fun FactorRow(factor: FactorContribution, isPositive: Boolean) {
         verticalAlignment = Alignment.CenterVertically,
     ) {
         LinearProgressIndicator(
-            progress = { factor.score },
+            progress = { (factor.score / 100f).coerceIn(0f, 1f) },
             modifier = Modifier
                 .width(40.dp)
                 .height(4.dp),
@@ -637,9 +617,9 @@ private fun FactorRow(factor: FactorContribution, isPositive: Boolean) {
 }
 
 private fun scoreColor(score: Float) = when {
-    score >= 0.8f -> ScoreExcellent
-    score >= 0.6f -> ScoreGood
-    score >= 0.4f -> ScoreFair
+    score >= 80f -> ScoreExcellent
+    score >= 70f -> ScoreGood
+    score >= 50f -> ScoreFair
     else -> ScorePoor
 }
 

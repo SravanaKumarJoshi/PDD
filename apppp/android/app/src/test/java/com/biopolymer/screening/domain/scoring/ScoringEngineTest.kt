@@ -94,7 +94,7 @@ class ScoringEngineTest {
         }
         val result = engine.scoreAndRank(defaultReq(), materials)
         for (rec in result.recommendations) {
-            assertTrue("Score out of bounds: ${rec.score}", rec.score in 0f..1f)
+            assertTrue("Score out of bounds: ${rec.score}", rec.score in 0f..100f)
             assertTrue("Confidence out of bounds: ${rec.confidence}", rec.confidence in 0f..1f)
         }
     }
@@ -200,8 +200,8 @@ class ScoringEngineTest {
         val result = engine.scoreAndRank(req, listOf(makeMaterial()))
         val rec = result.recommendations[0]
         // Should have some concerns for the poor tensile match
-        // Concerns are factors with score < 0.4
-        assertTrue("Expected concerns for poor match", rec.concerns.isNotEmpty() || rec.topFactors.any { it.score < 0.4f })
+        // Concerns are factors with score < 50.0f
+        assertTrue("Expected concerns for poor match", rec.concerns.isNotEmpty() || rec.topFactors.any { it.score < 50.0f })
     }
 
     // ── Determinism ─────────────────────────────────────────────

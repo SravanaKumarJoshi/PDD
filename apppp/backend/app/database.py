@@ -50,8 +50,6 @@ async def get_db() -> AsyncSession:  # type: ignore[override]
         except Exception:
             await session.rollback()
             raise
-        finally:
-            await session.close()
 
 
 async def create_all_tables() -> None:
@@ -60,6 +58,14 @@ async def create_all_tables() -> None:
         await conn.run_sync(Base.metadata.create_all)
         try:
             from sqlalchemy import text
-            await conn.execute(text("ALTER TABLE users ADD COLUMN password_hash VARCHAR(255) NULL AFTER display_name"))
+            res = await conn.execute(text(
+                "SELECT COUNT(*) FROM information_schema.COLUMNS "
+                "WHERE TABLE_SCHEMA=DATABASE() AND TABLE_NAME='users' "
+                "AND COLUMN_NAME='password_hash'"
+            ))
+            exists = res.scalar()
+            if not exists:
+                await conn.execute(text("ALTER TABLE users ADD COLUMN password_hash VARCHAR(255) NULL AFTER display_name"))
         except Exception:
             pass
+

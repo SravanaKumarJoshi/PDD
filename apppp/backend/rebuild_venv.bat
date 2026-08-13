@@ -20,13 +20,13 @@ setlocal ENABLEEXTENSIONS
 REM -- Verify Python 3.12 is reachable ------------------------------------------
 python3.12 --version >nul 2>&1
 IF %ERRORLEVEL% NEQ 0 (
-    echo.
+    echo:
     echo ERROR: 'python3.12' was not found on PATH.
-    echo.
+    echo:
     echo Install Python 3.12 from https://www.python.org/downloads/
-    echo  - Choose the 3.12.x Windows installer (64-bit).
+    echo  - Choose the 3.12.x Windows installer 64-bit.
     echo  - Tick "Add Python 3.12 to PATH" on the first installer screen.
-    echo.
+    echo:
     echo If you already installed it, open a NEW terminal and try again.
     exit /b 1
 )
@@ -61,7 +61,7 @@ echo Installing dependencies from requirements.txt ...
 echo (All packages have pre-built Python 3.12 wheels — no compiler needed)
 .venv\Scripts\pip install -r requirements.txt
 IF %ERRORLEVEL% NEQ 0 (
-    echo.
+    echo:
     echo ERROR: pip install failed.
     echo Check your internet connection and the versions in requirements.txt.
     exit /b 1
@@ -70,7 +70,7 @@ IF %ERRORLEVEL% NEQ 0 (
 REM -- Quick smoke-test: verify pandas and numpy import cleanly ------------------
 echo.
 echo Running import smoke-test ...
-.venv\Scripts\python.exe -c "import pandas; import numpy; print('pandas', pandas.__version__, '/ numpy', numpy.__version__, '— OK')"
+.venv\Scripts\python.exe -c "import pandas; import numpy; print('pandas', pandas.__version__, '/ numpy', numpy.__version__, '- OK')"
 IF %ERRORLEVEL% NEQ 0 (
     echo ERROR: pandas/numpy import failed after install. See messages above.
     exit /b 1

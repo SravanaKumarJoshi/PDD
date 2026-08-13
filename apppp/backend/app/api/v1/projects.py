@@ -64,6 +64,8 @@ async def list_projects(
     return result.scalars().all()
 
 
+from sqlalchemy.exc import IntegrityError
+
 @router.post("", response_model=ProjectResponse, status_code=status.HTTP_201_CREATED)
 async def create_project(
     project_in: ProjectCreate,
@@ -72,6 +74,13 @@ async def create_project(
 ):
     """Create a new project, or upsert an existing one by client-supplied ID."""
     now = _now()
+    clean_title = (project_in.title or "").strip()
+    if not clean_title:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Project title cannot be blank."
+        )
+    norm_title = clean_title.lower()
 
     if project_in.id:
         # Client-supplied ID — check for existing record (offline sync scenario)
@@ -83,26 +92,74 @@ async def create_project(
         )
         existing = result.scalar_one_or_none()
         if existing:
+            # Check title collision if renaming to another existing project name
+            if existing.normalized_title != norm_title:
+                dup_check = await db.execute(
+                    select(Project).where(
+                        Project.user_id == user.id,
+                        Project.normalized_title == norm_title,
+                        Project.id != existing.id,
+                        Project.is_deleted.is_(False),
+                    )
+                )
+                if dup_check.scalar_one_or_none():
+                    raise HTTPException(
+                        status_code=status.HTTP_409_CONFLICT,
+                        detail="A project with this name already exists."
+                    )
+
             # Last-write-wins merge
-            existing.title = project_in.title
+            existing.title = clean_title
+            existing.normalized_title = norm_title
             existing.requirements_json = _to_json(project_in.requirements) or "{}"
             existing.results_json = _to_json(project_in.results)
             existing.updated_at = now
             existing.is_deleted = False
-            await db.flush()
+            try:
+                await db.commit()
+                await db.refresh(existing)
+            except IntegrityError:
+                await db.rollback()
+                raise HTTPException(
+                    status_code=status.HTTP_409_CONFLICT,
+                    detail="A project with this name already exists."
+                )
             return existing
+
+    # Check for existing project with same normalized title for this user
+    dup_check = await db.execute(
+        select(Project).where(
+            Project.user_id == user.id,
+            Project.normalized_title == norm_title,
+            Project.is_deleted.is_(False),
+        )
+    )
+    if dup_check.scalar_one_or_none():
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail="A project with this name already exists."
+        )
 
     project = Project(
         id=project_in.id or str(uuid.uuid4()),
         user_id=user.id,
-        title=project_in.title,
+        title=clean_title,
+        normalized_title=norm_title,
         requirements_json=_to_json(project_in.requirements) or "{}",
         results_json=_to_json(project_in.results),
         created_at=now,
         updated_at=now,
     )
     db.add(project)
-    await db.flush()
+    try:
+        await db.commit()
+        await db.refresh(project)
+    except IntegrityError:
+        await db.rollback()
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail="A project with this name already exists."
+        )
     return project
 
 
@@ -164,14 +221,46 @@ async def update_project(
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Project not found")
 
     if project_in.title is not None:
-        project.title = project_in.title
+        clean_title = project_in.title.strip()
+        if not clean_title:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="Project title cannot be blank."
+            )
+        norm_title = clean_title.lower()
+
+        if project.normalized_title != norm_title:
+            dup_check = await db.execute(
+                select(Project).where(
+                    Project.user_id == user.id,
+                    Project.normalized_title == norm_title,
+                    Project.id != project_id,
+                    Project.is_deleted.is_(False),
+                )
+            )
+            if dup_check.scalar_one_or_none():
+                raise HTTPException(
+                    status_code=status.HTTP_409_CONFLICT,
+                    detail="A project with this name already exists."
+                )
+            project.title = clean_title
+            project.normalized_title = norm_title
+
     if project_in.requirements is not None:
         project.requirements_json = _to_json(project_in.requirements) or "{}"
     if project_in.results is not None:
         project.results_json = _to_json(project_in.results)
     project.updated_at = _now()
 
-    await db.flush()
+    try:
+        await db.commit()
+        await db.refresh(project)
+    except IntegrityError:
+        await db.rollback()
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail="A project with this name already exists."
+        )
     return project
 
 
@@ -191,4 +280,4 @@ async def delete_project(
 
     project.is_deleted = True
     project.updated_at = _now()
-    await db.flush()
+    await db.commit()

@@ -11,36 +11,36 @@ if str(ROOT_DIR) not in sys.path:
 if str(BACKEND_DIR) not in sys.path:
     sys.path.insert(0, str(BACKEND_DIR))
 
-from src.data import load_dataset_from_mysql, get_dataset_stats, ingest_new_material, load_dataset
+from src.data import load_dataset_from_mysql, get_dataset_stats, ingest_new_material, load_dataset, standardize_material_dataframe
+from scripts.train_pipeline import load_data_from_mysql_or_fallback
 
 st.set_page_config(page_title="Dataset Browser", page_icon="📊", layout="wide")
 st.title("📊 Dataset Browser")
 
-# ─── Load from MySQL ──────────────────────────────────────────────
-if "dataset" not in st.session_state or st.session_state.get("dataset_source") != "mysql":
-    with st.spinner("Loading materials from MySQL..."):
+# ─── Load Dataset ──────────────────────────────────────────────────
+if "dataset" not in st.session_state:
+    with st.spinner("Loading materials..."):
         df, stats, error = load_dataset_from_mysql()
-        if error:
-            st.error(f"⚠️ {error}")
-            st.info(
-                "💡 Make sure MySQL is running and MYSQL_HOST / MYSQL_DATABASE / "
-                "MYSQL_USER / MYSQL_PASSWORD are set in your .env file."
-            )
-            st.stop()
+        if error or df is None or df.empty:
+            df = load_data_from_mysql_or_fallback()
+            stats = get_dataset_stats(df)
         st.session_state["dataset"] = df.copy(deep=True)
         st.session_state["dataset_stats"] = stats
         st.session_state["dataset_source"] = "mysql"
 
 df = st.session_state["dataset"]
+df = standardize_material_dataframe(df)
+st.session_state["dataset"] = df
+
 if "is_augmented" not in df.columns:
     df["is_augmented"] = 0
 
 # ─── Metrics ──────────────────────────────────────────────────────
 c1, c2, c3, c4 = st.columns(4)
 c1.metric("Total Materials", len(df))
-c2.metric("Literature-Sourced", len(df[df["is_augmented"] == 0]))
-c3.metric("Categories", df["category"].nunique())
-bio_mean = pd.to_numeric(df["biocompatibility"], errors="coerce").mean()
+c2.metric("Literature-Sourced", len(df[df["is_augmented"] == 0]) if "is_augmented" in df.columns else len(df))
+c3.metric("Categories", df["category"].nunique() if "category" in df.columns else 0)
+bio_mean = pd.to_numeric(df["biocompatibility"], errors="coerce").mean() if "biocompatibility" in df.columns else 0.0
 c4.metric("Avg Biocompatibility", f"{bio_mean:.1f}/10")
 
 st.divider()
@@ -49,9 +49,11 @@ st.divider()
 st.header("🔍 Filters")
 c1, c2, c3, c4 = st.columns(4)
 
+categories_list = sorted(df["category"].dropna().unique().tolist()) if "category" in df.columns else []
+
 with c1:
     cat_filter = st.multiselect(
-        "Category", ["All"] + sorted(df["category"].unique().tolist()), default=["All"]
+        "Category", ["All"] + categories_list, default=["All"]
     )
 with c2:
     evid_filter = st.selectbox("Evidence Level", ["All", "high", "med", "low"])
@@ -61,15 +63,16 @@ with c4:
     bio_min = st.slider("Min Biocompatibility", 1, 10, 1)
 
 filtered = df.copy()
-if "All" not in cat_filter and cat_filter:
+if "All" not in cat_filter and cat_filter and "category" in filtered.columns:
     filtered = filtered[filtered["category"].isin(cat_filter)]
-if evid_filter != "All":
+if evid_filter != "All" and "evidence_level" in filtered.columns:
     filtered = filtered[filtered["evidence_level"] == evid_filter]
-if aug_filter == "Literature Only":
+if aug_filter == "Literature Only" and "is_augmented" in filtered.columns:
     filtered = filtered[filtered["is_augmented"] == 0]
-elif aug_filter == "Augmented Only":
+elif aug_filter == "Augmented Only" and "is_augmented" in filtered.columns:
     filtered = filtered[filtered["is_augmented"] == 1]
-filtered = filtered[pd.to_numeric(filtered["biocompatibility"], errors="coerce") >= bio_min]
+if "biocompatibility" in filtered.columns:
+    filtered = filtered[pd.to_numeric(filtered["biocompatibility"], errors="coerce") >= bio_min]
 
 st.info(f"Showing {len(filtered)} of {len(df)} materials")
 

@@ -7,12 +7,23 @@ import com.biopolymer.screening.domain.model.MaterialCardModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class CatalogViewModel @Inject constructor(
     private val materialRepository: MaterialRepository,
 ) : ViewModel() {
+
+    init {
+        refreshCatalog()
+    }
+
+    fun refreshCatalog() {
+        viewModelScope.launch {
+            materialRepository.refreshMaterialsFromBackend()
+        }
+    }
 
     val searchQuery = MutableStateFlow("")
     val selectedCategory = MutableStateFlow<String?>(null)

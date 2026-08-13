@@ -47,11 +47,6 @@ class LoginActivity : AppCompatActivity() {
             validateAndLogin()
         }
 
-        binding.btnDevLogin.setOnClickListener {
-            Toast.makeText(this, "⚡ Dev Login (Demo Researcher)", Toast.LENGTH_SHORT).show()
-            saveSessionAndNavigate(null)
-        }
-
         binding.tvSignupLink.setOnClickListener {
             startActivity(Intent(this, SignUpActivity::class.java))
         }
@@ -102,17 +97,6 @@ class LoginActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     saveSessionAndNavigate(auth.currentUser)
                 } else {
-                    val excMsg = task.exception?.message ?: ""
-                    if (excMsg.contains("API key", ignoreCase = true) ||
-                        excMsg.contains("invalid", ignoreCase = true) ||
-                        excMsg.contains("unregistered", ignoreCase = true) ||
-                        BuildConfig.DEBUG) {
-                        Log.w(TAG, "Firebase Auth failed ($excMsg), executing Dev Bypass Login")
-                        Toast.makeText(this, "Logged in via Dev Bypass", Toast.LENGTH_SHORT).show()
-                        saveSessionAndNavigate(null)
-                        return@addOnCompleteListener
-                    }
-
                     val errorMsg = mapFirebaseAuthError(task.exception)
                     binding.tilEmail.error = null
                     binding.tilPassword.error = null

@@ -11,7 +11,7 @@ data class ScreeningRequestDto(
     @Json(name = "flexibility") val flexibility: Double? = null,
     @Json(name = "wvtr") val wvtr: Double? = null,
     @Json(name = "oxygen_permeability") val oxygenPermeability: Double? = null,
-    @Json(name = "min_biocompatibility") val minBiocompatibility: Double = 5.0,
+    @Json(name = "min_biocompatibility") val minBiocompatibility: Double? = null,
     @Json(name = "target_biodegradation_days") val targetBiodegradationDays: Double? = null,
     @Json(name = "sterilization_gamma") val sterilizationGamma: Boolean = false,
     @Json(name = "sterilization_eto") val sterilizationEto: Boolean = false,
@@ -36,8 +36,10 @@ data class ExplanationDto(
 
 @JsonClass(generateAdapter = true)
 data class RiskCategoryDto(
-    @Json(name = "label") val label: String,
-    @Json(name = "color") val color: String
+    @Json(name = "level") val level: String? = "low",
+    @Json(name = "label") val label: String = "Low Confidence",
+    @Json(name = "color") val color: String = "red",
+    @Json(name = "reasons") val reasons: List<String> = emptyList()
 )
 
 @JsonClass(generateAdapter = true)

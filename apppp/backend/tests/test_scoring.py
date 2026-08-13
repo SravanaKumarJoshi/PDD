@@ -1,70 +1,56 @@
 """Unit tests for the scoring engine."""
 
 import pytest
-from app.scoring.engine import range_overlap_score, inverse_point_score, band_score, score_and_rank
+from app.scoring.engine import (
+    score_min_requirement,
+    score_max_requirement,
+    score_range_requirement,
+    score_inverse_point,
+    score_ordinal_band,
+    score_and_rank,
+)
 from app.schemas.recommendation import RequirementInput
 
 
-class TestRangeOverlapScore:
-    def test_perfect_overlap(self):
-        """Actual range perfectly contains target range."""
-        score = range_overlap_score(10, 100, 20, 80)
-        assert score == 1.0
+class TestContinuousScoringHelpers:
+    def test_score_min_requirement(self):
+        """Test continuous minimum requirement scoring."""
+        # Below minimum -> continuous decay
+        assert score_min_requirement(30, 50) == 42.0
+        # At minimum -> 80%
+        assert score_min_requirement(50, 50) == 80.0
+        # Surplus margin -> scales up to 100%
+        assert score_min_requirement(70, 50) == 88.0
+        assert score_min_requirement(100, 50) == 100.0
+        # Missing value -> 25% penalty
+        assert score_min_requirement(None, 50) == 25.0
 
-    def test_partial_overlap(self):
-        """Actual range partially overlaps target."""
-        score = range_overlap_score(10, 50, 30, 70)
-        assert score is not None
-        assert 0 < score < 1
-        assert abs(score - 0.5) < 0.01  # 20/40 overlap
+    def test_score_max_requirement(self):
+        """Test continuous maximum requirement scoring."""
+        # Under max -> 85% to 100%
+        assert score_max_requirement(50, 100) == 92.5
+        assert score_max_requirement(100, 100) == 85.0
+        # Exceeds max -> continuous inverse ratio decay
+        assert score_max_requirement(150, 100) == 56.67
+        # Missing value -> 25% penalty
+        assert score_max_requirement(None, 100) == 25.0
 
-    def test_no_overlap(self):
-        """Actual range entirely outside target."""
-        score = range_overlap_score(100, 200, 10, 50)
-        assert score is not None
-        assert score < 0.5  # Distance penalty
+    def test_score_range_requirement(self):
+        """Test range requirement continuous distance scoring."""
+        # Target range 2.0 to 4.0 (midpoint 3.0, half 1.0)
+        assert score_range_requirement(3.0, 3.0, 2.0, 4.0) == 100.0
+        assert score_range_requirement(2.5, 2.5, 2.0, 4.0) == 92.5
+        assert score_range_requirement(2.0, 2.0, 2.0, 4.0) == 85.0
+        # Outside range -> decay
+        assert score_range_requirement(1.0, 1.0, 2.0, 4.0) == 15.0
+        assert score_range_requirement(None, None, 2.0, 4.0) == 25.0
 
-    def test_none_values(self):
-        """Returns None if any value is None."""
-        assert range_overlap_score(None, 100, 10, 50) is None
-        assert range_overlap_score(10, 100, None, 50) is None
-        assert range_overlap_score(10, None, 10, 50) is None
-
-    def test_exact_match(self):
-        """Actual range exactly equals target."""
-        score = range_overlap_score(30, 100, 30, 100)
-        assert score == 1.0
-
-
-class TestInversePointScore:
-    def test_below_target(self):
-        """Actual value below target max — perfect score."""
-        assert inverse_point_score(50, 100) == 1.0
-
-    def test_equal_target(self):
-        """Actual value equals target max — perfect score."""
-        assert inverse_point_score(100, 100) == 1.0
-
-    def test_above_target(self):
-        """Actual value exceeds target — decaying score."""
-        score = inverse_point_score(200, 100)
-        assert score == 0.5
-
-    def test_none_values(self):
-        assert inverse_point_score(None, 100) is None
-        assert inverse_point_score(100, None) is None
-
-
-class TestBandScore:
-    def test_within_budget(self):
-        assert band_score("low", "med") == 1.0
-        assert band_score("low", "low") == 1.0
-
-    def test_over_budget(self):
-        assert band_score("high", "low") == 0.3
-
-    def test_none(self):
-        assert band_score(None, "low") is None
+    def test_score_ordinal_band(self):
+        """Test cost/availability band scoring."""
+        assert score_ordinal_band("low", "med", higher_is_better=False) == 100.0
+        assert score_ordinal_band("med", "med", higher_is_better=False) == 85.0
+        assert score_ordinal_band("high", "med", higher_is_better=False) == 45.0
+        assert score_ordinal_band(None, "med") == 25.0
 
 
 class TestScoreAndRank:
@@ -109,9 +95,17 @@ class TestScoreAndRank:
             "properties": props,
         }
 
+    def test_empty_criteria_returns_no_recommendations(self):
+        """When no screening criteria are provided, empty recommendations should be returned."""
+        req = RequirementInput()  # all defaults (empty criteria)
+        materials = [self._make_material()]
+        result = score_and_rank(req, materials)
+        assert len(result.recommendations) == 0
+
     def test_basic_scoring(self):
         """A material that matches requirements should score high."""
-        req = RequirementInput()  # all defaults
+        req = RequirementInput()
+        req.mechanical.tensile_strength_min = 10.0
         materials = [self._make_material()]
         result = score_and_rank(req, materials)
 
@@ -124,6 +118,7 @@ class TestScoreAndRank:
     def test_hard_constraint_filters(self):
         """Materials failing hard constraints should be filtered out."""
         req = RequirementInput()
+        req.mechanical.tensile_strength_min = 10.0
         req.sterilization.steam_required = True  # Material has ster_steam=False
         materials = [self._make_material()]
         result = score_and_rank(req, materials)
@@ -141,8 +136,8 @@ class TestScoreAndRank:
                                    tensile_strength_mpa_min=30,
                                    tensile_strength_mpa_max=100)
         poor = self._make_material(name="Poor",
-                                   tensile_strength_mpa_min=200,
-                                   tensile_strength_mpa_max=300)
+                                   tensile_strength_mpa_min=5,
+                                   tensile_strength_mpa_max=10)
 
         result = score_and_rank(req, [good, poor])
         assert len(result.recommendations) == 2
@@ -151,6 +146,7 @@ class TestScoreAndRank:
     def test_explanations_generated(self):
         """Recommendations should include explanation factors."""
         req = RequirementInput()
+        req.mechanical.tensile_strength_min = 10.0
         materials = [self._make_material()]
         result = score_and_rank(req, materials)
 
@@ -161,6 +157,7 @@ class TestScoreAndRank:
     def test_empty_materials(self):
         """Empty materials list should return empty recommendations."""
         req = RequirementInput()
+        req.mechanical.tensile_strength_min = 10.0
         result = score_and_rank(req, [])
         assert len(result.recommendations) == 0
 
@@ -187,6 +184,7 @@ class TestScoreAndRank:
         """Materials with identical properties should produce identical scores
         and maintain stable insertion-order sort."""
         req = RequirementInput()
+        req.mechanical.tensile_strength_min = 10.0
         mat_a = self._make_material(name="Alpha")
         mat_b = self._make_material(name="Beta")
         # Same properties → same scores
@@ -203,6 +201,7 @@ class TestScoreAndRank:
     def test_response_schema_snapshot(self):
         """Verify response contains all expected keys and types."""
         req = RequirementInput()
+        req.mechanical.tensile_strength_min = 10.0
         materials = [self._make_material()]
         result = score_and_rank(req, materials)
 
@@ -240,8 +239,9 @@ class TestScoreAndRank:
             assert isinstance(f.score, float)
 
     def test_all_null_properties(self):
-        """Material with all None properties should still score (with penalties)."""
+        """Material with all None properties should score 25.0 (penalty) for requested criteria."""
         req = RequirementInput()
+        req.mechanical.tensile_strength_min = 10.0
         mat = {
             "id": "00000000-0000-0000-0000-000000000099",
             "name": "Empty Material",
@@ -252,12 +252,10 @@ class TestScoreAndRank:
         result = score_and_rank(req, [mat])
         assert len(result.recommendations) == 1
         rec = result.recommendations[0]
-        # Should get partial credit for missing data (0.3 per dimension)
-        assert 0 < rec.score <= 0.4  # Heavy penalty for all-missing
-        assert rec.confidence < 0.5  # Low evidence + zero completeness
+        assert rec.score == 25.0
 
     def test_score_bounds(self):
-        """All scores should be between 0.0 and 1.0."""
+        """All scores should be between 0.0 and 100.0."""
         req = RequirementInput()
         req.mechanical.tensile_strength_min = 1
         req.mechanical.tensile_strength_max = 500
@@ -276,7 +274,7 @@ class TestScoreAndRank:
         ]
         result = score_and_rank(req, materials)
         for rec in result.recommendations:
-            assert 0.0 <= rec.score <= 1.0, f"Score out of bounds: {rec.score}"
+            assert 0.0 <= rec.score <= 100.0, f"Score out of bounds: {rec.score}"
             assert 0.0 <= rec.confidence <= 1.0, f"Confidence out of bounds: {rec.confidence}"
 
     def test_fully_specified_requirements(self):

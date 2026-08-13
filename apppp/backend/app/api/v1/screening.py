@@ -6,6 +6,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from typing import Optional
 
 from app.database import get_db
+from app.auth.dependencies import require_auth
+from app.models.user import User
 from app.schemas.screening import ScreeningRequestSchema, ScreeningResponseSchema
 from app.services.inference_service import InferenceService
 
@@ -18,6 +20,7 @@ router = APIRouter(prefix="/screening", tags=["Screening"])
 @router.post("/", response_model=ScreeningResponseSchema, include_in_schema=False)
 async def screen_materials(
     request: ScreeningRequestSchema,
+    user: User = Depends(require_auth),
     db: AsyncSession = Depends(get_db),
 ) -> ScreeningResponseSchema:
     """Execute AI screening pipeline for candidate biopolymers."""

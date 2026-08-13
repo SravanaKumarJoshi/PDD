@@ -9,11 +9,12 @@ ROOT_DIR = Path(__file__).resolve().parent.parent.parent
 CONFIG_DIR = ROOT_DIR / "config"
 
 def load_yaml_config(filename: str) -> Dict[str, Any]:
-    path = CONFIG_DIR / filename
-    if not path.exists():
-        return {}
-    with open(path, "r", encoding="utf-8") as f:
-        return yaml.safe_load(f) or {}
+    paths = [CONFIG_DIR / filename, ROOT_DIR.parent / "config" / filename]
+    for path in paths:
+        if path.exists():
+            with open(path, "r", encoding="utf-8") as f:
+                return yaml.safe_load(f) or {}
+    return {}
 
 TRAINING_CONFIG = load_yaml_config("training_config.yaml")
 SCREENING_CONFIG = load_yaml_config("screening_config.yaml")
@@ -40,5 +41,6 @@ FEATURE_COLUMNS: List[str] = TRAINING_CONFIG.get("feature_columns", [
 
 MATERIAL_TABLE_NAME: str = os.getenv(
     "MATERIAL_TABLE_NAME",
-    APP_CONFIG.get("database", {}).get("table_name", "materials")
+    APP_CONFIG.get("database", {}).get("table_name", "filtered_polymers")
 )
+

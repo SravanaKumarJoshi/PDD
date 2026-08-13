@@ -172,14 +172,16 @@ def save_json(records, filepath):
         json.dump(records, f, indent=2)
     print(f"✅ Saved JSON file to: {filepath} ({len(records)} records)")
 
-def seed_mariadb(records, db_pass="meheer17"):
+def seed_mariadb(records, db_pass=None):
+    if db_pass is None:
+        db_pass = os.getenv("MYSQL_PASSWORD", "root123")
     try:
         conn = pymysql.connect(
-            host="localhost",
-            port=3306,
-            user="root",
+            host=os.getenv("MYSQL_HOST", "localhost"),
+            port=int(os.getenv("MYSQL_PORT", "3306")),
+            user=os.getenv("MYSQL_USER", "root"),
             password=db_pass,
-            database="polysaccharide_selector"
+            database=os.getenv("MYSQL_DATABASE", "polysaccharide_selector")
         )
         cur = conn.cursor()
 

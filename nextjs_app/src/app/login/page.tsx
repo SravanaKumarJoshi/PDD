@@ -65,8 +65,8 @@ export default function LoginPage() {
           </h2>
           <p className="mt-1 text-xs text-gray-400">
             {isRegisterMode
-              ? 'Register with JWT authentication to access saved screening runs'
-              : 'Sign in to access AI biopolymer recommendation engine'}
+              ? 'Register with Firebase Authentication to access saved screening runs'
+              : 'Sign in with your Firebase account to access AI biopolymer engine'}
           </p>
         </div>
 
@@ -171,7 +171,7 @@ export default function LoginPage() {
         <div className="mt-6 pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs text-gray-400 relative z-10">
           <div className="flex items-center gap-1 text-emerald-400 font-medium">
             <ShieldCheck className="w-4 h-4" />
-            <span>JWT Secured</span>
+            <span>Firebase Auth</span>
           </div>
           <button
             type="button"

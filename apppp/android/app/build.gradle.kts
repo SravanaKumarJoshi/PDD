@@ -13,7 +13,7 @@ plugins {
 //   .\gradlew.bat assembleDevDebug -PDEV_API_BASE_URL=http://127.0.0.1:8000/
 // Without this property, dev builds keep the standard Android-emulator route.
 val devApiBaseUrl = providers.gradleProperty("DEV_API_BASE_URL")
-    .getOrElse("http://10.192.187.144:8000/")
+    .getOrElse("http://10.0.2.2:8000/")
 
 android {
     namespace = "com.biopolymer.screening"

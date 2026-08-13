@@ -3,60 +3,6 @@
     "version": "v6",
     "model_type": "random_forest",
     "filename": "v6_random_forest.joblib",
-    "timestamp": "2026-05-12T13:25:37.888258",
-    "metrics": {
-      "accuracy": 1.0,
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0,
-      "cv_mean": 0.9952380952380953,
-      "cv_std": 0.014285714285714303,
-      "cv_scores": [
-        1.0,
-        0.9523809523809523,
-        1.0,
-        1.0,
-        1.0,
-        1.0,
-        1.0,
-        1.0,
-        1.0,
-        1.0
-      ],
-      "test_size": 63,
-      "train_size": 147
-    }
-  },
-  {
-    "version": "v6",
-    "model_type": "xgboost",
-    "filename": "v6_xgboost.joblib",
-    "timestamp": "2026-05-26T10:06:32.059714",
-    "metrics": {
-      "accuracy": 0.9841269841269841,
-      "train_accuracy": 1.0,
-      "overfit_gap": 0.0159,
-      "precision": 0.9761904761904762,
-      "recall": 1.0,
-      "f1": 0.9879518072289156,
-      "cv_mean": 0.9857142857142858,
-      "cv_std": 0.01904761904761907,
-      "cv_scores": [
-        1.0,
-        1.0,
-        0.9761904761904762,
-        1.0,
-        0.9523809523809523
-      ],
-      "test_size": 63,
-      "train_size": 147,
-      "overfit_warning": null
-    }
-  },
-  {
-    "version": "v6",
-    "model_type": "random_forest",
-    "filename": "v6_random_forest.joblib",
     "timestamp": "2026-05-26T10:06:32.137565",
     "metrics": {
       "accuracy": 1.0,
@@ -133,6 +79,55 @@
       ],
       "test_size": 63,
       "train_size": 147
+    }
+  },
+  {
+    "version": "v6",
+    "model_type": "xgboost",
+    "filename": "v6_xgboost.joblib",
+    "timestamp": "2026-08-13T11:25:49.924689",
+    "metrics": {
+      "accuracy": 0.99,
+      "train_accuracy": 0.9985714285714286,
+      "overfit_gap": 0.0086,
+      "precision": 1.0,
+      "recall": 0.985,
+      "f1": 0.9924433249370277,
+      "cv_mean": 0.999,
+      "cv_std": 0.0020000000000000018,
+      "cv_scores": [
+        1.0,
+        1.0,
+        0.995,
+        1.0,
+        1.0
+      ],
+      "test_size": 300,
+      "train_size": 700,
+      "overfit_warning": null
+    }
+  },
+  {
+    "version": "v6",
+    "model_type": "random_forest",
+    "filename": "v6_random_forest.joblib",
+    "timestamp": "2026-08-13T11:25:49.988936",
+    "metrics": {
+      "accuracy": 0.9966666666666667,
+      "precision": 1.0,
+      "recall": 0.995,
+      "f1": 0.9974937343358395,
+      "cv_mean": 1.0,
+      "cv_std": 0.0,
+      "cv_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "test_size": 300,
+      "train_size": 700
     }
   }
 ]

@@ -1,5 +1,6 @@
 package com.biopolymer.screening.navigation
 
+import android.content.Intent
 import androidx.compose.animation.*
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.padding
@@ -52,6 +53,11 @@ fun AppNavGraph() {
             when (event) {
                 is RequirementsEvent.NavigateToResults -> {
                     navController.navigate("results") { launchSingleTop = true }
+                }
+                is RequirementsEvent.RequireLogin -> {
+                    val context = navController.context
+                    val intent = Intent(context, com.biopolymer.screening.LoginActivity::class.java)
+                    context.startActivity(intent)
                 }
             }
         }

@@ -17,46 +17,46 @@ echo ===========================================================================
 echo.
 
 REM -- Verify the venv exists and was built with Python 3.12 --------------------
-IF NOT EXIST ".venv\Scripts\activate.bat" (
+IF NOT EXIST "%~dp0.venv\Scripts\python.exe" (
     echo ERROR: Virtual environment not found at .venv\
     echo Run rebuild_venv.bat first to create it with Python 3.12.
     exit /b 1
 )
 
-call .venv\Scripts\activate.bat
+call "%~dp0.venv\Scripts\activate.bat"
 
 REM -- Confirm Python version inside venv (must be 3.12) ------------------------
-FOR /F "tokens=2" %%V IN ('.venv\Scripts\python.exe --version 2^>^&1') DO SET VENV_PYVER=%%V
+FOR /F "tokens=2" %%V IN ('"%~dp0.venv\Scripts\python.exe" --version 2^>^&1') DO SET VENV_PYVER=%%V
 echo Venv Python: %VENV_PYVER%
 echo %VENV_PYVER% | findstr /B "3.12" >nul
 IF %ERRORLEVEL% NEQ 0 (
-    echo.
+    echo:
     echo WARNING: The venv was not built with Python 3.12.
     echo   Detected: %VENV_PYVER%
     echo   Expected: 3.12.x
-    echo.
+    echo:
     echo Run rebuild_venv.bat to recreate the venv with Python 3.12.
-    echo Continuing anyway — some packages may fail to import.
-    echo.
+    echo Continuing anyway - some packages may fail to import.
+    echo:
 )
 
 REM -- Verify MySQL is reachable before starting ---------------------------------
 echo Checking MySQL connectivity...
-python -c "import mysql.connector; c=mysql.connector.connect(host='localhost',port=3306,database='polysaccharide_selector',user='root',password='root123',connection_timeout=5); c.close(); print('MySQL OK')" 2>nul
+"%~dp0.venv\Scripts\python.exe" -c "import mysql.connector; c=mysql.connector.connect(host='localhost',port=3306,database='polysaccharide_selector',user='root',password='root123',connection_timeout=5); c.close(); print('MySQL OK')" 2>nul
 IF %ERRORLEVEL% NEQ 0 (
-    echo.
+    echo:
     echo WARNING: Could not connect to MySQL at localhost:3306
-    echo   - Ensure MySQL is running (check Services / MySQL Workbench)
+    echo   - Ensure MySQL is running - check Services / MySQL Workbench
     echo   - Verify credentials in .env match your MySQL setup
     echo   - Database name: polysaccharide_selector
-    echo.
+    echo:
     echo Continuing anyway - FastAPI will report the DB error on startup.
-    echo.
+    echo:
 )
 
 REM -- Run the migration if needed -----------------------------------------------
 echo Checking for pending migrations...
-python check_migration.py
+"%~dp0.venv\Scripts\python.exe" check_migration.py
 
 echo.
 echo Starting uvicorn on 0.0.0.0:8000 ...
@@ -84,11 +84,10 @@ REM      Multiple workers allow concurrent sync sessions to proceed in
 REM      parallel without blocking each other.
 REM
 REM  --reload is for development only — disable in production.
-uvicorn app.main:app ^
+"%~dp0.venv\Scripts\python.exe" -m uvicorn app.main:app ^
     --host 0.0.0.0 ^
     --port 8000 ^
     --reload ^
     --reload-dir app ^
     --timeout-keep-alive 75 ^
     --timeout-graceful-shutdown 30
-

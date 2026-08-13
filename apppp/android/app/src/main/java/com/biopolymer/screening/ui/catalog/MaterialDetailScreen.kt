@@ -23,16 +23,33 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+sealed interface MaterialDetailUiState {
+    data class Loading(val message: String = "Loading material details...") : MaterialDetailUiState
+    data class Success(val material: Material) : MaterialDetailUiState
+    data object NotFound : MaterialDetailUiState
+    data class Error(val message: String = "Unable to load material details. Please try again.") : MaterialDetailUiState
+}
+
 @HiltViewModel
 class MaterialDetailViewModel @Inject constructor(
     private val materialRepository: MaterialRepository,
 ) : ViewModel() {
-    private val _material = MutableStateFlow<Material?>(null)
-    val material: StateFlow<Material?> = _material
+    private val _uiState = MutableStateFlow<MaterialDetailUiState>(MaterialDetailUiState.Loading())
+    val uiState: StateFlow<MaterialDetailUiState> = _uiState
 
     fun loadMaterial(id: String) {
+        _uiState.value = MaterialDetailUiState.Loading("Loading material details...")
         viewModelScope.launch {
-            _material.value = materialRepository.getMaterialById(id)
+            try {
+                val mat = materialRepository.getMaterialById(id)
+                if (mat != null) {
+                    _uiState.value = MaterialDetailUiState.Success(mat)
+                } else {
+                    _uiState.value = MaterialDetailUiState.NotFound
+                }
+            } catch (e: Exception) {
+                _uiState.value = MaterialDetailUiState.Error("Unable to load material details. Please try again.")
+            }
         }
     }
 }
@@ -48,12 +65,19 @@ fun MaterialDetailScreen(
         viewModel.loadMaterial(materialId)
     }
 
-    val material by viewModel.material.collectAsState()
+    val state by viewModel.uiState.collectAsState()
 
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(material?.name ?: "Material Detail") },
+                title = {
+                    Text(
+                        when (val s = state) {
+                            is MaterialDetailUiState.Success -> s.material.name
+                            else -> "Material Profile"
+                        }
+                    )
+                },
                 navigationIcon = {
                     IconButton(onClick = onNavigateBack) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
@@ -62,103 +86,194 @@ fun MaterialDetailScreen(
             )
         }
     ) { padding ->
-        val mat = material
-        if (mat == null) {
-            Box(modifier = Modifier.fillMaxSize().padding(padding), contentAlignment = Alignment.Center) {
-                CircularProgressIndicator()
-            }
-        } else {
-            Column(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(padding)
-                    .verticalScroll(rememberScrollState())
-                    .padding(16.dp),
-                verticalArrangement = Arrangement.spacedBy(16.dp),
-            ) {
-                // Header
-                Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.4f))) {
-                    Column(modifier = Modifier.padding(16.dp)) {
-                        Text(mat.name, style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
-                        Text(mat.category.replaceFirstChar { it.uppercase() }, style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.primary)
-                        mat.source?.let { Text("Source: $it", style = MaterialTheme.typography.bodyMedium) }
-                        Text("Evidence: ${mat.evidenceLevel.uppercase()}", style = MaterialTheme.typography.labelLarge)
-                    }
-                }
-
-                // Mechanical Properties
-                PropertySection("⚙ Mechanical Properties") {
-                    PropertyRow("Tensile Strength", mat.properties.tensileStrengthMin, mat.properties.tensileStrengthMax, "MPa")
-                    PropertyRow("Elastic Modulus", mat.properties.elasticModulusMin, mat.properties.elasticModulusMax, "GPa")
-                    PropertyRow("Elongation at Break", mat.properties.elongationMin, mat.properties.elongationMax, "%")
-                    SinglePropertyRow("Puncture Resistance", mat.properties.punctureResistance?.let { "$it N" })
-                }
-
-                // Barrier Properties
-                PropertySection("🛡 Barrier Properties") {
-                    SinglePropertyRow("WVTR", mat.properties.wvtr?.let { "$it g/m²/day" })
-                    SinglePropertyRow("OTR", mat.properties.otr?.let { "$it cc/m²/day" })
-                }
-
-                // Biological Properties
-                PropertySection("🧬 Biological Properties") {
-                    BoolPropertyRow("Cytotoxicity Safe", mat.properties.cytotoxicitySafe)
-                    BoolPropertyRow("Hemocompatible", mat.properties.hemocompatible)
-                    BoolPropertyRow("Antimicrobial", mat.properties.antimicrobial)
-                    SinglePropertyRow("Endotoxin Concern", mat.properties.endotoxinConcern)
-                }
-
-                // Degradation
-                PropertySection("♻ Degradation") {
-                    PropertyRow("Degradation Time", mat.properties.degradationDaysMin?.toFloat(), mat.properties.degradationDaysMax?.toFloat(), "days")
-                    BoolPropertyRow("Enzymatic Degradability", mat.properties.enzymaticDegradability)
-                    SinglePropertyRow("Hydrolytic Stability", mat.properties.hydrolyticStability?.uppercase())
-                }
-
-                // Sterilization
-                PropertySection("🔬 Sterilization Compatibility") {
-                    BoolPropertyRow("Gamma", mat.properties.sterGamma)
-                    BoolPropertyRow("EtO", mat.properties.sterEto)
-                    BoolPropertyRow("Steam", mat.properties.sterSteam)
-                    BoolPropertyRow("UV", mat.properties.sterUv)
-                    BoolPropertyRow("Autoclave", mat.properties.sterAutoclave)
-                }
-
-                // Processing
-                PropertySection("🏭 Processing Methods") {
-                    BoolPropertyRow("Film", mat.properties.procFilm)
-                    BoolPropertyRow("Casting", mat.properties.procCasting)
-                    BoolPropertyRow("Extrusion", mat.properties.procExtrusion)
-                    BoolPropertyRow("Coating", mat.properties.procCoating)
-                    BoolPropertyRow("Melt Processing", mat.properties.procMelt)
-                    SinglePropertyRow("Solvents", mat.properties.solventCompatible)
-                }
-
-                // Cost & Availability
-                PropertySection("💰 Cost & Availability") {
-                    SinglePropertyRow("Cost Band", mat.properties.costBand?.uppercase())
-                    SinglePropertyRow("Availability", mat.properties.availabilityBand?.uppercase())
-                }
-
-                // Notes
-                Card {
-                    Column(modifier = Modifier.padding(16.dp)) {
-                        Text("Notes", style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.Bold)
-                        Spacer(modifier = Modifier.height(4.dp))
-                        Text(mat.notes ?: "Not Available", style = MaterialTheme.typography.bodyMedium)
-                    }
-                }
-
-                // Data completeness
-                Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))) {
-                    Column(modifier = Modifier.padding(16.dp)) {
-                        Text("Data Completeness", style = MaterialTheme.typography.titleSmall)
-                        Spacer(modifier = Modifier.height(8.dp))
-                        LinearProgressIndicator(
-                            progress = { (mat.properties.dataCompleteness).coerceIn(0f, 1f) },
-                            modifier = Modifier.fillMaxWidth()
+        when (val s = state) {
+            is MaterialDetailUiState.Loading -> {
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(padding),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        CircularProgressIndicator()
+                        Spacer(modifier = Modifier.height(16.dp))
+                        Text(
+                            text = s.message,
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
                         )
-                        Text("${"%.0f".format((mat.properties.dataCompleteness * 100).coerceIn(0f, 100f))}%", style = MaterialTheme.typography.labelSmall)
+                    }
+                }
+            }
+
+            is MaterialDetailUiState.NotFound -> {
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(padding),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        modifier = Modifier.padding(24.dp)
+                    ) {
+                        Icon(
+                            imageVector = Icons.Filled.SearchOff,
+                            contentDescription = null,
+                            modifier = Modifier.size(64.dp),
+                            tint = MaterialTheme.colorScheme.outline
+                        )
+                        Spacer(modifier = Modifier.height(16.dp))
+                        Text(
+                            text = "Material Details Not Found",
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.Bold
+                        )
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Text(
+                            text = "Material details not found.",
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                        Spacer(modifier = Modifier.height(24.dp))
+                        Button(onClick = onNavigateBack) {
+                            Text("Go Back")
+                        }
+                    }
+                }
+            }
+
+            is MaterialDetailUiState.Error -> {
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(padding),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        modifier = Modifier.padding(24.dp)
+                    ) {
+                        Icon(
+                            imageVector = Icons.Filled.Warning,
+                            contentDescription = null,
+                            modifier = Modifier.size(64.dp),
+                            tint = MaterialTheme.colorScheme.error
+                        )
+                        Spacer(modifier = Modifier.height(16.dp))
+                        Text(
+                            text = "Failed to Load Details",
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.Bold
+                        )
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Text(
+                            text = s.message,
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                        Spacer(modifier = Modifier.height(24.dp))
+                        Button(onClick = { viewModel.loadMaterial(materialId) }) {
+                            Text("Retry")
+                        }
+                    }
+                }
+            }
+
+            is MaterialDetailUiState.Success -> {
+                val mat = s.material
+                Column(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(padding)
+                        .verticalScroll(rememberScrollState())
+                        .padding(16.dp),
+                    verticalArrangement = Arrangement.spacedBy(16.dp),
+                ) {
+                    // Header
+                    Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.4f))) {
+                        Column(modifier = Modifier.padding(16.dp)) {
+                            Text(mat.name, style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
+                            Text(mat.category.replaceFirstChar { it.uppercase() }, style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.primary)
+                            mat.source?.let { Text("Source: $it", style = MaterialTheme.typography.bodyMedium) }
+                            Text("Evidence: ${mat.evidenceLevel.uppercase()}", style = MaterialTheme.typography.labelLarge)
+                        }
+                    }
+
+                    // Mechanical Properties
+                    PropertySection("⚙ Mechanical Properties") {
+                        PropertyRow("Tensile Strength", mat.properties.tensileStrengthMin, mat.properties.tensileStrengthMax, "MPa")
+                        PropertyRow("Elastic Modulus", mat.properties.elasticModulusMin, mat.properties.elasticModulusMax, "GPa")
+                        PropertyRow("Elongation at Break", mat.properties.elongationMin, mat.properties.elongationMax, "%")
+                        SinglePropertyRow("Puncture Resistance", mat.properties.punctureResistance?.let { "$it N" })
+                    }
+
+                    // Barrier Properties
+                    PropertySection("🛡 Barrier Properties") {
+                        SinglePropertyRow("WVTR", mat.properties.wvtr?.let { "$it g/m²/day" })
+                        SinglePropertyRow("OTR", mat.properties.otr?.let { "$it cc/m²/day" })
+                    }
+
+                    // Biological Properties
+                    PropertySection("🧬 Biological Properties") {
+                        BoolPropertyRow("Cytotoxicity Safe", mat.properties.cytotoxicitySafe)
+                        BoolPropertyRow("Hemocompatible", mat.properties.hemocompatible)
+                        BoolPropertyRow("Antimicrobial", mat.properties.antimicrobial)
+                        SinglePropertyRow("Endotoxin Concern", mat.properties.endotoxinConcern)
+                    }
+
+                    // Degradation
+                    PropertySection("♻ Degradation") {
+                        PropertyRow("Degradation Time", mat.properties.degradationDaysMin?.toFloat(), mat.properties.degradationDaysMax?.toFloat(), "days")
+                        BoolPropertyRow("Enzymatic Degradability", mat.properties.enzymaticDegradability)
+                        SinglePropertyRow("Hydrolytic Stability", mat.properties.hydrolyticStability?.uppercase())
+                    }
+
+                    // Sterilization
+                    PropertySection("🔬 Sterilization Compatibility") {
+                        BoolPropertyRow("Gamma", mat.properties.sterGamma)
+                        BoolPropertyRow("EtO", mat.properties.sterEto)
+                        BoolPropertyRow("Steam", mat.properties.sterSteam)
+                        BoolPropertyRow("UV", mat.properties.sterUv)
+                        BoolPropertyRow("Autoclave", mat.properties.sterAutoclave)
+                    }
+
+                    // Processing
+                    PropertySection("🏭 Processing Methods") {
+                        BoolPropertyRow("Film", mat.properties.procFilm)
+                        BoolPropertyRow("Casting", mat.properties.procCasting)
+                        BoolPropertyRow("Extrusion", mat.properties.procExtrusion)
+                        BoolPropertyRow("Coating", mat.properties.procCoating)
+                        BoolPropertyRow("Melt Processing", mat.properties.procMelt)
+                        SinglePropertyRow("Solvents", mat.properties.solventCompatible)
+                    }
+
+                    // Cost & Availability
+                    PropertySection("💰 Cost & Availability") {
+                        SinglePropertyRow("Cost Band", mat.properties.costBand?.uppercase())
+                        SinglePropertyRow("Availability", mat.properties.availabilityBand?.uppercase())
+                    }
+
+                    // Notes
+                    Card {
+                        Column(modifier = Modifier.padding(16.dp)) {
+                            Text("Notes", style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.Bold)
+                            Spacer(modifier = Modifier.height(4.dp))
+                            Text(mat.notes ?: "Not Available", style = MaterialTheme.typography.bodyMedium)
+                        }
+                    }
+
+                    // Data completeness
+                    Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))) {
+                        Column(modifier = Modifier.padding(16.dp)) {
+                            Text("Data Completeness", style = MaterialTheme.typography.titleSmall)
+                            Spacer(modifier = Modifier.height(8.dp))
+                            LinearProgressIndicator(
+                                progress = { (mat.properties.dataCompleteness).coerceIn(0f, 1f) },
+                                modifier = Modifier.fillMaxWidth()
+                            )
+                            Text("${"%.0f".format((mat.properties.dataCompleteness * 100).coerceIn(0f, 100f))}%", style = MaterialTheme.typography.labelSmall)
+                        }
                     }
                 }
             }

@@ -28,6 +28,7 @@ data class NetworkDiagnosticReport(
         SSL_FAILURE,
         HTTP_CLIENT_ERROR,
         HTTP_SERVER_ERROR,
+        PARSE_ERROR,
         UNKNOWN
     }
 }
@@ -113,6 +114,18 @@ object NetworkDiagnostics {
                         targetUrl = targetUrl,
                     )
                 }
+            }
+            throwable is com.squareup.moshi.JsonDataException ||
+            throwable is com.squareup.moshi.JsonEncodingException ||
+            throwable is NetworkException.ParseError -> {
+                val msg = throwable.message ?: "Invalid JSON schema"
+                NetworkDiagnosticReport(
+                    category = NetworkDiagnosticReport.Category.PARSE_ERROR,
+                    technicalReason = "JSON Deserialization / API schema mismatch: $msg",
+                    userExplanation = "API response structure mismatch: $msg",
+                    recommendedFix = "The server returned HTTP 200, but the JSON response format does not match the app's expected schema.",
+                    targetUrl = targetUrl,
+                )
             }
             else -> {
                 val msg = throwable.message ?: throwable::class.java.simpleName

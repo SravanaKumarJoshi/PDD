@@ -1,7 +1,7 @@
 """Pydantic schemas for screening API requests, responses, performance metrics, and model metadata."""
 
 from typing import List, Dict, Any, Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 
 
 class ScreeningRequestSchema(BaseModel):
@@ -11,7 +11,7 @@ class ScreeningRequestSchema(BaseModel):
     flexibility: Optional[float] = Field(None, ge=1.0, le=10.0, description="Flexibility scale 1-10")
     wvtr: Optional[float] = Field(None, ge=0.0, description="Max WVTR barrier limit")
     oxygen_permeability: Optional[float] = Field(None, ge=0.0, description="Max O2 permeability")
-    min_biocompatibility: float = Field(5.0, ge=0.0, le=10.0, description="Minimum biocompatibility rating 0-10")
+    min_biocompatibility: Optional[float] = Field(None, ge=0.0, le=10.0, description="Minimum biocompatibility rating 0-10")
     target_biodegradation_days: Optional[float] = Field(None, ge=1.0, le=1000.0, description="Target biodegradation time in days")
     sterilization_gamma: bool = Field(False, description="Require gamma sterilization support")
     sterilization_eto: bool = Field(False, description="Require EtO sterilization support")
@@ -55,6 +55,13 @@ class ExplanationSchema(BaseModel):
     top_contributions: List[FactorContributionSchema]
 
 
+class RiskCategorySchema(BaseModel):
+    level: Optional[str] = "low"
+    label: str = "Low Confidence — verify experimentally"
+    color: str = "red"
+    reasons: List[str] = Field(default_factory=list)
+
+
 class ScreeningResultItemSchema(BaseModel):
     material_id: str
     polymer: str
@@ -69,14 +76,16 @@ class ScreeningResultItemSchema(BaseModel):
     ml_probability: float
     multi_criteria_score: float
     confidence: float
-    risk_category: Dict[str, Any]
+    risk_category: RiskCategorySchema
     is_pareto_optimal: bool
     explanation: Optional[ExplanationSchema] = None
     score_breakdown: Dict[str, CategoryScoreBreakdownSchema] = {}
     properties: Dict[str, Any] = {}
 
 
+
 class ModelMetadataSchema(BaseModel):
+    model_config = ConfigDict(protected_namespaces=())
     model_version: str
     model_type: Optional[str] = "Baseline Suitability Model (Policy Approximation)"
     label_source: Optional[str] = "Rule-Based Threshold Policy"
@@ -87,6 +96,7 @@ class ModelMetadataSchema(BaseModel):
 
 
 class PerformanceMetricsSchema(BaseModel):
+    model_config = ConfigDict(protected_namespaces=())
     sanitization_time_ms: float
     normalization_time_ms: float
     database_filter_time_ms: float
@@ -98,6 +108,7 @@ class PerformanceMetricsSchema(BaseModel):
 
 
 class ScreeningResponseSchema(BaseModel):
+    model_config = ConfigDict(protected_namespaces=())
     screening_id: str
     model_metadata: ModelMetadataSchema
     performance_metrics: PerformanceMetricsSchema

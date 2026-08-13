@@ -93,7 +93,7 @@ export default function Navigation() {
                 className="flex items-center gap-2 btn-primary text-xs"
               >
                 <LogIn className="w-4 h-4" />
-                <span>JWT Login</span>
+                <span>Firebase Login</span>
               </Link>
             )}
           </div>

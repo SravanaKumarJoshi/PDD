@@ -26,6 +26,8 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import android.content.Intent
+import androidx.compose.ui.platform.LocalContext
 import com.biopolymer.screening.ui.components.AppTopBar
 import com.biopolymer.screening.ui.components.ValidatedNumberField
 import java.util.Locale
@@ -41,11 +43,16 @@ fun RequirementsScreen(
     val error by viewModel.error.collectAsState()
     val showInstructions by viewModel.showInstructions.collectAsState()
 
+    val context = LocalContext.current
     LaunchedEffect(Unit) {
         viewModel.events.collectLatest { event ->
             when (event) {
                 is RequirementsEvent.NavigateToResults -> {
                     onViewResults()
+                }
+                is RequirementsEvent.RequireLogin -> {
+                    val intent = Intent(context, com.biopolymer.screening.LoginActivity::class.java)
+                    context.startActivity(intent)
                 }
             }
         }

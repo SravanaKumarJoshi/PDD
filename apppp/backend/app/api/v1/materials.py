@@ -19,7 +19,7 @@ async def get_materials(
     search: Optional[str] = Query(None, description="Search query string"),
     skip: int = Query(0, ge=0, description="Offset for pagination"),
     page: Optional[int] = Query(None, ge=1, description="Page number (1-based)"),
-    limit: int = Query(50, ge=1, le=500, description="Limit for pagination"),
+    limit: int = Query(5000, ge=1, le=10000, description="Limit for pagination"),
     db: AsyncSession = Depends(get_db)
 ) -> List[Dict[str, Any]]:
     """Fetch paginated, filtered material records from MySQL source of truth."""
@@ -34,7 +34,10 @@ async def get_materials(
         params["category"] = category
 
     if search:
-        where_clauses.append("(polymer LIKE :search OR category LIKE :search)")
+        if MATERIAL_TABLE_NAME == "materials":
+            where_clauses.append("(name LIKE :search OR category LIKE :search OR id LIKE :search)")
+        else:
+            where_clauses.append("(polymer LIKE :search OR category LIKE :search)")
         params["search"] = f"%{search}%"
 
     where_sql = f"WHERE {' AND '.join(where_clauses)}" if where_clauses else ""
@@ -51,7 +54,8 @@ async def get_materials(
         if category:
             df = df[df["category"] == category]
         if search:
-            df = df[df["polymer"].astype(str).str.contains(search, case=False, na=False)]
+            col = "polymer" if "polymer" in df.columns else ("name" if "name" in df.columns else df.columns[0])
+            df = df[df[col].astype(str).str.contains(search, case=False, na=False)]
         return df.iloc[skip:skip+limit].to_dict(orient="records")
 
 @router.get("/categories")
@@ -79,16 +83,41 @@ async def get_material(
     material_id: str,
     db: AsyncSession = Depends(get_db)
 ) -> Dict[str, Any]:
-    """Fetch single material record by identifier or polymer name."""
+    """Fetch single material record by identifier, polymer name, or general name."""
+    # 1. Query active MATERIAL_TABLE_NAME
     try:
-        query = text(f"SELECT * FROM {MATERIAL_TABLE_NAME} WHERE id = :id OR polymer = :id LIMIT 1")
+        if MATERIAL_TABLE_NAME == "materials":
+            query = text("SELECT * FROM materials WHERE id = :id OR name = :id LIMIT 1")
+        else:
+            query = text(f"SELECT * FROM {MATERIAL_TABLE_NAME} WHERE id = :id OR polymer = :id LIMIT 1")
+        
         result = await db.execute(query, {"id": material_id})
         row = result.mappings().first()
-        if not row:
-            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Material '{material_id}' not found.")
-        return dict(row)
-    except HTTPException:
-        raise
+        if row:
+            return dict(row)
     except Exception as e:
-        logger.error(f"Error fetching material {material_id}: {e}")
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Material '{material_id}' not found.")
+        logger.warning(f"Error querying {MATERIAL_TABLE_NAME} for {material_id}: {e}")
+
+    # 2. Query fallback ORM 'materials' table if MATERIAL_TABLE_NAME was different
+    if MATERIAL_TABLE_NAME != "materials":
+        try:
+            query = text("SELECT * FROM materials WHERE id = :id OR name = :id LIMIT 1")
+            result = await db.execute(query, {"id": material_id})
+            row = result.mappings().first()
+            if row:
+                return dict(row)
+        except Exception:
+            pass
+
+    # 3. Fallback to candidate dataframe (starter CSV / hardcoded candidates)
+    try:
+        from app.services.inference_service import InferenceService
+        df = await InferenceService.fetch_candidates_dataframe(db=db)
+        if not df.empty:
+            match = df[(df["id"] == material_id) | (df.get("polymer") == material_id) | (df.get("name") == material_id)]
+            if not match.empty:
+                return match.iloc[0].to_dict()
+    except Exception as e:
+        logger.warning(f"Fallback candidate dataframe query failed for {material_id}: {e}")
+
+    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Material '{material_id}' not found.")

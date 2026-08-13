@@ -35,7 +35,7 @@ interface ApiService {
         @Query("category") category: String? = null,
         @Query("search") search: String? = null,
         @Query("skip") skip: Int = 0,
-        @Query("limit") limit: Int = 50,
+        @Query("limit") limit: Int = 5000,
     ): Response<List<Map<String, Any?>>>
 
     @GET("api/v1/materials/categories")

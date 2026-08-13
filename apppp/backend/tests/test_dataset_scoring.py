@@ -163,10 +163,10 @@ class TestDatasetIntegrity:
 class TestAllMaterialsScore:
     """Every material should pass through the pipeline without errors."""
 
-    def test_default_requirements_no_crash(self, all_materials):
+    def test_empty_requirements_returns_zero_recommendations(self, all_materials):
         req = RequirementInput()
         result = score_and_rank(req, all_materials)
-        assert len(result.recommendations) > 0
+        assert len(result.recommendations) == 0
         assert result.total_materials_evaluated == len(all_materials)
 
     @pytest.mark.parametrize("profile_name", list(PROFILES.keys()))
@@ -185,7 +185,7 @@ class TestAllMaterialsScore:
             req = req_fn()
             result = score_and_rank(req, all_materials)
             for rec in result.recommendations:
-                assert 0.0 <= rec.score <= 1.0, \
+                assert 0.0 <= rec.score <= 100.0, \
                     f"[{profile_name}] {rec.material_name} score={rec.score}"
                 assert 0.0 <= rec.confidence <= 1.0, \
                     f"[{profile_name}] {rec.material_name} confidence={rec.confidence}"

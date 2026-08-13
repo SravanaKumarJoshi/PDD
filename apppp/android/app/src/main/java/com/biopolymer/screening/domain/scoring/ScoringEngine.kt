@@ -10,14 +10,18 @@ import kotlin.math.min
  * Mirrors the backend Python implementation for offline use.
  *
  * Pipeline:
- * 1. Hard constraint filtering
- * 2. Numeric range scoring
+ * 1. Active requirement detection & Hard constraint filtering
+ * 2. Continuous numeric range/distance scoring (0.0f - 100.0f scale)
  * 3. Boolean/categorical scoring
  * 4. Weighted aggregation
  * 5. Confidence computation
- * 6. Explanation generation
+ * 6. Explanation generation & Ranking
  */
 class ScoringEngine {
+
+    companion object {
+        const val MISSING_DATA_SCORE_PENALTY = 25.0f
+    }
 
     data class FailedConstraint(
         val reason: String,
@@ -35,15 +39,65 @@ class ScoringEngine {
         requirements: Requirement,
         materials: List<Material>,
     ): ScoringResult {
-        if (materials.isEmpty()) {
+        if (materials.isEmpty() || !hasAnySelectedCharacteristic(requirements)) {
             return ScoringResult(
                 recommendations = emptyList(),
-                totalEvaluated = 0,
+                totalEvaluated = materials.size,
                 filteredOut = 0,
                 limitingConstraints = emptyList(),
             )
         }
-        val isUnconstrainedSearch = !hasAnySelectedCharacteristic(requirements)
+
+        // Active requirements and weights map
+        val reqM = requirements.mechanical
+        val reqBar = requirements.barrier
+        val reqB = requirements.biological
+        val reqD = requirements.degradation
+        val reqP = requirements.processing
+        val reqS = requirements.sterilization
+        val reqC = requirements.cost
+
+        val activeWeights = mutableMapOf<String, Float>()
+
+        if (reqM.tensileStrengthMin != null || reqM.tensileStrengthMax != null) {
+            activeWeights["tensile_strength"] = reqM.weight
+        }
+        if (reqM.elasticModulusMin != null || reqM.elasticModulusMax != null) {
+            activeWeights["elastic_modulus"] = reqM.weight
+        }
+        if (reqM.elongationMin != null || reqM.elongationMax != null) {
+            activeWeights["elongation"] = reqM.weight
+        }
+        if (reqM.punctureResistanceMin != null) {
+            activeWeights["puncture_resistance"] = reqM.weight
+        }
+
+        if (reqBar.wvtrMax != null) {
+            activeWeights["wvtr"] = reqBar.weight
+        }
+        if (reqBar.otrMax != null) {
+            activeWeights["otr"] = reqBar.weight
+        }
+
+        if (reqD.degradationDaysMin != null || reqD.degradationDaysMax != null) {
+            activeWeights["degradation"] = reqD.weight
+        }
+        if (reqD.hydrolyticStabilityMin != null) {
+            activeWeights["hydrolytic_stability"] = reqD.weight
+        }
+
+        if (reqB.cytotoxicitySafeRequired || reqB.hemocompatibleRequired ||
+            reqB.antimicrobialRequired || reqB.lowEndotoxinRequired
+        ) {
+            activeWeights["biocompatibility"] = reqB.weight
+        }
+
+        if (reqC.maxCostBand != null) {
+            activeWeights["cost"] = reqC.weight
+        }
+        if (reqC.minAvailabilityBand != null) {
+            activeWeights["availability"] = reqC.weight
+        }
 
         val scored = mutableListOf<ScoredMaterial>()
         var filteredCount = 0
@@ -54,21 +108,18 @@ class ScoringEngine {
             val sm = ScoredMaterial(material)
 
             // ── PHASE 1: Hard Constraint Filtering ──
-            val reqS = requirements.sterilization
             if (reqS.gammaRequired && !props.sterGamma) sm.addFailure("Does not support gamma sterilization")
             if (reqS.etoRequired && !props.sterEto) sm.addFailure("Does not support EtO sterilization")
             if (reqS.steamRequired && !props.sterSteam) sm.addFailure("Does not support steam sterilization")
             if (reqS.uvRequired && !props.sterUv) sm.addFailure("Does not support UV sterilization")
             if (reqS.autoclaveRequired && !props.sterAutoclave) sm.addFailure("Does not support autoclave sterilization")
 
-            val reqP = requirements.processing
             if (reqP.filmRequired && !props.procFilm) sm.addFailure("Cannot be processed as film")
             if (reqP.castingRequired && !props.procCasting) sm.addFailure("Does not support casting")
             if (reqP.extrusionRequired && !props.procExtrusion) sm.addFailure("Does not support extrusion")
             if (reqP.coatingRequired && !props.procCoating) sm.addFailure("Does not support coating")
             if (reqP.meltRequired && !props.procMelt) sm.addFailure("Does not support melt processing")
 
-            val reqB = requirements.biological
             if (reqB.cytotoxicitySafeRequired && props.cytotoxicitySafe != true) sm.addFailure("Does not meet cytotoxicity safety requirement")
             if (reqB.hemocompatibleRequired && props.hemocompatible != true) sm.addFailure("Does not meet hemocompatibility requirement")
 
@@ -80,104 +131,97 @@ class ScoringEngine {
                 continue
             }
 
-            // ── PHASE 2: Numeric Range Scoring ──
-            val reqM = requirements.mechanical
-            sm.scores["tensile_strength"] = rangeOverlapScore(
-                props.tensileStrengthMin, props.tensileStrengthMax,
-                reqM.tensileStrengthMin, reqM.tensileStrengthMax
-            )
-            sm.scores["elastic_modulus"] = rangeOverlapScore(
-                props.elasticModulusMin, props.elasticModulusMax,
-                reqM.elasticModulusMin, reqM.elasticModulusMax
-            )
-            sm.scores["elongation"] = rangeOverlapScore(
-                props.elongationMin, props.elongationMax,
-                reqM.elongationMin, reqM.elongationMax
-            )
-            sm.scores["puncture_resistance"] = reqM.punctureResistanceMin?.let {
-                inversePointScore(props.punctureResistance, it)
+            // ── PHASE 2: Continuous Numeric & Categorical Scoring ──
+            if (activeWeights.containsKey("tensile_strength")) {
+                sm.scores["tensile_strength"] = scoreRangeRequirement(
+                    props.tensileStrengthMin, props.tensileStrengthMax,
+                    reqM.tensileStrengthMin, reqM.tensileStrengthMax
+                )
+            }
+            if (activeWeights.containsKey("elastic_modulus")) {
+                sm.scores["elastic_modulus"] = scoreRangeRequirement(
+                    props.elasticModulusMin, props.elasticModulusMax,
+                    reqM.elasticModulusMin, reqM.elasticModulusMax
+                )
+            }
+            if (activeWeights.containsKey("elongation")) {
+                sm.scores["elongation"] = scoreRangeRequirement(
+                    props.elongationMin, props.elongationMax,
+                    reqM.elongationMin, reqM.elongationMax
+                )
+            }
+            if (activeWeights.containsKey("puncture_resistance")) {
+                sm.scores["puncture_resistance"] = scoreMinRequirement(
+                    props.punctureResistance, reqM.punctureResistanceMin
+                )
             }
 
-            val reqBar = requirements.barrier
-            sm.scores["wvtr"] = inversePointScore(props.wvtr, reqBar.wvtrMax)
-            sm.scores["otr"] = inversePointScore(props.otr, reqBar.otrMax)
-
-            val reqD = requirements.degradation
-            sm.scores["degradation"] = rangeOverlapScore(
-                props.degradationDaysMin?.toFloat(), props.degradationDaysMax?.toFloat(),
-                reqD.degradationDaysMin?.toFloat(), reqD.degradationDaysMax?.toFloat()
-            )
-
-            // Hydrolytic stability (ordinal comparison, matching Python engine)
-            val hydrolyticOrder = mapOf("low" to 1, "med" to 2, "high" to 3)
-            sm.scores["hydrolytic_stability"] = if (
-                reqD.hydrolyticStabilityMin != null && props.hydrolyticStability != null
-            ) {
-                val reqLevel = hydrolyticOrder[reqD.hydrolyticStabilityMin.lowercase()] ?: 1
-                val actualLevel = hydrolyticOrder[props.hydrolyticStability.lowercase()] ?: 1
-                if (actualLevel >= reqLevel) 1.0f else 0.3f
-            } else {
-                null
+            if (activeWeights.containsKey("wvtr")) {
+                sm.scores["wvtr"] = scoreInversePoint(props.wvtr, reqBar.wvtrMax)
+            }
+            if (activeWeights.containsKey("otr")) {
+                sm.scores["otr"] = scoreInversePoint(props.otr, reqBar.otrMax)
             }
 
-            // Biocompatibility score
-            val bioScores = mutableListOf<Float>()
-            if (props.cytotoxicitySafe == true) bioScores.add(1.0f) else if (props.cytotoxicitySafe == false) bioScores.add(0.2f)
-            if (props.hemocompatible == true) bioScores.add(1.0f) else if (props.hemocompatible == false) bioScores.add(0.3f)
-            if (reqB.antimicrobialRequired) bioScores.add(if (props.antimicrobial == true) 1.0f else 0.0f)
-            sm.scores["biocompatibility"] = if (bioScores.isNotEmpty()) bioScores.average().toFloat() else null
+            if (activeWeights.containsKey("degradation")) {
+                sm.scores["degradation"] = scoreRangeRequirement(
+                    props.degradationDaysMin?.toFloat(), props.degradationDaysMax?.toFloat(),
+                    reqD.degradationDaysMin?.toFloat(), reqD.degradationDaysMax?.toFloat()
+                )
+            }
+            if (activeWeights.containsKey("hydrolytic_stability")) {
+                sm.scores["hydrolytic_stability"] = scoreOrdinalBand(
+                    props.hydrolyticStability, reqD.hydrolyticStabilityMin, higherIsBetter = true
+                )
+            }
 
-            // Cost
-            val reqC = requirements.cost
-            sm.scores["cost"] = bandScore(props.costBand, reqC.maxCostBand)
-            sm.scores["availability"] = reqC.minAvailabilityBand?.let {
-                bandScore(props.availabilityBand, it)
+            if (activeWeights.containsKey("biocompatibility")) {
+                val bioScores = mutableListOf<Float>()
+                if (reqB.cytotoxicitySafeRequired) {
+                    bioScores.add(if (props.cytotoxicitySafe == true) 100.0f else if (props.cytotoxicitySafe == false) 20.0f else MISSING_DATA_SCORE_PENALTY)
+                }
+                if (reqB.hemocompatibleRequired) {
+                    bioScores.add(if (props.hemocompatible == true) 100.0f else if (props.hemocompatible == false) 20.0f else MISSING_DATA_SCORE_PENALTY)
+                }
+                if (reqB.antimicrobialRequired) {
+                    bioScores.add(if (props.antimicrobial == true) 100.0f else if (props.antimicrobial == false) 20.0f else MISSING_DATA_SCORE_PENALTY)
+                }
+                if (reqB.lowEndotoxinRequired) {
+                    bioScores.add(if (props.endotoxinConcern != null && props.endotoxinConcern.equals("low", ignoreCase = true)) 100.0f else if (props.endotoxinConcern != null) 20.0f else MISSING_DATA_SCORE_PENALTY)
+                }
+
+                sm.scores["biocompatibility"] = if (bioScores.isNotEmpty()) bioScores.average().toFloat() else MISSING_DATA_SCORE_PENALTY
+            }
+
+            if (activeWeights.containsKey("cost")) {
+                sm.scores["cost"] = scoreOrdinalBand(props.costBand, reqC.maxCostBand, higherIsBetter = false)
+            }
+            if (activeWeights.containsKey("availability")) {
+                sm.scores["availability"] = scoreOrdinalBand(props.availabilityBand, reqC.minAvailabilityBand, higherIsBetter = true)
             }
 
             // ── PHASE 3: Weighted Aggregation ──
-            val weightMap = mapOf(
-                "tensile_strength" to reqM.weight,
-                "elastic_modulus" to reqM.weight,
-                "elongation" to reqM.weight,
-                "puncture_resistance" to reqM.weight,
-                "wvtr" to reqBar.weight,
-                "otr" to reqBar.weight,
-                "biocompatibility" to reqB.weight,
-                "degradation" to reqD.weight,
-                "hydrolytic_stability" to reqD.weight,
-                "cost" to reqC.weight,
-                "availability" to reqC.weight,
-            )
-
             var totalWeighted = 0f
             var totalWeight = 0f
 
-            for ((dim, score) in sm.scores) {
-                val w = weightMap[dim] ?: 1.0f
-                if (score == null) {
-                    totalWeighted += w * 0.3f
-                } else {
-                    totalWeighted += w * score
+            for ((dim, weight) in activeWeights) {
+                val score = sm.scores[dim]
+                if (score != null) {
+                    totalWeighted += weight * score
+                    totalWeight += weight
+                    if (score == MISSING_DATA_SCORE_PENALTY) {
+                        sm.missingDimensions.add(dim)
+                    }
                 }
-                totalWeight += w
             }
 
-            // ── PHASE 4: Confidence & Score Assignment ──
+            val rawScore = if (totalWeight > 0f) (totalWeighted / totalWeight).coerceIn(0f, 100f) else 0f
+            sm.totalScore = rawScore
+
+            // ── PHASE 4: Confidence ──
             val evidenceMap = mapOf("low" to 0.4f, "med" to 0.7f, "high" to 1.0f)
             val evScore = evidenceMap[material.evidenceLevel] ?: 0.4f
             sm.confidence = 0.6f * props.dataCompleteness + 0.4f * evScore
-
-            val rawScore = if (isUnconstrainedSearch || totalWeight == 0f) {
-                val bioScore = sm.scores["biocompatibility"] ?: 0.6f
-                0.5f * bioScore + 0.3f * props.dataCompleteness + 0.2f * evScore
-            } else {
-                if (totalWeight > 0) totalWeighted / totalWeight else 0.5f
-            }
-
-            // Calibrate score range so top candidates fall naturally into the 85% - 96% match range
-            val matHash = (material.id.hashCode() and 0x7FFFFFFF) % 100 / 1000f
-            val calibrated = 0.85f + (rawScore * 0.11f) - matHash * 0.05f
-            sm.totalScore = calibrated.coerceIn(0.68f, 0.96f)
 
             scored.add(sm)
         }
@@ -185,32 +229,31 @@ class ScoringEngine {
         // ── PHASE 5: Sort & Generate Explanations ──
         scored.sortByDescending { it.totalScore }
 
-        val recommendations = scored.mapIndexed { index, sm ->
-            val baseRankScore = 0.95f - (index * 0.006f)
-            val matHash = (sm.material.id.hashCode() and 0x7FFFFFFF) % 40 / 1000f - 0.020f
-            val itemScore = (baseRankScore + matHash).coerceIn(0.60f, 0.95f)
-
+        val recommendations = scored.map { sm ->
             val contributions = sm.scores.entries
                 .filter { it.value != null }
                 .map { (dim, score) ->
+                    val isMissing = sm.missingDimensions.contains(dim)
                     FactorContribution(
                         factor = dim,
                         score = score!!,
-                        description = describeFactor(dim, score)
+                        description = describeFactor(dim, score, isMissing = isMissing)
                     )
                 }
                 .sortedByDescending { it.score }
 
+            val topFactors = contributions.filter { it.score >= 70.0f }.take(5)
+            val concerns = contributions.filter { it.score < 50.0f && !sm.missingDimensions.contains(it.factor) }.take(3)
             val tradeoffs = generateTradeoffs(sm)
 
             Recommendation(
                 materialId = sm.material.id,
                 materialName = sm.material.name,
                 category = sm.material.category,
-                score = itemScore,
+                score = sm.totalScore,
                 confidence = sm.confidence,
-                topFactors = contributions.take(5),
-                concerns = contributions.filter { it.score < 0.4f }.take(3),
+                topFactors = topFactors,
+                concerns = concerns,
                 unmetConstraints = sm.hardFailures,
                 tradeoffs = tradeoffs,
             )
@@ -273,41 +316,102 @@ class ScoringEngine {
             sustainability.compostableRequired
     }
 
-    // ── Helper Functions ──
+    // ── Helper Continuous Scoring Functions (0.0f to 100.0f) ──
 
-    private fun rangeOverlapScore(
+    private fun scoreMinRequirement(actualVal: Float?, targetMin: Float?): Float {
+        if (targetMin == null || targetMin <= 0f) return 100.0f
+        if (actualVal == null) return MISSING_DATA_SCORE_PENALTY
+
+        return if (actualVal < targetMin) {
+            val ratio = max(0.0f, actualVal / targetMin)
+            max(0.0f, 70.0f * ratio)
+        } else {
+            val surplus = (actualVal - targetMin) / targetMin
+            min(100.0f, 80.0f + 20.0f * min(1.0f, surplus))
+        }
+    }
+
+    private fun scoreMaxRequirement(actualVal: Float?, targetMax: Float?): Float {
+        if (targetMax == null || targetMax <= 0f) return 100.0f
+        if (actualVal == null) return MISSING_DATA_SCORE_PENALTY
+
+        return if (actualVal <= targetMax) {
+            val margin = (targetMax - actualVal) / targetMax
+            min(100.0f, 85.0f + 15.0f * min(1.0f, margin))
+        } else {
+            val ratio = targetMax / actualVal
+            max(0.0f, 85.0f * ratio)
+        }
+    }
+
+    private fun scoreRangeRequirement(
         actualMin: Float?, actualMax: Float?,
-        targetMin: Float?, targetMax: Float?,
-    ): Float? {
-        if (actualMin == null || actualMax == null || targetMin == null || targetMax == null) return null
-        if (targetMax <= targetMin) return null
+        targetMin: Float?, targetMax: Float?
+    ): Float {
+        if (targetMin == null && targetMax == null) return 100.0f
 
-        val overlapStart = max(actualMin, targetMin)
-        val overlapEnd = min(actualMax, targetMax)
-
-        if (overlapStart > overlapEnd) {
-            val gap = min(abs(actualMin - targetMax), abs(actualMax - targetMin))
-            val targetSpan = targetMax - targetMin
-            return max(0f, 1f - (gap / targetSpan))
+        if (targetMin != null && targetMax == null) {
+            val actVal = actualMax ?: actualMin
+            return scoreMinRequirement(actVal, targetMin)
+        }
+        if (targetMax != null && targetMin == null) {
+            val actVal = actualMin ?: actualMax
+            return scoreMaxRequirement(actVal, targetMax)
         }
 
-        val overlapLength = overlapEnd - overlapStart
-        val targetLength = targetMax - targetMin
-        return min(overlapLength / targetLength, 1f)
+        if (actualMin == null && actualMax == null) return MISSING_DATA_SCORE_PENALTY
+        if (targetMax!! <= targetMin!!) return 100.0f
+
+        val actMin = actualMin ?: actualMax
+        val actMax = actualMax ?: actualMin
+        if (actMin == null || actMax == null) return MISSING_DATA_SCORE_PENALTY
+
+        val targetMid = (targetMin + targetMax) / 2.0f
+        val targetHalf = (targetMax - targetMin) / 2.0f
+        val actMid = (actMin + actMax) / 2.0f
+
+        val diff = abs(actMid - targetMid)
+        return if (diff <= targetHalf) {
+            val ratio = if (targetHalf > 0f) diff / targetHalf else 0f
+            100.0f - 15.0f * ratio
+        } else {
+            val gap = diff - targetHalf
+            val span = if (targetHalf > 0f) targetHalf else if (targetMid > 0f) targetMid else 1.0f
+            max(0.0f, 85.0f - 70.0f * (gap / span))
+        }
     }
 
-    private fun inversePointScore(actualValue: Float?, targetMax: Float?): Float? {
-        if (actualValue == null || targetMax == null || targetMax <= 0) return null
-        if (actualValue <= targetMax) return 1.0f
-        return min(targetMax / actualValue, 1.0f)
+    private fun scoreInversePoint(actualValue: Float?, targetMax: Float?): Float {
+        return scoreMaxRequirement(actualValue, targetMax)
     }
 
-    private fun bandScore(actualBand: String?, targetMaxBand: String?): Float? {
-        if (actualBand == null || targetMaxBand == null) return null
+    private fun scoreOrdinalBand(
+        actualBand: String?,
+        targetBand: String?,
+        higherIsBetter: Boolean = false
+    ): Float {
+        if (targetBand == null) return 100.0f
+        if (actualBand == null) return MISSING_DATA_SCORE_PENALTY
+
         val bandOrder = mapOf("low" to 1, "med" to 2, "high" to 3)
         val actual = bandOrder[actualBand.lowercase()] ?: 2
-        val target = bandOrder[targetMaxBand.lowercase()] ?: 3
-        return if (actual <= target) 1.0f else 0.3f
+        val target = bandOrder[targetBand.lowercase()] ?: 3
+
+        return if (higherIsBetter) {
+            when {
+                actual > target -> 100.0f
+                actual == target -> 85.0f
+                target - actual == 1 -> 45.0f
+                else -> 15.0f
+            }
+        } else {
+            when {
+                actual < target -> 100.0f
+                actual == target -> 85.0f
+                actual - target == 1 -> 45.0f
+                else -> 15.0f
+            }
+        }
     }
 
     private val factorLabels = mapOf(
@@ -324,13 +428,18 @@ class ScoringEngine {
         "hydrolytic_stability" to "Hydrolytic Stability",
     )
 
-    private fun describeFactor(dim: String, score: Float): String {
+    private fun describeFactor(dim: String, score: Float, isMissing: Boolean = false): String {
         val label = factorLabels[dim] ?: dim.replace("_", " ").replaceFirstChar { it.uppercase() }
+        if (isMissing) {
+            return "$label: Data missing for requested requirement (25% penalty)"
+        }
         return when {
-            score >= 0.9f -> "$label: Excellent match with target requirements"
-            score >= 0.7f -> "$label: Good match, within acceptable range"
-            score >= 0.4f -> "$label: Partial match, some deviation from target"
-            else -> "$label: Poor match, significant gap from requirements"
+            score >= 90.0f -> "$label: Excellent match with target requirements (${score.toInt()}%)"
+            score >= 80.0f -> "$label: Very good match, meets requirements comfortably (${score.toInt()}%)"
+            score >= 70.0f -> "$label: Good match, within acceptable range (${score.toInt()}%)"
+            score >= 50.0f -> "$label: Moderate match, minor deviation from target (${score.toInt()}%)"
+            score >= 30.0f -> "$label: Weak match, noticeable gap from requirements (${score.toInt()}%)"
+            else -> "$label: Poor match, significant gap from requirements (${score.toInt()}%)"
         }
     }
 
@@ -338,15 +447,20 @@ class ScoringEngine {
         val tradeoffs = mutableListOf<String>()
         val scores = sm.scores
 
+        if (sm.missingDimensions.isNotEmpty()) {
+            val missingNames = sm.missingDimensions.map { factorLabels[it] ?: it }
+            tradeoffs.add("⚠ Missing data for requested properties: ${missingNames.joinToString(", ")} (25% penalty applied)")
+        }
+
         val mechAvg = listOfNotNull(scores["tensile_strength"], scores["elastic_modulus"])
             .takeIf { it.isNotEmpty() }?.average()?.toFloat()
         val barrierAvg = listOfNotNull(scores["wvtr"], scores["otr"])
             .takeIf { it.isNotEmpty() }?.average()?.toFloat()
 
         if (mechAvg != null && barrierAvg != null) {
-            if (mechAvg > 0.7f && barrierAvg < 0.4f)
+            if (mechAvg > 70.0f && barrierAvg < 50.0f)
                 tradeoffs.add("Strong mechanical properties but weak barrier performance — consider blending or coating")
-            else if (barrierAvg > 0.7f && mechAvg < 0.4f)
+            else if (barrierAvg > 70.0f && mechAvg < 50.0f)
                 tradeoffs.add("Good barrier properties but limited mechanical strength — consider reinforcement")
         }
 
@@ -354,7 +468,7 @@ class ScoringEngine {
             tradeoffs.add("⚠ Evidence level is LOW — properties based on limited or synthetic data")
 
         val costScore = scores["cost"]
-        if (costScore != null && costScore < 0.5f && sm.totalScore > 0.7f)
+        if (costScore != null && costScore < 50.0f && sm.totalScore > 70.0f)
             tradeoffs.add("High-performing material but cost may be prohibitive — evaluate cost-benefit")
 
         return tradeoffs
@@ -362,6 +476,7 @@ class ScoringEngine {
 
     private class ScoredMaterial(val material: Material) {
         val scores = mutableMapOf<String, Float?>()
+        val missingDimensions = mutableListOf<String>()
         val hardFailures = mutableListOf<String>()
         var totalScore: Float = 0f
         var confidence: Float = 0f

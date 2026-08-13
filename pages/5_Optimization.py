@@ -20,18 +20,21 @@ st.set_page_config(page_title="Optimization", page_icon="🎯", layout="wide")
 st.title("🎯 Multi-Objective Optimization")
 st.markdown("Explore Pareto-optimal trade-offs between strength, biodegradability, and biocompatibility.")
 
-if "dataset" not in st.session_state or st.session_state.get("dataset_source") != "mysql":
-    with st.spinner("Loading materials from MySQL..."):
+if "dataset" not in st.session_state:
+    with st.spinner("Loading materials..."):
+        from src.data import standardize_material_dataframe
+        from scripts.train_pipeline import load_data_from_mysql_or_fallback
         df, stats, error = load_dataset_from_mysql()
-        if error:
-            st.error(f"⚠️ {error}")
-            st.info("Ensure MYSQL_HOST / MYSQL_DATABASE / MYSQL_USER / MYSQL_PASSWORD are set in .env")
-            st.stop()
+        if error or df is None or df.empty:
+            df = load_data_from_mysql_or_fallback()
+        df = standardize_material_dataframe(df)
         st.session_state["dataset"] = df.copy(deep=True)
-        st.session_state["dataset_stats"] = stats
         st.session_state["dataset_source"] = "mysql"
 
 df = st.session_state["dataset"]
+from src.data import standardize_material_dataframe
+df = standardize_material_dataframe(df)
+st.session_state["dataset"] = df
 
 # Config
 st.header("⚙️ Optimization Settings")
@@ -68,7 +71,7 @@ st.header("📊 Pareto Front Visualization")
 all_strength = [min(c.get("tensile_strength", 0) / 300, 1.0) for c in candidates]
 all_biodeg = [1 - min(c.get("biodegradation_days", 365) / 730, 1.0) for c in candidates]
 all_biocomp = [min(c.get("biocompatibility", 0) / 10, 1.0) for c in candidates]
-all_names = [c["polymer"] for c in candidates]
+all_names = [c.get("polymer", c.get("name", "Unknown")) for c in candidates]
 
 is_pareto = [i in pareto_idx for i in range(len(candidates))]
 

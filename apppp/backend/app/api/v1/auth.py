@@ -13,6 +13,7 @@ import jwt
 from app.database import get_db
 from app.models.user import User
 from app.config import settings
+from app.auth.dependencies import require_auth
 
 logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/auth", tags=["Authentication"])
@@ -121,33 +122,13 @@ async def login(
 
 @router.get("/me")
 async def get_me(
-    authorization: Optional[str] = Header(None),
-    db: AsyncSession = Depends(get_db)
+    user: User = Depends(require_auth),
 ):
     """Retrieve current authenticated user profile."""
-    if not authorization:
-        raise HTTPException(status_code=401, detail="Missing authorization header")
-    
-    parts = authorization.split()
-    if len(parts) != 2 or parts[0].lower() != "bearer":
-        raise HTTPException(status_code=401, detail="Invalid token format")
-
-    token = parts[1]
-    try:
-        payload = jwt.decode(token, settings.JWT_SECRET_KEY, algorithms=[settings.JWT_ALGORITHM])
-        uid = payload.get("sub")
-    except Exception:
-        raise HTTPException(status_code=401, detail="Invalid or expired token")
-
-    result = await db.execute(select(User).where(User.auth_provider_id == uid))
-    user = result.scalar_one_or_none()
-    if not user:
-        raise HTTPException(status_code=404, detail="User profile not found")
-
     return {
         "id": user.id,
         "email": user.email,
-        "display_name": user.display_name,
+        "display_name": user.display_name or (user.email.split("@")[0] if user.email else "User"),
         "role": user.role,
         "created_at": user.created_at.isoformat() if user.created_at else None
     }

@@ -1,0 +1,18 @@
+{
+  "name": "brainbattle-e2e",
+  "version": "1.0.0",
+  "description": "BioPolymer AI Screening — Web E2E Test Suite (1,100 Selenium Tests)",
+  "private": true,
+  "scripts": {
+    "test": "mocha tests/mega_web_1100.test.js --timeout 120000 --exit",
+    "security:web": "node scripts/generateWebSecuritySuite.js",
+    "report:html": "node utils/htmlReportGenerator.js"
+  },
+  "dependencies": {
+    "mocha": "^10.7.3",
+    "selenium-webdriver": "^4.25.0",
+    "chromedriver": "^130.0.0",
+    "exceljs": "^4.4.0",
+    "chai": "^4.5.0"
+  }
+}

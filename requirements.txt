@@ -11,3 +11,5 @@ faiss-cpu
 scipy   
 mysql-connector-python
 python-dotenv
+PyYAML
+

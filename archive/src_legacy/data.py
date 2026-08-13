@@ -65,6 +65,136 @@ FEATURE_COLUMNS = [
 ]
 
 
+def standardize_material_dataframe(df: pd.DataFrame) -> pd.DataFrame:
+    """Ensure DataFrame columns conform to the standard schema used across ML pipeline and UI."""
+    if df is None or df.empty:
+        return df
+
+    df = df.copy()
+
+    column_mapping = {
+        "name": "polymer",
+        "tensileStrengthMpaMin": "tensile_strength",
+        "tensileStrengthMpaMax": "tensile_strength_max",
+        "elasticModulusGpaMin": "elastic_modulus",
+        "elasticModulusGpaMax": "elastic_modulus_max",
+        "elongationPctMin": "elongation_pct",
+        "degradationDaysMin": "biodegradation_days",
+        "enzymaticDegradability": "environmental_impact",
+        "cytotoxicitySafe": "cytotoxicity_safe",
+        "sterGamma": "sterilization_gamma",
+        "sterEto": "sterilization_eto",
+        "sterSteam": "sterilization_steam",
+        "procFilm": "film_forming",
+        "evidenceLevel": "evidence_level",
+    }
+
+    rename_dict = {old: new for old, new in column_mapping.items() if old in df.columns and new not in df.columns}
+    if rename_dict:
+        df = df.rename(columns=rename_dict)
+
+    if "polymer" not in df.columns:
+        if "name" in df.columns:
+            df["polymer"] = df["name"]
+        else:
+            df["polymer"] = "Unknown Polymer"
+
+    if "category" not in df.columns:
+        df["category"] = "Uncategorized"
+
+    if "biocompatibility" not in df.columns:
+        if "cytotoxicity_safe" in df.columns:
+            df["biocompatibility"] = df["cytotoxicity_safe"].apply(
+                lambda x: 9.0 if str(x).strip() in ["1", "1.0", "True", "true"] else 4.0
+            )
+        elif "cytotoxicitySafe" in df.columns:
+            df["biocompatibility"] = df["cytotoxicitySafe"].apply(
+                lambda x: 9.0 if str(x).strip() in ["1", "1.0", "True", "true"] else 4.0
+            )
+        else:
+            df["biocompatibility"] = 8.0
+
+    if "toxicity_score" not in df.columns:
+        if "cytotoxicity_safe" in df.columns:
+            df["toxicity_score"] = df["cytotoxicity_safe"].apply(
+                lambda x: 8.5 if str(x).strip() in ["1", "1.0", "True", "true"] else 3.0
+            )
+        else:
+            df["toxicity_score"] = 8.0
+
+    if "tensile_strength" not in df.columns:
+        if "tensileStrengthMpaMin" in df.columns:
+            df["tensile_strength"] = pd.to_numeric(df["tensileStrengthMpaMin"], errors="coerce").fillna(20.0)
+        else:
+            df["tensile_strength"] = 20.0
+
+    if "elastic_modulus" not in df.columns:
+        if "elasticModulusGpaMin" in df.columns:
+            df["elastic_modulus"] = pd.to_numeric(df["elasticModulusGpaMin"], errors="coerce").fillna(1.2)
+        else:
+            df["elastic_modulus"] = 1.2
+
+    if "elongation_pct" not in df.columns:
+        if "elongationPctMin" in df.columns:
+            df["elongation_pct"] = pd.to_numeric(df["elongationPctMin"], errors="coerce").fillna(45.0)
+        else:
+            df["elongation_pct"] = 45.0
+
+    if "flexibility" not in df.columns:
+        if "elongation_pct" in df.columns:
+            df["flexibility"] = pd.to_numeric(df["elongation_pct"], errors="coerce").fillna(45.0) * 0.8
+        else:
+            df["flexibility"] = 35.0
+
+    if "wvtr" not in df.columns:
+        df["wvtr"] = 800.0
+
+    if "oxygen_permeability" not in df.columns:
+        if "otr" in df.columns:
+            df["oxygen_permeability"] = pd.to_numeric(df["otr"], errors="coerce").fillna(120.0)
+        else:
+            df["oxygen_permeability"] = 120.0
+
+    if "antimicrobial" not in df.columns:
+        df["antimicrobial"] = 0.0
+
+    if "biodegradation_days" not in df.columns:
+        if "degradationDaysMin" in df.columns:
+            df["biodegradation_days"] = pd.to_numeric(df["degradationDaysMin"], errors="coerce").fillna(60.0)
+        else:
+            df["biodegradation_days"] = 60.0
+
+    if "environmental_impact" not in df.columns:
+        df["environmental_impact"] = 5.0
+
+    if "film_forming" not in df.columns:
+        df["film_forming"] = 1.0
+
+    if "sterilization_gamma" not in df.columns:
+        df["sterilization_gamma"] = 0.0
+
+    if "sterilization_eto" not in df.columns:
+        df["sterilization_eto"] = 0.0
+
+    if "sterilization_steam" not in df.columns:
+        df["sterilization_steam"] = 0.0
+
+    if "is_augmented" not in df.columns:
+        df["is_augmented"] = 0
+
+    if "evidence_level" not in df.columns:
+        df["evidence_level"] = "high"
+
+    if "suitability_label" not in df.columns:
+        if "biocompatibility" in df.columns:
+            bio = pd.to_numeric(df["biocompatibility"], errors="coerce").fillna(5.0)
+            df["suitability_label"] = (bio >= bio.median()).astype(int)
+        else:
+            df["suitability_label"] = 1
+
+    return df
+
+
 # ---------------------------------------------------------------------------
 # MySQL connection
 # ---------------------------------------------------------------------------
@@ -79,7 +209,7 @@ def _get_mysql_config() -> dict:
     port = int(os.environ.get("MYSQL_PORT", "3306"))
     database = os.environ.get("MYSQL_DATABASE", "polysaccharide_selector")
     user = os.environ.get("MYSQL_USER", "root")
-    password = os.environ.get("MYSQL_PASSWORD", "meheer17")
+    password = os.environ.get("MYSQL_PASSWORD", "root123")
     # connection_timeout: seconds to wait for the TCP handshake
     # read_timeout / write_timeout: seconds to wait for a query response
     connection_timeout = int(os.environ.get("MYSQL_CONNECTION_TIMEOUT", "10"))
@@ -141,6 +271,129 @@ def mysql_connection():
 # ---------------------------------------------------------------------------
 # Dataset loading — MySQL primary, CSV fallback
 # ---------------------------------------------------------------------------
+
+def standardize_material_dataframe(df: pd.DataFrame) -> pd.DataFrame:
+    """Ensure DataFrame columns conform to the standard schema used across ML pipeline and UI."""
+    if df is None or df.empty:
+        return df
+
+    df = df.copy()
+
+    column_mapping = {
+        "name": "polymer",
+        "tensileStrengthMpaMin": "tensile_strength",
+        "tensileStrengthMpaMax": "tensile_strength_max",
+        "elasticModulusGpaMin": "elastic_modulus",
+        "elasticModulusGpaMax": "elastic_modulus_max",
+        "elongationPctMin": "elongation_pct",
+        "degradationDaysMin": "biodegradation_days",
+        "enzymaticDegradability": "environmental_impact",
+        "cytotoxicitySafe": "cytotoxicity_safe",
+        "sterGamma": "sterilization_gamma",
+        "sterEto": "sterilization_eto",
+        "sterSteam": "sterilization_steam",
+        "procFilm": "film_forming",
+        "evidenceLevel": "evidence_level",
+    }
+
+    rename_dict = {old: new for old, new in column_mapping.items() if old in df.columns and new not in df.columns}
+    if rename_dict:
+        df = df.rename(columns=rename_dict)
+
+    if "polymer" not in df.columns:
+        if "name" in df.columns:
+            df["polymer"] = df["name"]
+        else:
+            df["polymer"] = "Unknown Polymer"
+
+    if "category" not in df.columns:
+        df["category"] = "Uncategorized"
+
+    if "biocompatibility" not in df.columns:
+        if "cytotoxicity_safe" in df.columns:
+            df["biocompatibility"] = df["cytotoxicity_safe"].apply(
+                lambda x: 9.0 if str(x).strip() in ["1", "1.0", "True", "true"] else 4.0
+            )
+        elif "cytotoxicitySafe" in df.columns:
+            df["biocompatibility"] = df["cytotoxicitySafe"].apply(
+                lambda x: 9.0 if str(x).strip() in ["1", "1.0", "True", "true"] else 4.0
+            )
+        else:
+            df["biocompatibility"] = 8.0
+
+    if "toxicity_score" not in df.columns:
+        if "cytotoxicity_safe" in df.columns:
+            df["toxicity_score"] = df["cytotoxicity_safe"].apply(
+                lambda x: 8.5 if str(x).strip() in ["1", "1.0", "True", "true"] else 3.0
+            )
+        else:
+            df["toxicity_score"] = 8.0
+
+    if "tensile_strength" not in df.columns:
+        if "tensileStrengthMpaMin" in df.columns:
+            df["tensile_strength"] = pd.to_numeric(df["tensileStrengthMpaMin"], errors="coerce").fillna(20.0)
+        else:
+            df["tensile_strength"] = 20.0
+
+    if "elastic_modulus" not in df.columns:
+        if "elasticModulusGpaMin" in df.columns:
+            df["elastic_modulus"] = pd.to_numeric(df["elasticModulusGpaMin"], errors="coerce").fillna(1.2)
+        else:
+            df["elastic_modulus"] = 1.2
+
+    if "elongation_pct" not in df.columns:
+        if "elongationPctMin" in df.columns:
+            df["elongation_pct"] = pd.to_numeric(df["elongationPctMin"], errors="coerce").fillna(45.0)
+        else:
+            df["elongation_pct"] = 45.0
+
+    if "flexibility" not in df.columns:
+        if "elongation_pct" in df.columns:
+            df["flexibility"] = pd.to_numeric(df["elongation_pct"], errors="coerce").fillna(45.0) * 0.8
+        else:
+            df["flexibility"] = 35.0
+
+    if "wvtr" not in df.columns:
+        df["wvtr"] = 800.0
+
+    if "oxygen_permeability" not in df.columns:
+        if "otr" in df.columns:
+            df["oxygen_permeability"] = pd.to_numeric(df["otr"], errors="coerce").fillna(120.0)
+        else:
+            df["oxygen_permeability"] = 120.0
+
+    if "antimicrobial" not in df.columns:
+        df["antimicrobial"] = 0.0
+
+    if "biodegradation_days" not in df.columns:
+        if "degradationDaysMin" in df.columns:
+            df["biodegradation_days"] = pd.to_numeric(df["degradationDaysMin"], errors="coerce").fillna(60.0)
+        else:
+            df["biodegradation_days"] = 60.0
+
+    if "environmental_impact" not in df.columns:
+        df["environmental_impact"] = 5.0
+
+    if "film_forming" not in df.columns:
+        df["film_forming"] = 1.0
+
+    if "sterilization_gamma" not in df.columns:
+        df["sterilization_gamma"] = 0.0
+
+    if "sterilization_eto" not in df.columns:
+        df["sterilization_eto"] = 0.0
+
+    if "sterilization_steam" not in df.columns:
+        df["sterilization_steam"] = 0.0
+
+    if "is_augmented" not in df.columns:
+        df["is_augmented"] = 0
+
+    if "evidence_level" not in df.columns:
+        df["evidence_level"] = "high"
+
+    return df
+
 
 def load_dataset_from_mysql(
     table: str = "filtered_polymers",
@@ -209,8 +462,9 @@ def load_dataset_from_mysql(
 
         df = pd.DataFrame(rows)
 
-        # Normalise column names: strip whitespace
+        # Normalise column names: strip whitespace and standardize schema
         df.columns = [str(c).strip() for c in df.columns]
+        df = standardize_material_dataframe(df)
 
         # Coerce numeric columns
         for col in NUMERIC_COLUMNS:

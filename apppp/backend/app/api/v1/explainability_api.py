@@ -9,7 +9,7 @@ import pandas as pd
 
 _p = Path(__file__).resolve().parent
 while _p.parent != _p:
-    if (_p / "src").exists():
+    if (_p / "src").is_dir():
         if str(_p) not in sys.path:
             sys.path.insert(0, str(_p))
         break

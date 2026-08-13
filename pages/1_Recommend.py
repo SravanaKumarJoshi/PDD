@@ -14,6 +14,10 @@ if str(BACKEND_DIR) not in sys.path:
 
 from shared.ml.config import FEATURE_COLUMNS
 from scripts.train_pipeline import load_data_from_mysql_or_fallback
+from src.data import get_dataset_stats
+from src.scoring import run_full_pipeline, PipelineResult, ensure_models_trained
+from src.results_store import save_result
+
 
 st.set_page_config(page_title="Recommend", page_icon="🔬", layout="wide")
 
@@ -39,11 +43,8 @@ if "dataset" not in st.session_state:
         st.session_state["dataset"] = df.copy(deep=True)
         st.session_state["dataset_source"] = "mysql"
 
-if "xgb_model" not in st.session_state:
-    st.warning("⚠️ Models not trained. Visit **Model Training** page first.")
-    st.info("You can still run recommendations without ML (similarity-only mode).")
-
 df = st.session_state["dataset"]
+ensure_models_trained(df)
 stats = st.session_state.get("dataset_stats") or get_dataset_stats(df)
 
 # ─── Requirements Form ────────────────────────────────────────────

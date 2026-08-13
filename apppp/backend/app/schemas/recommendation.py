@@ -90,7 +90,7 @@ class RecommendationResult(BaseModel):
     material_id: UUID
     material_name: str
     category: str
-    score: float = Field(..., ge=0, le=1)
+    score: float = Field(..., ge=0, le=100)
     confidence: float = Field(..., ge=0, le=1)
     top_factors: list[FactorContribution]
     concerns: list[FactorContribution]

@@ -85,11 +85,38 @@ class SavedScreeningRepositoryImpl @Inject constructor(
         }
         Log.d(TAG, "saveScreening: Validation Passed (${scoringResult.recommendations.size} recommendations)")
 
-        // 2. Content Hash Computation
+        // 2. Compute Target ID
+        val targetId = UUID.randomUUID().toString()
+
+        // 3. Backend API Validation & Creation first
+        try {
+            val projectMap = mapOf<String, Any?>(
+                "id" to targetId,
+                "title" to trimmedTitle,
+                "requirements" to mapOf("note" to "saved_screening"),
+                "results" to mapOf("total" to scoringResult.totalEvaluated)
+            )
+            val resp = apiService.createProject(projectMap)
+            if (!resp.isSuccessful) {
+                val errBody = resp.errorBody()?.string() ?: ""
+                Log.w(TAG, "saveScreening: Backend returned HTTP ${resp.code()}: $errBody")
+                if (resp.code() == 409 || errBody.contains("already exists", ignoreCase = true)) {
+                    return@withContext SaveScreeningResult.Error("A project with this name already exists.")
+                } else if (resp.code() == 401) {
+                    return@withContext SaveScreeningResult.Error("Please log in to save projects.")
+                }
+            } else {
+                Log.d(TAG, "saveScreening: Backend project creation successful for title='$trimmedTitle'")
+            }
+        } catch (netErr: Exception) {
+            Log.w(TAG, "saveScreening: Backend REST sync skipped/offline: ${netErr.message}")
+        }
+
+        // 4. Content Hash Computation
         val contentHash = mapper.computeContentHash(requirement, scoringResult)
         Log.d(TAG, "saveScreening: Fingerprint Computed - contentHash=$contentHash")
 
-        // 3. Extract Summary Fields for Fast UI List Rendering
+        // 5. Extract Summary Fields for Fast UI List Rendering
         val topRec = scoringResult.recommendations.firstOrNull()
         val topMaterialName = topRec?.materialName ?: "Unknown Material"
         val topMatchScore = topRec?.score ?: 0f
@@ -97,10 +124,10 @@ class SavedScreeningRepositoryImpl @Inject constructor(
         val summaryText = "${scoringResult.recommendations.size} materials matched out of ${scoringResult.totalEvaluated} evaluated"
 
         try {
-            // 4. Room Transaction
+            // 6. Room Transaction
             Log.d(TAG, "saveScreening: Transaction Started")
             val outcome = database.withTransaction {
-                // Check if duplicate content hash exists
+                // Check if duplicate content hash exists locally
                 val existingHash = dao.getScreeningByContentHash(contentHash)
                 if (existingHash != null && !overwriteIfExists) {
                     val existingDomain = mapper.toDomain(existingHash)
@@ -109,14 +136,14 @@ class SavedScreeningRepositoryImpl @Inject constructor(
                 }
 
                 val now = System.currentTimeMillis()
-                val targetId = if (existingHash != null && overwriteIfExists) {
+                val finalId = if (existingHash != null && overwriteIfExists) {
                     existingHash.id
                 } else {
-                    UUID.randomUUID().toString()
+                    targetId
                 }
 
                 val domainObject = SavedScreening(
-                    id = targetId,
+                    id = finalId,
                     title = trimmedTitle,
                     contentHash = contentHash,
                     topMaterialName = topMaterialName,
@@ -133,26 +160,10 @@ class SavedScreeningRepositoryImpl @Inject constructor(
                 val entity = mapper.toEntity(domainObject)
                 dao.insertScreening(entity)
 
-                // Verify insertion & fire backend REST sync
-                val verified = dao.getScreeningById(targetId)
+                // Verify insertion
+                val verified = dao.getScreeningById(finalId)
                 if (verified != null) {
-                    Log.d(TAG, "saveScreening: Insert Successful - ID=$targetId, Title='$trimmedTitle'")
-                    try {
-                        val projectMap = mapOf(
-                            "id" to targetId,
-                            "title" to trimmedTitle,
-                            "requirements" to (verified.requirementsJson.ifBlank { "{}" }),
-                            "results" to (verified.rawBackendResponseJson.ifBlank { "{}" })
-                        )
-                        val resp = apiService.createProject(projectMap)
-                        if (resp.isSuccessful) {
-                            Log.d(TAG, "saveScreening: Backend sync successful for ID=$targetId")
-                        } else {
-                            Log.w(TAG, "saveScreening: Backend HTTP ${resp.code()} for ID=$targetId")
-                        }
-                    } catch (netErr: Exception) {
-                        Log.w(TAG, "saveScreening: Backend sync skipped/offline: ${netErr.message}")
-                    }
+                    Log.d(TAG, "saveScreening: Insert Successful - ID=$finalId, Title='$trimmedTitle'")
                     SaveScreeningResult.Success(mapper.toDomain(verified))
                 } else {
                     Log.e(TAG, "saveScreening: Insert Failed - Database query post-insert returned null")

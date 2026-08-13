@@ -1,0 +1,66 @@
+{
+  "model_version": "v7",
+  "model_type": "Baseline Suitability Model (Policy Approximation)",
+  "label_source": "Rule-Based Threshold Policy",
+  "label_version": "v1.0",
+  "dataset_version": "v1.0.0",
+  "policy_version": "v1.0",
+  "algorithm": "XGBoost",
+  "git_commit_hash": "b18e12c2be354d74c2e251f9c692abf4a48561e4",
+  "dataset_hash": "9be7358b4a681bca",
+  "training_dataset": "filtered_polymers",
+  "artifact_checksums": {
+    "model.joblib": "5ade9bd54388adc49b987289fe31fdb264139988cbf7a92ab1b79da521200642",
+    "scaler.joblib": "f40b1bb13a63d42f8e195426e36adce1040f2cabf48647b1d83433ec47abbafd",
+    "feature_matrix.npy": "8c45e1e8e242caad2b422857468c96ea651ae1c89479a30b8c362c7e8066b8a4"
+  },
+  "selected_metrics": {
+    "algorithm": "XGBoost",
+    "accuracy": 1.0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "roc_auc": NaN,
+    "group_cv_f1_mean": 0.0,
+    "group_cv_f1_std": 0.0,
+    "platt_calibrated": false,
+    "train_time_ms": 358.47,
+    "inference_latency_ms": 1.809,
+    "composite_score": 0.25
+  },
+  "leaderboard": [
+    {
+      "algorithm": "XGBoost",
+      "accuracy": 1.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "roc_auc": NaN,
+      "group_cv_f1_mean": 0.0,
+      "group_cv_f1_std": 0.0,
+      "platt_calibrated": false,
+      "train_time_ms": 358.47,
+      "inference_latency_ms": 1.809,
+      "composite_score": 0.25
+    }
+  ],
+  "dataset_metadata": {
+    "total_rows": 1000,
+    "feature_count": 15,
+    "positive_labels": 0,
+    "negative_labels": 1000
+  },
+  "trained_at": "2026-08-10T05:34:24.014061+00:00",
+  "training_config": {},
+  "governance": {
+    "is_empirical_lab_data": false,
+    "policy_approximation_note": "Trained on rule-derived baseline suitability policy. Transition to lab outcome labels scheduled for Phase 2."
+  },
+  "leakage_prevention": {
+    "strategy": "GroupShuffleSplit & GroupKFold by polymer name",
+    "unique_train_groups": 748,
+    "unique_holdout_groups": 250,
+    "holdout_size": 250
+  },
+  "digital_signature": "f0861c2693be836ad98d31f01d147f35da34ab544c51a455d2179b7e647cda67"
+}

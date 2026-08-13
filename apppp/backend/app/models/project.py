@@ -3,7 +3,7 @@
 import uuid
 from datetime import datetime, timezone
 
-from sqlalchemy import String, DateTime, Boolean, ForeignKey, Text
+from sqlalchemy import String, DateTime, Boolean, ForeignKey, Text, UniqueConstraint
 from sqlalchemy.orm import Mapped, mapped_column
 from sqlalchemy.dialects.mysql import LONGTEXT
 
@@ -12,6 +12,9 @@ from app.database import Base
 
 class Project(Base):
     __tablename__ = "projects"
+    __table_args__ = (
+        UniqueConstraint("user_id", "normalized_title", name="uq_user_project_normalized_title"),
+    )
 
     id: Mapped[str] = mapped_column(
         String(36), primary_key=True, default=lambda: str(uuid.uuid4())
@@ -20,6 +23,7 @@ class Project(Base):
         String(36), ForeignKey("users.id", ondelete="CASCADE"), nullable=False, index=True
     )
     title: Mapped[str] = mapped_column(String(255), nullable=False)
+    normalized_title: Mapped[str] = mapped_column(String(255), nullable=False, default="")
 
     # Store as TEXT/LONGTEXT instead of native JSON so this works on every
     # MySQL version (JSON column type requires MySQL 5.7.8+; LONGTEXT is safe
@@ -43,3 +47,4 @@ class Project(Base):
         nullable=False,
     )
     is_deleted: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
+

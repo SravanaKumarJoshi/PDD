@@ -52,6 +52,12 @@ class ScreeningRepository @Inject constructor(
                 val errorMsg = response.errorBody()?.string() ?: "HTTP $code"
                 ApiResult.Error(NetworkException.HttpError(code, ApiErrorBody(message = errorMsg)))
             }
+        } catch (e: com.squareup.moshi.JsonDataException) {
+            Log.e(TAG, "Health check Moshi JsonDataException: ${e.message}", e)
+            ApiResult.Error(NetworkException.ParseError(cause = e, userMessage = "API response schema error: ${e.message}"))
+        } catch (e: com.squareup.moshi.JsonEncodingException) {
+            Log.e(TAG, "Health check Moshi JsonEncodingException: ${e.message}", e)
+            ApiResult.Error(NetworkException.ParseError(cause = e, userMessage = "API response encoding error: ${e.message}"))
         } catch (e: Exception) {
             val diag = NetworkDiagnostics.diagnose(context, e, targetUrl)
             Log.e(TAG, "Health check failed at $targetUrl: ${diag.technicalReason}")
@@ -82,6 +88,12 @@ class ScreeningRepository @Inject constructor(
                     Log.e(TAG, "Screening API call failed with code ${response.code()}: $errorMsg")
                     ApiResult.Error(NetworkException.HttpError(response.code(), ApiErrorBody(message = errorMsg)))
                 }
+            } catch (e: com.squareup.moshi.JsonDataException) {
+                Log.e(TAG, "Screening Moshi JsonDataException: ${e.message}", e)
+                ApiResult.Error(NetworkException.ParseError(cause = e, userMessage = "API response schema error: ${e.message}"))
+            } catch (e: com.squareup.moshi.JsonEncodingException) {
+                Log.e(TAG, "Screening Moshi JsonEncodingException: ${e.message}", e)
+                ApiResult.Error(NetworkException.ParseError(cause = e, userMessage = "API response encoding error: ${e.message}"))
             } catch (e: Exception) {
                 val diag = NetworkDiagnostics.diagnose(context, e, targetUrl)
                 Log.e(TAG, "Error executing screening API call: ${diag.technicalReason}", e)

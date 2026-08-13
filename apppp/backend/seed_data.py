@@ -10,29 +10,32 @@ from sqlalchemy import select
 
 from app.database import async_session, create_all_tables
 from app.models.user import User
-from app.models.project import Project
+from app.api.v1.auth import hash_password
 
 SEED_USERS = [
     {
         "id": "11111111-1111-1111-1111-111111111111",
-        "auth_provider_id": "dev-user-001",
+        "auth_provider_id": "jwt_user@biopolymer.ai",
         "email": "user@biopolymer.ai",
         "display_name": "Demo Researcher",
         "role": "user",
+        "password": "password123",
     },
     {
         "id": "22222222-2222-2222-2222-222222222222",
-        "auth_provider_id": "dev-admin-001",
+        "auth_provider_id": "jwt_admin@biopolymer.ai",
         "email": "admin@biopolymer.ai",
         "display_name": "Dr. Sarah Admin",
         "role": "admin",
+        "password": "password123",
     },
     {
         "id": "33333333-3333-3333-3333-333333333333",
-        "auth_provider_id": "dev-researcher-001",
+        "auth_provider_id": "jwt_researcher@biopolymer.ai",
         "email": "researcher@biopolymer.ai",
         "display_name": "Prof. Alex Chen",
         "role": "researcher",
+        "password": "password123",
     },
 ]
 
@@ -62,7 +65,7 @@ async def seed_database():
         print("\n--- Seeding Users ---")
         for udata in SEED_USERS:
             res = await session.execute(
-                select(User).where(User.auth_provider_id == udata["auth_provider_id"])
+                select(User).where(User.email == udata["email"])
             )
             existing = res.scalar_one_or_none()
             if not existing:
@@ -71,6 +74,7 @@ async def seed_database():
                     auth_provider_id=udata["auth_provider_id"],
                     email=udata["email"],
                     display_name=udata["display_name"],
+                    password_hash=hash_password(udata["password"]),
                     role=udata["role"],
                     created_at=datetime.now(timezone.utc),
                     updated_at=datetime.now(timezone.utc),
@@ -78,7 +82,10 @@ async def seed_database():
                 session.add(user)
                 print(f"  + Added User: {udata['email']} (Role: {udata['role']}, Auth ID: {udata['auth_provider_id']})")
             else:
-                print(f"  = User already exists: {udata['email']} (Auth ID: {udata['auth_provider_id']})")
+                if not existing.password_hash:
+                    existing.password_hash = hash_password(udata["password"])
+                print(f"  = User already exists: {udata['email']} (Auth ID: {existing.auth_provider_id})")
+        await session.commit()
 
         print("\n--- Seeding Sample Projects ---")
         for pdata in SEED_PROJECTS:

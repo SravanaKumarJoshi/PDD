@@ -11,10 +11,10 @@ Full 7-step scoring pipeline:
 import numpy as np
 import pandas as pd
 import uuid
+import sys
 from dataclasses import dataclass, field
 from typing import Any
-
-from src.data import FEATURE_COLUMNS
+from src.data import FEATURE_COLUMNS, standardize_material_dataframe
 from src.safety_gate import run_safety_gate, SafetyResult
 from src import faiss_similarity
 from src.xgboost_model import predict_suitability as xgb_predict
@@ -59,6 +59,29 @@ class PipelineResult:
     request_id: str = ""
 
 
+def ensure_models_trained(df: pd.DataFrame):
+    """Ensure XGBoost and RandomForest models are trained and stored in st.session_state."""
+    import streamlit as st
+    from src.xgboost_model import train_xgboost
+    from src.model import train_model
+
+    xgb_model = st.session_state.get("xgb_model") if "streamlit" in sys.modules else None
+    rf_model = st.session_state.get("rf_model") if "streamlit" in sys.modules else None
+
+    if (xgb_model is None or rf_model is None) and df is not None and not df.empty:
+        df_std = standardize_material_dataframe(df)
+        if xgb_model is None:
+            xgb_model, _ = train_xgboost(df_std)
+            if "streamlit" in sys.modules and hasattr(st, "session_state"):
+                st.session_state["xgb_model"] = xgb_model
+        if rf_model is None:
+            rf_model, _ = train_model(df_std)
+            if "streamlit" in sys.modules and hasattr(st, "session_state"):
+                st.session_state["rf_model"] = rf_model
+
+    return xgb_model, rf_model
+
+
 def run_full_pipeline(
     df: pd.DataFrame,
     user_requirements: dict,
@@ -69,6 +92,13 @@ def run_full_pipeline(
     top_n_ga: int = 15,
 ) -> PipelineResult:
     """Execute the full 7-step recommendation pipeline with guardrails."""
+
+    df = standardize_material_dataframe(df)
+
+    if xgb_model is None or rf_model is None:
+        auto_xgb, auto_rf = ensure_models_trained(df)
+        xgb_model = xgb_model or auto_xgb
+        rf_model = rf_model or auto_rf
 
     timer = PipelineTimer()
     timer.start_pipeline()
@@ -149,7 +179,7 @@ def run_full_pipeline(
         ga_candidates.append(row.to_dict())
 
     ga_result = run_nsga2(ga_candidates)
-    pareto_names = [ga_candidates[i]["polymer"]
+    pareto_names = [ga_candidates[i].get("polymer", ga_candidates[i].get("name", "Unknown"))
                     for i in ga_result["pareto_indices"]]
     timer.end_stage("nsga2_optimization")
     metadata["pareto_count"] = len(pareto_names)
@@ -168,8 +198,10 @@ def run_full_pipeline(
                 vals = vals[:, :, 1]
             shap_vals_array = vals
             for i, (_, row) in enumerate(similar_df.iterrows()):
-                shap_explanations[row["polymer"]] = generate_explanation_text(
-                    vals[i], FEATURE_COLUMNS, row["polymer"],
+                r = row.to_dict()
+                p_name = r.get("polymer") or r.get("name") or "Unknown"
+                shap_explanations[p_name] = generate_explanation_text(
+                    vals[i], FEATURE_COLUMNS, p_name,
                 )
         except Exception:
             pass
@@ -191,17 +223,18 @@ def run_full_pipeline(
     # Build final ranked results
     scored_materials = []
     for i, (_, row) in enumerate(similar_df.iterrows()):
-        name = row["polymer"]
+        r = row.to_dict()
+        name = r.get("polymer") or r.get("name") or f"Material #{i}"
         conf = compute_confidence_score(
             ensemble_proba[i],
-            row.get("evidence_level", "med"),
-            row.get("data_completeness", 1.0),
+            r.get("evidence_level", "med"),
+            r.get("data_completeness", 1.0),
         )
         risk = get_risk_category(conf)
 
         scored_materials.append(ScoredMaterial(
             polymer=name,
-            category=row.get("category", ""),
+            category=r.get("category", ""),
             final_score=round(float(ensemble_proba[i]) * 100, 1),
             confidence=conf,
             risk_category=risk["label"],
@@ -209,7 +242,7 @@ def run_full_pipeline(
             explanation=shap_explanations.get(name, ""),
             is_pareto=name in pareto_names,
             warnings=safety.warnings.get(name, []),
-            properties={c: row[c] for c in FEATURE_COLUMNS if c in row},
+            properties={c: r[c] for c in FEATURE_COLUMNS if c in r},
             shap_values=shap_vals_array[i].tolist() if shap_vals_array is not None else None,
         ))
 

@@ -26,9 +26,10 @@ from app.schemas.screening import (
 )
 from app.services.model_manager import ModelManager
 from app.services.audit_service import AuditService
-from shared.ml.input_sanitizer import sanitize_screening_request
+from shared.ml.input_sanitizer import sanitize_screening_request, has_valid_screening_criteria
 from shared.ml.config import FEATURE_COLUMNS
 from shared.ml.scoring import rank_candidates, calculate_material_score_details
+from shared.ml.confidence import get_risk_category
 from shared.ml.faiss_search import FAISSSearchEngine
 from shared.ml.explainability.factory import ExplainerFactory
 
@@ -59,7 +60,7 @@ FALLBACK_MATERIALS = [
         "sterilization_steam": 0.0,
         "evidence_level": "high",
         "data_completeness": 0.95,
-        "risk_category": {"level": "low", "reasons": ["Well-characterized biocompatible polymer"]},
+        "risk_category": {"level": "low", "label": "Low Confidence — verify experimentally", "color": "red", "reasons": ["Well-characterized biocompatible polymer"]},
         "is_pareto_optimal": True,
         "properties": {"tensile_strength": 65.0, "elastic_modulus": 2.5, "wvtr": 180.0, "biocompatibility": 8.5},
     },
@@ -84,7 +85,7 @@ FALLBACK_MATERIALS = [
         "sterilization_steam": 1.0,
         "evidence_level": "high",
         "data_completeness": 0.90,
-        "risk_category": {"level": "low", "reasons": ["GRAS polymer with strong safety record"]},
+        "risk_category": {"level": "low", "label": "Low Confidence — verify experimentally", "color": "red", "reasons": ["GRAS polymer with strong safety record"]},
         "is_pareto_optimal": True,
         "properties": {"tensile_strength": 50.0, "elastic_modulus": 1.5, "wvtr": 350.0, "biocompatibility": 9.0},
     },
@@ -109,7 +110,7 @@ FALLBACK_MATERIALS = [
         "sterilization_steam": 1.0,
         "evidence_level": "high",
         "data_completeness": 0.88,
-        "risk_category": {"level": "low", "reasons": ["High strength bio-nanomaterial"]},
+        "risk_category": {"level": "low", "label": "Low Confidence — verify experimentally", "color": "red", "reasons": ["High strength bio-nanomaterial"]},
         "is_pareto_optimal": True,
         "properties": {"tensile_strength": 140.0, "elastic_modulus": 10.0, "wvtr": 50.0, "biocompatibility": 8.0},
     },
@@ -160,7 +161,7 @@ class InferenceService:
                         "sterilization_steam": 1.0 if (props and props.ster_steam) else 0.0,
                         "evidence_level": mat.evidence_level or "medium",
                         "data_completeness": props.data_completeness if props else 0.8,
-                        "risk_category": {"level": "low" if (props and props.cytotoxicity_safe) else "medium", "reasons": []},
+                        "risk_category": {"level": "low" if (props and props.cytotoxicity_safe) else "medium", "label": "Low Confidence — verify experimentally", "color": "red", "reasons": []},
                         "is_pareto_optimal": True,
                         "properties": {
                             "tensile_strength": ts,
@@ -202,7 +203,7 @@ class InferenceService:
                         "sterilization_steam": 1.0 if row.get("ster_steam", False) else 0.0,
                         "evidence_level": str(row.get("evidence_level", "medium")),
                         "data_completeness": 0.85,
-                        "risk_category": {"level": "low", "reasons": []},
+                        "risk_category": {"level": "low", "label": "Low Confidence — verify experimentally", "color": "red", "reasons": []},
                         "is_pareto_optimal": True,
                         "properties": {
                             "tensile_strength": float(ts) if pd.notna(ts) else None,
@@ -227,12 +228,40 @@ class InferenceService:
         """Execute end-to-end multi-criteria screening request."""
         t_start = time.perf_counter()
 
-        # 1. Sanitization
+        # 1. Sanitization & Empty Criteria Validation
         t0 = time.perf_counter()
         req_dict = request.model_dump()
         sanitized_req = sanitize_screening_request(req_dict)
         t1 = time.perf_counter()
         sanitization_time_ms = max(0.1, round((t1 - t0) * 1000, 2))
+
+        if not has_valid_screening_criteria(sanitized_req):
+            session_id = str(uuid.uuid4())
+            perf_metrics = PerformanceMetricsSchema(
+                sanitization_time_ms=sanitization_time_ms,
+                normalization_time_ms=0.1,
+                database_filter_time_ms=0.1,
+                faiss_search_time_ms=0.1,
+                model_inference_time_ms=0.1,
+                ranking_time_ms=0.1,
+                explainability_time_ms=0.1,
+                total_request_duration_ms=max(0.1, round((time.perf_counter() - t_start) * 1000, 2)),
+            )
+            model_meta = ModelMetadataSchema(
+                model_version="v1.0.0",
+                algorithm="NoCriteriaValidator",
+                dataset_hash="empty_input",
+                prediction_timestamp=pd.Timestamp.now().isoformat(),
+            )
+            return ScreeningResponseSchema(
+                screening_id=session_id,
+                model_metadata=model_meta,
+                performance_metrics=perf_metrics,
+                total_evaluated=0,
+                candidates_after_prefilter=0,
+                candidates_after_faiss=0,
+                results=[],
+            )
 
         # 2. Normalization
         t2 = time.perf_counter()
@@ -245,6 +274,15 @@ class InferenceService:
         database_filter_time_ms = max(0.1, round((t4 - t3) * 1000, 2))
 
         total_evaluated = len(candidates_df)
+
+        # Apply mandatory hard constraint filtering
+        if sanitized_req.get("sterilization_gamma"):
+            candidates_df = candidates_df[candidates_df["sterilization_gamma"] == 1.0]
+        if sanitized_req.get("sterilization_eto"):
+            candidates_df = candidates_df[candidates_df["sterilization_eto"] == 1.0]
+        if sanitized_req.get("sterilization_steam"):
+            candidates_df = candidates_df[candidates_df["sterilization_steam"] == 1.0]
+
         candidates_after_prefilter = len(candidates_df)
 
         # 4. FAISS Similarity Indexing / Search
@@ -393,7 +431,13 @@ class InferenceService:
                     logger.debug(f"Explainability instance generation skipped for {mat_name}: {e}")
 
             confidence = round(float(row.get("data_completeness", 0.85)) * (0.5 + 0.5 * ml_prob), 2)
-            risk_cat = row.get("risk_category") if isinstance(row.get("risk_category"), dict) else {"level": "low", "reasons": []}
+            risk_cat = get_risk_category(confidence)
+            row_risk = row.get("risk_category")
+            if isinstance(row_risk, dict):
+                if "reasons" in row_risk and row_risk["reasons"]:
+                    risk_cat["reasons"] = row_risk["reasons"]
+                if "level" in row_risk and row_risk["level"]:
+                    risk_cat["level"] = row_risk["level"]
             is_pareto = bool(row.get("is_pareto_optimal", True))
             properties_map = row.get("properties") if isinstance(row.get("properties"), dict) else {}
 

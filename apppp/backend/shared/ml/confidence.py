@@ -22,8 +22,14 @@ def compute_confidence_score(
 def get_risk_category(confidence: float) -> Dict[str, Any]:
     """Return risk category dict for confidence score."""
     if confidence >= 0.8:
-        return RISK_CATEGORIES["high"]
+        res = dict(RISK_CATEGORIES["high"])
+        res["level"] = "high"
     elif confidence >= 0.5:
-        return RISK_CATEGORIES["moderate"]
+        res = dict(RISK_CATEGORIES["moderate"])
+        res["level"] = "moderate"
     else:
-        return RISK_CATEGORIES["low"]
+        res = dict(RISK_CATEGORIES["low"])
+        res["level"] = "low"
+    res.setdefault("reasons", [])
+    return res
+

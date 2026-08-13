@@ -13,8 +13,8 @@ from app.database import Base
 class Material(Base):
     __tablename__ = "materials"
 
-    id: Mapped[uuid.UUID] = mapped_column(
-        Uuid(as_uuid=True), primary_key=True, default=uuid.uuid4
+    id: Mapped[str] = mapped_column(
+        String(255), primary_key=True, default=lambda: str(uuid.uuid4())
     )
     name: Mapped[str] = mapped_column(String(255), nullable=False)
     category: Mapped[str] = mapped_column(String(100), nullable=False)
@@ -45,11 +45,11 @@ class Material(Base):
 class MaterialProperty(Base):
     __tablename__ = "material_properties"
 
-    id: Mapped[uuid.UUID] = mapped_column(
-        Uuid(as_uuid=True), primary_key=True, default=uuid.uuid4
+    id: Mapped[str] = mapped_column(
+        String(255), primary_key=True, default=lambda: str(uuid.uuid4())
     )
-    material_id: Mapped[uuid.UUID] = mapped_column(
-        Uuid(as_uuid=True), ForeignKey("materials.id", ondelete="CASCADE"), unique=True
+    material_id: Mapped[str] = mapped_column(
+        String(255), ForeignKey("materials.id", ondelete="CASCADE"), unique=True
     )
 
     # Mechanical

@@ -225,6 +225,7 @@ class TestCombinedHardFilters:
     def test_no_hard_constraints_passes_all(self):
         """With no hard constraints, all materials should pass."""
         req = RequirementInput()
+        req.mechanical.tensile_strength_min = 10.0
         materials = [
             _make_material(name=f"Mat{i}") for i in range(10)
         ]

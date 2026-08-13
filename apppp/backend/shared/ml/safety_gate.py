@@ -23,28 +23,31 @@ def run_safety_gate(df: pd.DataFrame, requirements: Dict[str, Any]) -> SafetyRes
     req_steam = requirements.get("sterilization_steam", False)
 
     for idx, row in df.iterrows():
-        polymer_name = row.get("polymer", f"material_{idx}")
+        r = row.to_dict()
+        polymer_name = str(r.get("polymer") or r.get("name") or f"material_{idx}")
         reasons = []
 
         # Hard reject: toxicity score < 3
-        if row.get("toxicity_score", 10.0) < 3.0:
+        tox = float(r.get("toxicity_score", 10.0) if pd.notna(r.get("toxicity_score")) else 10.0)
+        if tox < 3.0:
             reasons.append("Fails cytotoxicity threshold (toxicity_score < 3)")
 
         # Hard reject: biocompatibility < minimum
-        if row.get("biocompatibility", 0.0) < min_biocompat:
-            reasons.append(f"Insufficient biocompatibility ({row.get('biocompatibility')} < {min_biocompat})")
+        bio = float(r.get("biocompatibility", 0.0) if pd.notna(r.get("biocompatibility")) else 0.0)
+        if bio < min_biocompat:
+            reasons.append(f"Insufficient biocompatibility ({bio} < {min_biocompat})")
 
         # Hard reject: degradation range
-        bd = row.get("biodegradation_days", 0.0)
+        bd = float(r.get("biodegradation_days", 0.0) if pd.notna(r.get("biodegradation_days")) else 0.0)
         if bd < 1.0 or bd > 1000.0:
             reasons.append(f"Non-compliant degradation ({bd} days, must be 1-1000)")
 
         # Hard reject: sterilization
-        if req_gamma and row.get("sterilization_gamma", 0) != 1:
+        if req_gamma and float(r.get("sterilization_gamma", 0) if pd.notna(r.get("sterilization_gamma")) else 0) != 1:
             reasons.append("Does not support gamma sterilization")
-        if req_eto and row.get("sterilization_eto", 0) != 1:
+        if req_eto and float(r.get("sterilization_eto", 0) if pd.notna(r.get("sterilization_eto")) else 0) != 1:
             reasons.append("Does not support EtO sterilization")
-        if req_steam and row.get("sterilization_steam", 0) != 1:
+        if req_steam and float(r.get("sterilization_steam", 0) if pd.notna(r.get("sterilization_steam")) else 0) != 1:
             reasons.append("Does not support steam sterilization")
 
         if reasons:

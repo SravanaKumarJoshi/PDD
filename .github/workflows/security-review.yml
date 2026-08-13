@@ -1,0 +1,107 @@
+name: Security Review Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+    paths:
+      - 'apppp/backend/**'
+      - 'nextjs_app/**'
+      - 'BrainBattleE2E/scripts/**'
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  security_review:
+    name: Web & Backend Security Scan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # ── Install ExcelJS Dependency ──────────────────────────
+      - name: Install ExcelJS
+        working-directory: BrainBattleE2E
+        run: |
+          npm install exceljs
+          echo "NODE_PATH=${{ github.workspace }}/BrainBattleE2E/node_modules" >> $GITHUB_ENV
+
+      # ── Web Frontend Security Scan ──────────────────────────
+      - name: Run Web Frontend Security Scan
+        env:
+          NODE_PATH: ${{ github.workspace }}/BrainBattleE2E/node_modules
+        run: |
+          node BrainBattleE2E/scripts/generateWebSecuritySuite.js
+          echo "✅ Web frontend security scan complete"
+
+      # ── Backend Security Scan ───────────────────────────────
+      - name: Run Backend Security Scan
+        env:
+          NODE_PATH: ${{ github.workspace }}/BrainBattleE2E/node_modules
+        run: |
+          node apppp/backend/scripts/generateSecuritySuite.js
+          echo "✅ Backend security scan complete"
+
+      # ── Zero-Critical Policy Gate ───────────────────────────
+      - name: Enforce Zero-Critical Security Policy
+        run: |
+          echo "🛡️ Checking Zero-Critical Security Policy..."
+
+          # Check web findings
+          WEB_CRITICAL=0
+          if [ -f "BrainBattleE2E/Security_Results/Web/web-executive-summary.md" ]; then
+            WEB_CRITICAL=$(grep -oP 'Critical \| \K[0-9]+' BrainBattleE2E/Security_Results/Web/web-executive-summary.md || echo "0")
+          fi
+
+          # Check backend findings
+          BE_CRITICAL=0
+          if [ -f "apppp/backend/Security_Results/executive-summary.md" ]; then
+            BE_CRITICAL=$(grep -oP 'Critical \| \K[0-9]+' apppp/backend/Security_Results/executive-summary.md || echo "0")
+          fi
+
+          echo "Web Critical: $WEB_CRITICAL"
+          echo "Backend Critical: $BE_CRITICAL"
+
+          TOTAL_CRITICAL=$((WEB_CRITICAL + BE_CRITICAL))
+
+          if [ "$TOTAL_CRITICAL" -gt 0 ]; then
+            echo "❌ ZERO-CRITICAL POLICY VIOLATION: $TOTAL_CRITICAL Critical findings detected!"
+            exit 1
+          fi
+
+          echo "✅ Zero-Critical Policy: PASSED (0 Critical findings)"
+
+      # ── Append Summaries to Step Summary ────────────────────
+      - name: Write Security Summary
+        if: always()
+        run: |
+          echo "# 🛡️ Security Review Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ -f "BrainBattleE2E/Security_Results/Web/web-executive-summary.md" ]; then
+            echo "## Web Frontend" >> $GITHUB_STEP_SUMMARY
+            cat BrainBattleE2E/Security_Results/Web/web-executive-summary.md >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          if [ -f "apppp/backend/Security_Results/executive-summary.md" ]; then
+            echo "## Backend API" >> $GITHUB_STEP_SUMMARY
+            cat apppp/backend/Security_Results/executive-summary.md >> $GITHUB_STEP_SUMMARY
+          fi
+
+      # ── Upload Security Artifacts ───────────────────────────
+      - name: Upload Security Reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-reports-build-${{ github.run_number }}
+          path: |
+            BrainBattleE2E/Security_Results/
+            apppp/backend/Security_Results/
+          retention-days: 30

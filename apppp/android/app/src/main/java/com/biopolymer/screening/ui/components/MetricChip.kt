@@ -6,10 +6,10 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.biopolymer.screening.ui.theme.*
+import kotlin.math.roundToInt
 
 @Composable
 fun MetricChip(
@@ -17,10 +17,13 @@ fun MetricChip(
     label: String,
     modifier: Modifier = Modifier
 ) {
+    val boundedValue = value.coerceIn(0f, 100f)
+    val pct = boundedValue.roundToInt()
+
     val color = when {
-        value >= 0.8f -> ScoreExcellent
-        value >= 0.6f -> ScoreGood
-        value >= 0.4f -> ScoreFair
+        boundedValue >= 80f -> ScoreExcellent
+        boundedValue >= 70f -> ScoreGood
+        boundedValue >= 50f -> ScoreFair
         else -> ScorePoor
     }
 
@@ -31,7 +34,7 @@ fun MetricChip(
         modifier = modifier
     ) {
         Text(
-            text = "${(value * 100).toInt()}% $label",
+            text = "$pct% $label",
             style = MaterialTheme.typography.labelMedium,
             fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)

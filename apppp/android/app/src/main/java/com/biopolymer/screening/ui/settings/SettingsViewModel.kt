@@ -262,8 +262,8 @@ class SettingsViewModel @Inject constructor(
                                 if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString()
                             }
                             builder.append("  ${index + 1}. $category: ${rec.materialName}\n")
-                            val scorePct = (rec.score * 100).toInt()
-                            val confPct  = (rec.confidence * 100).toInt()
+                            val scorePct = rec.score.coerceIn(0f, 100f).toInt()
+                            val confPct  = if (rec.confidence > 1.0f) rec.confidence.coerceIn(0f, 100f).toInt() else (rec.confidence * 100).coerceIn(0f, 100f).toInt()
                             builder.append("     Overall Match: $scorePct% (Confidence: $confPct%)\n")
                         }
                     } else {

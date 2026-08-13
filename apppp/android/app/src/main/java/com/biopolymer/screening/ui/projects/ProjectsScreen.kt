@@ -129,11 +129,13 @@ class ProjectsViewModel @Inject constructor(
                 val builder = StringBuilder()
                 builder.append("BioPolymer Screening: ${screening.title}\n")
                 builder.append("Top Material: ${screening.topMaterialName}\n")
-                builder.append("Match Score: ${(screening.topMatchScore * 100).toInt()}%\n")
+                val topScorePct = screening.topMatchScore.coerceIn(0f, 100f).toInt()
+                builder.append("Match Score: $topScorePct%\n")
                 if (results.recommendations.isNotEmpty()) {
                     builder.append("\nTop Recommendations:\n")
                     results.recommendations.take(5).forEachIndexed { index, rec ->
-                        builder.append("${index + 1}. ${rec.materialName} (${(rec.score * 100).toInt()}% Match)\n")
+                        val recPct = rec.score.coerceIn(0f, 100f).toInt()
+                        builder.append("${index + 1}. ${rec.materialName} ($recPct% Match)\n")
                     }
                 }
                 val sendIntent = android.content.Intent().apply {

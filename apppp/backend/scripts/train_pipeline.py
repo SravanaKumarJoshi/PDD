@@ -77,44 +77,193 @@ def record_deployment_audit_log(action: str, prev_version: str, new_version: str
     with open(log_file, "a", encoding="utf-8") as f:
         f.write(json.dumps(entry) + "\n")
 
+def standardize_material_dataframe(df: pd.DataFrame) -> pd.DataFrame:
+    """Ensure DataFrame columns conform to the standard schema used across ML pipeline and UI."""
+    if df is None or df.empty:
+        return df
+
+    df = df.copy()
+
+    column_mapping = {
+        "name": "polymer",
+        "tensileStrengthMpaMin": "tensile_strength",
+        "tensileStrengthMpaMax": "tensile_strength_max",
+        "elasticModulusGpaMin": "elastic_modulus",
+        "elasticModulusGpaMax": "elastic_modulus_max",
+        "elongationPctMin": "elongation_pct",
+        "degradationDaysMin": "biodegradation_days",
+        "enzymaticDegradability": "environmental_impact",
+        "cytotoxicitySafe": "cytotoxicity_safe",
+        "sterGamma": "sterilization_gamma",
+        "sterEto": "sterilization_eto",
+        "sterSteam": "sterilization_steam",
+        "procFilm": "film_forming",
+        "evidenceLevel": "evidence_level",
+    }
+
+    rename_dict = {old: new for old, new in column_mapping.items() if old in df.columns and new not in df.columns}
+    if rename_dict:
+        df = df.rename(columns=rename_dict)
+
+    if "polymer" not in df.columns:
+        if "name" in df.columns:
+            df["polymer"] = df["name"]
+        else:
+            df["polymer"] = "Unknown Polymer"
+
+    if "category" not in df.columns:
+        df["category"] = "Uncategorized"
+
+    if "biocompatibility" not in df.columns:
+        if "cytotoxicity_safe" in df.columns:
+            df["biocompatibility"] = df["cytotoxicity_safe"].apply(
+                lambda x: 9.0 if str(x).strip() in ["1", "1.0", "True", "true"] else 4.0
+            )
+        elif "cytotoxicitySafe" in df.columns:
+            df["biocompatibility"] = df["cytotoxicitySafe"].apply(
+                lambda x: 9.0 if str(x).strip() in ["1", "1.0", "True", "true"] else 4.0
+            )
+        else:
+            df["biocompatibility"] = 8.0
+
+    if "toxicity_score" not in df.columns:
+        if "cytotoxicity_safe" in df.columns:
+            df["toxicity_score"] = df["cytotoxicity_safe"].apply(
+                lambda x: 8.5 if str(x).strip() in ["1", "1.0", "True", "true"] else 3.0
+            )
+        else:
+            df["toxicity_score"] = 8.0
+
+    if "tensile_strength" not in df.columns:
+        if "tensileStrengthMpaMin" in df.columns:
+            df["tensile_strength"] = pd.to_numeric(df["tensileStrengthMpaMin"], errors="coerce").fillna(20.0)
+        else:
+            df["tensile_strength"] = 20.0
+
+    if "elastic_modulus" not in df.columns:
+        if "elasticModulusGpaMin" in df.columns:
+            df["elastic_modulus"] = pd.to_numeric(df["elasticModulusGpaMin"], errors="coerce").fillna(1.2)
+        else:
+            df["elastic_modulus"] = 1.2
+
+    if "elongation_pct" not in df.columns:
+        if "elongationPctMin" in df.columns:
+            df["elongation_pct"] = pd.to_numeric(df["elongationPctMin"], errors="coerce").fillna(45.0)
+        else:
+            df["elongation_pct"] = 45.0
+
+    if "flexibility" not in df.columns:
+        if "elongation_pct" in df.columns:
+            df["flexibility"] = pd.to_numeric(df["elongation_pct"], errors="coerce").fillna(45.0) * 0.8
+        else:
+            df["flexibility"] = 35.0
+
+    if "wvtr" not in df.columns:
+        df["wvtr"] = 800.0
+
+    if "oxygen_permeability" not in df.columns:
+        if "otr" in df.columns:
+            df["oxygen_permeability"] = pd.to_numeric(df["otr"], errors="coerce").fillna(120.0)
+        else:
+            df["oxygen_permeability"] = 120.0
+
+    if "antimicrobial" not in df.columns:
+        df["antimicrobial"] = 0.0
+
+    if "biodegradation_days" not in df.columns:
+        if "degradationDaysMin" in df.columns:
+            df["biodegradation_days"] = pd.to_numeric(df["degradationDaysMin"], errors="coerce").fillna(60.0)
+        else:
+            df["biodegradation_days"] = 60.0
+
+    if "environmental_impact" not in df.columns:
+        df["environmental_impact"] = 5.0
+
+    if "film_forming" not in df.columns:
+        df["film_forming"] = 1.0
+
+    if "sterilization_gamma" not in df.columns:
+        df["sterilization_gamma"] = 0.0
+
+    if "sterilization_eto" not in df.columns:
+        df["sterilization_eto"] = 0.0
+
+    if "sterilization_steam" not in df.columns:
+        df["sterilization_steam"] = 0.0
+
+    if "is_augmented" not in df.columns:
+        df["is_augmented"] = 0
+
+    if "evidence_level" not in df.columns:
+        df["evidence_level"] = "high"
+
+    return df
+
 def load_data_from_mysql_or_fallback() -> pd.DataFrame:
-    """Load data exclusively from production MySQL database table."""
-    db_url = os.getenv("DATABASE_URL", "mysql+pymysql://root:meheer17@localhost:3306/polysaccharide_selector")
+    """Load dataset from MySQL database with automatic fallback to biopolymer_materials_1000.csv."""
+    try:
+        from dotenv import load_dotenv
+        env_path = ROOT_DIR / ".env"
+        if env_path.exists():
+            load_dotenv(env_path)
+        elif (ROOT_DIR.parent / ".env").exists():
+            load_dotenv(ROOT_DIR.parent / ".env")
+    except Exception:
+        pass
+
+    db_url = os.getenv("DATABASE_URL", "mysql+pymysql://root:root123@localhost:3306/polysaccharide_selector")
+    db_url = db_url.replace("mysql+aiomysql://", "mysql+pymysql://")
+
     try:
         import sqlalchemy
         engine = sqlalchemy.create_engine(db_url)
-        query = """
-        SELECT 
-            m.name AS polymer,
-            m.category AS category,
-            COALESCE(mp.tensile_strength_mpa_min, 15.0) AS tensile_strength,
-            COALESCE(mp.elastic_modulus_gpa_min, 1.2) AS elastic_modulus,
-            COALESCE(mp.elongation_pct_min, 45.0) AS elongation_pct,
-            COALESCE(mp.elongation_pct_min * 0.8, 35.0) AS flexibility,
-            COALESCE(mp.wvtr, 800.0) AS wvtr,
-            COALESCE(mp.otr, 120.0) AS oxygen_permeability,
-            CASE WHEN mp.cytotoxicity_safe = 1 THEN 9.0 ELSE 4.0 END AS biocompatibility,
-            CASE WHEN mp.cytotoxicity_safe = 1 THEN 8.5 ELSE 3.0 END AS toxicity_score,
-            CASE WHEN mp.antimicrobial = 1 THEN 1.0 ELSE 0.0 END AS antimicrobial,
-            COALESCE(mp.degradation_days_min, 60) AS biodegradation_days,
-            CASE WHEN mp.enzymatic_degradability = 1 THEN 9.0 ELSE 5.0 END AS environmental_impact,
-            CASE WHEN mp.proc_film = 1 THEN 1.0 ELSE 0.0 END AS film_forming,
-            CASE WHEN mp.ster_gamma = 1 THEN 1.0 ELSE 0.0 END AS sterilization_gamma,
-            CASE WHEN mp.ster_eto = 1 THEN 1.0 ELSE 0.0 END AS sterilization_eto,
-            CASE WHEN mp.ster_steam = 1 THEN 1.0 ELSE 0.0 END AS sterilization_steam
-        FROM materials m 
-        JOIN material_properties mp ON m.id = mp.material_id 
-        WHERE m.is_deleted = 0
-        """
+        table_name = os.getenv("MATERIAL_TABLE_NAME", "filtered_polymers")
+        if table_name == "filtered_polymers":
+            query = "SELECT * FROM filtered_polymers WHERE is_deleted = 0 OR is_deleted IS NULL"
+        else:
+            query = """
+            SELECT 
+                m.name AS polymer,
+                m.category AS category,
+                COALESCE(mp.tensile_strength_mpa_min, 15.0) AS tensile_strength,
+                COALESCE(mp.elastic_modulus_gpa_min, 1.2) AS elastic_modulus,
+                COALESCE(mp.elongation_pct_min, 45.0) AS elongation_pct,
+                COALESCE(mp.elongation_pct_min * 0.8, 35.0) AS flexibility,
+                COALESCE(mp.wvtr, 800.0) AS wvtr,
+                COALESCE(mp.otr, 120.0) AS oxygen_permeability,
+                CASE WHEN mp.cytotoxicity_safe = 1 THEN 9.0 ELSE 4.0 END AS biocompatibility,
+                CASE WHEN mp.cytotoxicity_safe = 1 THEN 8.5 ELSE 3.0 END AS toxicity_score,
+                CASE WHEN mp.antimicrobial = 1 THEN 1.0 ELSE 0.0 END AS antimicrobial,
+                COALESCE(mp.degradation_days_min, 60) AS biodegradation_days,
+                CASE WHEN mp.enzymatic_degradability = 1 THEN 9.0 ELSE 5.0 END AS environmental_impact,
+                CASE WHEN mp.proc_film = 1 THEN 1.0 ELSE 0.0 END AS film_forming,
+                CASE WHEN mp.ster_gamma = 1 THEN 1.0 ELSE 0.0 END AS sterilization_gamma,
+                CASE WHEN mp.ster_eto = 1 THEN 1.0 ELSE 0.0 END AS sterilization_eto,
+                CASE WHEN mp.ster_steam = 1 THEN 1.0 ELSE 0.0 END AS sterilization_steam
+            FROM materials m 
+            JOIN material_properties mp ON m.id = mp.material_id 
+            WHERE m.is_deleted = 0
+            """
         df = pd.read_sql(query, engine)
         df = df.loc[:, ~df.columns.duplicated()]
-        if df.empty:
-            raise RuntimeError(f"MySQL table 'materials' returned 0 records.")
-        print(f"[TrainPipeline] Loaded {len(df)} production records from MySQL 'materials' database.")
-        return df
+        if not df.empty:
+            print(f"[TrainPipeline] Loaded {len(df)} production records from MySQL '{table_name}' table.")
+            return standardize_material_dataframe(df)
     except Exception as e:
-        print(f"[TrainPipeline] ERROR: Failed to connect to MySQL database or query table '{MATERIAL_TABLE_NAME}': {e}")
-        raise RuntimeError(f"Strict MySQL data source requirement violated. Connection error: {e}") from e
+        print(f"[TrainPipeline] WARNING: Could not connect to MySQL ({e}). Trying fallback CSV...")
+
+    csv_paths = [
+        ROOT_DIR / "biopolymer_materials_1000.csv",
+        ROOT_DIR.parent / "biopolymer_materials_1000.csv"
+    ]
+    for csv_path in csv_paths:
+        if csv_path.exists():
+            df = pd.read_csv(csv_path)
+            print(f"[TrainPipeline] Loaded {len(df)} rows from fallback CSV: {csv_path.name}")
+            return standardize_material_dataframe(df)
+
+    raise RuntimeError("Failed to load dataset from both MySQL and CSV fallback sources.")
+
 
 def main():
     parser = argparse.ArgumentParser(description="BioPolymer Model Training Pipeline")
@@ -244,17 +393,36 @@ def main():
 
     if not args.dry_run:
         if latest_pointer.exists() or latest_pointer.is_symlink():
-            if latest_pointer.is_dir() and not latest_pointer.is_symlink():
-                shutil.rmtree(latest_pointer)
-            else:
-                latest_pointer.unlink()
+            try:
+                if latest_pointer.is_dir() and not latest_pointer.is_symlink():
+                    shutil.rmtree(latest_pointer)
+                else:
+                    latest_pointer.unlink()
+            except Exception as e:
+                print(f"[TrainPipeline] Warning removing existing latest pointer: {e}")
 
         try:
             latest_pointer.symlink_to(version_dir, target_is_directory=True)
             print(f"[TrainPipeline] Symlinked 'latest' -> {version_str}")
         except Exception:
-            shutil.copytree(version_dir, latest_pointer)
+            shutil.copytree(version_dir, latest_pointer, dirs_exist_ok=True)
             print(f"[TrainPipeline] Copied version {version_str} -> 'latest'")
+
+        # Sync to root registry directory if distinct
+        root_registry = ROOT_DIR.parent / "models" / "registry" if ROOT_DIR.name == "backend" else ROOT_DIR / "models" / "registry"
+        if root_registry.exists() and root_registry != REGISTRY_DIR:
+            root_v_dir = root_registry / version_str
+            shutil.copytree(version_dir, root_v_dir, dirs_exist_ok=True)
+            root_latest = root_registry / "latest"
+            if root_latest.exists() or root_latest.is_symlink():
+                try:
+                    if root_latest.is_dir() and not root_latest.is_symlink():
+                        shutil.rmtree(root_latest)
+                    else:
+                        root_latest.unlink()
+                except Exception:
+                    pass
+            shutil.copytree(version_dir, root_latest, dirs_exist_ok=True)
 
         # Record deployment audit log
         record_deployment_audit_log(

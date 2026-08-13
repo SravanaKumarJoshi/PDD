@@ -4,6 +4,9 @@ Main Streamlit Dashboard
 """
 import streamlit as st
 import sys
+import json
+import urllib.request
+import urllib.error
 import pandas as pd
 from pathlib import Path
 
@@ -15,6 +18,7 @@ if str(BACKEND_DIR) not in sys.path:
     sys.path.insert(0, str(BACKEND_DIR))
 
 from scripts.train_pipeline import load_data_from_mysql_or_fallback
+from src.scoring import ensure_models_trained
 
 # ─── Page Config ──────────────────────────────────────────────────
 st.set_page_config(
@@ -71,7 +75,48 @@ st.info(
     "judgment. Experimental validation is required before clinical use."
 )
 
-# ─── Sidebar refresh button ───────────────────────────────────────
+FIREBASE_API_KEY = "AIzaSyDTBL6quWZuxDVj2k4QPBCKYvRSWN9GNIs"
+
+def firebase_auth_api(action: str, payload: dict):
+    url = f"https://identitytoolkit.googleapis.com/v1/accounts:{action}?key={FIREBASE_API_KEY}"
+    data = json.dumps({**payload, "returnSecureToken": True}).encode("utf-8")
+    req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
+    try:
+        with urllib.request.urlopen(req) as resp:
+            return json.loads(resp.read().decode("utf-8")), None
+    except urllib.error.HTTPError as e:
+        err_data = json.loads(e.read().decode("utf-8"))
+        msg = err_data.get("error", {}).get("message", "Authentication failed")
+        if "INVALID_LOGIN_CREDENTIALS" in msg or "INVALID_PASSWORD" in msg or "wrong-password" in msg:
+            msg = "Incorrect email or password."
+        elif "EMAIL_NOT_FOUND" in msg or "USER_NOT_FOUND" in msg:
+            msg = "No account found with this email."
+        elif "EMAIL_EXISTS" in msg:
+            msg = "An account with this email already exists."
+        return None, msg
+    except Exception as e:
+        return None, str(e)
+
+def render_firebase_auth_sidebar():
+    st.sidebar.markdown("### 🔐 Authentication")
+    
+    if st.session_state.get("firebase_user"):
+        user = st.session_state["firebase_user"]
+        st.sidebar.success(f"Logged in as:\n**{user.get('email')}**")
+        if user.get("displayName"):
+            st.sidebar.caption(f"Name: {user.get('displayName')}")
+        if st.sidebar.button("🚪 Logout", use_container_width=True):
+            st.session_state.pop("firebase_user", None)
+            st.session_state.pop("id_token", None)
+            st.rerun()
+    else:
+        st.sidebar.info("🔑 Sign in to access full features.")
+        if st.sidebar.button("Open Dedicated Login Page", use_container_width=True, type="primary"):
+            st.switch_page("pages/0_Login.py")
+    st.sidebar.divider()
+
+# ─── Sidebar Authentication & Controls ───────────────────────────
+render_firebase_auth_sidebar()
 refresh_requested = st.sidebar.button("↻ Refresh from MySQL", use_container_width=True)
 
 if refresh_requested or "dataset" not in st.session_state:
@@ -83,9 +128,11 @@ if refresh_requested or "dataset" not in st.session_state:
             "categories": df["category"].nunique() if "category" in df.columns else 0
         }
         st.session_state["dataset_source"] = "mysql"
+        ensure_models_trained(df)
 
 df = st.session_state["dataset"]
 stats = st.session_state["dataset_stats"]
+ensure_models_trained(df)
 
 if refresh_requested:
     st.success("✅ Reloaded the latest materials from MySQL.")
@@ -100,14 +147,14 @@ with c2:
     real = len(df[df["is_augmented"] == 0]) if "is_augmented" in df.columns else len(df)
     st.markdown(f'<div class="metric-card"><h3>{real}</h3><p>Literature-Sourced</p></div>', unsafe_allow_html=True)
 with c3:
-    cats = df["category"].nunique()
+    cats = df["category"].nunique() if "category" in df.columns else 0
     st.markdown(f'<div class="metric-card"><h3>{cats}</h3><p>Categories</p></div>', unsafe_allow_html=True)
 with c4:
-    avg_bio = pd.to_numeric(df["biocompatibility"], errors="coerce").mean()
+    avg_bio = pd.to_numeric(df["biocompatibility"], errors="coerce").mean() if "biocompatibility" in df.columns else 0.0
     st.markdown(f'<div class="metric-card"><h3>{avg_bio:.1f}</h3><p>Avg Biocompatibility</p></div>', unsafe_allow_html=True)
 with c5:
-    model_status = "✅" if "xgb_model" in st.session_state else "⚠️"
-    st.markdown(f'<div class="metric-card"><h3>{model_status}</h3><p>Model Status</p></div>', unsafe_allow_html=True)
+    model_status = "✅ Active" if "xgb_model" in st.session_state else "⚠️ Training"
+    st.markdown(f'<div class="metric-card"><h3>{model_status}</h3><p>AI Engine Status</p></div>', unsafe_allow_html=True)
 
 st.divider()
 
@@ -137,12 +184,12 @@ st.header("🚀 Quick Start Guide")
 c1, c2, c3 = st.columns(3)
 
 with c1:
-    st.subheader("1️⃣ Train Models")
-    st.markdown("Visit **Model Training** to train XGBoost + RandomForest ensemble.")
-    if "xgb_model" in st.session_state:
-        st.success("✅ Models trained")
+    st.subheader("1️⃣ Login / Register")
+    st.markdown("Visit **Login** page to authenticate with Firebase.")
+    if st.session_state.get("firebase_user"):
+        st.success("✅ Signed In")
     else:
-        st.warning("⚠️ Models not yet trained")
+        st.info("💡 Guest Mode / Sign In optional")
 
 with c2:
     st.subheader("2️⃣ Set Requirements")
@@ -198,19 +245,17 @@ st.markdown("""
 with st.sidebar:
     st.header("🧭 Navigation")
     st.markdown("""
+    - **Login**: Account authentication
     - **Home**: Overview & architecture
     - **Recommend**: Get AI recommendations
     - **Dataset Browser**: Explore materials
-    - **Model Training**: Train & compare models
     - **Explainability**: SHAP analysis
     - **Optimization**: Pareto front explorer
-    - **Feedback**: Submit & review feedback
-    - **Projects**: Manage saved results
     """)
     st.divider()
     st.header("📈 Session Status")
     st.markdown(f"**Dataset:** ✅ {len(df)} materials loaded (MySQL)")
-    xgb = "✅ Trained" if "xgb_model" in st.session_state else "⚠️ Not trained"
-    st.markdown(f"**XGBoost:** {xgb}")
-    rf = "✅ Trained" if "rf_model" in st.session_state else "⚠️ Not trained"
-    st.markdown(f"**RandomForest:** {rf}")
+    xgb = "✅ Trained" if "xgb_model" in st.session_state else "⚠️ Ready"
+    st.markdown(f"**XGBoost Engine:** {xgb}")
+    rf = "✅ Trained" if "rf_model" in st.session_state else "⚠️ Ready"
+    st.markdown(f"**RandomForest Engine:** {rf}")

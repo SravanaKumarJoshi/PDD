@@ -36,3 +36,30 @@ def sanitize_screening_request(input_dict: Dict[str, Any]) -> Dict[str, Any]:
             # Drop unhandled types
             pass
     return sanitized
+
+def has_valid_screening_criteria(input_dict: Dict[str, Any]) -> bool:
+    """Check whether a screening request contains at least one non-empty, valid criterion."""
+    if not isinstance(input_dict, dict) or not input_dict:
+        return False
+
+    # Ignore meta/config keys that are not user screening criteria
+    ignored_keys = {"explainability_method", "weight_mechanical", "weight_barrier", "weight_biological", "weight_degradation"}
+
+    for key, val in input_dict.items():
+        if key in ignored_keys:
+            continue
+        if val is None:
+            continue
+        if isinstance(val, str) and val.strip() != "":
+            return True
+        if isinstance(val, (int, float)) and val > 0:
+            return True
+        if isinstance(val, bool) and val is True:
+            return True
+        if isinstance(val, dict) and has_valid_screening_criteria(val):
+            return True
+        if isinstance(val, list) and len(val) > 0:
+            return True
+
+    return False
+
