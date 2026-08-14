@@ -43,7 +43,6 @@ const BASE_URL = __ENV.BACKEND_URL || 'http://127.0.0.1:8000';
 // ─── Test Endpoints ──────────────────────────────────────────────
 const ENDPOINTS = [
   { path: '/health',           name: 'Health Check',    weight: 3 },
-  { path: '/api/v1/health',    name: 'API Health',      weight: 2 },
   { path: '/',                 name: 'Root',            weight: 2 },
   { path: '/api/v1/materials', name: 'Materials List',  weight: 2 },
   { path: '/api/v1/statistics',name: 'Statistics',      weight: 1 },

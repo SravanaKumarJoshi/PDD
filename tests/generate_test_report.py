@@ -116,8 +116,9 @@ def run_selenium_e2e_tests():
             title = f"[E2E-{case_id:03d}] {feat} on Page '{p}'"
             latency = round(random.uniform(12.0, 85.0), 2)
             
-            # Simulate real verification status
-            status = "PASSED"
+            # The UI tests are not currently executing against a real browser
+            # in this wrapper script, so we must mark them as SKIPPED rather than PASSED.
+            status = "SKIPPED"
             
             results.append({
                 "id": f"E2E-{case_id:03d}",
@@ -125,7 +126,7 @@ def run_selenium_e2e_tests():
                 "title": title,
                 "endpoint": f"{FRONTEND_URL}{p}",
                 "status": status,
-                "latency_ms": latency,
+                "latency_ms": 0.0,
                 "timestamp": datetime.datetime.now().strftime("%H:%M:%S.%f")[:-3]
             })
             case_id += 1
@@ -138,8 +139,8 @@ def run_selenium_e2e_tests():
             "category": "UI State & Layout",
             "title": title,
             "endpoint": f"{FRONTEND_URL}{p}",
-            "status": "PASSED",
-            "latency_ms": round(random.uniform(15.0, 60.0), 2),
+            "status": "SKIPPED",
+            "latency_ms": 0.0,
             "timestamp": datetime.datetime.now().strftime("%H:%M:%S.%f")[:-3]
         })
         case_id += 1
@@ -174,7 +175,7 @@ def run_api_integration_tests():
     # Run actual requests for key endpoints
     for path, method, desc in endpoints:
         start_t = time.time()
-        status_code = 200
+        status_code = 500  # Default to 500 so exceptions are treated as failures
         try:
             url = f"{BASE_URL}{path}"
             if method == "GET":
@@ -183,12 +184,12 @@ def run_api_integration_tests():
             elif method == "POST":
                 r = requests.post(url, json={"application_type": "Wound dressing", "test_size": 0.3}, timeout=5)
                 status_code = r.status_code
-        except Exception:
-            status_code = 200
+        except Exception as e:
+            # Capture actual exceptions instead of swallowing them and faking 200
+            print(f"Error on {method} {url}: {e}")
+            status_code = 500
             
         elapsed = round((time.time() - start_t) * 1000, 2)
-        if elapsed == 0:
-            elapsed = round(random.uniform(15.0, 95.0), 2)
             
         title = f"[API-{case_id:03d}] {method} {path} — {desc}"
         results.append({
@@ -227,8 +228,8 @@ def run_api_integration_tests():
             "category": "Query & Filter Parameters",
             "title": title,
             "endpoint": full_path,
-            "status": "PASSED",
-            "latency_ms": round(random.uniform(8.0, 45.0), 2),
+            "status": "SKIPPED",
+            "latency_ms": 0.0,
             "timestamp": datetime.datetime.now().strftime("%H:%M:%S.%f")[:-3]
         })
         case_id += 1
@@ -254,7 +255,8 @@ def run_load_performance_tests():
             dur = (time.time() - st) * 1000
             return r.status_code == 200, dur
         except Exception:
-            return True, random.uniform(45.0, 120.0)
+            dur = (time.time() - st) * 1000
+            return False, dur
 
     start_total = time.time()
     with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
@@ -332,8 +334,8 @@ def run_vulnerability_security_tests():
                 "category": cat,
                 "title": title,
                 "endpoint": endpoint,
-                "status": "PASSED",
-                "latency_ms": latency,
+                "status": "SKIPPED",
+                "latency_ms": 0.0,
                 "timestamp": datetime.datetime.now().strftime("%H:%M:%S.%f")[:-3]
             })
             case_id += 1
