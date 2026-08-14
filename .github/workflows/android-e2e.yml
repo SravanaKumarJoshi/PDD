@@ -19,11 +19,11 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Setup Java 17
+      - name: Setup Java 21
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '17'
+          java-version: '21'
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -35,8 +35,12 @@ jobs:
         working-directory: apppp/android
         run: |
           chmod +x gradlew
-          ./gradlew assembleDebug --no-daemon
-          APK_REL_PATH=$(find . -name 'app-debug.apk' -type f | head -1 | sed 's|^\./||')
+          ./gradlew assembleStagingDebug --no-daemon
+          APK_REL_PATH=$(find . -name '*-debug.apk' -type f | head -1 | sed 's|^\./||')
+          if [ -z "$APK_REL_PATH" ]; then
+            echo "❌ APK build failed or APK not found!"
+            exit 1
+          fi
           echo "APK_PATH=$APK_REL_PATH" >> $GITHUB_ENV
 
       # ── Install Appium Dependencies ─────────────────────────
@@ -79,9 +83,20 @@ jobs:
             BrainBattleAppium/Test_Results/
           retention-days: 30
 
+      # ── Check if HTML Report Exists ──────────────────────────
+      - name: Check HTML Report
+        id: check_html
+        if: always()
+        run: |
+          if [ -d "BrainBattleAppium/Test_Results/HTML" ]; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
+
       # ── Deploy Reports to GH Pages ─────────────────────────
       - name: Deploy Mobile Reports to GitHub Pages
-        if: always()
+        if: steps.check_html.outputs.exists == 'true'
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: BrainBattleAppium/Test_Results/HTML
@@ -90,7 +105,7 @@ jobs:
           clean: false
 
       - name: Deploy Mobile Report History
-        if: always()
+        if: steps.check_html.outputs.exists == 'true'
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: BrainBattleAppium/Test_Results/HTML
@@ -108,4 +123,6 @@ jobs:
             echo "Reports uploaded as artifacts and deployed to GitHub Pages." >> $GITHUB_STEP_SUMMARY
           fi
           # Run summary generator
-          cd BrainBattleAppium && node utils/generateSummary.js || true
+          if [ -f "BrainBattleAppium/utils/generateSummary.js" ]; then
+            cd BrainBattleAppium && node utils/generateSummary.js
+          fi
