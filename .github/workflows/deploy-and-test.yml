@@ -55,6 +55,20 @@ jobs:
           curl -sf http://127.0.0.1:5173 > /dev/null && echo "✅ Preview server is alive" || echo "⚠️ Server not responding"
           echo "TEST_BASE_URL=http://127.0.0.1:5173" >> $GITHUB_ENV
 
+      # ── Start Backend API ───────────────────────────────────
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Start Python Backend
+        working-directory: apppp/backend
+        run: |
+          pip install -r requirements.txt
+          uvicorn app.main:app --host 127.0.0.1 --port 8000 &
+          sleep 5
+          curl -sf http://127.0.0.1:8000/health > /dev/null && echo "✅ Backend is alive" || echo "⚠️ Backend not responding"
+
       # ── Install E2E Dependencies ────────────────────────────
       - name: Install E2E Dependencies
         working-directory: BrainBattleE2E

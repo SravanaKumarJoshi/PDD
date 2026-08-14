@@ -30,10 +30,20 @@ jobs:
         with:
           node-version: '20'
 
+      # ── Start Backend API ───────────────────────────────────
+      - name: Start Python Backend
+        working-directory: apppp/backend
+        run: |
+          pip install -r requirements.txt
+          uvicorn app.main:app --host 127.0.0.1 --port 8000 &
+          sleep 5
+          curl -sf http://127.0.0.1:8000/health > /dev/null && echo "✅ Backend is alive" || echo "⚠️ Backend not responding"
+
       # ── Build Debug APK ─────────────────────────────────────
       - name: Build Android Debug APK
         working-directory: apppp/android
         run: |
+          sed -i 's/\r$//' gradlew
           chmod +x gradlew
           ./gradlew assembleStagingDebug --no-daemon
           APK_REL_PATH=$(find . -name '*-debug.apk' -type f | head -1 | sed 's|^\./||')
