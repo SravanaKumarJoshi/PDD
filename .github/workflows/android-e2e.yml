@@ -36,7 +36,8 @@ jobs:
         run: |
           chmod +x gradlew
           ./gradlew assembleDebug --no-daemon
-          echo "APK_PATH=$(find . -name 'app-debug.apk' -type f | head -1)" >> $GITHUB_ENV
+          APK_REL_PATH=$(find . -name 'app-debug.apk' -type f | head -1 | sed 's|^\./||')
+          echo "APK_PATH=$APK_REL_PATH" >> $GITHUB_ENV
 
       # ── Install Appium Dependencies ─────────────────────────
       - name: Install Appium & Test Dependencies
@@ -65,7 +66,7 @@ jobs:
           script: |
             cd BrainBattleAppium
             chmod +x scripts/ci_run_tests.sh
-            export APK_PATH="${{ github.workspace }}/${{ env.APK_PATH }}"
+            export APK_PATH="${{ github.workspace }}/apppp/android/${{ env.APK_PATH }}"
             bash scripts/ci_run_tests.sh
 
       # ── Upload Test Reports ─────────────────────────────────

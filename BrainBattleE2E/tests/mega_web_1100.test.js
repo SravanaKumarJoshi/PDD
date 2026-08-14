@@ -1424,36 +1424,41 @@ describe('BioPolymer AI — Mega Web E2E Suite (1,100 Tests)', function () {
         it(testName, async function () {
           const startTime = Date.now();
 
-          // Programmatic assertion — validates test definition integrity
-          expect(testName).to.be.a('string').with.length.greaterThan(5);
-          expect(category.type).to.be.a('string');
-          expect(category.category).to.be.a('string');
-
           // For the first test of each category, do a real browser check if available
           if (testIndex === 0 && driver) {
             try {
               const currentUrl = await driver.getCurrentUrl();
               expect(currentUrl).to.be.a('string');
+              excelReporter.recordTest({
+                category: category.category,
+                type: category.type,
+                name: testName,
+                status: 'PASS',
+                duration: Date.now() - startTime,
+                error: null
+              });
             } catch (e) {
-              // Browser check failed — assertion still passes
+              excelReporter.recordTest({
+                category: category.category,
+                type: category.type,
+                name: testName,
+                status: 'FAIL',
+                duration: Date.now() - startTime,
+                error: e.message
+              });
+              throw e;
             }
+          } else {
+            excelReporter.recordTest({
+              category: category.category,
+              type: category.type,
+              name: testName,
+              status: 'SKIP',
+              duration: 0,
+              error: null
+            });
+            this.skip();
           }
-
-          // Calculate duration with random fallback for sub-1ms execution
-          let duration = Date.now() - startTime;
-          if (duration === 0) {
-            duration = Math.floor(Math.random() * 8) + 3; // 3-10ms fallback
-          }
-
-          // Record to reporter
-          excelReporter.recordTest({
-            category: category.category,
-            type: category.type,
-            name: testName,
-            status: 'PASS',
-            duration: duration,
-            error: null
-          });
         });
       });
     });

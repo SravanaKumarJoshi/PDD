@@ -113,9 +113,6 @@ describe('BioPolymer AI — Mega Android E2E Suite (1,111 Tests)', function () {
 
       category.tests.forEach((testName, index) => {
         it(testName, async function () {
-          // Dynamic sleep to ensure non-zero duration in CI
-          await dynamicSleep();
-
           if (index === 0) {
             // First test: attempt real Appium connection check
             try {
@@ -129,20 +126,13 @@ describe('BioPolymer AI — Mega Android E2E Suite (1,111 Tests)', function () {
                   `Orientation should be PORTRAIT or LANDSCAPE, got: ${orientation}`
                 );
               } else {
-                // No browser available — programmatic assertion
-                assert.ok(testName.length > 5, 'Test name should be descriptive');
+                this.skip();
               }
             } catch (err) {
-              // Appium not available — fall back to programmatic assertion
-              assert.ok(testName.length > 5, `Test definition valid: ${testName}`);
+              throw err;
             }
           } else {
-            // Parameterized assertions
-            assert.ok(typeof testName === 'string', 'Test name must be a string');
-            assert.ok(testName.length > 5, 'Test name must be descriptive');
-            assert.ok(category.name.length > 0, 'Category must have a name');
-            assert.strictEqual(typeof index, 'number', 'Index must be a number');
-            assert.ok(index >= 0 && index <= 100, 'Index must be within range');
+            this.skip();
           }
         });
       });
