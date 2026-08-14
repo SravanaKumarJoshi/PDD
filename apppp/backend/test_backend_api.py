@@ -85,41 +85,64 @@ async def main():
         user_a_headers = {"Authorization": "Bearer dev-userA"}
         user_b_headers = {"Authorization": "Bearer dev-userB"}
 
+        # Use a unique project name per run to avoid stale data conflicts
+        import time as _time
+        unique_suffix = str(int(_time.time() * 1000))[-8:]
+        unique_project_name = f"TestProject-{unique_suffix}"
+        print(f"Using unique project name: '{unique_project_name}'")
+
+        # Clean up any leftover test projects from prior runs for userA & userB
+        for hdr, user_label in [(user_a_headers, "A"), (user_b_headers, "B")]:
+            cleanup_resp = await client.get("/api/v1/projects", headers=hdr)
+            if cleanup_resp.status_code == 200:
+                for proj in cleanup_resp.json():
+                    if proj.get("title", "").startswith("TestProject-"):
+                        del_resp = await client.delete(f"/api/v1/projects/{proj['id']}", headers=hdr)
+                        print(f"  Cleaned up old project '{proj['title']}' for User {user_label}: {del_resp.status_code}")
+
         proj_payload_1 = {
-            "title": "Project Alpha",
+            "title": unique_project_name,
             "requirements": {"ts": 40},
             "results": {"count": 5}
         }
 
-        # 1. User A saves "Project Alpha" -> expect 201
+        # 1. User A saves unique project -> expect 201
         res_save1 = await client.post("/api/v1/projects", json=proj_payload_1, headers=user_a_headers)
-        print(f"User A First Save 'Project Alpha' status: {res_save1.status_code}")
+        print(f"User A First Save '{unique_project_name}' status: {res_save1.status_code}")
         assert res_save1.status_code == 201
 
-        # 2. User A saves "Project Alpha" again -> expect 409 Conflict
+        # 2. User A saves same project again -> expect 409 Conflict
         res_save2 = await client.post("/api/v1/projects", json=proj_payload_1, headers=user_a_headers)
-        print(f"User A Second Save 'Project Alpha' status: {res_save2.status_code}, Detail: {res_save2.json().get('detail')}")
+        print(f"User A Second Save '{unique_project_name}' status: {res_save2.status_code}, Detail: {res_save2.json().get('detail')}")
         assert res_save2.status_code == 409
         assert "already exists" in res_save2.json().get("detail", "").lower()
 
-        # 3. User A saves " Project Alpha " -> expect 409 Conflict
-        proj_payload_spaces = {"title": "  Project Alpha  ", "requirements": {}, "results": {}}
+        # 3. User A saves with leading/trailing spaces -> expect 409 Conflict
+        proj_payload_spaces = {"title": f"  {unique_project_name}  ", "requirements": {}, "results": {}}
         res_save3 = await client.post("/api/v1/projects", json=proj_payload_spaces, headers=user_a_headers)
-        print(f"User A Save '  Project Alpha  ' status: {res_save3.status_code}")
+        print(f"User A Save '  {unique_project_name}  ' status: {res_save3.status_code}")
         assert res_save3.status_code == 409
 
-        # 4. User A saves "project alpha" -> expect 409 Conflict
-        proj_payload_lower = {"title": "project alpha", "requirements": {}, "results": {}}
+        # 4. User A saves with different casing -> expect 409 Conflict
+        proj_payload_lower = {"title": unique_project_name.lower(), "requirements": {}, "results": {}}
         res_save4 = await client.post("/api/v1/projects", json=proj_payload_lower, headers=user_a_headers)
-        print(f"User A Save 'project alpha' status: {res_save4.status_code}")
+        print(f"User A Save '{unique_project_name.lower()}' status: {res_save4.status_code}")
         assert res_save4.status_code == 409
 
-        # 5. User B saves "Project Alpha" -> expect 201 Created (per-user uniqueness)
+        # 5. User B saves same name -> expect 201 Created (per-user uniqueness)
         res_save_user_b = await client.post("/api/v1/projects", json=proj_payload_1, headers=user_b_headers)
-        print(f"User B Save 'Project Alpha' status: {res_save_user_b.status_code}")
+        print(f"User B Save '{unique_project_name}' status: {res_save_user_b.status_code}")
         assert res_save_user_b.status_code == 201
 
         print("SUCCESS: Duplicate project name prevention verified!\n")
+
+        # Clean up test projects created during this run
+        for hdr, user_label in [(user_a_headers, "A"), (user_b_headers, "B")]:
+            cleanup_resp = await client.get("/api/v1/projects", headers=hdr)
+            if cleanup_resp.status_code == 200:
+                for proj in cleanup_resp.json():
+                    if proj.get("title", "").startswith("TestProject-"):
+                        await client.delete(f"/api/v1/projects/{proj['id']}", headers=hdr)
 
 if __name__ == "__main__":
     print("=== Running BioPolymer Backend API Verification ===\n")

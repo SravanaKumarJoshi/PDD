@@ -14,6 +14,13 @@ Outputs:
 import os
 import sys
 import time
+
+# Fix Windows console encoding for emoji characters
+if sys.stdout and hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+if sys.stderr and hasattr(sys.stderr, 'reconfigure'):
+    sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+
 import json
 import math
 import random
