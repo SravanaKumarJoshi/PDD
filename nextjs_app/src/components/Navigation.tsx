@@ -22,14 +22,16 @@ export default function Navigation() {
   const { user, isAuthenticated, logout } = useAuth();
 
   const navItems = [
-    { label: 'Overview', href: '/', icon: Dna },
-    { label: 'Recommend', href: '/recommend', icon: Search },
-    { label: 'Dataset Browser', href: '/dataset', icon: Database },
-    { label: 'Model Training', href: '/training', icon: BrainCircuit },
-    { label: 'Explainability', href: '/explainability', icon: Microscope },
-    { label: 'Optimization', href: '/optimization', icon: Target },
-    { label: 'Projects', href: '/projects', icon: FolderKanban },
+    { label: 'Overview', href: '/', icon: Dna, public: true },
+    { label: 'Recommend', href: '/recommend', icon: Search, public: false },
+    { label: 'Dataset Browser', href: '/dataset', icon: Database, public: false },
+    { label: 'Model Training', href: '/training', icon: BrainCircuit, public: false },
+    { label: 'Explainability', href: '/explainability', icon: Microscope, public: false },
+    { label: 'Optimization', href: '/optimization', icon: Target, public: false },
+    { label: 'Projects', href: '/projects', icon: FolderKanban, public: false },
   ];
+
+  const visibleNavItems = navItems.filter((item) => item.public || isAuthenticated);
 
   return (
     <nav className="glass-panel sticky top-0 z-50 border-b border-gray-800 backdrop-blur-md">
@@ -48,7 +50,7 @@ export default function Navigation() {
 
           {/* Nav Links */}
           <div className="hidden lg:flex items-center space-x-1">
-            {navItems.map((item) => {
+            {visibleNavItems.map((item) => {
               const Icon = item.icon;
               const isActive = pathname === item.href;
               return (
@@ -93,7 +95,7 @@ export default function Navigation() {
                 className="flex items-center gap-2 btn-primary text-xs"
               >
                 <LogIn className="w-4 h-4" />
-                <span>Firebase Login</span>
+                <span>Login / Register</span>
               </Link>
             )}
           </div>

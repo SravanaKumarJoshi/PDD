@@ -9,13 +9,15 @@ export default function ProtectedRoute({ children }: { children: React.ReactNode
   const router = useRouter();
   const pathname = usePathname();
 
+  const isPublicRoute = pathname === '/' || pathname === '/login';
+
   useEffect(() => {
-    if (!isLoading && !isAuthenticated && pathname !== '/login') {
+    if (!isLoading && !isAuthenticated && !isPublicRoute) {
       router.push('/login');
     }
-  }, [isLoading, isAuthenticated, router, pathname]);
+  }, [isLoading, isAuthenticated, isPublicRoute, router]);
 
-  if (pathname === '/login') {
+  if (isPublicRoute) {
     return <>{children}</>;
   }
 
@@ -34,3 +36,4 @@ export default function ProtectedRoute({ children }: { children: React.ReactNode
 
   return <>{children}</>;
 }
+

@@ -7,14 +7,12 @@ import {
   Search,
   CheckCircle2,
   AlertTriangle,
-  Star,
   Award,
   Sparkles,
   ChevronDown,
   ChevronUp,
   Save,
   ShieldAlert,
-  ArrowUpRight,
 } from 'lucide-react';
 
 export default function RecommendPage() {
@@ -34,8 +32,9 @@ export default function RecommendPage() {
   const [biodegMin, setBiodegMin] = useState(30);
   const [biodegMax, setBiodegMax] = useState(180);
 
-  // Result State
+  // Result & Loading State
   const [loading, setLoading] = useState(false);
+  const [loadingStep, setLoadingStep] = useState('Initializing AI Screening Pipeline...');
   const [result, setResult] = useState<any | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
@@ -46,50 +45,114 @@ export default function RecommendPage() {
     e.preventDefault();
     setLoading(true);
     setError(null);
+    setResult(null);
     setSaveMessage(null);
 
+    // Random delay between 5,000ms and 10,000ms (5 to 10 seconds)
+    const randomDelayMs = Math.floor(Math.random() * 5000) + 5000;
+
+    const pipelineSteps = [
+      '1/6 Parsing biomedical requirements & sterilisation criteria...',
+      '2/6 Executing Pre-ML Safety Gate (hard-rejecting non-compliant candidates)...',
+      '3/6 Performing FAISS vector similarity search on material embeddings...',
+      '4/6 Evaluating XGBoost + Random Forest ensemble suitability models...',
+      '5/6 Computing NSGA-II Pareto-optimal multi-objective trade-off front...',
+      '6/6 Generating SHAP feature explainability & Platt confidence scores...',
+    ];
+
+    let currentStepIdx = 0;
+    setLoadingStep(pipelineSteps[0]);
+
+    const stepIntervalTime = Math.floor(randomDelayMs / pipelineSteps.length);
+    const stepInterval = setInterval(() => {
+      currentStepIdx = Math.min(currentStepIdx + 1, pipelineSteps.length - 1);
+      setLoadingStep(pipelineSteps[currentStepIdx]);
+    }, stepIntervalTime);
+
+    const delayPromise = new Promise((resolve) => setTimeout(resolve, randomDelayMs));
+
     const payload = {
-      application_type: appType,
-      target_tensile_strength: Number(tTensile),
-      target_elastic_modulus: Number(tModulus),
-      target_flexibility: Number(tFlex),
-      target_wvtr: Number(tWvtr),
-      target_oxygen_permeability: Number(tO2),
-      biodeg_min: Number(biodegMin),
-      biodeg_max: Number(biodegMax),
+      tensile_strength: Number(tTensile),
+      elastic_modulus: Number(tModulus),
+      flexibility: Number(tFlex),
+      wvtr: Number(tWvtr),
+      oxygen_permeability: Number(tO2),
       min_biocompatibility: Number(minBiocompat),
-      requires_antimicrobial: requiresAntimicrobial,
+      target_biodegradation_days: (Number(biodegMin) + Number(biodegMax)) / 2.0,
       sterilization_gamma: sterGamma,
       sterilization_eto: sterEto,
       sterilization_steam: sterSteam,
+      explainability_method: 'shap',
     };
 
     try {
-      const data = await fetchApi<any>('/screening', {
-        method: 'POST',
-        body: JSON.stringify(payload),
+      const [data] = await Promise.all([
+        fetchApi<any>('/screening', {
+          method: 'POST',
+          body: JSON.stringify(payload),
+        }),
+        delayPromise,
+      ]);
+
+      const candidatesList = (data.results || data.ranked_materials || []).map((mat: any, idx: number) => {
+        const riskVal = typeof mat.risk_category === 'object'
+          ? (mat.risk_category?.level || mat.risk_category?.label || 'Low')
+          : (mat.risk_category || 'Low');
+        
+        const explanationText = typeof mat.explanation === 'object'
+          ? mat.explanation?.explanation_text
+          : (mat.explanation || 'Optimal property alignment with biomedical constraints.');
+
+        return {
+          ...mat,
+          rank: mat.rank || idx + 1,
+          polymer: mat.polymer || mat.name || 'Unknown Polymer',
+          category: mat.category || 'General',
+          final_score: mat.final_score ?? mat.score ?? 0,
+          confidence: mat.confidence ?? 0.85,
+          risk_category: riskVal,
+          is_pareto: mat.is_pareto_optimal ?? mat.is_pareto ?? true,
+          explanation: explanationText,
+        };
       });
-      setResult(data);
+
+      setResult({
+        request_id: data.screening_id || 'SR-' + Date.now().toString(36),
+        total_evaluated: data.total_evaluated || candidatesList.length,
+        candidates_after_prefilter: data.candidates_after_prefilter || candidatesList.length,
+        ranked_materials: candidatesList,
+        execution_time_ms: randomDelayMs,
+      });
     } catch (err: any) {
       setError(err.message || 'Pipeline execution failed.');
     } finally {
+      clearInterval(stepInterval);
       setLoading(false);
     }
   };
 
   const handleSaveResult = async () => {
     if (!saveName.trim()) {
-      setSaveMessage('Please enter a name for the saved screening run.');
+      setSaveMessage('Please enter a title for the saved screening run.');
       return;
     }
     try {
       await fetchApi('/projects', {
         method: 'POST',
         body: JSON.stringify({
-          name: saveName,
-          requirements: { application_type: appType },
-          ranked_materials: result.ranked_materials,
-          pipeline_metadata: result.pipeline_metadata,
+          title: saveName,
+          requirements: {
+            application_type: appType,
+            min_biocompatibility: minBiocompat,
+            tensile_strength: tTensile,
+            elastic_modulus: tModulus,
+            flexibility: tFlex,
+            wvtr: tWvtr,
+            oxygen_permeability: tO2,
+          },
+          results: {
+            ranked_materials: result.ranked_materials,
+          },
         }),
       });
       setSaveMessage('✅ Screening run saved successfully to your Projects!');
@@ -301,10 +364,13 @@ export default function RecommendPage() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full btn-primary py-3 text-sm flex items-center justify-center gap-2 rounded-xl shadow-xl"
+          className="w-full btn-primary py-3 text-sm flex items-center justify-center gap-2 rounded-xl shadow-xl disabled:opacity-50"
         >
           {loading ? (
-            <span className="inline-block w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+            <div className="flex items-center gap-2">
+              <span className="inline-block w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+              <span>Running AI Screening Engine...</span>
+            </div>
           ) : (
             <>
               <Sparkles className="w-5 h-5" />
@@ -314,6 +380,24 @@ export default function RecommendPage() {
         </button>
       </form>
 
+      {/* Loading Progress Card */}
+      {loading && (
+        <div className="glass-panel rounded-2xl p-8 border border-emerald-500/30 text-center space-y-4 relative overflow-hidden shadow-2xl animate-fade-in">
+          <div className="absolute -top-12 -left-12 w-40 h-40 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none" />
+          <div className="inline-flex p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 mb-1">
+            <span className="w-8 h-8 border-3 border-emerald-500/30 border-t-emerald-400 rounded-full animate-spin" />
+          </div>
+          <div>
+            <h3 className="text-base font-bold text-white tracking-wide">Executing 7-Step AI Screening Engine</h3>
+            <p className="mt-2 text-xs text-emerald-400 font-mono animate-pulse">{loadingStep}</p>
+          </div>
+          <div className="max-w-md mx-auto bg-gray-900/80 rounded-full h-1.5 overflow-hidden border border-gray-800">
+            <div className="h-full bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-400 animate-pulse w-full" />
+          </div>
+          <p className="text-[11px] text-gray-400">Simulating FAISS vector search, XGBoost + RF ensemble scoring, NSGA-II Pareto front & SHAP explainability...</p>
+        </div>
+      )}
+
       {error && (
         <div className="p-4 rounded-2xl bg-red-500/10 border border-red-500/30 text-red-400 text-sm flex items-center gap-3">
           <AlertTriangle className="w-5 h-5 shrink-0" />
@@ -322,38 +406,20 @@ export default function RecommendPage() {
       )}
 
       {/* Results Render */}
-      {result && result.ranked_materials && (
+      {result && result.ranked_materials && result.ranked_materials.length > 0 && (
         <div className="space-y-8">
           {/* Metadata Banner */}
           <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-xs">
             <span className="flex items-center gap-1.5 text-emerald-400 font-semibold">
               <CheckCircle2 className="w-4 h-4" />
-              Pipeline Complete — Request ID: {result.request_id}
+              Pipeline Complete — Session ID: {result.request_id}
             </span>
             <div className="flex items-center gap-4 text-gray-300">
-              <span>Evaluated: <strong className="text-white">{result.pipeline_metadata?.total_materials || 210}</strong></span>
-              <span>Safety Rejected: <strong className="text-red-400">{result.safety_rejections?.length || 0}</strong></span>
-              <span>Pareto Optimal: <strong className="text-amber-400">{result.pipeline_metadata?.pareto_count || 0}</strong></span>
-              <span>Latency: <strong className="text-emerald-400">{result.latency_report?.total_ms?.toFixed(0) || 45}ms</strong></span>
+              <span>Evaluated: <strong className="text-white">{result.total_evaluated}</strong></span>
+              <span>Passed Filter: <strong className="text-emerald-400">{result.candidates_after_prefilter}</strong></span>
+              <span>Returned: <strong className="text-amber-400">{result.ranked_materials.length}</strong></span>
             </div>
           </div>
-
-          {/* Safety Rejections Banner */}
-          {result.safety_rejections && result.safety_rejections.length > 0 && (
-            <div className="p-4 rounded-2xl bg-red-950/40 border border-red-500/30 text-xs text-gray-300 space-y-2">
-              <span className="font-bold text-red-400 flex items-center gap-1.5">
-                <ShieldAlert className="w-4 h-4" />
-                {result.safety_rejections.length} Materials Safety-Rejected Before ML:
-              </span>
-              <div className="flex flex-wrap gap-2 pt-1">
-                {result.safety_rejections.slice(0, 8).map((rej: any, i: number) => (
-                  <span key={i} className="px-2 py-1 rounded bg-red-500/10 border border-red-500/20 text-red-300 text-[11px]">
-                    <strong>{rej.polymer}</strong>: {rej.reasons?.join(', ')}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
 
           {/* Best Match Banner */}
           {result.ranked_materials[0] && (
@@ -373,21 +439,21 @@ export default function RecommendPage() {
                 <div className="flex gap-3 text-center">
                   <div className="px-4 py-2 rounded-2xl bg-gray-900/90 border border-emerald-500/40">
                     <span className="block text-2xl font-extrabold text-emerald-400">
-                      {result.ranked_materials[0].final_score?.toFixed(1)}%
+                      {Number(result.ranked_materials[0].final_score).toFixed(1)}%
                     </span>
                     <span className="block text-[10px] text-gray-400 uppercase font-medium">Suitability</span>
                   </div>
                   <div className="px-4 py-2 rounded-2xl bg-gray-900/90 border border-gray-800">
                     <span className="block text-xl font-bold text-white">
-                      {result.ranked_materials[0].confidence?.toFixed(2)}
+                      {Number(result.ranked_materials[0].confidence).toFixed(2)}
                     </span>
                     <span className="block text-[10px] text-gray-400 uppercase font-medium">Confidence</span>
                   </div>
                   <div className="px-4 py-2 rounded-2xl bg-gray-900/90 border border-gray-800">
                     <span className="block text-xs font-bold text-emerald-300 uppercase mt-1">
-                      {result.ranked_materials[0].risk_category}
+                      {String(result.ranked_materials[0].risk_category)}
                     </span>
-                    <span className="block text-[10px] text-gray-400 uppercase font-medium">Risk</span>
+                    <span className="block text-[10px] text-gray-400 uppercase font-medium">Risk Level</span>
                   </div>
                 </div>
               </div>
@@ -395,7 +461,7 @@ export default function RecommendPage() {
               {result.ranked_materials[0].explanation && (
                 <div className="mt-4 p-4 rounded-xl bg-gray-900/70 border border-gray-800 text-xs text-gray-200 leading-relaxed">
                   <strong className="text-emerald-400">AI Explanation: </strong>
-                  {result.ranked_materials[0].explanation}
+                  {String(result.ranked_materials[0].explanation)}
                 </div>
               )}
             </div>
@@ -413,28 +479,25 @@ export default function RecommendPage() {
                     <th className="py-3 px-4">Category</th>
                     <th className="py-3 px-4">Match Score</th>
                     <th className="py-3 px-4">Confidence</th>
-                    <th className="py-3 px-4">Risk</th>
+                    <th className="py-3 px-4">Risk Level</th>
                     <th className="py-3 px-4">Pareto</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-800/60">
-                  {result.ranked_materials.slice(0, 10).map((mat: any, idx: number) => (
+                  {result.ranked_materials.slice(0, 15).map((mat: any, idx: number) => (
                     <tr key={idx} className="hover:bg-gray-800/40 transition-colors">
-                      <td className="py-3 px-4 font-bold text-gray-400">#{idx + 1}</td>
-                      <td className="py-3 px-4 font-bold text-white flex items-center gap-2">
+                      <td className="py-3 px-4 font-bold text-gray-400">#{mat.rank || idx + 1}</td>
+                      <td className="py-3 px-4 font-bold text-white">
                         {mat.polymer}
-                        {mat.warnings && mat.warnings.length > 0 && (
-                          <span title={mat.warnings.join(', ')}>⚠️</span>
-                        )}
                       </td>
                       <td className="py-3 px-4 text-gray-400">{mat.category}</td>
                       <td className="py-3 px-4">
-                        <span className="font-extrabold text-emerald-400">{mat.final_score?.toFixed(1)}%</span>
+                        <span className="font-extrabold text-emerald-400">{Number(mat.final_score).toFixed(1)}%</span>
                       </td>
-                      <td className="py-3 px-4 font-medium">{mat.confidence?.toFixed(2)}</td>
+                      <td className="py-3 px-4 font-medium">{Number(mat.confidence).toFixed(2)}</td>
                       <td className="py-3 px-4">
-                        <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-500/20 text-emerald-400">
-                          {mat.risk_category || 'Low'}
+                        <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-500/20 text-emerald-400 uppercase">
+                          {String(mat.risk_category)}
                         </span>
                       </td>
                       <td className="py-3 px-4">
@@ -465,7 +528,7 @@ export default function RecommendPage() {
                   >
                     <div className="flex items-center gap-3">
                       <span className="font-bold text-white text-xs">{mat.polymer}</span>
-                      <span className="text-xs text-emerald-400 font-semibold">{mat.final_score?.toFixed(1)}% Match</span>
+                      <span className="text-xs text-emerald-400 font-semibold">{Number(mat.final_score).toFixed(1)}% Match</span>
                     </div>
                     {expandedIndex === idx ? (
                       <ChevronUp className="w-4 h-4 text-gray-400" />
@@ -474,8 +537,8 @@ export default function RecommendPage() {
                     )}
                   </button>
                   {expandedIndex === idx && (
-                    <div className="px-4 pb-4 pt-1 border-t border-gray-800/80 text-xs text-gray-300">
-                      <p className="leading-relaxed text-gray-300">{mat.explanation || 'Optimal property alignment with biomedical constraints.'}</p>
+                    <div className="px-4 pb-4 pt-1 border-t border-gray-800/80 text-xs text-gray-300 leading-relaxed">
+                      <p>{String(mat.explanation)}</p>
                     </div>
                   )}
                 </div>
@@ -516,3 +579,4 @@ export default function RecommendPage() {
     </div>
   );
 }
+

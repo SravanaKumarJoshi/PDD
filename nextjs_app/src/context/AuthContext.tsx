@@ -2,13 +2,18 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { fetchApi, getAuthToken, setAuthToken, removeAuthToken } from '@/lib/api';
-import { firebaseSignIn, firebaseSignUp, firebaseLookupToken } from '@/lib/firebase';
 
 export interface User {
   id: string;
   email: string;
   display_name?: string;
   role: string;
+}
+
+interface AuthResponse {
+  access_token: string;
+  token_type: string;
+  user: User;
 }
 
 interface AuthContextType {
@@ -34,29 +39,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       if (storedToken) {
         setTokenState(storedToken);
         try {
-          // Attempt loading user from backend /auth/me
+          // Verify session & load profile from backend /auth/me via JWT token
           const userData = await fetchApi<User>('/auth/me');
           setUser(userData);
         } catch (e) {
-          // Fallback: verify Firebase ID Token directly with Firebase Lookup REST API
-          try {
-            const fbUser = await firebaseLookupToken(storedToken);
-            if (fbUser) {
-              setUser({
-                id: fbUser.localId,
-                email: fbUser.email,
-                display_name: fbUser.displayName || fbUser.email.split('@')[0],
-                role: 'user',
-              });
-            } else {
-              throw new Error('Invalid session');
-            }
-          } catch {
-            console.warn('Session expired or invalid, clearing auth token');
-            removeAuthToken();
-            setTokenState(null);
-            setUser(null);
-          }
+          console.warn('JWT session expired or invalid, clearing auth token');
+          removeAuthToken();
+          setTokenState(null);
+          setUser(null);
         }
       }
       setIsLoading(false);
@@ -65,38 +55,28 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const login = async (email: string, pass: string) => {
-    const res = await firebaseSignIn(email, pass);
-    setAuthToken(res.idToken);
-    setTokenState(res.idToken);
+    const res = await fetchApi<AuthResponse>('/auth/login', {
+      method: 'POST',
+      body: JSON.stringify({ email, password: pass }),
+    });
 
-    try {
-      const dbUser = await fetchApi<User>('/auth/me');
-      setUser(dbUser);
-    } catch {
-      setUser({
-        id: res.localId,
-        email: res.email,
-        display_name: res.displayName || res.email.split('@')[0],
-        role: 'user',
-      });
+    if (res.access_token) {
+      setAuthToken(res.access_token);
+      setTokenState(res.access_token);
+      setUser(res.user);
     }
   };
 
   const register = async (email: string, pass: string, name?: string) => {
-    const res = await firebaseSignUp(email, pass, name);
-    setAuthToken(res.idToken);
-    setTokenState(res.idToken);
+    const res = await fetchApi<AuthResponse>('/auth/register', {
+      method: 'POST',
+      body: JSON.stringify({ email, password: pass, display_name: name }),
+    });
 
-    try {
-      const dbUser = await fetchApi<User>('/auth/me');
-      setUser(dbUser);
-    } catch {
-      setUser({
-        id: res.localId,
-        email: res.email,
-        display_name: name || res.displayName || res.email.split('@')[0],
-        role: 'user',
-      });
+    if (res.access_token) {
+      setAuthToken(res.access_token);
+      setTokenState(res.access_token);
+      setUser(res.user);
     }
   };
 
@@ -130,3 +110,4 @@ export function useAuth() {
   }
   return context;
 }
+

@@ -74,6 +74,10 @@ export default function ProjectsPage() {
           <span className="inline-block w-6 h-6 border-2 border-emerald-500/30 border-t-emerald-500 rounded-full animate-spin mb-2" />
           <p>Loading saved projects...</p>
         </div>
+      ) : error ? (
+        <div className="p-4 rounded-2xl bg-red-500/10 border border-red-500/30 text-red-400 text-sm">
+          <span>{error}</span>
+        </div>
       ) : projects.length === 0 ? (
         <div className="glass-panel rounded-2xl p-12 text-center border border-gray-800 space-y-3">
           <FolderKanban className="w-12 h-12 text-gray-600 mx-auto" />
@@ -84,50 +88,61 @@ export default function ProjectsPage() {
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {projects.map((proj) => (
-            <div key={proj.id} className="glass-card rounded-2xl p-6 border border-gray-800 space-y-4 relative group">
-              <div className="flex items-start justify-between gap-4 border-b border-gray-800 pb-3">
-                <div>
-                  <h3 className="text-base font-bold text-white group-hover:text-emerald-400 transition-colors">
-                    {proj.name || 'Untitled Screening Run'}
-                  </h3>
-                  <span className="text-[11px] text-gray-400 flex items-center gap-1 mt-1">
-                    <Calendar className="w-3 h-3 text-gray-500" />
-                    {proj.created_at ? new Date(proj.created_at).toLocaleString() : 'Recent'}
-                  </span>
-                </div>
+          {projects.map((proj) => {
+            const reqs = typeof proj.requirements === 'string' ? JSON.parse(proj.requirements) : (proj.requirements || {});
+            const resObj = typeof proj.results === 'string' ? JSON.parse(proj.results) : (proj.results || {});
+            const materials = resObj?.ranked_materials || proj.ranked_materials || [];
 
-                <button
-                  onClick={() => handleDelete(proj.id)}
-                  className="p-1.5 text-gray-500 hover:text-red-400 hover:bg-red-500/10 rounded-lg transition-colors"
-                  title="Delete Project"
-                >
-                  <Trash2 className="w-4 h-4" />
-                </button>
-              </div>
-
-              {proj.requirements && (
-                <div className="p-3 rounded-xl bg-gray-900/60 border border-gray-800 text-xs text-gray-300">
-                  <span className="font-semibold text-emerald-400 block mb-1">Target Requirements:</span>
-                  <span>Application: {proj.requirements.application_type || 'Wound dressing'}</span>
-                </div>
-              )}
-
-              {proj.ranked_materials && proj.ranked_materials.length > 0 && (
-                <div>
-                  <span className="text-xs font-bold text-white block mb-2">Top Candidates:</span>
-                  <div className="space-y-1.5 text-xs">
-                    {proj.ranked_materials.slice(0, 3).map((m: any, i: number) => (
-                      <div key={i} className="flex items-center justify-between p-2 rounded-lg bg-gray-900/40 border border-gray-800/80">
-                        <span className="font-medium text-gray-200">#{i + 1} {m.polymer}</span>
-                        <span className="font-bold text-emerald-400">{m.final_score?.toFixed(1)}%</span>
-                      </div>
-                    ))}
+            return (
+              <div key={proj.id} className="glass-card rounded-2xl p-6 border border-gray-800 space-y-4 relative group">
+                <div className="flex items-start justify-between gap-4 border-b border-gray-800 pb-3">
+                  <div>
+                    <h3 className="text-base font-bold text-white group-hover:text-emerald-400 transition-colors">
+                      {proj.title || proj.name || 'Untitled Screening Run'}
+                    </h3>
+                    <span className="text-[11px] text-gray-400 flex items-center gap-1 mt-1">
+                      <Calendar className="w-3 h-3 text-gray-500" />
+                      {proj.created_at ? new Date(proj.created_at).toLocaleString() : 'Recent'}
+                    </span>
                   </div>
+
+                  <button
+                    onClick={() => handleDelete(proj.id)}
+                    className="p-1.5 text-gray-500 hover:text-red-400 hover:bg-red-500/10 rounded-lg transition-colors"
+                    title="Delete Project"
+                  >
+                    <Trash2 className="w-4 h-4" />
+                  </button>
                 </div>
-              )}
-            </div>
-          ))}
+
+                {reqs && (
+                  <div className="p-3 rounded-xl bg-gray-900/60 border border-gray-800 text-xs text-gray-300 space-y-1">
+                    <span className="font-semibold text-emerald-400 block">Target Requirements:</span>
+                    <div className="grid grid-cols-2 gap-2 text-[11px] text-gray-400">
+                      <span>App: <strong className="text-gray-200">{reqs.application_type || 'Wound dressing'}</strong></span>
+                      <span>Biocompatibility: <strong className="text-gray-200">{reqs.min_biocompatibility || 7}/10</strong></span>
+                      <span>Tensile: <strong className="text-gray-200">{reqs.tensile_strength || 50} MPa</strong></span>
+                      <span>Modulus: <strong className="text-gray-200">{reqs.elastic_modulus || 2} GPa</strong></span>
+                    </div>
+                  </div>
+                )}
+
+                {materials && materials.length > 0 && (
+                  <div>
+                    <span className="text-xs font-bold text-white block mb-2">Top Recommended Candidates:</span>
+                    <div className="space-y-1.5 text-xs">
+                      {materials.slice(0, 4).map((m: any, i: number) => (
+                        <div key={i} className="flex items-center justify-between p-2 rounded-lg bg-gray-900/40 border border-gray-800/80">
+                          <span className="font-medium text-gray-200">#{m.rank || i + 1} {m.polymer || m.name}</span>
+                          <span className="font-bold text-emerald-400">{Number(m.final_score).toFixed(1)}%</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       )}
     </div>
