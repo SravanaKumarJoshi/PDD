@@ -12,10 +12,11 @@ import {
   ArrowRight,
   Sparkles,
   CheckCircle2,
-  AlertTriangle,
   Cpu,
   Layers,
   FlaskConical,
+  Activity,
+  Zap,
 } from 'lucide-react';
 
 export default function DashboardPage() {
@@ -57,13 +58,13 @@ export default function DashboardPage() {
   }, []);
 
   const pipelineSteps = [
-    { num: '1', title: 'User Requirements', desc: 'Parse & validate biomedical target properties and sterilization criteria.', color: 'from-blue-500/20 to-indigo-500/20', border: 'border-blue-500/30' },
-    { num: '2', title: 'Safety Gate', desc: 'Hard-reject toxic or non-compliant materials before ML evaluation.', color: 'from-red-500/20 to-rose-500/20', border: 'border-red-500/30' },
-    { num: '3', title: 'FAISS Vector Similarity', desc: 'Retrieve K nearest neighbor candidate biopolymers via embedding distance.', color: 'from-cyan-500/20 to-teal-500/20', border: 'border-cyan-500/30' },
-    { num: '4', title: 'XGBoost + RF Ensemble', desc: 'Predict suitability probability using calibrated 70/30 weighted ensemble.', color: 'from-emerald-500/20 to-teal-500/20', border: 'border-emerald-500/30' },
-    { num: '5', title: 'NSGA-II Optimization', desc: 'Identify Pareto-optimal trade-offs across strength, biodegradability, biocompatibility.', color: 'from-amber-500/20 to-yellow-500/20', border: 'border-amber-500/30' },
-    { num: '6', title: 'SHAP Explainability', desc: 'Generate waterfall plots and human-readable feature importance reasons.', color: 'from-purple-500/20 to-violet-500/20', border: 'border-purple-500/30' },
-    { num: '7', title: 'Confidence & Risk', desc: 'Assign Platt-calibrated confidence score and risk categorization.', color: 'from-emerald-500/20 to-cyan-500/20', border: 'border-emerald-500/30' },
+    { num: '1', title: 'User Requirements', desc: 'Parse & validate biomedical target properties and sterilization criteria.', color: 'from-blue-500/15 to-indigo-500/15', border: 'border-blue-500/30' },
+    { num: '2', title: 'Safety Gate', desc: 'Hard-reject toxic or non-compliant materials before ML evaluation.', color: 'from-red-500/15 to-rose-500/15', border: 'border-red-500/30' },
+    { num: '3', title: 'FAISS Vector Similarity', desc: 'Retrieve K nearest neighbor candidate biopolymers via embedding distance.', color: 'from-cyan-500/15 to-teal-500/15', border: 'border-cyan-500/30' },
+    { num: '4', title: 'XGBoost + RF Ensemble', desc: 'Predict suitability probability using calibrated 70/30 weighted ensemble.', color: 'from-emerald-500/15 to-teal-500/15', border: 'border-emerald-500/30' },
+    { num: '5', title: 'NSGA-II Optimization', desc: 'Identify Pareto-optimal trade-offs across strength, biodegradability, biocompatibility.', color: 'from-amber-500/15 to-yellow-500/15', border: 'border-amber-500/30' },
+    { num: '6', title: 'SHAP Explainability', desc: 'Generate waterfall plots and human-readable feature importance reasons.', color: 'from-purple-500/15 to-violet-500/15', border: 'border-purple-500/30' },
+    { num: '7', title: 'Confidence & Risk', desc: 'Assign Platt-calibrated confidence score and risk categorization.', color: 'from-emerald-500/15 to-cyan-500/15', border: 'border-emerald-500/30' },
   ];
 
   const [activeTab, setActiveTab] = useState<'models' | 'safety' | 'explain'>('models');
@@ -71,26 +72,25 @@ export default function DashboardPage() {
   return (
     <div className="space-y-8">
       {/* Hero Header */}
-      <div className="relative rounded-3xl overflow-hidden glass-panel p-8 sm:p-12 border border-emerald-500/20 shadow-2xl">
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-gradient-to-br from-emerald-500/20 to-teal-500/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="relative z-10 max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-medium mb-4">
+      <div className="rounded-2xl bg-[#111827] p-8 sm:p-10 border border-[#1f293d] shadow-sm">
+        <div className="max-w-3xl space-y-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-600/10 border border-blue-500/20 text-blue-400 text-xs font-semibold">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Next.js 14 • AI Decision Support</span>
+            <span>Biomedical Material Decision Support Engine</span>
           </div>
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
-            BioPolymer <span className="gradient-text-emerald">AI Screening</span> Platform
+          <h1 className="text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight">
+            BioPolymer <span className="text-blue-400">AI Screening</span> Platform
           </h1>
-          <p className="mt-4 text-base sm:text-lg text-gray-300 leading-relaxed">
+          <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
             AI-powered material selection for biomedical packaging applications using XGBoost ensemble predictions, vector similarity search, multi-objective Pareto optimization, and SHAP explainability.
           </p>
-          <div className="mt-6 flex flex-wrap gap-4">
-            <Link href="/recommend" className="btn-primary flex items-center gap-2">
+          <div className="flex flex-wrap gap-3 pt-2">
+            <Link href="/recommend" className="btn-primary flex items-center gap-2 text-xs">
               <FlaskConical className="w-4 h-4" />
               <span>Start Recommendation Pipeline</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <Link href="/dataset" className="btn-secondary flex items-center gap-2">
+            <Link href="/dataset" className="btn-secondary flex items-center gap-2 text-xs">
               <Database className="w-4 h-4" />
               <span>Explore Materials Catalog</span>
             </Link>
@@ -99,78 +99,78 @@ export default function DashboardPage() {
       </div>
 
       {/* Clinical Disclaimer */}
-      <div className="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs flex items-start gap-3 shadow-lg">
-        <ShieldAlert className="w-5 h-5 shrink-0 mt-0.5 text-amber-400" />
-        <div>
-          <strong className="font-semibold text-amber-200">Clinical Disclaimer:</strong> This system provides AI-assisted recommendations for biomedical research and decision support. It does not replace professional medical judgment. Experimental validation is required before clinical use.
+      <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 text-xs flex items-start gap-3">
+        <ShieldAlert className="w-4 h-4 shrink-0 mt-0.5 text-amber-400" />
+        <div className="leading-relaxed">
+          <strong className="font-semibold text-slate-200">Clinical Disclaimer:</strong> This system provides AI-assisted decision support for biomedical material research. Recommendations do not replace clinical or lab testing. Experimental validation is required prior to medical application.
         </div>
       </div>
 
       {/* Metrics Grid */}
       <div>
-        <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-          <Cpu className="w-5 h-5 text-emerald-400" />
+        <h2 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+          <Cpu className="w-4 h-4 text-blue-400" />
           <span>System Overview</span>
         </h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-          <div className="glass-card rounded-2xl p-5 border border-gray-800 text-center">
-            <span className="block text-3xl font-extrabold gradient-text-emerald">{stats.totalMaterials}</span>
-            <span className="block text-xs text-gray-400 mt-1 font-medium">Total Materials</span>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5">
+          <div className="glass-card rounded-xl p-4 border border-[#222d44] text-center">
+            <span className="block text-2xl font-bold text-white">{stats.totalMaterials}</span>
+            <span className="block text-[11px] text-slate-400 mt-1 font-medium uppercase tracking-wider">Total Materials</span>
           </div>
-          <div className="glass-card rounded-2xl p-5 border border-gray-800 text-center">
-            <span className="block text-3xl font-extrabold text-cyan-400">{stats.literatureSourced}</span>
-            <span className="block text-xs text-gray-400 mt-1 font-medium">Literature Sourced</span>
+          <div className="glass-card rounded-xl p-4 border border-[#222d44] text-center">
+            <span className="block text-2xl font-bold text-blue-400">{stats.literatureSourced}</span>
+            <span className="block text-[11px] text-slate-400 mt-1 font-medium uppercase tracking-wider">Literature Sourced</span>
           </div>
-          <div className="glass-card rounded-2xl p-5 border border-gray-800 text-center">
-            <span className="block text-3xl font-extrabold text-indigo-400">{stats.categories}</span>
-            <span className="block text-xs text-gray-400 mt-1 font-medium">Categories</span>
+          <div className="glass-card rounded-xl p-4 border border-[#222d44] text-center">
+            <span className="block text-2xl font-bold text-slate-200">{stats.categories}</span>
+            <span className="block text-[11px] text-slate-400 mt-1 font-medium uppercase tracking-wider">Categories</span>
           </div>
-          <div className="glass-card rounded-2xl p-5 border border-gray-800 text-center">
-            <span className="block text-3xl font-extrabold text-teal-400">{stats.avgBiocompatibility}/10</span>
-            <span className="block text-xs text-gray-400 mt-1 font-medium">Avg Biocompatibility</span>
+          <div className="glass-card rounded-xl p-4 border border-[#222d44] text-center">
+            <span className="block text-2xl font-bold text-emerald-400">{stats.avgBiocompatibility}/10</span>
+            <span className="block text-[11px] text-slate-400 mt-1 font-medium uppercase tracking-wider">Avg Biocompatibility</span>
           </div>
-          <div className="glass-card rounded-2xl p-5 border border-gray-800 text-center">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold mt-1">
-              <CheckCircle2 className="w-3.5 h-3.5" />
+          <div className="glass-card rounded-xl p-4 border border-[#222d44] text-center flex flex-col items-center justify-center">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-400 text-xs font-semibold border border-emerald-500/20">
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
               {stats.modelStatus}
             </span>
-            <span className="block text-xs text-gray-400 mt-2 font-medium">Model Status</span>
+            <span className="block text-[11px] text-slate-400 mt-2 font-medium uppercase tracking-wider">AI Engine Status</span>
           </div>
         </div>
       </div>
 
       {/* 7-Step Pipeline Diagram */}
       <div>
-        <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-          <Layers className="w-5 h-5 text-emerald-400" />
+        <h2 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+          <Layers className="w-4 h-4 text-blue-400" />
           <span>7-Step AI Recommendation Pipeline</span>
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3.5">
           {pipelineSteps.map((step) => (
             <div
               key={step.num}
-              className={`glass-card rounded-2xl p-5 border ${step.border} bg-gradient-to-br ${step.color} relative group`}
+              className="bg-[#151c2c] rounded-xl p-5 border border-[#222d44] hover:border-slate-600 transition-colors"
             >
-              <div className="w-8 h-8 rounded-xl bg-gray-900/80 border border-gray-700 text-emerald-400 font-bold text-sm flex items-center justify-center mb-3">
+              <div className="w-7 h-7 rounded-md bg-slate-800 text-blue-400 font-bold text-xs flex items-center justify-center mb-3">
                 {step.num}
               </div>
-              <h3 className="text-sm font-bold text-white mb-1 group-hover:text-emerald-300 transition-colors">
+              <h3 className="text-xs font-bold text-white mb-1">
                 {step.title}
               </h3>
-              <p className="text-xs text-gray-400 leading-relaxed">{step.desc}</p>
+              <p className="text-xs text-slate-400 leading-relaxed">{step.desc}</p>
             </div>
           ))}
         </div>
       </div>
 
       {/* Feature Highlights Tabs */}
-      <div className="glass-panel rounded-2xl p-6 border border-gray-800">
-        <div className="flex border-b border-gray-800 gap-4 mb-6">
+      <div className="glass-panel rounded-3xl p-6 sm:p-8 border border-white/[0.08]">
+        <div className="flex border-b border-gray-800 gap-6 mb-6">
           <button
             onClick={() => setActiveTab('models')}
-            className={`pb-3 text-sm font-medium border-b-2 transition-colors ${
+            className={`pb-3 text-sm font-bold border-b-2 transition-all duration-200 ${
               activeTab === 'models'
-                ? 'border-emerald-500 text-emerald-400'
+                ? 'border-emerald-400 text-emerald-400'
                 : 'border-transparent text-gray-400 hover:text-gray-200'
             }`}
           >
@@ -178,9 +178,9 @@ export default function DashboardPage() {
           </button>
           <button
             onClick={() => setActiveTab('safety')}
-            className={`pb-3 text-sm font-medium border-b-2 transition-colors ${
+            className={`pb-3 text-sm font-bold border-b-2 transition-all duration-200 ${
               activeTab === 'safety'
-                ? 'border-emerald-500 text-emerald-400'
+                ? 'border-emerald-400 text-emerald-400'
                 : 'border-transparent text-gray-400 hover:text-gray-200'
             }`}
           >
@@ -188,9 +188,9 @@ export default function DashboardPage() {
           </button>
           <button
             onClick={() => setActiveTab('explain')}
-            className={`pb-3 text-sm font-medium border-b-2 transition-colors ${
+            className={`pb-3 text-sm font-bold border-b-2 transition-all duration-200 ${
               activeTab === 'explain'
-                ? 'border-emerald-500 text-emerald-400'
+                ? 'border-emerald-400 text-emerald-400'
                 : 'border-transparent text-gray-400 hover:text-gray-200'
             }`}
           >
@@ -200,22 +200,22 @@ export default function DashboardPage() {
 
         {activeTab === 'models' && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-gray-300">
-            <div className="space-y-2">
-              <p className="flex items-center gap-2">
+            <div className="space-y-3">
+              <p className="flex items-center gap-2.5 p-2.5 rounded-xl bg-gray-900/60 border border-gray-800">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span><strong>XGBoost</strong> primary suitability prediction model</span>
               </p>
-              <p className="flex items-center gap-2">
+              <p className="flex items-center gap-2.5 p-2.5 rounded-xl bg-gray-900/60 border border-gray-800">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span><strong>RandomForest</strong> benchmarking with side-by-side metric comparison</span>
               </p>
             </div>
-            <div className="space-y-2">
-              <p className="flex items-center gap-2">
+            <div className="space-y-3">
+              <p className="flex items-center gap-2.5 p-2.5 rounded-xl bg-gray-900/60 border border-gray-800">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span><strong>FAISS</strong> vector similarity search across property embeddings</span>
               </p>
-              <p className="flex items-center gap-2">
+              <p className="flex items-center gap-2.5 p-2.5 rounded-xl bg-gray-900/60 border border-gray-800">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span><strong>NSGA-II</strong> multi-objective optimization for trade-off Pareto fronts</span>
               </p>
@@ -225,22 +225,22 @@ export default function DashboardPage() {
 
         {activeTab === 'safety' && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-gray-300">
-            <div className="space-y-2">
-              <p className="flex items-center gap-2">
+            <div className="space-y-3">
+              <p className="flex items-center gap-2.5 p-2.5 rounded-xl bg-gray-900/60 border border-gray-800">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span><strong>Pre-ML Safety Gate:</strong> Hard-rejects toxic or non-biocompatible materials</span>
               </p>
-              <p className="flex items-center gap-2">
+              <p className="flex items-center gap-2.5 p-2.5 rounded-xl bg-gray-900/60 border border-gray-800">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span><strong>Confidence Scoring:</strong> Platt-calibrated probabilities & risk levels</span>
               </p>
             </div>
-            <div className="space-y-2">
-              <p className="flex items-center gap-2">
+            <div className="space-y-3">
+              <p className="flex items-center gap-2.5 p-2.5 rounded-xl bg-gray-900/60 border border-gray-800">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span><strong>Data Provenance:</strong> Literature-sourced vs synthetic data flagging</span>
               </p>
-              <p className="flex items-center gap-2">
+              <p className="flex items-center gap-2.5 p-2.5 rounded-xl bg-gray-900/60 border border-gray-800">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span><strong>Model Versioning:</strong> Checkpoint versioning & rollback capability</span>
               </p>
@@ -250,22 +250,22 @@ export default function DashboardPage() {
 
         {activeTab === 'explain' && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-gray-300">
-            <div className="space-y-2">
-              <p className="flex items-center gap-2">
+            <div className="space-y-3">
+              <p className="flex items-center gap-2.5 p-2.5 rounded-xl bg-gray-900/60 border border-gray-800">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span><strong>SHAP Explanations</strong> computed for every candidate biopolymer</span>
               </p>
-              <p className="flex items-center gap-2">
+              <p className="flex items-center gap-2.5 p-2.5 rounded-xl bg-gray-900/60 border border-gray-800">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span><strong>Feature Contribution</strong> waterfall plots & ranking breakdown</span>
               </p>
             </div>
-            <div className="space-y-2">
-              <p className="flex items-center gap-2">
+            <div className="space-y-3">
+              <p className="flex items-center gap-2.5 p-2.5 rounded-xl bg-gray-900/60 border border-gray-800">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span><strong>Global Importance</strong> summary across all dataset materials</span>
               </p>
-              <p className="flex items-center gap-2">
+              <p className="flex items-center gap-2.5 p-2.5 rounded-xl bg-gray-900/60 border border-gray-800">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span><strong>Natural Language Text:</strong> "Selected due to high biocompatibility (+0.34)..."</span>
               </p>
@@ -276,3 +276,4 @@ export default function DashboardPage() {
     </div>
   );
 }
+

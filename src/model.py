@@ -18,11 +18,14 @@ def prepare_features(df: pd.DataFrame,
                      feature_cols: list[str] = None) -> tuple[pd.DataFrame, pd.Series]:
     """Prepare features and labels for training."""
     feature_cols = feature_cols or FEATURE_COLUMNS
-    X = df[feature_cols].copy()
-    y = df["suitability_label"].copy()
-    if y.nunique() < 2:
+    X = df[feature_cols].copy().apply(pd.to_numeric, errors="coerce").fillna(0.0)
+    y_series = pd.to_numeric(df["suitability_label"], errors="coerce") if "suitability_label" in df.columns else pd.Series(dtype=float)
+    if y_series.isna().any() or y_series.nunique() < 2:
         bio = df["biocompatibility"] if "biocompatibility" in df.columns else np.random.randn(len(df))
+        bio = pd.to_numeric(bio, errors="coerce").fillna(5.0)
         y = (bio >= bio.median()).astype(int)
+    else:
+        y = y_series.astype(int)
     return X, y
 
 

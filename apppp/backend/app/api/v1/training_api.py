@@ -15,7 +15,7 @@ while _p.parent != _p:
         break
     _p = _p.parent
 
-from src.data import load_dataset_from_mysql, FEATURE_COLUMNS
+from src.data import load_dataset_auto, FEATURE_COLUMNS
 from src.xgboost_model import train_xgboost, get_feature_importance
 from src.model import train_model as train_rf, compare_models
 from src.evaluation import run_strict_validation
@@ -34,9 +34,7 @@ class TrainRequestSchema(BaseModel):
 async def train_models(payload: TrainRequestSchema):
     """Train XGBoost and RandomForest models and return comparison metrics."""
     try:
-        df, stats, error = load_dataset_from_mysql()
-        if error:
-            raise RuntimeError(f"Database error: {error}")
+        df, stats, source = load_dataset_auto()
 
         # Train XGBoost
         xgb_model, xgb_metrics = train_xgboost(

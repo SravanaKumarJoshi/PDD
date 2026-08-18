@@ -99,11 +99,11 @@ export default function DatasetBrowserPage() {
       {/* Header */}
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-medium mb-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold mb-3 shadow-inner">
             <Database className="w-3.5 h-3.5" />
             <span>MySQL-Backed Catalog Source of Truth</span>
           </div>
-          <h1 className="text-3xl font-extrabold text-white tracking-tight">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
             📊 Dataset Browser
           </h1>
           <p className="mt-1 text-sm text-gray-300">
@@ -114,7 +114,7 @@ export default function DatasetBrowserPage() {
         <div className="flex gap-3">
           <button
             onClick={loadDataset}
-            className="btn-secondary text-xs flex items-center gap-2 px-4 py-2 rounded-xl"
+            className="btn-secondary text-xs flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold"
           >
             <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
             <span>Reload</span>
@@ -122,7 +122,7 @@ export default function DatasetBrowserPage() {
           <button
             onClick={handleDownloadCSV}
             disabled={!filteredMaterials.length}
-            className="btn-primary text-xs flex items-center gap-2 px-5 py-2 rounded-xl"
+            className="btn-primary text-xs flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold"
           >
             <Download className="w-4 h-4" />
             <span>Download CSV ({filteredCount})</span>
@@ -132,38 +132,38 @@ export default function DatasetBrowserPage() {
 
       {/* Metrics Banner */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <div className="glass-card rounded-2xl p-4 border border-gray-800 text-center">
-          <span className="block text-2xl font-extrabold text-white">{totalCount}</span>
-          <span className="block text-[11px] text-gray-400 font-medium">Total Catalog Materials</span>
+        <div className="glass-card rounded-2xl p-5 border border-white/[0.08] text-center">
+          <span className="block text-3xl font-extrabold text-white">{totalCount}</span>
+          <span className="block text-[11px] text-gray-400 font-semibold uppercase tracking-wider mt-1">Total Materials</span>
         </div>
-        <div className="glass-card rounded-2xl p-4 border border-gray-800 text-center">
-          <span className="block text-2xl font-extrabold text-cyan-400">{literatureCount}</span>
-          <span className="block text-[11px] text-gray-400 font-medium">Literature Sourced</span>
+        <div className="glass-card rounded-2xl p-5 border border-white/[0.08] text-center">
+          <span className="block text-3xl font-extrabold text-cyan-400">{literatureCount}</span>
+          <span className="block text-[11px] text-gray-400 font-semibold uppercase tracking-wider mt-1">Literature Sourced</span>
         </div>
-        <div className="glass-card rounded-2xl p-4 border border-gray-800 text-center">
-          <span className="block text-2xl font-extrabold text-emerald-400">{filteredCount}</span>
-          <span className="block text-[11px] text-gray-400 font-medium">Matching Filters</span>
+        <div className="glass-card rounded-2xl p-5 border border-white/[0.08] text-center">
+          <span className="block text-3xl font-extrabold text-emerald-400">{filteredCount}</span>
+          <span className="block text-[11px] text-gray-400 font-semibold uppercase tracking-wider mt-1">Matching Filters</span>
         </div>
-        <div className="glass-card rounded-2xl p-4 border border-gray-800 text-center">
-          <span className="block text-2xl font-extrabold text-teal-400">{categories.length}</span>
-          <span className="block text-[11px] text-gray-400 font-medium">Distinct Categories</span>
+        <div className="glass-card rounded-2xl p-5 border border-white/[0.08] text-center">
+          <span className="block text-3xl font-extrabold text-teal-400">{categories.length}</span>
+          <span className="block text-[11px] text-gray-400 font-semibold uppercase tracking-wider mt-1">Distinct Categories</span>
         </div>
       </div>
 
       {/* Filter Toolbar */}
-      <div className="glass-panel rounded-2xl p-6 border border-gray-800 space-y-4">
-        <h2 className="text-sm font-bold text-white flex items-center gap-2">
+      <div className="glass-panel rounded-3xl p-6 sm:p-8 border border-white/[0.08] space-y-5 shadow-2xl">
+        <h2 className="text-sm font-extrabold text-white flex items-center gap-2">
           <Filter className="w-4 h-4 text-emerald-400" />
           <span>Filters & Search</span>
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <div>
-            <label className="block text-[11px] font-medium text-gray-300 mb-1">Category</label>
+            <label className="block text-[11px] font-semibold text-gray-300 mb-1.5">Category</label>
             <select
               value={categoryFilter}
               onChange={(e) => setCategoryFilter(e.target.value)}
-              className="w-full bg-gray-900 border border-gray-800 rounded-xl px-3 py-2 text-xs text-gray-100 focus:border-emerald-500 focus:outline-none"
+              className="w-full bg-[#070a12] border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-gray-100 focus:border-emerald-500 focus:outline-none"
             >
               <option value="All">All Categories</option>
               {categories.map((c) => (
@@ -173,11 +173,11 @@ export default function DatasetBrowserPage() {
           </div>
 
           <div>
-            <label className="block text-[11px] font-medium text-gray-300 mb-1">Data Source</label>
+            <label className="block text-[11px] font-semibold text-gray-300 mb-1.5">Data Source</label>
             <select
               value={sourceFilter}
               onChange={(e) => setSourceFilter(e.target.value)}
-              className="w-full bg-gray-900 border border-gray-800 rounded-xl px-3 py-2 text-xs text-gray-100 focus:border-emerald-500 focus:outline-none"
+              className="w-full bg-[#070a12] border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-gray-100 focus:border-emerald-500 focus:outline-none"
             >
               <option value="All">All Sources</option>
               <option value="Literature Only">Literature Only</option>
@@ -186,9 +186,9 @@ export default function DatasetBrowserPage() {
           </div>
 
           <div>
-            <div className="flex justify-between text-[11px] text-gray-300 mb-1">
+            <div className="flex justify-between text-[11px] text-gray-300 mb-1.5 font-semibold">
               <span>Min Biocompatibility</span>
-              <span className="font-bold text-emerald-400">{bioMin}/10</span>
+              <span className="font-extrabold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-md border border-emerald-500/20">{bioMin}/10</span>
             </div>
             <input
               type="range"
@@ -196,20 +196,20 @@ export default function DatasetBrowserPage() {
               max="10"
               value={bioMin}
               onChange={(e) => setBioMin(Number(e.target.value))}
-              className="w-full accent-emerald-500 bg-gray-900 rounded-lg cursor-pointer mt-1"
+              className="w-full accent-emerald-400 bg-[#070a12] rounded-lg cursor-pointer h-2 mt-1"
             />
           </div>
 
           <div>
-            <label className="block text-[11px] font-medium text-gray-300 mb-1">Search Polymer Name</label>
+            <label className="block text-[11px] font-semibold text-gray-300 mb-1.5">Search Polymer Name</label>
             <div className="relative">
-              <Search className="w-3.5 h-3.5 text-gray-500 absolute left-3 top-3" />
+              <Search className="w-3.5 h-3.5 text-gray-500 absolute left-3.5 top-3" />
               <input
                 type="text"
                 placeholder="e.g. Chitosan, Alginate"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-gray-900 border border-gray-800 rounded-xl pl-8 pr-3 py-1.5 text-xs text-gray-100 placeholder-gray-600 focus:border-emerald-500 focus:outline-none"
+                className="w-full bg-[#070a12] border border-white/10 rounded-xl pl-9 pr-3.5 py-2 text-xs text-gray-100 placeholder-gray-600 focus:border-emerald-500 focus:outline-none"
               />
             </div>
           </div>
@@ -217,46 +217,46 @@ export default function DatasetBrowserPage() {
       </div>
 
       {/* Material Catalog Data Table */}
-      <div className="glass-panel rounded-2xl p-6 border border-gray-800">
-        <h3 className="text-base font-bold text-white mb-4">📜 Material Catalog ({filteredCount} Records)</h3>
+      <div className="glass-panel rounded-3xl p-6 sm:p-8 border border-white/[0.08] shadow-2xl">
+        <h3 className="text-base font-extrabold text-white mb-5">📜 Material Catalog ({filteredCount} Records)</h3>
 
         {loading ? (
           <div className="py-12 text-center text-xs text-gray-400">
             <span className="inline-block w-6 h-6 border-2 border-emerald-500/30 border-t-emerald-500 rounded-full animate-spin mb-2" />
-            <p>Loading catalog from MySQL database...</p>
+            <p>Loading catalog from database...</p>
           </div>
         ) : (
-          <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs text-gray-300">
-              <thead className="bg-gray-900/80 text-gray-400 uppercase text-[10px] tracking-wider border-b border-gray-800">
+          <div className="overflow-x-auto rounded-2xl border border-white/[0.08]">
+            <table className="w-full text-left text-xs text-gray-300 border-collapse">
+              <thead className="bg-gray-950/90 text-gray-400 uppercase text-[10px] tracking-wider border-b border-white/[0.08]">
                 <tr>
-                  <th className="py-3 px-4">Polymer</th>
-                  <th className="py-3 px-4">Category</th>
-                  <th className="py-3 px-4">Tensile (MPa)</th>
-                  <th className="py-3 px-4">Modulus (GPa)</th>
-                  <th className="py-3 px-4">Flexibility</th>
-                  <th className="py-3 px-4">Biocompat.</th>
-                  <th className="py-3 px-4">Biodeg (Days)</th>
-                  <th className="py-3 px-4">Source</th>
+                  <th className="py-3.5 px-4 font-extrabold">Polymer</th>
+                  <th className="py-3.5 px-4 font-extrabold">Category</th>
+                  <th className="py-3.5 px-4 font-extrabold">Tensile (MPa)</th>
+                  <th className="py-3.5 px-4 font-extrabold">Modulus (GPa)</th>
+                  <th className="py-3.5 px-4 font-extrabold">Flexibility</th>
+                  <th className="py-3.5 px-4 font-extrabold">Biocompat.</th>
+                  <th className="py-3.5 px-4 font-extrabold">Biodeg (Days)</th>
+                  <th className="py-3.5 px-4 font-extrabold">Source</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-800/60">
+              <tbody className="divide-y divide-white/[0.06] bg-[#070a12]/60">
                 {filteredMaterials.slice(0, 50).map((mat: any, idx: number) => (
-                  <tr key={idx} className="hover:bg-gray-800/40 transition-colors">
-                    <td className="py-3 px-4 font-bold text-white">{mat.polymer}</td>
-                    <td className="py-3 px-4 text-emerald-400">{mat.category}</td>
-                    <td className="py-3 px-4">{mat.tensile_strength ?? 'N/A'}</td>
-                    <td className="py-3 px-4">{mat.elastic_modulus ?? 'N/A'}</td>
-                    <td className="py-3 px-4">{mat.flexibility ?? 'N/A'}</td>
-                    <td className="py-3 px-4 font-bold text-teal-300">{mat.biocompatibility ?? 'N/A'}/10</td>
-                    <td className="py-3 px-4">{mat.biodegradation_days ?? 'N/A'}</td>
-                    <td className="py-3 px-4">
+                  <tr key={idx} className="hover:bg-white/[0.04] transition-colors">
+                    <td className="py-3.5 px-4 font-extrabold text-white">{mat.polymer}</td>
+                    <td className="py-3.5 px-4 text-emerald-400 font-semibold">{mat.category}</td>
+                    <td className="py-3.5 px-4 font-mono">{mat.tensile_strength ?? 'N/A'}</td>
+                    <td className="py-3.5 px-4 font-mono">{mat.elastic_modulus ?? 'N/A'}</td>
+                    <td className="py-3.5 px-4 font-mono">{mat.flexibility ?? 'N/A'}</td>
+                    <td className="py-3.5 px-4 font-extrabold text-teal-300">{mat.biocompatibility ?? 'N/A'}/10</td>
+                    <td className="py-3.5 px-4 font-mono">{mat.biodegradation_days ?? 'N/A'}</td>
+                    <td className="py-3.5 px-4">
                       {mat.is_augmented === 1 ? (
-                        <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-purple-500/20 text-purple-300 border border-purple-500/30">
+                        <span className="px-2.5 py-1 rounded-lg text-[10px] font-extrabold bg-purple-500/15 text-purple-300 border border-purple-500/30">
                           Augmented
                         </span>
                       ) : (
-                        <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                        <span className="px-2.5 py-1 rounded-lg text-[10px] font-extrabold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
                           Literature
                         </span>
                       )}
@@ -270,42 +270,42 @@ export default function DatasetBrowserPage() {
       </div>
 
       {/* Numeric Properties Summary Stats */}
-      <div className="glass-panel rounded-2xl p-6 border border-gray-800 space-y-4">
-        <h3 className="text-base font-bold text-white flex items-center gap-2">
+      <div className="glass-panel rounded-3xl p-6 sm:p-8 border border-white/[0.08] space-y-5 shadow-2xl">
+        <h3 className="text-base font-extrabold text-white flex items-center gap-2">
           <BarChart3 className="w-5 h-5 text-emerald-400" />
           <span>Numeric Feature Statistics (Filtered Set)</span>
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="p-4 rounded-xl bg-gray-900/60 border border-gray-800 text-xs">
-            <span className="font-bold text-gray-200 block mb-2">Tensile Strength (MPa)</span>
-            <div className="flex justify-between text-gray-400">
+          <div className="p-4.5 rounded-2xl bg-[#070a12] border border-white/10 text-xs">
+            <span className="font-extrabold text-gray-200 block mb-2">Tensile Strength (MPa)</span>
+            <div className="flex justify-between text-gray-400 font-mono">
               <span>Min: <strong className="text-white">{tsStats.min}</strong></span>
               <span>Mean: <strong className="text-emerald-400">{tsStats.mean}</strong></span>
               <span>Max: <strong className="text-white">{tsStats.max}</strong></span>
             </div>
           </div>
 
-          <div className="p-4 rounded-xl bg-gray-900/60 border border-gray-800 text-xs">
-            <span className="font-bold text-gray-200 block mb-2">Biocompatibility (1-10)</span>
-            <div className="flex justify-between text-gray-400">
+          <div className="p-4.5 rounded-2xl bg-[#070a12] border border-white/10 text-xs">
+            <span className="font-extrabold text-gray-200 block mb-2">Biocompatibility (1-10)</span>
+            <div className="flex justify-between text-gray-400 font-mono">
               <span>Min: <strong className="text-white">{bioStats.min}</strong></span>
               <span>Mean: <strong className="text-emerald-400">{bioStats.mean}</strong></span>
               <span>Max: <strong className="text-white">{bioStats.max}</strong></span>
             </div>
           </div>
 
-          <div className="p-4 rounded-xl bg-gray-900/60 border border-gray-800 text-xs">
-            <span className="font-bold text-gray-200 block mb-2">Flexibility Score (1-10)</span>
-            <div className="flex justify-between text-gray-400">
+          <div className="p-4.5 rounded-2xl bg-[#070a12] border border-white/10 text-xs">
+            <span className="font-extrabold text-gray-200 block mb-2">Flexibility Score (1-10)</span>
+            <div className="flex justify-between text-gray-400 font-mono">
               <span>Min: <strong className="text-white">{flexStats.min}</strong></span>
               <span>Mean: <strong className="text-emerald-400">{flexStats.mean}</strong></span>
               <span>Max: <strong className="text-white">{flexStats.max}</strong></span>
             </div>
           </div>
 
-          <div className="p-4 rounded-xl bg-gray-900/60 border border-gray-800 text-xs">
-            <span className="font-bold text-gray-200 block mb-2">Biodegradation Days</span>
-            <div className="flex justify-between text-gray-400">
+          <div className="p-4.5 rounded-2xl bg-[#070a12] border border-white/10 text-xs">
+            <span className="font-extrabold text-gray-200 block mb-2">Biodegradation Days</span>
+            <div className="flex justify-between text-gray-400 font-mono">
               <span>Min: <strong className="text-white">{biodegStats.min}</strong></span>
               <span>Mean: <strong className="text-emerald-400">{biodegStats.mean}</strong></span>
               <span>Max: <strong className="text-white">{biodegStats.max}</strong></span>

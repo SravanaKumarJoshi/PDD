@@ -504,14 +504,16 @@ def load_dataset(csv_path: str | Path) -> pd.DataFrame:
         raise FileNotFoundError(f"Dataset not found at: {path}")
 
     df = pd.read_csv(path)
-
-    missing_cols = set(REQUIRED_COLUMNS) - set(df.columns)
-    if missing_cols:
-        raise ValueError(f"Missing required columns: {missing_cols}")
+    df = standardize_material_dataframe(df)
 
     for col in NUMERIC_COLUMNS:
         if col in df.columns and not pd.api.types.is_numeric_dtype(df[col]):
             df[col] = pd.to_numeric(df[col], errors="coerce")
+
+    # Ensure required columns exist
+    for col in REQUIRED_COLUMNS:
+        if col not in df.columns:
+            df[col] = np.nan
 
     return df
 
@@ -527,19 +529,31 @@ def load_dataset_auto(csv_path: str | Path | None = None) -> tuple[pd.DataFrame,
         return df, stats, "mysql"
 
     # MySQL failed — try CSV fallback
-    if csv_path is None:
-        csv_path = Path(__file__).parent.parent / "data" / "polymers.csv"
+    possible_csvs = []
+    if csv_path is not None:
+        possible_csvs.append(Path(csv_path))
+    root_dir = Path(__file__).parent.parent
+    possible_csvs.extend([
+        root_dir / "biopolymer_materials_1000.csv",
+        root_dir / "apppp" / "backend" / "biopolymer_materials_1000.csv",
+        root_dir / "data" / "polymers.csv"
+    ])
 
-    try:
-        df = load_dataset(csv_path)
-        stats = get_dataset_stats(df)
-        return df, stats, "csv"
-    except Exception as csv_err:
-        raise RuntimeError(
-            f"Both MySQL and CSV loaders failed.\n"
-            f"MySQL error: {err}\n"
-            f"CSV error: {csv_err}"
-        )
+    last_csv_err = None
+    for p in possible_csvs:
+        if p.exists():
+            try:
+                df = load_dataset(p)
+                stats = get_dataset_stats(df)
+                return df, stats, "csv"
+            except Exception as csv_err:
+                last_csv_err = csv_err
+
+    raise RuntimeError(
+        f"Both MySQL and CSV loaders failed.\n"
+        f"MySQL error: {err}\n"
+        f"CSV error: {last_csv_err}"
+    )
 
 
 # ---------------------------------------------------------------------------

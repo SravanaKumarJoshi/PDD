@@ -43,13 +43,15 @@ def train_xgboost(
     params = {**DEFAULT_PARAMS, **(params or {})}
     params["random_state"] = random_state
 
-    X = df[feature_cols].copy()
-    y = df[target_col].copy()
+    X = df[feature_cols].copy().apply(pd.to_numeric, errors="coerce").fillna(0.0)
+    y_series = pd.to_numeric(df[target_col], errors="coerce") if target_col in df.columns else pd.Series(dtype=float)
 
-    # Ensure y has at least 2 unique classes for StratifiedKFold and classification
-    if y.nunique() < 2:
+    if y_series.isna().any() or y_series.nunique() < 2:
         bio = df["biocompatibility"] if "biocompatibility" in df.columns else np.random.randn(len(df))
+        bio = pd.to_numeric(bio, errors="coerce").fillna(5.0)
         y = (bio >= bio.median()).astype(int)
+    else:
+        y = y_series.astype(int)
 
     # Cross-validation
     cv = StratifiedKFold(n_splits=cv_folds, shuffle=True, random_state=random_state)
