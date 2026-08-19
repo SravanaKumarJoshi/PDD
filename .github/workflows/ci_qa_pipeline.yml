@@ -1,0 +1,42 @@
+name: BioPolymer AI QA & Compliance Test Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  qa_and_excel_dashboard:
+    name: Execute Selenium, API, Appium, Load & Vulnerability Test Suite
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install openpyxl requests
+
+      - name: Execute Full Test Suite & Generate Excel Dashboard
+        run: |
+          python tests/generate_test_report.py
+
+      - name: Upload Excel Test Results Dashboard Artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: BioPolymer_AI_Test_Results_Dashboard
+          path: test_results_dashboard.xlsx
+          retention-days: 30
